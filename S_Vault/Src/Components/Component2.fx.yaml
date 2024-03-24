@@ -1,0 +1,17 @@
+Component2 As CanvasComponent:
+    CustomProperty1: =false
+    CustomProperty2: =ISexpp
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =App.DesignHeight
+    OnReset: =Set(ISexpp,Component2.CustomProperty1)
+    Width: =If(ISexpp,130,40)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Image11_3 As image:
+        Height: =40  
+        Image: ='WhatsApp Image 2023-11-09 at 14.43.02_c0bf4c3d'
+        Width: =Parent.Width
+        ZIndex: =2
+

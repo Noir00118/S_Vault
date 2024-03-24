@@ -1,0 +1,28 @@
+Component1_2 As CanvasComponent:
+    Badge1: ="Text"
+    Badge1Color: =RGBA(0, 0, 0, 1)
+    Badge2: ="Text"
+    Color: ="Text"
+    ElevationColor: =RGBA(0, 0, 0, 0)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =200
+    Icone: ="Text"
+    Moreinfo: ="Text"
+    Width: =160
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container98 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =Component1_2.ElevationColor
+        Height: =Parent.Height-14
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width-14
+        X: =7
+        Y: =7
+        ZIndex: =1
+
