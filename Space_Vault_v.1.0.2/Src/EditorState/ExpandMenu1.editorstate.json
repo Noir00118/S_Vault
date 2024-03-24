@@ -2123,6 +2123,14 @@
           "InvariantPropertyName": "Tooltip",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "IconType",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -2163,6 +2171,11 @@
           "Category": "Data",
           "PropertyName": "Tooltip",
           "RuleProviderType": "User"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "IconType",
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",

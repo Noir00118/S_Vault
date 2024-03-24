@@ -1,8 +1,10 @@
 [
   {
     "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "58abdf28-e39e-49c1-8236-56c3aebfcd84",
     "Name": "getalldetailstookan",
     "ServiceKind": "ConnectedWadl",
-    "Type": "ServiceInfo"
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "be6b485b-ba38-ee11-bdf4-0022489e7d7f"
   }
 ]

@@ -11495,6 +11495,7 @@ ExpandMenu1 As CanvasComponent:
                 Height: =Parent.Height
                 IconColor: ="Black"
                 IconName: =If(ExpandMenu1.IsExpanded,"DoubleChevronLeft8","DoubleChevronRight8")
+                IconType: ='PowerCAT.Icon.IconType'.IconButon
                 OnChange: =Set(IsOpen,!IsOpen);ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
                 TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
                 Theme: |-
@@ -11696,7 +11697,7 @@ ExpandMenu1 As CanvasComponent:
             IconSize: =18
             IconType: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.IconType'.ActionButton,'PowerCAT.Icon.IconType'.IconButon)
             OnChange: |-
-                =Set(IsOpen,true);ExpandMenu1.OnExpandSelect();If(
+                =Set(IsOpen,true);If(
                     IsBlank(ThisItem.Screen) && ExpandMenu1.IsNavigationEnabled,If(SectionIDRef=ThisItem.SectionIDRef,Set(SectionIDRef,0),
                     Set(
                         SectionIDRef,

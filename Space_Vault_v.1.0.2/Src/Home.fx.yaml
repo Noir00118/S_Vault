@@ -11337,6 +11337,7 @@ Home As screen:
                     , Name=IconName).Path
                 LayoutMinHeight: =640
                 LayoutMinWidth: =640
+                OnExpandSelect: =Set(IsOpen,!IsOpen);Set(SectionIDRef,0)
                 Width: =If(ExpandMenu1_1.IsExpanded,150,46)
                 ZIndex: =1
 
@@ -11364,6 +11365,7 @@ Home As screen:
             FooterContainer1_6 As groupContainer.horizontalAutoLayoutContainer:
                 Fill: =RGBA(255, 255, 255, 1)
                 FillPortions: =0
+                LayoutGap: =10
                 LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
@@ -11376,8 +11378,8 @@ Home As screen:
 
                 HeaderContainer2_5 As groupContainer.horizontalAutoLayoutContainer:
                     Fill: =RGBA(255, 255, 255, 1)
-                    FillPortions: =0
                     Height: =75
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
@@ -11387,7 +11389,138 @@ Home As screen:
                     RadiusTopRight: =0
                     ZIndex: =1
 
+                    TextCanvas2 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: =CalendarComponent_3.StartDate
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    TextCanvas3 As Text:
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: =CalendarComponent_3.EndDate
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
                 CalendarComponent_3 As CalendarComponent_2:
+                    Filter: |-
+                        =
+                            ClearCollect(
+                                osforderlist,
+                                ForAll(
+                                    Table(
+                                        ParseJSON(
+                                            OFSOrderList.Run(
+                                                Text(
+                                                    CalendarComponent_3.StartDate,
+                                                    "mm/dd/yyyy"
+                                                ),
+                                                Text(
+                                                    CalendarComponent_3.EndDate,
+                                                    "mm/dd/yyyy"
+                                                )
+                                            ).re
+                                        )
+                                    ),
+                                    {
+                                        Docno: Text(ThisRecord.Value.WebOrderNo),
+                                        Client: Text(ThisRecord.Value.PackagingLocation),
+                                        OrderDate: Text(
+                                            Text(ThisRecord.Value.OrderDate),
+                                            "mm/dd/yyyy"
+                                        ),
+                                        OrderStatus: Text(ThisRecord.Value.OrderStatus),
+                                        OS:"OFS",
+                                        Fulfilltype:"Order"
+                                    }
+                                )
+                            );Set(
+                                tookanpagecountDash,
+                                getalldetailstookan.Run(
+                                    Text(
+                                       CalendarComponent_3.StartDate,
+                                        "yyyy-mm-dd"
+                                    ),
+                                    Text(
+                                       CalendarComponent_3.EndDate,
+                                        "yyyy-mm-dd"
+                                    )
+                                ).responpage
+                            );Concurrent(
+                            ClearCollect(
+                                dashBoardSVMSout,
+                                ForAll(
+                                    Filter(
+                                        'Master Out Bound',
+                                        Date >= DateValue(
+                                            Text(
+                                                _selectedStart,
+                                                "mm/dd/yyy"
+                                            )
+                                        ) && Date <= DateValue(
+                                            Text(
+                                                _selectedEnd,
+                                                "mm/dd/yyy"
+                                            )
+                                        )
+                                    ),
+                                    {
+                                        OrderStatus: ThisRecord.Status.Value,
+                                        Client: ThisRecord.Company,
+                                        Docno: ThisRecord.Title,
+                                        OrderDate: Text(ThisRecord.Date),
+                                        Fulfilltype: ThisRecord.'Fulfillment Type'.Value,
+                                        Orderype: ThisRecord.'Order Type'.Value,
+                                        OS: "SV",
+                                        Remarkk: ThisRecord.Remark
+                                    }
+                                )
+                            ),
+                            ClearCollect(
+                                dashin,
+                                Filter(
+                                    'Master In Bound',
+                                    Date >= DateValue(
+                                        Text(
+                                            _selectedStart,
+                                            "mm/dd/yyy"
+                                        )
+                                    ) && Date <= DateValue(
+                                        Text(
+                                            _selectedEnd,
+                                            "mm/dd/yyy"
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                            ;
+                        ClearCollect(
+                            OMSremove,
+                            ofsolistD
+                        );
+                        RemoveIf(
+                            OMSremove,
+                            Docno in ShowColumns(
+                                dashBoardSVMSout,
+                                "Docno"
+                            )
+                        );
+                        ClearCollect(
+                            AllOrdercount,
+                            OMSremove,
+                            dashBoardSVMSout
+                        ); Clear(logissDash);
+                            Select(Button2_8)
                     LayoutMinHeight: =640
                     LayoutMinWidth: =640
                     ZIndex: =2

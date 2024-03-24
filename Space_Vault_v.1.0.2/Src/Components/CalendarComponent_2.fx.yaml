@@ -1,4 +1,7 @@
 CalendarComponent_2 As CanvasComponent:
+    Filter():
+        ThisProperty:
+            Default: =true
     AllowSelectionOfWeekends: =true
     BorderRadius: =0
     CalendarItems: |-
@@ -214,7 +217,7 @@ CalendarComponent_2 As CanvasComponent:
         DisabledFill: =RGBA(0, 0, 0, 0)
         FocusedBorderColor: =btnPrevMonth_2.BorderColor
         FocusedBorderThickness: =4
-        Height: =25
+        Height: =20
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
         HoverFill: =RGBA(0, 0, 0, 0)
@@ -232,14 +235,14 @@ CalendarComponent_2 As CanvasComponent:
                 _firstDayInView,
                DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-3,7)+1),TimeUnit.Days)
             )
-        PaddingBottom: |
-            =7
-        PaddingTop: =7 
+        PaddingBottom: =3
+        PaddingTop: =3
         PressedBorderColor: =RGBA(0, 0, 0, 0)
         PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
         PressedFill: =RGBA(0, 0, 0, 0)
-        Width: =Parent.Width / 10
-        X: =btnToday_2.X - Self.Width - 5
+        Width: =Parent.Width / 15
+        X: =ButtonCanvas2.X - Self.Width - 5
+        Y: =2
         ZIndex: =4
 
     btnNextMonth_2 As icon.ChevronRight:
@@ -250,7 +253,7 @@ CalendarComponent_2 As CanvasComponent:
         DisabledFill: =RGBA(0, 0, 0, 0)
         FocusedBorderColor: =btnNextMonth_2.BorderColor
         FocusedBorderThickness: =4
-        Height: =btnPrevMonth_2.Height
+        Height: =20
         HoverBorderColor: =RGBA(0, 0, 0, 0)
         HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
         HoverFill: =RGBA(0, 0, 0, 0)
@@ -268,14 +271,14 @@ CalendarComponent_2 As CanvasComponent:
                     _firstDayInView, 
                  DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-3,7)+1),TimeUnit.Days)
                 )
-        PaddingBottom: |
-            =7
-        PaddingTop: =7
+        PaddingBottom: =3
+        PaddingTop: =3
         PressedBorderColor: =RGBA(0, 0, 0, 0)
         PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
         PressedFill: =RGBA(0, 0, 0, 0)
         Width: =btnPrevMonth_2.Width
         X: =iconClose_1.X - Self.Width - 5
+        Y: =2
         ZIndex: =5
 
     btnToday_2 As button:
@@ -318,6 +321,7 @@ CalendarComponent_2 As CanvasComponent:
             )
         Size: =10
         Text: ="Today"
+        Visible: =false
         Width: =55
         X: =btnNextMonth_2.X-Self.Width-5
         ZIndex: =6
@@ -665,7 +669,7 @@ CalendarComponent_2 As CanvasComponent:
 
     iconClose_1 As icon.Cancel:
         Height: =btnPrevMonth_2.Height
-        Icon: =Icon.Cancel
+        Icon: =Icon.FilterFlatFilled
         OnSelect: |-
             =Set(visible_variable, false);Set(
                 _today,
@@ -700,6 +704,7 @@ CalendarComponent_2 As CanvasComponent:
             )
         PaddingBottom: =7
         PaddingTop: =7
+        Visible: =false
         Width: =30
         X: =Parent.Width-Self.Width-5
         ZIndex: =8
@@ -734,4 +739,63 @@ CalendarComponent_2 As CanvasComponent:
             Width: =8
             X: =9
             ZIndex: =3
+
+    ButtonCanvas2 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Arial
+        FontSize: =10
+        FontWeight: =FontWeight.Normal
+        Height: =20
+        OnSelect: |-
+            =Set(visible_variable, false);Set(
+                _today,
+                Today()
+            );
+                Set(
+                    _firstDayOfMonth,
+                    DateAdd(
+                        _today,
+                        1 - Day(_today),
+                        TimeUnit.Days
+                    )
+                );
+                Set(
+                    _firstDayInView,
+                    DateAdd(
+                        _firstDayOfMonth,
+                        -(Mod(
+                            Weekday(_firstDayOfMonth) - 3,
+                            7
+                        ) + 1),
+                        TimeUnit.Days
+                    )
+                );
+            Set(
+                _selectedStart,
+                Blank()
+            );
+            Set(
+                _selectedEnd,
+                Blank()
+            )
+        Text: ="Today"
+        Width: =35
+        X: =btnNextMonth_2.X-Self.Width-5
+        Y: =2
+        ZIndex: =11
+
+    iconClose_2 As icon.Cancel:
+        Color: =RGBA(15, 108, 189, 1)
+        Height: =btnPrevMonth_2.Height
+        HoverBorderColor: =ColorFade(Self.BorderColor, 100%)
+        Icon: =Icon.FilterFlatFilled
+        OnSelect: =CalendarComponent_2.Filter()
+        PaddingBottom: =2
+        PaddingTop: =2
+        Tooltip: ="Filter"
+        Width: =30
+        X: =Parent.Width-Self.Width-5
+        Y: =3
+        ZIndex: =12
 

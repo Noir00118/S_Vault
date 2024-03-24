@@ -1,23 +1,16 @@
-<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://europe-002.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="ImportfileorderInfo" xmlns="http://wadl.dev.java.net/2009/02">
-  <doc title="Importfile order Info" />
+<application xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:service="https://europe-002.azure-apim.net/apim/logicflows" xmlns:siena="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11" siena:serviceId="Clientreportexcel" xmlns="http://wadl.dev.java.net/2009/02">
+  <doc title="Clientreportexcel" />
   <grammars>
     <jsonTypes targetNamespace="https://europe-002.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
-      <string name="ManualTriggerInput_text_def" />
-      <string name="ManualTriggerInput_file_def_name_def" />
-      <base64Binary name="ManualTriggerInput_file_def_contentBytes_def" />
-      <object name="ManualTriggerInput_file_def">
-        <property name="name" type="string" />
-        <property name="contentBytes" typeRef="ManualTriggerInput_file_def_contentBytes_def" />
-      </object>
-      <string name="ManualTriggerInput_text_1_def" />
+      <string name="ManualTriggerInput_Compose_Inputs_def" />
+      <string name="ManualTriggerInput_Createfile_FileName_def" />
       <object name="ManualTriggerInput">
-        <property name="text" type="string" />
-        <property name="file" typeRef="ManualTriggerInput_file_def" />
-        <property name="text_1" type="string" />
+        <property name="Compose_Inputs" type="string" />
+        <property name="Createfile_FileName" type="string" />
       </object>
-      <string name="ResponseActionOutput_respppp_def" />
+      <string name="ResponseActionOutput_excel_def" />
       <object name="ResponseActionOutput">
-        <property name="respppp" type="string" />
+        <property name="excel" type="string" />
       </object>
       <object name="Run_responses_default_def" />
     </jsonTypes>
@@ -32,15 +25,8 @@
             <doc title="The api version" />
           </param>
           <representation mediaType="application/json">
-            <param style="plain" name="text" path="/text" type="xs:string" required="true">
-              <doc title="name" />
-            </param>
-            <param style="plain" name="file" path="/file" type="service:ManualTriggerInput_file_def">
-              <doc title="File Content" />
-            </param>
-            <param style="plain" name="text_1" path="/text_1" type="xs:string" required="true">
-              <doc title="Client" />
-            </param>
+            <param style="plain" name="Compose_Inputs" path="/Compose_Inputs" type="xs:string" required="true" />
+            <param style="plain" name="Createfile_FileName" path="/Createfile_FileName" type="xs:string" required="true" />
           </representation>
         </request>
         <response>

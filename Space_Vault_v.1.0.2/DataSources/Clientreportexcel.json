@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "784773c1-fb3f-447d-9c2e-9d69ef45e5d3",
+    "Name": "Clientreportexcel",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "5edc8b4e-a622-ee11-9cbc-0022489e7d7f"
+  }
+]

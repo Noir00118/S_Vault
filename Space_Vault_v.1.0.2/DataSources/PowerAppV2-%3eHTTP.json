@@ -1,8 +1,0 @@
-[
-  {
-    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
-    "Name": "PowerAppV2->HTTP",
-    "ServiceKind": "ConnectedWadl",
-    "Type": "ServiceInfo"
-  }
-]
