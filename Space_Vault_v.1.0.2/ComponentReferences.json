@@ -8,5 +8,15 @@
     "OriginalComponentDefinitionTemplateId": "4e43a9bf657e4b219245c9432418451b",
     "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
     "SourceLastTimeSaved": "2024-03-24T13:37:37.422+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "aabf774b-f65d-4ff0-820f-7804ae9723a9",
+    "LibraryLogicalName": "cr34d_navigation_76f3e",
+    "LibraryVersion": "2024-03-24T13:37:33Z",
+    "OriginalComponentDefinitionTemplateId": "6f7e206759094efba1bde921ac09b2e2",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-03-24T13:37:37.422+00:00"
   }
 ]

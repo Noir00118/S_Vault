@@ -47,6 +47,15 @@ CalendarComponent_2 As CanvasComponent:
     Y: =0
     ZIndex: =6
 
+    Container4 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height-6
+        Width: =Parent.Width-6      
+        X: =3
+        Y: =3
+        ZIndex: =1
+
     galWeekdays_2 As gallery.galleryHorizontal:
         BorderColor: =RGBA(130, 144, 156, 1)
         BorderStyle: =BorderStyle.None
@@ -81,10 +90,11 @@ CalendarComponent_2 As CanvasComponent:
         PressedFill: =galWeekdays_2.Fill
         ShowScrollbar: =false
         TemplatePadding: =0
-        TemplateSize: =Parent.Width/7
-        Width: =Parent.Width
+        TemplateSize: =Parent.Width/7.2
+        Width: =Parent.Width-10
+        X: =5
         Y: =28
-        ZIndex: =1
+        ZIndex: =2
 
         lblWeekday_3 As label:
             Align: =Align.Center
@@ -174,7 +184,7 @@ CalendarComponent_2 As CanvasComponent:
             =Text(Time(0, 0, tmrInitialize_3.Value/1000), "hh:mm:ss")
         Visible: =false
         Y: =446
-        ZIndex: =2
+        ZIndex: =3
 
     lblMonthYear_2 As label:
         Color: =CalendarComponent_2.Color
@@ -207,7 +217,9 @@ CalendarComponent_2 As CanvasComponent:
                 )
             )
         Width: =90
-        ZIndex: =3
+        X: =6
+        Y: =3
+        ZIndex: =4
 
     btnPrevMonth_2 As icon.ChevronLeft:
         BorderColor: =RGBA(166, 166, 166, 1)
@@ -242,8 +254,8 @@ CalendarComponent_2 As CanvasComponent:
         PressedFill: =RGBA(0, 0, 0, 0)
         Width: =Parent.Width / 15
         X: =ButtonCanvas2.X - Self.Width - 5
-        Y: =2
-        ZIndex: =4
+        Y: =3
+        ZIndex: =5
 
     btnNextMonth_2 As icon.ChevronRight:
         BorderColor: =RGBA(166, 166, 166, 1)
@@ -278,8 +290,8 @@ CalendarComponent_2 As CanvasComponent:
         PressedFill: =RGBA(0, 0, 0, 0)
         Width: =btnPrevMonth_2.Width
         X: =iconClose_1.X - Self.Width - 5
-        Y: =2
-        ZIndex: =5
+        Y: =3
+        ZIndex: =6
 
     btnToday_2 As button:
         Color: =RGBA(0, 0, 0, 1)
@@ -324,14 +336,14 @@ CalendarComponent_2 As CanvasComponent:
         Visible: =false
         Width: =55
         X: =btnNextMonth_2.X-Self.Width-5
-        ZIndex: =6
+        ZIndex: =7
 
     galCalendar_2 As gallery.galleryVertical:
         BorderColor: =RGBA(130, 144, 156, 1)
         DisabledBorderColor: =galCalendar_2.BorderColor
         DisabledFill: =galCalendar_2.Fill
         Fill: =RGBA(255, 255, 255, 1)
-        Height: =Parent.Height-Self.Y
+        Height: =Parent.Height-Self.Y-5
         HoverBorderColor: =galCalendar_2.BorderColor
         HoverFill: =galCalendar_2.Fill
         Items: |-
@@ -347,10 +359,11 @@ CalendarComponent_2 As CanvasComponent:
         ShowScrollbar: =false
         TemplatePadding: =1
         TemplateSize: =Self.Height/6.5
-        Width: =CalendarComponent_2.Width
+        Width: =Parent.Width-10
         WrapCount: =7
+        X: =5
         Y: =galWeekdays_2.Height+galWeekdays_2.Y+2
-        ZIndex: =7
+        ZIndex: =8
 
         Rectangle2_4 As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
@@ -707,7 +720,7 @@ CalendarComponent_2 As CanvasComponent:
         Visible: =false
         Width: =30
         X: =Parent.Width-Self.Width-5
-        ZIndex: =8
+        ZIndex: =9
 
     galCalItems_1 As gallery.variableTemplateHeightGallery:
         Height: =9
@@ -782,7 +795,7 @@ CalendarComponent_2 As CanvasComponent:
         Text: ="Today"
         Width: =35
         X: =btnNextMonth_2.X-Self.Width-5
-        Y: =2
+        Y: =3
         ZIndex: =11
 
     iconClose_2 As icon.Cancel:
@@ -796,6 +809,6 @@ CalendarComponent_2 As CanvasComponent:
         Tooltip: ="Filter"
         Width: =30
         X: =Parent.Width-Self.Width-5
-        Y: =3
+        Y: =6
         ZIndex: =12
 

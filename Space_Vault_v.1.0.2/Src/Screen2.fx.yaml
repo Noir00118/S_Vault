@@ -140,7 +140,7 @@ Screen2 As screen:
             Height: =32
             LayoutMinHeight: =32
             LayoutMinWidth: =96
-            OnSelect: |-
+            OnSelect: |
                 =Set(
                     varu,
                     If(
@@ -170,7 +170,6 @@ Screen2 As screen:
                         UpdateContext({WrongPass: true})
                     )
                 )
-                ;Set(IsOpen,!IsOpen);Set(SectionIDRef,0)
             Text: ="Login"
             Width: =96
             X: =0

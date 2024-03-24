@@ -1,4 +1,4 @@
-ExpandMenu1 As CanvasComponent:
+ExpandMenu1_3 As CanvasComponent:
     GetMenuIconPath(IconName As String):
         IconName:
             Default: ="Text"
@@ -11283,7 +11283,7 @@ ExpandMenu1 As CanvasComponent:
     CustomProperty1: |-
         ={col:{color:"#15942A" ,
         whit:"#FFFFFF" }}
-    CustomProperty2: =ExpandMenu1.src
+    CustomProperty2: =ExpandMenu1_3.src
     DefaultExpandValue: =false
     Document: =App.ActiveScreen
     Fill: =RGBA(214, 214, 214, 0.08)
@@ -11408,8 +11408,8 @@ ExpandMenu1 As CanvasComponent:
             }
         )
     OnButtonSelect: =true
-    OnExpandSelect: =Set(IsOpen,!IsOpen)
-    OnReset: =Set(IsOpen, ExpandMenu1.DefaultExpandValue)
+    OnExpandSelect: =true
+    OnReset: =Set(IsOpen, ExpandMenu1_3.DefaultExpandValue)
     Settings: =App.ActiveScreen
     src: =
     Theme: |-
@@ -11440,12 +11440,12 @@ ExpandMenu1 As CanvasComponent:
         	}
         }
     user: =
-    Width: =If(ExpandMenu1.IsExpanded,150,46)
+    Width: =150
     X: =0
     Y: =0
     ZIndex: =11
 
-    Container163_6 As groupContainer.horizontalAutoLayoutContainer:
+    Container163_5 As groupContainer.horizontalAutoLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =55
         LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
@@ -11454,31 +11454,31 @@ ExpandMenu1 As CanvasComponent:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Width: =Parent.Width
+        X: =80
         ZIndex: =1
 
-        imgExpandButton_10 As image:
+        imgExpandButton_9 As image:
             AccessibleLabel: ="Expand Collapase button"
             AlignInContainer: =AlignInContainer.Stretch
-            BorderColor: =ColorFade(imgExpandButton_10.Fill, -20%)
+            BorderColor: =ColorFade(imgExpandButton_9.Fill, -20%)
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0,0,0,0)
             FocusedBorderThickness: =0
             Height: =46
-            HoverBorderColor: =ColorFade(imgExpandButton_10.BorderColor, 20%)
-            HoverFill: =ColorValue(ExpandMenu1.Theme.palette.neutralLight)
+            HoverBorderColor: =ColorFade(imgExpandButton_9.BorderColor, 20%)
+            HoverFill: =ColorValue(ExpandMenu1_3.Theme.palette.neutralLight)
             Image: ='77fgbv1f'
             ImagePosition: =ImagePosition.Fill
             LayoutMinHeight: =8
-            OnSelect: =Set(IsOpen,!IsOpen);ExpandMenu1.OnExpandSelect()
-            PressedBorderColor: =ColorFade(imgExpandButton_10.BorderColor, -20%)
-            PressedFill: =ColorFade(imgExpandButton_10.Fill, -20%)
+            OnSelect: =Set(IsOpen,!IsOpen);ExpandMenu1_3.OnExpandSelect()
+            PressedBorderColor: =ColorFade(imgExpandButton_9.BorderColor, -20%)
+            PressedFill: =ColorFade(imgExpandButton_9.Fill, -20%)
             TabIndex: =0
-            Visible: =ExpandMenu1.IsExpanded
+            Visible: =ExpandMenu1_3.IsExpanded
             Width: =80
             ZIndex: =1
 
-        Container149_17 As groupContainer.manualLayoutContainer:
+        Container149_16 As groupContainer.manualLayoutContainer:
             DropShadow: =DropShadow.None
             FillPortions: =0
             LayoutMinHeight: =10
@@ -11490,65 +11490,13 @@ ExpandMenu1 As CanvasComponent:
             Width: =46
             ZIndex: =2
 
-            "Icon1 As 'Fluent Icon (1.0.22)'":
-                DisplayMode: =DisplayMode.Edit
-                Height: =Parent.Height
-                IconColor: ="Black"
-                IconName: =If(ExpandMenu1.IsExpanded,"DoubleChevronLeft8","DoubleChevronRight8")
-                IconType: ='PowerCAT.Icon.IconType'.IconButon
-                OnChange: =ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
-                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
-                Theme: |-
-                    = JSON({palette:
-                         {
-                                themePrimary: "#0078d4",
-                                themeLighterAlt: "#eff6fc",
-                                themeLighter: "#deecf9",
-                                themeLight: "#c7e0f4",
-                                themeTertiary: "#71afe5",
-                                themeSecondary: "#2b88d8",
-                                themeDarkAlt: "#106ebe",
-                                themeDark: "#005a9e",
-                                themeDarker: "#004578",
-                                neutralLighterAlt: "#faf9f8",
-                                neutralLighter: "#f3f2f1",
-                                neutralLight: "#edebe9",
-                                neutralQuaternaryAlt: "#e1dfdd",
-                                neutralQuaternary: "#d0d0d0",
-                                neutralTertiaryAlt: "#c8c6c4",
-                                neutralTertiary: "#a19f9d",
-                                neutralSecondary: "#605e5c",
-                                neutralPrimaryAlt: "#3b3a39",
-                                neutralPrimary: "#323130",
-                                neutralDark: "#201f1e",
-                                black: "#000000",
-                                white: "#ffffff"
-                              
-                        }})
-                Tooltip: =If(ExpandMenu1.IsExpanded,"Close","Open")
-                Width: =Parent.Width
-                X: =0
-                Y: =0
-                ZIndex: =1
-
-            ButtonCanvas3 As Button:
-                Appearance: ='ButtonCanvas.Appearance'.Outline
-                DisplayMode: =DisplayMode.Edit
-                Height: =Parent.Height
-                OnSelect: =Set(IsOpen,!IsOpen);ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
-                Text: =""
-                Width: =Parent.Width
-                X: =0
-                Y: =0
-                ZIndex: =2
-
-    glExpandMenu_5 As gallery.galleryVertical:
+    glExpandMenu_4 As gallery.galleryVertical:
         AccessibleLabel: ="Menu"
         BorderColor: =
         Fill: =Color.Transparent
         FocusedBorderThickness: =0
-        Height: =ExpandMenu1.Height-Self.Y
-        Items: =ExpandMenu1.Items
+        Height: =ExpandMenu1_3.Height-Self.Y
+        Items: =ExpandMenu1_3.Items
         Layout: =Layout.Vertical
         OnSelect: =
         ShowScrollbar: =false
@@ -11563,7 +11511,7 @@ ExpandMenu1 As CanvasComponent:
         Y: =189
         ZIndex: =2
 
-        Label9_3 As label:
+        Label9_2 As label:
             Align: =Align.Center
             BorderColor: =RGBA(0, 0, 0, 0)
             FontWeight: =If(ThisItem.Screen.Name =App.ActiveScreen.Name,FontWeight.Bold,FontWeight.Normal)
@@ -11577,102 +11525,88 @@ ExpandMenu1 As CanvasComponent:
             X: =10
             ZIndex: =4
 
-        imgIcon_6 As image:
-            BorderColor: =ColorFade(imgIcon_6.Fill, -20%)
+        imgIcon_5 As image:
+            BorderColor: =ColorFade(imgIcon_5.Fill, -20%)
             Fill: =RGBA(0,0,0,0)
             FocusedBorderThickness: =0
             Height: =27
-            HoverBorderColor: =ColorFade(imgIcon_6.BorderColor, 20%)
-            HoverFill: =ColorFade(imgIcon_6.Fill, 20%)
+            HoverBorderColor: =ColorFade(imgIcon_5.BorderColor, 20%)
+            HoverFill: =ColorFade(imgIcon_5.Fill, 20%)
             Image: |-
-                =If(IsBlank(ExpandMenu1.GetMenuIconPath(ThisItem.Icon)), ThisItem.Icon,"data:image/svg+xml," & 
+                =If(IsBlank(ExpandMenu1_3.GetMenuIconPath(ThisItem.Icon)), ThisItem.Icon,"data:image/svg+xml," & 
                  EncodeUrl(
                     "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 0 " & 2068 & " 2048'>
                   <g transform='matrix(1 0 0 -1 0 2048),rotate(0, 2068,1024)'>
-                   <path fill='" & If(ThisItem.Screen.Name =App.ActiveScreen.Name,ExpandMenu1.CustomProperty1.col.color,ExpandMenu1.Theme.palette.neutralPrimary) & "'
-                d='" & ExpandMenu1.GetMenuIconPath(ThisItem.Icon) & "' />
+                   <path fill='" & If(ThisItem.Screen.Name =App.ActiveScreen.Name,ExpandMenu1_3.CustomProperty1.col.color,ExpandMenu1_3.Theme.palette.neutralPrimary) & "'
+                d='" & ExpandMenu1_3.GetMenuIconPath(ThisItem.Icon) & "' />
                   </g>
                 </svg>"
                 ))
             OnSelect: =Select(Parent)
-            PressedBorderColor: =ColorFade(imgIcon_6.BorderColor, -20%)
-            PressedFill: =ColorFade(imgIcon_6.Fill, -20%)
+            PressedBorderColor: =ColorFade(imgIcon_5.BorderColor, -20%)
+            PressedFill: =ColorFade(imgIcon_5.Fill, -20%)
             Width: =40
             X: =1
             Y: =Parent.TemplateHeight/2-Self.Height/2
             ZIndex: =5
 
-        rectHighlight_11 As rectangle:
-            BorderColor: =ColorFade(rectHighlight_11.Fill, -20%)
-            DisabledFill: =rectHighlight_11.Fill
-            Fill: =ColorValue(ExpandMenu1.Theme.palette.themePrimary)
+        rectHighlight_10 As rectangle:
+            BorderColor: =ColorFade(rectHighlight_10.Fill, -20%)
+            DisabledFill: =rectHighlight_10.Fill
+            Fill: =ColorValue(ExpandMenu1_3.Theme.palette.themePrimary)
             FocusedBorderThickness: =0
             Height: =20
-            HoverFill: =ColorFade(rectHighlight_11.Fill, 20%)
+            HoverFill: =ColorFade(rectHighlight_10.Fill, 20%)
             OnSelect: =Select(Parent)
-            PressedFill: =ColorFade(rectHighlight_11.Fill, -20%)
+            PressedFill: =ColorFade(rectHighlight_10.Fill, -20%)
             Visible: =ThisItem.Screen = App.ActiveScreen
             Width: =2
             X: =5
             Y: =Parent.TemplateHeight/2-Self.Height/2
             ZIndex: =6
 
-        rectHighlight_8 As rectangle:
-            BorderColor: =ColorFade(rectHighlight_8.Fill, -20%)
-            DisabledFill: =rectHighlight_8.Fill
+        rectHighlight_7 As rectangle:
+            BorderColor: =ColorFade(rectHighlight_7.Fill, -20%)
+            DisabledFill: =rectHighlight_7.Fill
             Fill: =RGBA(0, 0, 0, 0)
             FocusedBorderThickness: =0
             Height: =Parent.TemplateHeight
             HoverFill: =
-            OnSelect: =If(!IsBlank(ThisItem.Screen) && ExpandMenu1.IsNavigationEnabled, Navigate(ThisItem.Screen));Set(Scr,ThisItem)
-            PressedFill: =ColorFade(rectHighlight_8.Fill, -20%)
+            OnSelect: =If(!IsBlank(ThisItem.Screen) && ExpandMenu1_3.IsNavigationEnabled, Navigate(ThisItem.Screen));Set(Scr,ThisItem)
+            PressedFill: =ColorFade(rectHighlight_7.Fill, -20%)
             Width: =Parent.TemplateWidth
             Y: =
             ZIndex: =7
 
-    Gallery2_1 As gallery.variableTemplateHeightGallery:
+    Gallery2 As gallery.variableTemplateHeightGallery:
         DelayItemLoading: =true
         Height: =429
-        Items: =ExpandMenu1.Items
+        Items: =ExpandMenu1_3.Items
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false
         TemplateSize: =280
-        Width: =If(!ExpandMenu1.IsExpanded, 46, 150)
-        Y: =88
+        Width: =If(!ExpandMenu1_3.IsExpanded, 46, 150)
+        Y: =84
         ZIndex: =3
 
-        "Elevation1 As 'Fluent Elevation (1.0.22)'":
-            DisplayMode: =DisplayMode.Edit
-            Height: =200
-            HoverDepth: ='PowerCAT.Elevation.HoverDepth'.Depth8
-            PaddingBottom: =5
-            PaddingLeft: =5
-            PaddingRight: =5
-            PaddingTop: =3
-            Visible: =If(SectionIDRef=ThisItem.SectionIDRef,true,false)
-            Width: =Parent.TemplateWidth
-            X: =0
-            Y: =0
-            ZIndex: =1
-
-        "TabList1_1 As 'Tab list'.pcfdataset":
+        "TabList1 As 'Tab list'.pcfdataset":
             Alignment: ='TabList.Alignment'.Vertical
             DefaultSelectedItems: =[LookUp(ThisItem.Submanu,Screen=App.ActiveScreen)]
             DisplayMode: =DisplayMode.Edit
-            FontSize: =12
+            FontSize: =11
             FontWeight: =FontWeight.Normal
-            Height: =If(ThisItem.SectionIDRef=SectionIDRef,180,0)
+            Height: =If(ThisItem.SectionIDRef=SectionIDRef,150,0)
             Items: =ThisItem.Submanu
             OnSelect: =Navigate(Self.Selected.Screen)
             Size: ='TabList.Size'.Small
             Visible: =If(ThisItem.SectionIDRef=SectionIDRef,true,false)
-            Width: =122
-            X: =4
+            Width: =92
+            X: =15
             Y: =39
-            ZIndex: =2
+            ZIndex: =9
 
-            Label1_1 As pcfDataField.textualColumn:
+            Label1 As pcfDataField.textualColumn:
                 FieldDisplayName: ="Label"
                 FieldName: ="Label"
                 FieldType: ="s"
@@ -11680,7 +11614,7 @@ ExpandMenu1 As CanvasComponent:
                 Order: =1
                 ZIndex: =10
 
-            Screen2_2 As pcfDataField.textualColumn:
+            Screen2_1 As pcfDataField.textualColumn:
                 FieldDisplayName: ="Screen"
                 FieldName: ="Screen"
                 FieldType: ="v"
@@ -11688,74 +11622,7 @@ ExpandMenu1 As CanvasComponent:
                 Order: =2
                 ZIndex: =11
 
-        "Elevation2 As 'Fluent Elevation (1.0.22)'":
-            Depth: ='PowerCAT.Elevation.Depth'.Depth0
-            DisplayMode: =DisplayMode.Edit
-            FillColor: =""
-            Height: =30
-            HoverFillColor: |-
-                ="#ffffff"
-            Width: =Parent.TemplateWidth-2
-            X: =0
-            Y: =3
-            ZIndex: =3
-
-        "Icon2 As 'Fluent Icon (1.0.22)'":
-            DisplayMode: =DisplayMode.Edit
-            Height: =30
-            IconColor: =If(ThisItem.SectionIDRef=SectionIDRef,"DarkSeaGreen","SteelBlue")
-            IconName: =ThisItem.Icon
-            IconSize: =18
-            IconType: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.IconType'.ActionButton,'PowerCAT.Icon.IconType'.IconButon)
-            OnChange: |-
-                =Set(IsOpen,true);If(
-                    IsBlank(ThisItem.Screen) && ExpandMenu1.IsNavigationEnabled,If(SectionIDRef=ThisItem.SectionIDRef,Set(SectionIDRef,0),
-                    Set(
-                        SectionIDRef,
-                        ThisItem.SectionIDRef
-                    )),
-                    Navigate(ThisItem.Screen)
-                );
-                Set(
-                    Scr,
-                    ThisItem
-                )
-            Text: =ThisItem.Label
-            TextAlignment: =If(ThisItem.SectionIDRef=SectionIDRef,'PowerCAT.Icon.TextAlignment'.Center,'PowerCAT.Icon.TextAlignment'.Left)
-            Theme: |-
-                = JSON({palette:
-                     {
-                            themePrimary: "#0078d4",
-                            themeLighterAlt: "#eff6fc",
-                            themeLighter: "#deecf9",
-                            themeLight: "#c7e0f4",
-                            themeTertiary: "#71afe5",
-                            themeSecondary: "#2b88d8",
-                            themeDarkAlt: "#106ebe",
-                            themeDark: "#005a9e",
-                            themeDarker: "#004578",
-                            neutralLighterAlt: "#faf9f8",
-                            neutralLighter: "#f3f2f1",
-                            neutralLight: "#edebe9",
-                            neutralQuaternaryAlt: "#e1dfdd",
-                            neutralQuaternary: "#d0d0d0",
-                            neutralTertiaryAlt: "#c8c6c4",
-                            neutralTertiary: "#a19f9d",
-                            neutralSecondary: "#605e5c",
-                            neutralPrimaryAlt: "#3b3a39",
-                            neutralPrimary: "#323130",
-                            neutralDark: "#201f1e",
-                            black: "#000000",
-                            white: "#ffffff"
-                          
-                    }})
-            Tooltip: =ThisItem.Label
-            Width: =Parent.TemplateWidth-2
-            X: =0
-            Y: =3
-            ZIndex: =4
-
-    BadgeCanvas21_2 As Badge:
+    BadgeCanvas21_1 As Badge:
         Appearance: ='BadgeCanvas.Appearance'.Filled
         BasePaletteColor: =
         Content: =""
@@ -11774,10 +11641,9 @@ ExpandMenu1 As CanvasComponent:
         Y: =144
         ZIndex: =4
 
-    Container165_2 As groupContainer.verticalAutoLayoutContainer:
+    Container165_1 As groupContainer.verticalAutoLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =110
-        LayoutAlignItems: =LayoutAlignItems.Center
         LayoutDirection: =LayoutDirection.Vertical
         LayoutJustifyContent: =LayoutJustifyContent.End
         LayoutMode: =LayoutMode.Auto
@@ -11785,94 +11651,7 @@ ExpandMenu1 As CanvasComponent:
         RadiusBottomRight: =0
         RadiusTopLeft: =0
         RadiusTopRight: =0
-        Width: =If(ExpandMenu1.IsExpanded,150,46)
+        X: =80
         Y: =Parent.Height-Self  .Height
         ZIndex: =5
-
-        "Icon3 As 'Fluent Icon (1.0.22)'":
-            DisplayMode: =DisplayMode.Edit
-            Height: =30
-            HoverFillColor: ="WhiteSmoke"
-            IconName: ="Settings"
-            IconSize: =18
-            IconType: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.IconType'.ActionButton,'PowerCAT.Icon.IconType'.IconButon)
-            LayoutMinHeight: =200
-            LayoutMinWidth: =30
-            Text: ="Settings"
-            TextAlignment: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.TextAlignment'.Left,'PowerCAT.Icon.TextAlignment'.Center)
-            Theme: |-
-                = JSON({palette:
-                     {
-                            themePrimary: "#0078d4",
-                            themeLighterAlt: "#eff6fc",
-                            themeLighter: "#deecf9",
-                            themeLight: "#c7e0f4",
-                            themeTertiary: "#71afe5",
-                            themeSecondary: "#2b88d8",
-                            themeDarkAlt: "#106ebe",
-                            themeDark: "#005a9e",
-                            themeDarker: "#004578",
-                            neutralLighterAlt: "#faf9f8",
-                            neutralLighter: "#f3f2f1",
-                            neutralLight: "#edebe9",
-                            neutralQuaternaryAlt: "#e1dfdd",
-                            neutralQuaternary: "#d0d0d0",
-                            neutralTertiaryAlt: "#c8c6c4",
-                            neutralTertiary: "#a19f9d",
-                            neutralSecondary: "#605e5c",
-                            neutralPrimaryAlt: "#3b3a39",
-                            neutralPrimary: "#323130",
-                            neutralDark: "#201f1e",
-                            black: "#000000",
-                            white: "#ffffff"
-                          
-                    }})
-            Width: =Parent.Width
-            X: =0
-            Y: =0
-            ZIndex: =1
-
-        "Icon3_1 As 'Fluent Icon (1.0.22)'":
-            DisplayMode: =DisplayMode.Edit
-            Height: =30
-            HoverFillColor: ="WhiteSmoke"
-            IconColor: ="Red"
-            IconName: ="SignOut"
-            IconSize: =18
-            IconType: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.IconType'.ActionButton,'PowerCAT.Icon.IconType'.IconButon)
-            LayoutMinHeight: =200
-            LayoutMinWidth: =30
-            Text: ="SignOut"
-            TextAlignment: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.TextAlignment'.Left,'PowerCAT.Icon.TextAlignment'.Center)
-            Theme: |-
-                = JSON({palette:
-                     {
-                            themePrimary: "#0078d4",
-                            themeLighterAlt: "#eff6fc",
-                            themeLighter: "#deecf9",
-                            themeLight: "#c7e0f4",
-                            themeTertiary: "#71afe5",
-                            themeSecondary: "#2b88d8",
-                            themeDarkAlt: "#106ebe",
-                            themeDark: "#005a9e",
-                            themeDarker: "#004578",
-                            neutralLighterAlt: "#faf9f8",
-                            neutralLighter: "#f3f2f1",
-                            neutralLight: "#edebe9",
-                            neutralQuaternaryAlt: "#e1dfdd",
-                            neutralQuaternary: "#d0d0d0",
-                            neutralTertiaryAlt: "#c8c6c4",
-                            neutralTertiary: "#a19f9d",
-                            neutralSecondary: "#605e5c",
-                            neutralPrimaryAlt: "#3b3a39",
-                            neutralPrimary: "#323130",
-                            neutralDark: "#201f1e",
-                            black: "#000000",
-                            white: "#ffffff"
-                          
-                    }})
-            Width: =Parent.Width
-            X: =0
-            Y: =0
-            ZIndex: =2
 

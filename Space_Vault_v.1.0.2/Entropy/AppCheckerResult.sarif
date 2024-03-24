@@ -1479,43 +1479,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.FooterContainer1_6.CalendarComponent_3.Filter"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.FooterContainer1_6.CalendarComponent_3.Filter",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 9,
-                  "charOffset": 2916,
-                  "snippet": {
-                    "text": "Button2_8"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Filter",
-                "module": "Home",
-                "type": "Home.ScreenContainer4_4.ScreenContainer2_5.FooterContainer1_6.CalendarComponent_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrFunctionExpectsSameScreenForSelect",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.Y"
                 }
               ],
@@ -2778,6 +2741,168 @@
           },
           "ruleId": "app-ErrIncorrectFormat-Func",
           "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Height"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Height",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 25,
+                  "snippet": {
+                    "text": "SectionIDRef"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Height",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2.TabList1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SectionIDRef"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Height"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Height",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 24,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Height",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2.TabList1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Number",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 25,
+                  "snippet": {
+                    "text": "SectionIDRef"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2.TabList1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "SectionIDRef"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 24,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2.TabList1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Number",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -4697,19 +4822,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container66_2.DatePickerCanvas4_13.AccessibleLabel"
+                  "fullyQualifiedName": "ExpandMenu1_3.Container163_5.imgExpandButton_9.FocusedBorderThickness"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container66_2.DatePickerCanvas4_13.AccessibleLabel",
+                  "fullyQualifiedName": "ExpandMenu1_3.Container163_5.imgExpandButton_9.FocusedBorderThickness",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "AccessibleLabel",
-                "module": "Home",
-                "type": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container66_2.DatePickerCanvas4_13"
+                "member": "FocusedBorderThickness",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Container163_5.imgExpandButton_9"
               }
             }
           ],
@@ -4719,27 +4844,27 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 5
         },
         {
           "locations": [
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container66_2.DatePickerCanvas4_14.AccessibleLabel"
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container66_2.DatePickerCanvas4_14.AccessibleLabel",
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Home",
-                "type": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container66_2.DatePickerCanvas4_14"
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2"
               }
             }
           ],
@@ -4847,19 +4972,49 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.DatePickerCanvas4_15.AccessibleLabel"
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.DatePickerCanvas4_15.AccessibleLabel",
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.Gallery2.TabList1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Home",
-                "type": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.DatePickerCanvas4_15"
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.Gallery2.TabList1"
               }
             }
           ],
@@ -4877,49 +5032,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.DatePickerCanvas4_16.AccessibleLabel"
+                  "fullyQualifiedName": "ExpandMenu1_3.BadgeCanvas21_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.DatePickerCanvas4_16.AccessibleLabel",
+                  "fullyQualifiedName": "ExpandMenu1_3.BadgeCanvas21_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
-                "module": "Home",
-                "type": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.DatePickerCanvas4_16"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 6
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.ButtonCanvas18_10.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.ButtonCanvas18_10.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "Home",
-                "type": "Home.ScreenContainer4_4.ScreenContainer2_5.MainContainer2_5.Canvas2_4.DataCard37_1.Container17_1.ButtonCanvas18_10"
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.BadgeCanvas21_1"
               }
             }
           ],
@@ -5476,6 +5601,186 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.glExpandMenu_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.glExpandMenu_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-TabOrderShouldBeChecked",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3.glExpandMenu_4.rectHighlight_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ExpandMenu1.Container163_6.Container149_17.ButtonCanvas3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1.Container163_6.Container149_17.ButtonCanvas3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "ExpandMenu1",
+                "type": "ExpandMenu1.Container163_6.Container149_17.ButtonCanvas3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.paginatedgall"
                 }
               ],
@@ -5487,36 +5792,6 @@
               },
               "properties": {
                 "member": "paginatedgall",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 11
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.Scr"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.Scr",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Scr",
                 "module": "App",
                 "type": "App"
               }
@@ -8175,6 +8450,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "ExpandMenu1.Scr"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "ExpandMenu1.Scr",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Scr",
+                "module": "ExpandMenu1",
+                "type": "ExpandMenu1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "Screen3.loader"
                 }
               ],
@@ -8205,19 +8510,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Home.loader"
+                  "fullyQualifiedName": "ExpandMenu1_3.Scr"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Home.loader",
+                  "fullyQualifiedName": "ExpandMenu1_3.Scr",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "loader",
-                "module": "Home",
-                "type": "Home"
+                "member": "Scr",
+                "module": "ExpandMenu1_3",
+                "type": "ExpandMenu1_3"
               }
             }
           ],
@@ -8296,14 +8601,18 @@
               }
             },
             {
-              "id": "app-ErrFunctionExpectsSameScreenForSelect",
+              "id": "app-ErrIncompatibleTypesForEquality-Left-Right",
               "messageStrings": {
                 "issue": {
-                  "text": "Select of a control that is not on this screen."
+                  "text": "Incompatible types for comparison. These types can't be compared: {0}, {1}."
                 }
               },
               "properties": {
                 "componentType": "app",
+                "howToFix": [
+                  "You might need to convert the value to be the same type, such as converting a date string (e.g., \"12/31/2018\") to a date value.",
+                  "If you’re comparing records or tables, the field or column types must match exactly."
+                ],
                 "level": "High",
                 "primaryCategory": "formula",
                 "whyFix": ""

@@ -11337,7 +11337,6 @@ Home As screen:
                     , Name=IconName).Path
                 LayoutMinHeight: =640
                 LayoutMinWidth: =640
-                OnExpandSelect: =Set(IsOpen,!IsOpen);Set(SectionIDRef,0)
                 Width: =If(ExpandMenu1_1.IsExpanded,150,46)
                 ZIndex: =1
 
@@ -11363,8 +11362,10 @@ Home As screen:
             ZIndex: =3
 
             FooterContainer1_6 As groupContainer.horizontalAutoLayoutContainer:
-                Fill: =RGBA(255, 255, 255, 1)
+                DropShadow: =DropShadow.None
                 FillPortions: =0
+                Height: =205
+                LayoutAlignItems: =LayoutAlignItems.Stretch
                 LayoutGap: =10
                 LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
                 LayoutMinHeight: =100
@@ -11377,8 +11378,10 @@ Home As screen:
                 ZIndex: =2
 
                 HeaderContainer2_5 As groupContainer.horizontalAutoLayoutContainer:
-                    Fill: =RGBA(255, 255, 255, 1)
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    DropShadow: =DropShadow.None
                     Height: =75
+                    LayoutDirection: =LayoutDirection.Vertical
                     LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
                     LayoutMinHeight: =100
                     LayoutMinWidth: =250
@@ -11389,27 +11392,95 @@ Home As screen:
                     RadiusTopRight: =0
                     ZIndex: =1
 
-                    TextCanvas2 As Text:
-                        DisplayMode: =DisplayMode.Edit
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        Text: =CalendarComponent_3.StartDate
-                        Width: =96
-                        X: =0
-                        Y: =0
-                        ZIndex: =1
+                    Container2 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =25
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        ZIndex: =3
 
-                    TextCanvas3 As Text:
-                        DisplayMode: =DisplayMode.Edit
-                        Height: =32
-                        LayoutMinHeight: =32
-                        LayoutMinWidth: =96
-                        Text: =CalendarComponent_3.EndDate
-                        Width: =96
-                        X: =0
-                        Y: =0
-                        ZIndex: =2
+                        TextCanvas2 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: =CalendarComponent_3.StartDate
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                        TextCanvas3 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: =CalendarComponent_3.EndDate
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =2
+
+                    Container3 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        ZIndex: =4
+
+                        Card_1 As Card:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =1
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+
+                        Card_2 As Card:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =1
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            ZIndex: =2
+
+                        Card_3 As Card:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =1
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            ZIndex: =3
+
+                        Card_4 As Card:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =1
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            ZIndex: =4
+
+                        Card_5 As Card:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =1
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            ZIndex: =5
+
+                        Card_6 As Card:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            FillPortions: =1
+                            LayoutMinHeight: =64
+                            LayoutMinWidth: =64
+                            ZIndex: =6
 
                 CalendarComponent_3 As CalendarComponent_2:
                     Filter: |-
@@ -11520,8 +11591,8 @@ Home As screen:
                             OMSremove,
                             dashBoardSVMSout
                         ); Clear(logissDash);
-                            Select(Button2_8)
-                    LayoutMinHeight: =640
+                            Select(Button2_9)
+                    LayoutMinHeight: =64
                     LayoutMinWidth: =640
                     ZIndex: =2
 
@@ -13394,7 +13465,7 @@ Home As screen:
                         DisplayMode: =DisplayMode.Edit
                         Fill: =RGBA(0, 0, 0, 0)
                         Height: =190
-                        Visible: =false
+                        Visible: =true
                         Width: =658
                         X: =0
                         Y: =6
@@ -13403,7 +13474,7 @@ Home As screen:
                         Container66_2 As groupContainer.verticalAutoLayoutContainer:
                             DropShadow: =DropShadow.None
                             Fill: =RGBA(255, 255, 255, 1)
-                            Height: =100
+                            Height: =166
                             LayoutAlignItems: =LayoutAlignItems.Stretch
                             LayoutGap: =5
                             LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
@@ -13413,7 +13484,7 @@ Home As screen:
                             PaddingLeft: =5
                             PaddingRight: =5
                             PaddingTop: =5
-                            Width: =437
+                            Width: =602
                             ZIndex: =1
 
                             Button2_9 As button:
@@ -13459,12 +13530,12 @@ Home As screen:
                                         tokanalladata.Run(
                                           Text(
                                                    Coalesce(
-                                                                _selectedStart,Today()),
+                                                                CalendarComponent_3.StartDate,Today()),
                                                     "yyyy-mm-dd"
                                                 ),
                                                 Text(
                                                    Coalesce(
-                                                                _selectedEnd,Today()),
+                                                                CalendarComponent_3.EndDate,Today()),
                                                     "yyyy-mm-dd"
                                                 )
                                             ,pagecounttDash
@@ -13634,86 +13705,6 @@ Home As screen:
                                 X: =19
                                 Y: =91
                                 ZIndex: =5
-
-                            "DatePickerCanvas4_13 As 'Date picker'":
-                                BasePaletteColor: =
-                                DisplayMode: =DisplayMode.Edit
-                                Font: =""
-                                FontColor: =
-                                FontItalic: =false
-                                FontSize: =0
-                                FontStrikethrough: =false
-                                FontUnderline: =false
-                                FontWeight: =""
-                                Format: ='DatePickerCanvas.Format'.Short
-                                Height: =32
-                                LayoutMinHeight: =32
-                                LayoutMinWidth: =100
-                                OnChange: |-
-                                    =Concurrent(
-                                    
-                                    
-                                    
-                                    ClearCollect(
-                                        dashoms,
-                                        Filter(
-                                            'Master Out Bound',
-                                            Date = DatePickerCanvas4_13.SelectedDate
-                                        )
-                                    ),
-                                    ClearCollect(
-                                        dashin,
-                                        Filter(
-                                            'Master In Bound',
-                                            Date = DatePickerCanvas4_13.SelectedDate
-                                        )
-                                    ))
-                                SelectedDate: =Today()
-                                Visible: =true
-                                Width: =130
-                                X: =0
-                                Y: =0
-                                ZIndex: =6
-
-                            "DatePickerCanvas4_14 As 'Date picker'":
-                                BasePaletteColor: =
-                                DisplayMode: =DisplayMode.Edit
-                                Font: =""
-                                FontColor: =
-                                FontItalic: =false
-                                FontSize: =0
-                                FontStrikethrough: =false
-                                FontUnderline: =false
-                                FontWeight: =""
-                                Format: ='DatePickerCanvas.Format'.Short
-                                Height: =32
-                                LayoutMinHeight: =32
-                                LayoutMinWidth: =100
-                                OnChange: |-
-                                    =Concurrent(
-                                    
-                                    
-                                    
-                                    ClearCollect(
-                                        dashoms,
-                                        Filter(
-                                            'Master Out Bound',
-                                            Date = DatePickerCanvas4_14.SelectedDate
-                                        )
-                                    ),
-                                    ClearCollect(
-                                        dashin,
-                                        Filter(
-                                            'Master In Bound',
-                                            Date = DatePickerCanvas4_14.SelectedDate
-                                        )
-                                    ))
-                                SelectedDate: =Today()
-                                Visible: =true
-                                Width: =130
-                                X: =0
-                                Y: =0
-                                ZIndex: =7
 
                             Timer1_8 As timer:
                                 AutoStart: =true
@@ -14013,163 +14004,6 @@ Home As screen:
                                 X: =Parent.Width-Self.Width-20
                                 Y: =72
                                 ZIndex: =1
-
-                            "DatePickerCanvas4_15 As 'Date picker'":
-                                AlignInContainer: =AlignInContainer.Center
-                                BasePaletteColor: =
-                                DisplayMode: =DisplayMode.Edit
-                                Font: =""
-                                FontColor: =
-                                FontItalic: =false
-                                FontSize: =0
-                                FontStrikethrough: =false
-                                FontUnderline: =false
-                                FontWeight: =""
-                                Format: ='DatePickerCanvas.Format'.Short
-                                Height: =32
-                                LayoutMinHeight: =32
-                                LayoutMinWidth: =100
-                                OnChange: =
-                                SelectedDate: =Today()
-                                Visible: =false
-                                Width: =130
-                                X: =0
-                                Y: =0
-                                ZIndex: =2
-
-                            "DatePickerCanvas4_16 As 'Date picker'":
-                                AlignInContainer: =AlignInContainer.Center
-                                BasePaletteColor: =
-                                DisplayMode: =DisplayMode.Edit
-                                Font: =""
-                                FontColor: =
-                                FontItalic: =false
-                                FontSize: =0
-                                FontStrikethrough: =false
-                                FontUnderline: =false
-                                FontWeight: =""
-                                Format: ='DatePickerCanvas.Format'.Short
-                                Height: =32
-                                LayoutMinHeight: =32
-                                LayoutMinWidth: =100
-                                OnChange: |-
-                                    =Concurrent(
-                                    
-                                    
-                                    
-                                    ClearCollect(
-                                        dashoms,
-                                        Filter(
-                                            'Master Out Bound',
-                                            Date = DatePickerCanvas4_16.SelectedDate
-                                        )
-                                    ),
-                                    ClearCollect(
-                                        dashin,
-                                        Filter(
-                                            'Master In Bound',
-                                            Date = DatePickerCanvas4_16.SelectedDate
-                                        )
-                                    ))
-                                SelectedDate: =DateAdd(Today(),1)
-                                Visible: =false
-                                Width: =130
-                                X: =0
-                                Y: =0
-                                ZIndex: =3
-
-                            ButtonCanvas18_10 As Button:
-                                AlignInContainer: =AlignInContainer.Center
-                                Appearance: ='ButtonCanvas.Appearance'.Primary
-                                BasePaletteColor: =
-                                DisplayMode: =DisplayMode.Edit
-                                Font: =""
-                                FontColor: =
-                                FontItalic: =false
-                                FontSize: =0
-                                FontStrikethrough: =false
-                                FontUnderline: =false
-                                FontWeight: =""
-                                Height: =32
-                                LayoutMinHeight: =32
-                                LayoutMinWidth: =100
-                                OnSelect: |-
-                                    =UpdateContext({loader: true});
-                                    Concurrent(
-                                        ClearCollect(
-                                            ofsolistdashboard,
-                                            ForAll(
-                                                Table(
-                                                    ParseJSON(
-                                                        OFSOrderList.Run(
-                                                            DatePickerCanvas4_15.SelectedDate,
-                                                            DatePickerCanvas4_16.SelectedDate
-                                                        ).re
-                                                    )
-                                                ),
-                                                {
-                                                    Docno: Text(ThisRecord.Value.WebOrderNo),
-                                                    Client: Text(ThisRecord.Value.PackagingLocation),
-                                                    OrderDate: Text(
-                                                        Text(ThisRecord.Value.OrderDate),
-                                                        "mm/dd/yyyy"
-                                                    ),
-                                                    OrderStatus: Text(ThisRecord.Value.OrderStatus)
-                                                }
-                                            )
-                                        ),
-                                        Set(
-                                            tookanpagecountDash,
-                                            getalldetailstookan.Run(
-                                                Text(
-                                                    DatePickerCanvas4_13.SelectedDate,
-                                                    "yyyy-mm-dd"
-                                                ),
-                                                Text(
-                                                    DatePickerCanvas4_14.SelectedDate,
-                                                    "yyyy-mm-dd"
-                                                )
-                                            ).responpage
-                                        ));
-                                        Set(
-                                            pagecounttDash,
-                                            0
-                                        );
-                                        Clear(logissDash);
-                                        Select(Button2_9);
-                                    
-                                        Concurrent(
-                                            
-                                        ClearCollect(
-                                            dashoms,
-                                            ForAll(
-                                                Filter(
-                                                    'Master Out Bound',
-                                                    Date >= DatePickerCanvas4_15.SelectedDate && Date <= DatePickerCanvas4_16.SelectedDate
-                                                ),
-                                                {
-                                                    OrderStatus: ThisRecord.Status.Value,
-                                                    Client: ThisRecord.Company,
-                                                    Docno: ThisRecord.'Doc Number',
-                                                    OrderDate: Text(ThisRecord.Date)
-                                                }
-                                            )
-                                        ),
-                                        ClearCollect(
-                                            dashin,
-                                            Filter(
-                                                'Master In Bound',
-                                                Date >= DatePickerCanvas4_15.SelectedDate && Date <= DatePickerCanvas4_16.SelectedDate
-                                            )
-                                        )
-                                    );
-                                    UpdateContext({loader: false})
-                                Text: ="Update"
-                                Visible: =false
-                                Width: =70
-                                X: =0
-                                Y: =0
-                                ZIndex: =4
 
                     DataCard26_1 As dataCard.blankCard:
                         BorderColor: =RGBA(0, 0, 0, 1)
