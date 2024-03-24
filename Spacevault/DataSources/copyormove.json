@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "24632ac8-79b2-4978-86f0-d8747621b9e6",
+    "Name": "copyormove",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "bb41a6db-8d8c-ee11-8179-6045bd8c9633"
+  }
+]

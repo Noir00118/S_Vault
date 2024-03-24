@@ -1,0 +1,37 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": false,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "Barcode",
+    "TemplateGuid": "43cc89aef0eb4af38355f2a3140c8810"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Code",
+      "Hidden": false,
+      "Name": "Code",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "Code",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213916323",
+  "Name": "43cc89aef0eb4af38355f2a3140c8810",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "8e320275b494496491a4514c3debf833",
+  "Version": "636856141623492545"
+}

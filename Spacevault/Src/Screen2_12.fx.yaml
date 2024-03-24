@@ -1,0 +1,149 @@
+"Screen2_12 As screen.'autoLayout_HeaderFooter_ver1.0'":
+    OnVisible: |-
+        =UpdateContext({Clintinfoo:true});UpdateContext({Clientbill:false});
+        ClearCollect(comname,'Company name')
+
+    attach_1 As attachments:
+        AddAttachmentText: ="Upload file"
+        BorderColor: =
+        Color: =RGBA(51, 51, 51, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Segoe UI'
+        Height: =466
+        HoverColor: =RGBA(51, 51, 51, 1)
+        HoverFill: =RGBA(212, 212, 212, 1)
+        IsInDataCard: =true
+        ItemColor: =RGBA(0, 0, 0, 1)
+        ItemFill: =RGBA(0, 120, 212, 1)
+        ItemHoverColor: =RGBA(51, 51, 51, 1)
+        ItemHoverFill: =RGBA(212, 212, 212, 1)
+        Items: =
+        ItemSpacing: =12
+        MaxAttachments: =10
+        MaxAttachmentSize: =50
+        MaxAttachmentsText: =""
+        NoAttachmentsColor: =RGBA(166, 166, 166, 1)
+        NoAttachmentsText: ="No file(s) uploaded!"
+        PaddingBottom: =5
+        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedFill: =RGBA(0, 120, 212, 1)
+        Size: =16
+        Tooltip: =
+        Width: =670
+        X: =350
+        Y: =72
+        ZIndex: =1
+
+    btnNav_2 As button:
+        Align: =LayoutAlignItems.Center
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =Color.White
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(CountRows(attach_1.Attachments)>0,DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(135, 100, 184, 1)
+        FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+        Font: =Font.'Segoe UI'
+        Height: =34
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade(RGBA(135, 100, 184, 1), -10%)
+        OnSelect: |
+            =ForAll(
+                attach_1.Attachments,
+                Office365Groups.HttpRequest(
+                    "https://graph.microsoft.com/v1.0/sites/6aaba830-5c81-45a4-ac39-86650a9fd237/drives/b!MKiraoFcpEWsOYZlCp_SN_WSbVeJ3-ZLuF3VaTEKRGghXEU6o6H9T5ZIFq9xtBvL/root:/" & ThisRecord.Name & ":/content",
+                    "PUT",
+                    ThisRecord.Value
+                )
+            );
+            Set(
+                varReset,
+                false
+            );
+        PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 1), -50%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =12
+        Text: ="Upload"
+        Width: =153
+        X: =585
+        Y: =575
+        ZIndex: =2
+
+    Timer1 As timer:
+        AutoStart: =!varReset
+        BorderColor: =RGBA(135, 100, 184, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Duration: =2000
+        Fill: =RGBA(135, 100, 184, 1)
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =ColorFade(RGBA(135, 100, 184, 1), -10%)
+        HoverFill: =ColorFade(RGBA(135, 100, 184, 1), -10%)
+        OnTimerEnd: |
+            =Set(varReset,true);
+            Back();
+        PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+        Visible: =false
+        X: =9
+        Y: =32
+        ZIndex: =3
+
+    galBreadcrumb_1 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Default: |-
+            =Last(ForAll(Split(Left(varCurrentPath,Len(varCurrentPath)-1),"/"), {Result: ThisRecord.Value}))
+        DisplayMode: =DisplayMode.View
+        Height: =60
+        Items: |-
+            =ForAll(Split(Left(varCurrentPath,Len(varCurrentPath)-1),"/"), {Result: ThisRecord.Value})
+        TemplateSize: =156
+        Width: =657
+        X: =21
+        Y: =92
+        ZIndex: =4
+
+        btnNav_3 As button:
+            Align: =LayoutAlignItems.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =If(ThisItem.IsSelected,Color.White, RGBA(67, 50, 92, 1))
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            Fill: =If(ThisItem.IsSelected,RGBA(135, 100, 184, 1), ColorFade(RGBA(135, 100, 184, 1),0.8))
+            FocusedBorderColor: =ColorFade(Self.Fill, -75%)
+            Font: =Font.'Segoe UI'
+            Height: =34
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =ColorFade(RGBA(135, 100, 184, 1), -10%)
+            OnSelect: |-
+                =Set(
+                    varCurrentPath,
+                    Left(
+                        varCurrentPath,
+                        Find(
+                            ThisItem.Result,
+                            varCurrentPath
+                        ) + Len(ThisItem.Result)
+                    )
+                )
+            PressedBorderColor: =ColorFade(RGBA(135, 100, 184, 1), -50%)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =ColorFade(RGBA(135, 100, 184, 1), -30%)
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =12
+            Text: =ThisItem.Result
+            Width: =153
+            Y: =4
+            ZIndex: =1
+

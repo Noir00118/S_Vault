@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "25c9c426-9d24-400c-ad27-b6789b9fb629",
+    "Name": "tokanalladata",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "eecdd6b1-8f43-ee11-bdf3-000d3a69dce2"
+  }
+]

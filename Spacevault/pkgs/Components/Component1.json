@@ -1,0 +1,75 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "Component1",
+    "TemplateGuid": "d5b056c3bf3e4c458016cbba95167ae6"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Icone",
+      "Hidden": false,
+      "Name": "Icone",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Color",
+      "Hidden": false,
+      "Name": "Color",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Badge1",
+      "Hidden": false,
+      "Name": "Badge1",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Badge 2",
+      "Hidden": false,
+      "Name": "Badge2",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Elevation Color",
+      "Hidden": false,
+      "Name": "ElevationColor",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": true,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213921441",
+  "Name": "d5b056c3bf3e4c458016cbba95167ae6",
+  "OverridableProperties": {},
+  "SourceLibraryId": "9325410f-1d71-42b4-a793-b447efde049a",
+  "SourceLibraryLogicalName": "cr34d_cards_61fc2",
+  "TemplateOriginalName": "0198e9c53a594da7be956d55338937e1",
+  "Version": "1.0"
+}

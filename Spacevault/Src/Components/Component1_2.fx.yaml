@@ -1,0 +1,74 @@
+Component1_2 As CanvasComponent:
+    Badge1: ="Text"
+    Badge1Color: =RGBA(0, 0, 0, 1)
+    Badge2: ="Text"
+    Color: ="Text"
+    ElevationColor: =RGBA(0, 0, 0, 0)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =200
+    Icone: ="Text"
+    Moreinfo: ="Text"
+    Width: =160
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container98 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =Component1_2.ElevationColor
+        Height: =Parent.Height-14
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width-14
+        X: =7
+        Y: =7
+        ZIndex: =1
+
+    "Icon25 As 'Fluent Icon (1.0.22)'":
+        BorderColor: ="Transparent"
+        DisplayMode: =DisplayMode.Edit
+        FillColor: ="SmokeWhite"
+        Height: =40
+        IconColor: =Component1_2.Color
+        IconName: =Component1_2.Icone
+        IconSize: =40
+        IconType: ='PowerCAT.Icon.IconType'.Icon
+        OnChange: =Component1_2.Moreinfo
+        Text: =""
+        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+        Theme: =AppThemeJson
+        Tooltip: =""
+        Width: =40
+        X: =15
+        Y: =20
+        ZIndex: =2
+
+    BadgeCanvas18 As Badge:
+        Appearance: ='BadgeCanvas.Appearance'.Ghost
+        BasePaletteColor: =
+        Content: =Component1_2.Badge1
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        FontSize: =16
+        Height: =20
+        Shape: ='BadgeCanvas.Shape'.Rounded
+        ThemeColor: ='BadgeCanvas.ThemeColor'.Subtle
+        Width: =Parent.Width-Self.X-7
+        X: =10
+        Y: =Parent.Height/1.9
+        ZIndex: =3
+
+    Label7 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =Parent.Height-Self.Y
+        Size: =25
+        Text: =Component1_2.Badge2
+        Width: =Parent.Width-Self.X-7
+        X: =10
+        Y: =BadgeCanvas18.Y+BadgeCanvas18.Height
+        ZIndex: =4
+

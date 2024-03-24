@@ -1,0 +1,91 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "Component4_39",
+    "TemplateGuid": "0860d93afb464205abda004b6fe780f2"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Service",
+      "Hidden": false,
+      "Name": "Service",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Rate",
+      "Hidden": false,
+      "Name": "Rate",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Total",
+      "Hidden": false,
+      "Name": "Total",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "count",
+      "Hidden": true,
+      "Name": "count",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Data",
+      "Hidden": false,
+      "Name": "Data",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Custom property 1",
+      "Hidden": false,
+      "Name": "CustomProperty1",
+      "PropertyDataTypeKey": "Boolean",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Boolean\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Countdata",
+      "Hidden": true,
+      "Name": "Countdata",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213917319",
+  "Name": "0860d93afb464205abda004b6fe780f2",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "771c239fbff54367959eacf43f57d560",
+  "Version": "1.0"
+}

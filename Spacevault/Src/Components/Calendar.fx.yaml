@@ -1,0 +1,631 @@
+Calendar As CanvasComponent:
+    CustomProperty1():
+        ThisProperty:
+            Default: |-
+                =Set(_today,Today());
+                Set(_firstDayOfMonth,DateAdd(_today,1-Day(_today),TimeUnit.Days));
+                Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days));
+                Set(_selectedStart,Blank()); Set(_selectedEnd, Blank())
+    CustomProperty2():
+        ThisProperty:
+            Default: =true
+    BorderRadius: =0
+    Color: =RGBA(50,50,50,1)
+    DefaultEndDate: =Now()
+    DefaultStartDate: =Now()
+    EndDate: =If(Calendar.SelectRange,_selectedEnd,_selectedStart)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =300
+    OnReset: =true
+    SelectedDateColor: =Color.White
+    SelectedDateFill: =RGBA(20,145,84,57.647)
+    SelectRange: =true
+    StartDate: =_selectedStart
+    Styles: |-
+        =Table({Key:"",Value:"",Type:""})
+    Visibleee: =true
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "Elevation8 As 'Fluent Elevation (1.0.22)'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =Parent.Height
+        PaddingBottom: =3
+        PaddingLeft: =3
+        PaddingRight: =3
+        PaddingTop: =3
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+    BadgeCanvas30 As Badge:
+        Appearance: ='BadgeCanvas.Appearance'.Filled
+        BasePaletteColor: =
+        Content: =""
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =30
+        Shape: ='BadgeCanvas.Shape'.Square
+        ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+        Visible: =false
+        Width: =Parent.Width-Self.X-3
+        X: =3
+        Y: =3
+        ZIndex: =2
+
+    ddMonth As dropdown:
+        BorderColor: =RGBA(0,0,0,0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronDisabledBackground: =RGBA(0,0,0,0)
+        ChevronDisabledFill: =RGBA(0,0,0,0)
+        ChevronFill: |-
+            =RGBA(0,0,0,0) //ColorValue("#666666")
+        ChevronHoverBackground: =RGBA(0,0,0,0)
+        ChevronHoverFill: |-
+            =RGBA(0,0,0,0) //ColorValue("#666666")
+        Color: |-
+            =ColorValue("#212121")
+        Default: =Text(_firstDayOfMonth,"[$-en-US]mmmm")//LookUp(AddColumns(Calendar.MonthsLong(),"Number",Month(DateValue(Value))),Number=Month(_firstDayOfMonth)).Value
+        DisabledBorderColor: =RGBA(0,0,0,0)
+        DisabledColor: =ColorFade(ddMonth.Color,-10%)
+        DisabledFill: =ColorFade(ddMonth.Fill,-10%)
+        FocusedBorderColor: =RGBA(0,0,0,0)
+        FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
+        Height: =btnPrevMonth.Height
+        HoverBorderColor: =RGBA(0,0,0,0)
+        HoverColor: =ColorFade(ddMonth.Color,-10%)
+        HoverFill: =ColorFade(ddMonth.Fill, -10%)
+        Items: =AddColumns(Calendar.MonthsLong(),"Number",Month(DateValue(Value&"2018")))
+        OnChange: |-
+            =//Set(_selectedDate, Date(Value(ddYear.Selected.Value),ddMonth.Selected.Number,1));
+            Set(_firstDayOfMonth, _selectedDate );
+            Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days) )
+        OnSelect: =
+        PaddingBottom: =5
+        PaddingLeft: =8
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =RGBA(0,0,0,0)
+        PressedColor: =ColorFade(ddMonth.Color,-10%)
+        PressedFill: =ddMonth.Fill
+        SelectionColor: |-
+            =ColorValue("#212121")
+        SelectionFill: |-
+            =RGBA(0,0,0,0) //ColorValue("#C8C8C8")
+        Size: =14
+        Visible: =false
+        Width: =136
+        X: =120
+        ZIndex: =3
+
+    ddYear As dropdown:
+        BorderColor: =RGBA(0,0,0,0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        ChevronBackground: =RGBA(0,0,0,0)
+        ChevronDisabledBackground: |-
+            =ColorValue("#F4F4F4")
+        ChevronDisabledFill: |-
+            =ColorValue("#F4F4F4")
+        ChevronFill: |-
+            =RGBA(0,0,0,0) //ColorValue("#666666")
+        ChevronHoverBackground: |-
+            =RGBA(0,0,0,0) //ColorValue("#EAEAEA")
+        ChevronHoverFill: |-
+            =RGBA(0,0,0,0) //ColorValue("#666666")
+        Color: |-
+            =ColorValue("#212121")
+        Default: =LookUp([2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035], Value=Year(_firstDayOfMonth)).Value
+        DisabledBorderColor: =RGBA(0,0,0,0)
+        DisabledColor: |-
+            =ColorValue("#A6A6A6")
+        DisabledFill: |-
+            =ColorValue("#F4F4F4")
+        Fill: =Color.White
+        FocusedBorderColor: =RGBA(0,0,0,0)
+        FocusedBorderThickness: =0
+        Font: =Font.'Segoe UI'
+        Height: =
+        HoverBorderColor: =RGBA(0,0,0,0)
+        HoverColor: |-
+            =ColorValue("#212121")
+        HoverFill: |-
+            =ColorValue("#EAEAEA")
+        Items: =[2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030,2031,2032,2033,2034,2035]
+        OnChange: |-
+            =//Set(_selectedDate, Date(Value(ddYear.Selected.Value),ddMonth.Selected.Number,1));
+            Set(_firstDayOfMonth, _selectedDate );
+            Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days) )
+        PaddingBottom: =5
+        PaddingLeft: =8
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =RGBA(0,0,0,0)
+        PressedColor: |-
+            =ColorValue("#212121")
+        PressedFill: |-
+            =ColorValue("#DCDCDC")
+        SelectionColor: |-
+            =ColorValue("#212121")
+        SelectionFill: |-
+            =ColorValue("#C8C8C8")
+        Size: =14
+        Visible: =false
+        Width: =99
+        X: =201
+        ZIndex: =4
+
+    tmrInitialize As timer:
+        AutoStart: =IsBlank(_today)
+        BorderColor: =RGBA(0, 120, 212, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(0, 120, 212, 1)
+        FocusedBorderColor: =tmrInitialize.BorderColor
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        OnTimerStart: |-
+            =Set(_today,Today());
+            /* if default dates are provided, set to inputs, otherwise set to today */
+            Set(_selectedStart, If(!IsBlank(Calendar.DefaultStartDate), Calendar.DefaultStartDate, _today));
+            Set(_selectedEnd, If(!IsBlank(Calendar.DefaultEndDate) && Calendar.DefaultEndDate > _selectedStart, Calendar.DefaultEndDate, Blank()));
+            Set(_firstDayOfMonth,DateAdd(_selectedStart,1-Day(_selectedStart),TimeUnit.Days));
+            Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days))
+        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Text: |-
+            =Text(Time(0, 0, tmrInitialize.Value/1000), "hh:mm:ss")
+        Visible: =false
+        Y: =410
+        ZIndex: =5
+
+    galWeekdays As gallery.galleryHorizontal:
+        BorderColor: =RGBA(130, 144, 156, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =galWeekdays.BorderColor
+        DisabledFill: =galWeekdays.Fill
+        Fill: =RGBA(214, 221, 224, 1)
+        Height: =Parent.Height / 10
+        HoverBorderColor: =galWeekdays.BorderColor
+        HoverFill: =galWeekdays.Fill
+        Items: =["SUN","MON","TUE","WED","THU","FRI","SAT",]
+        PressedBorderColor: =galWeekdays.BorderColor
+        PressedFill: =galWeekdays.Fill
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =Parent.Width / 7-1.5
+        Width: =Parent.Width-Self.X-4
+        X: =4
+        Y: =btnPrevMonth.Y + btnPrevMonth.Height +5
+        ZIndex: =7
+
+        lblWeekday As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0,0,0,0)
+            BorderStyle: =BorderStyle.None
+            Color: |-
+                =ColorValue("#212121")
+            DisabledBorderColor: =RGBA(0,0,0,0)
+            DisabledColor: |-
+                =ColorValue("#A7A7A7")
+            Fill: =RGBA(255, 255, 255, 1)
+            FocusedBorderColor: =RGBA(0,0,0,0)
+            Font: =Font.'Courier New'
+            FontWeight: =FontWeight.Semibold
+            Height: =Parent.TemplateHeight
+            HoverBorderColor: =RGBA(0,0,0,0)
+            HoverColor: |-
+                =ColorValue("#0707077")
+            HoverFill: =RGBA(0,0,0,0)
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =11
+            PaddingTop: =2
+            PressedBorderColor: =RGBA(0,0,0,0)
+            PressedColor: |-
+                =ColorValue("#A7A7A7")
+            PressedFill: =RGBA(0,0,0,0)
+            Size: =10
+            Text: =ThisItem.Value
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        Container18 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(214, 221, 224, 1)
+            Height: =Parent.TemplateHeight
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.TemplateWidth
+            ZIndex: =2
+
+            lblWeekday_1 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0,0,0,0)
+                BorderStyle: =BorderStyle.None
+                DisabledBorderColor: =RGBA(0,0,0,0)
+                DisabledColor: |-
+                    =ColorValue("#A7A7A7")
+                FillPortions: =1
+                FocusedBorderColor: =RGBA(0,0,0,0)
+                Font: =Font.'Open Sans Condensed'
+                FontWeight: =FontWeight.Semibold
+                Height: =
+                HoverBorderColor: =RGBA(0,0,0,0)
+                HoverColor: |-
+                    =ColorValue("#0707077")
+                HoverFill: =RGBA(0,0,0,0)
+                LayoutMinHeight: =4
+                LayoutMinWidth: =1
+                OnSelect: =
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =2
+                PressedBorderColor: =RGBA(0,0,0,0)
+                PressedColor: |-
+                    =ColorValue("#A7A7A7")
+                PressedFill: =RGBA(0,0,0,0)
+                Size: =10
+                Text: =ThisItem.Value
+                Width: =
+                ZIndex: =1
+
+    galCalendar As gallery.galleryVertical:
+        BorderColor: =RGBA(130, 144, 156, 1)
+        DisabledBorderColor: =galCalendar.BorderColor
+        DisabledFill: =galCalendar.Fill
+        Height: =Calendar.Height - galCalendar.Y-5
+        HoverBorderColor: =galCalendar.BorderColor
+        HoverFill: =galCalendar.Fill
+        Items: |-
+            =[  0, 1, 2, 3, 4, 5, 6,
+               7, 8, 9,10,11,12,13,
+              14,15,16,17,18,19,20,
+              21,22,23,24,25,26,27,
+              28,29,30,31,32,33,34,
+              35,36,37,38,39,40,41]
+        Layout: =Layout.Vertical
+        PressedBorderColor: =galCalendar.BorderColor
+        PressedFill: =galCalendar.Fill
+        ShowScrollbar: =false
+        TemplateFill: =If(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _today,RGBA(245  , 245, 245, 150),RGBA(0, 0, 0, 0))
+        TemplatePadding: |
+            =0
+        TemplateSize: =Self.Height/7+3
+        Transition: =Transition.Push
+        Width: =Calendar.Width-Self.X-4
+        WrapCount: =7
+        X: =4
+        Y: =galWeekdays.Y + galWeekdays.Height + 5
+        ZIndex: =8
+
+        icnEvent_2 As circle:
+            BorderColor: =RGBA(130, 144, 156, 1)
+            BorderStyle: =BorderStyle.None
+            DisabledFill: =icnEvent_2.Fill
+            DisplayMode: =DisplayMode.Disabled
+            Fill: |-
+                =If(
+                    /* transparent if calender is not initialized yet */
+                    IsBlank(_today), 
+                        RGBA(0,0,0,0),
+                        
+                    /* else set to input property SelectedDateFill */
+                    !IsBlank(Calendar.SelectedDateFill),
+                        ColorFade(Calendar.SelectedDateFill,-10%),
+                
+                    /* else default to theme fill */
+                    ColorFade(tmrInitialize.Fill,-10%)
+                )
+            FocusedBorderColor: =icnEvent_2.BorderColor
+            FocusedBorderThickness: =0
+            Height: =4
+            HoverFill: =icnEvent_2.Fill
+            OnSelect: =Select(Parent)
+            PressedFill: =icnEvent_2.Fill
+            Visible: =false
+            Width: =20
+            X: =(btnDayValue_2.Width - icnEvent_2.Width) / 2
+            Y: =btnDayValue_2.Height/2+9
+            ZIndex: =1
+
+        btnDayValue_2 As button:
+            BorderColor: =ColorFade(btnDayValue_2.Fill, -15%)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Color: |-
+                =If(
+                    /* transparent before initialized */
+                    IsBlank(_today), 
+                        RGBA(0,0,0,1),
+                    /* range enabled and date is start or end */
+                    DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days)=_selectedStart ||
+                    (Calendar.SelectRange && (DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) > _selectedStart && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) <= _selectedEnd)),
+                        Calendar.SelectedDateColor,
+                    /* color of dates that share the same month*/
+                    Month(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days)) = Month(_firstDayOfMonth),
+                        Calendar.Color,
+                    /* default text color */
+                    Color.Gray
+                )
+            DisabledBorderColor: =ColorFade(btnDayValue_2.BorderColor, 70%)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+            Fill: |-
+                =If(
+                    /* transparent before initialized */
+                    IsBlank(_today),
+                        RGBA(0,0,0,0),
+                
+                    /* when range off, only show start date */
+                    DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart 
+                    || (Calendar.SelectRange && (DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) >= _selectedStart && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) <=_selectedEnd)),
+                        If(
+                            /* get value from styles */
+                            !IsBlank(LookUp(Calendar.Styles,Key="Selected Date Fill")),
+                                ColorValue(LookUp(Calendar.Styles,Key="Selected Date Fill").Value),
+                            /* get from input */
+                            !IsBlank(Calendar.SelectedDateFill),
+                                Calendar.SelectedDateFill,
+                            /* default to theme fill */
+                                tmrInitialize.Fill
+                        )
+                
+                    /* transparent by default */
+                    ,RGBA(0,0,0,0)
+                )
+            FocusedBorderColor: =btnDayValue_2.BorderColor
+            FocusedBorderThickness: =0
+            FontWeight: =FontWeight.Lighter
+            Height: =Parent.TemplateHeight-2
+            HoverBorderColor: =ColorFade(btnDayValue_2.BorderColor, 20%)
+            HoverColor: =btnDayValue_2.Color
+            HoverFill: =ColorFade(btnDayValue_2.Fill, -10%)
+            OnSelect: |-
+                =Set(_selectedDate, DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days));
+                If(Calendar.SelectRange,
+                // choose end
+                If(!IsBlank(_selectedStart) && IsBlank(_selectedEnd) && _selectedDate >= _selectedStart, 
+                    Set(_selectedEnd, _selectedDate)
+                    ,
+                // default: set start if empty or resetting
+                    Set(_selectedStart, _selectedDate);
+                    Set(_selectedEnd, Blank())),
+                    Set(_selectedStart, _selectedDate);
+                    Set(_selectedEnd, Blank())
+                )
+                    
+            PaddingBottom: =0
+            PaddingLeft: =2
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedBorderColor: =btnDayValue_2.Fill
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =ColorFade(Calendar.SelectedDateFill,60%)
+            RadiusBottomLeft: =btnDayValue_2.RadiusTopLeft
+            RadiusBottomRight: =btnDayValue_2.RadiusTopRight
+            RadiusTopLeft: |-
+                =If(
+                    /* input radius if dates are the same */
+                    _selectedStart = _selectedEnd || DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart, 
+                        Calendar.BorderRadius,
+                    /* square if end date or between start and end*/
+                    Calendar.SelectRange && (DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) > _selectedStart && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) <= _selectedEnd), 
+                        0,
+                    /* default radius */
+                    Calendar.BorderRadius
+                )
+            RadiusTopRight: |-
+                =If(
+                    /* input radius for single date mode, or if in range mode the selected end */
+                    (_selectedStart = _selectedEnd || !Calendar.SelectRange) || (Calendar.SelectRange && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedEnd), 
+                        Calendar.BorderRadius,
+                    /* square if in range mode and the start date or in between start and end date */
+                    Calendar.SelectRange && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart && !IsBlank(_selectedEnd) 
+                    || (DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) > _selectedStart && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) < _selectedEnd), 
+                        0,
+                    /* default radius */
+                    Calendar.BorderRadius
+                ) 
+            Size: =Sum(Self.Height,Self.Width)/Sum(1,6)
+            Text: =If(IsBlank(_today), ThisItem.Value,Day(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days)))
+            Width: =galCalendar.TemplateWidth
+            X: =
+            ZIndex: =2
+
+        btnDayBack_2 As button:
+            BorderColor: =ColorFade(btnDayBack_2.Fill, -15%)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =0
+            Color: |-
+                =If(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days)=_selectedStart || DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days)=_selectedEnd,
+                        Calendar.SelectedDateColor,
+                    DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days)=_today || Month(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days))=Month(_firstDayOfMonth),
+                        Color.Black,
+                    ColorFade(Color.Black,60%))
+            DisabledBorderColor: =ColorFade(btnDayBack_2.BorderColor, 70%)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+            Fill: |-
+                =If(
+                    /* transparent before initialized */
+                    IsBlank(_today),
+                        RGBA(0,0,0,0),
+                        
+                    DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) > _selectedStart && DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) < _selectedEnd,
+                    ColorFade(Calendar.SelectedDateFill,0%)
+                    , 
+                // default
+                    RGBA(0,0,0,0))
+            FocusedBorderColor: =btnDayBack_2.BorderColor
+            FocusedBorderThickness: =0
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Normal
+            Height: =btnDayValue_2.Height
+            HoverBorderColor: =ColorFade(btnDayBack_2.BorderColor, 20%)
+            HoverColor: =btnDayBack_2.Color
+            HoverFill: =ColorFade(btnDayBack_2.Fill, -10%)
+            OnSelect: |-
+                =Set(_selectedDate, DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days));
+                // choose end
+                If(!IsBlank(_selectedStart) && IsBlank(_selectedEnd) && _selectedDate >= _selectedStart, 
+                    Set(_selectedEnd, _selectedDate)
+                ,
+                // default: set start if empty or resetting
+                    Set(_selectedStart, _selectedDate);
+                    Set(_selectedEnd, Blank()))
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedBorderColor: =btnDayBack_2.Fill
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =Color.LightBlue
+            RadiusBottomLeft: =If(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart || DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedEnd, Calendar.BorderRadius,0)
+            RadiusBottomRight: =If(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart,0, DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedEnd, Calendar.BorderRadius)
+            RadiusTopLeft: =If(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart || DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedEnd, Calendar.BorderRadius,0)
+            RadiusTopRight: =If(DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedStart,0, DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _selectedEnd, Calendar.BorderRadius)
+            Size: =18
+            Text: =
+            Width: =btnDayValue_2.Width
+            X: =btnDayValue_2.X
+            Y: =btnDayValue_2.Y
+            ZIndex: =3
+
+        Icon23 As icon.HorizontalLine:
+            Color: =RGBA(15, 108, 189, 1)
+            DisplayMode: =DisplayMode.View
+            Fill: =RGBA(15, 108, 189, 1)
+            FocusedBorderThickness: =0
+            Height: =1
+            Icon: =Icon.HorizontalLine
+            OnSelect: =Select(Parent)
+            Visible: =DateAdd(_firstDayInView,ThisItem.Value,TimeUnit.Days) = _today
+            Width: =Parent.TemplateWidth
+            Y: =btnDayValue_2.Height-Self.Height+1
+            ZIndex: =4
+
+    lblMonthYear As label:
+        Color: =Calendar.Color
+        FocusedBorderColor: =lblMonthYear.BorderColor
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Semibold
+        Height: =25
+        HoverBorderColor: =lblMonthYear.BorderColor
+        HoverColor: =lblMonthYear.Color
+        HoverFill: =lblMonthYear.Fill
+        PaddingLeft: =10
+        PressedBorderColor: =lblMonthYear.BorderColor
+        PressedColor: =lblMonthYear.Color
+        PressedFill: =lblMonthYear.Fill
+        Size: =10
+        Text: =If(IsBlank(_today), "January 2019",Text(_firstDayOfMonth,"[$-en-US]mmm") & " " & Text(_firstDayOfMonth,"[$-en-US]yyyy"))
+        Width: =80
+        X: =4
+        ZIndex: =9
+
+    btnPrevMonth As icon.ChevronLeft:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =If(!IsBlank(Calendar.SelectedDateFill),Calendar.SelectedDateFill,tmrInitialize.Fill)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =btnPrevMonth.BorderColor
+        FocusedBorderThickness: =4
+        Height: =28
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.ChevronLeft
+        OnSelect: |-
+            =Set(_firstDayOfMonth,DateAdd(_firstDayOfMonth,-1,TimeUnit.Months));
+            Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days))
+        PaddingBottom: |
+            =7
+        PaddingTop: =7 
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =20
+        X: =ButtonCanvas12.X-8-Self.Width
+        Y: =3
+        ZIndex: =10
+
+    ButtonCanvas12 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Subtle
+        BasePaletteColor: =RGBA(141, 229, 250, 1)
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        FontSize: =11
+        FontWeight: =FontWeight.Semibold
+        Height: =28
+        OnSelect: =Calendar.CustomProperty1()
+        Text: ="Today"
+        Width: =35
+        X: =btnNextMonth.X-Self.Width-8
+        Y: =3
+        ZIndex: =11
+
+    btnNextMonth As icon.ChevronRight:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        Color: =btnPrevMonth.Color
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =btnNextMonth.BorderColor
+        FocusedBorderThickness: =4
+        Height: =28
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.ChevronRight
+        OnSelect: |-
+            =Set(_firstDayOfMonth,DateAdd(_firstDayOfMonth,1,TimeUnit.Months));
+            Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days));
+            Reset(ddMonth)
+        PaddingBottom: |
+            =7
+        PaddingTop: =7
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =btnPrevMonth.Width
+        X: =Icon26.X-Self.Width-8
+        Y: =3
+        ZIndex: =12
+
+    "Icon26 As 'Fluent Icon (1.0.22)'":
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =12
+        Height: =30
+        IconColor: =""
+        IconName: ="FilterSolid"
+        IconSize: =15
+        IconType: ='PowerCAT.Icon.IconType'.ActionButton
+        OnChange: =Calendar.CustomProperty2()
+        Text: ="Filter"
+        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+        Theme: =AppThemeJson
+        Tooltip: ="Filter"
+        Visible: =Calendar.Visibleee
+        Width: =55
+        X: =Parent.Width-Self.Width-15
+        Y: =3
+        ZIndex: =13
+

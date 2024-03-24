@@ -1,0 +1,91 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "cmp_ProgressBar_vert_4",
+    "TemplateGuid": "90f9a04e413044c29e62491f4c3123d2"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "barMaxValue",
+      "Hidden": false,
+      "Name": "barMaxValue",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Maximum value of the progress bar, defaults to 100",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "barCurrentValue",
+      "Hidden": false,
+      "Name": "barCurrentValue",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Value of barCurrent, defaults to 42",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "barMaxFill",
+      "Hidden": false,
+      "Name": "barMaxFill",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "Fill color of the maxBar, defaults to ColorValue(\"#1e6091\")y",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "barCurrentFill",
+      "Hidden": false,
+      "Name": "barCurrentFill",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "Fill color of the current progress bar, defaults to ColorValue(\"#168aad\")",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "barWidth",
+      "Hidden": false,
+      "Name": "barWidth",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Width of progress bar, defaults to 200",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "barHeight",
+      "Hidden": false,
+      "Name": "barHeight",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "Height of the progress bar, defaults to 42",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "labelColor",
+      "Hidden": false,
+      "Name": "labelColor",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "Color of the label, defaults to White",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213914635",
+  "Name": "90f9a04e413044c29e62491f4c3123d2",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "8e44af0d036f41cb9ac318628aa01a8b",
+  "Version": "637945227845916345"
+}

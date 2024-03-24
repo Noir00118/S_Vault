@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "ac04ac45-e6a1-426f-9ecb-4a5f6ccc504b",
+    "Name": "Createothertasktookenpickup",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "99803778-3871-ee11-8179-000d3a69dce2"
+  }
+]

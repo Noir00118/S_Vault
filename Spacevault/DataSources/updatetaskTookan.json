@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "fc4673c2-2a06-4721-be73-2381a8cbf7dc",
+    "Name": "updatetaskTookan",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "7f9f5c01-a690-ee11-be37-6045bd8c9633"
+  }
+]

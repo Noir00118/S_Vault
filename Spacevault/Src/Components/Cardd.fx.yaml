@@ -1,0 +1,55 @@
+Cardd As CanvasComponent:
+    Badge1: ="Text"
+    Badge1Color: =RGBA(0, 0, 0, 1)
+    Badge2: ="Text"
+    Color: ="Text"
+    ElevationColor: =RGBA(0, 0, 0, 0)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =110
+    Icone: ="Text"
+    Moreinfo: ="Text"
+    Width: =160
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container98_2 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =Cardd.ElevationColor
+        Height: =Parent.Height-14
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width-14
+        X: =7
+        Y: =7
+        ZIndex: =1
+
+    BadgeCanvas18_1 As Badge:
+        Appearance: ='BadgeCanvas.Appearance'.Ghost
+        BasePaletteColor: =
+        Content: =Cardd.Badge1
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        FontSize: =16
+        Height: =20
+        Shape: ='BadgeCanvas.Shape'.Rounded
+        ThemeColor: ='BadgeCanvas.ThemeColor'.Subtle
+        Width: =Parent.Width-Self.X-7
+        X: =10
+        Y: =15
+        ZIndex: =2
+
+    Label7_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =Parent.Height-Self.Y
+        Size: =25
+        Text: =Cardd.Badge2
+        Width: =Parent.Width-Self.X-7
+        X: =10
+        Y: =BadgeCanvas18_1.Y+BadgeCanvas18_1.Height
+        ZIndex: =3
+

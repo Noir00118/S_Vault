@@ -1,0 +1,270 @@
+"Invoice As screen.'printableLayout_A4Portrait_ver1.0'":
+    Height: =1123
+    Width: =794
+
+    Container36 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        Width: =Parent.Width
+        ZIndex: =6
+
+        Container37 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0
+            Height: =40
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =764
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =10
+            PaddingRight: =10
+            ZIndex: =1
+
+            ButtonCanvas4_1 As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Secondary
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: =Navigate('Web Order')
+                Text: ="Back"
+                Width: =96
+                X: =5
+                Y: =10
+                ZIndex: =1
+
+            ButtonCanvas4 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: |-
+                    =Set(Invoicee,invoiceflow.Run(VARPRIN.Title,HtmlText6_2.HtmlText).invoice);Download("https://spacefulfillmentsolutions.sharepoint.com/sites/Test/Downloads/"&Invoicee)
+                Text: ="Print"
+                Width: =96
+                X: =197
+                Y: =10
+                ZIndex: =2
+
+            ButtonCanvas39 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: =Back();Set(QRcod,JSON('QRCode for Request Form',JSONFormat.IncludeBinaryData))
+                Visible: =false
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+        Container38 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =764
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            ZIndex: =2
+
+            HtmlText11_3 As htmlViewer:
+                FillPortions: =1
+                Height: =700
+                HtmlText: |-
+                    ="<!DOCTYPE html>
+                    <html>
+                    
+                    <body>
+                    
+                    <table style='width:100%;height:"&Parent.Height-5&"px;border: 1px solid black;border-collapse: collapse;'>
+                    
+                    <!-- 1 -->
+                    
+                    <tr>
+                    <td style='text-align: left;padding-left:10px;'>
+                     <img src= " & logooo & " style='width:110px;height:80px;'></img>
+                     
+                     </td>
+                    
+                    <td style='text-align: center;'colspan='4'>
+                    <img alt='Barcode Generator TEC-IT'
+                    src=https://barcode.tec-it.com/barcode.ashx?data="&Coalesce(lastmileawbprint.'New AWB',lastmileawbprint.AWB)&"&code=Code39&multiplebarcodes=false&
+                    translate-esc=on&unit=Fit&dpi=96&imagetype=Jpg&rotation=50deg&color=%23000000&bgcolor=%23ffffff&
+                    codepage=Default&qunit=Mm&quiet=0&hidehrt=False' width=250; height=70 />
+                    </img>
+                    </td>
+                    
+                    </tr>
+                    
+                     <tr style='background-color: black;width:100%;'>
+                    <td style='text-align:center;color:White;'colspan='5'><strong  >
+                     From</strong>
+                    
+                     
+                    </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                    
+                    
+                    
+                    <td style='position: relative;' colspan='2'>
+                    <strong style='font-size:30px;padding-left:10px;'>"&lastmileawbprint.Title&" </strong><br>
+                    <b style='font-size:10px;padding-left:20px;'>Space3pl warehouese , Doha , Agility.
+                    </td>
+                    
+                    
+                    <td style=' background:lightgrey;text-align:center;margin: 0 0 20px 20px;'colspan='2'>
+                    
+                    <strong style='font-size:20px;padding-left:10px;margin: 0 0 20px 20px;'> Invoice No.</strong> <br></br>
+                    <b style='font-size:15px;padding-left:10px;'>"&lastmileawbprint.'Order No'&" 
+                    </tr>
+                    
+                    <tr style='background-color: black;width:100%;'>
+                    <td style='text-align:center;color:White;'colspan='5'><strong>
+                     Destination</strong>
+                    </td>
+                    
+                    </tr>
+                    
+                    
+                    
+                    
+                    <tr>
+                    <td style='font-size:12px;padding-bottom:px;padding-left:10px;'> <b>Country  </b>
+                    <div style='font-size:14px;padding-left:20px;padding-bottom:px;'> KWT </div>
+                    </td>
+                    <td>
+                    <div style='font-size:12px;padding-left:10px;'><b> City </b> </div>
+                    <div style='font-size:14px;padding-left:10px;text-align:left;'>"&lastmileawbprint.City&" </div>
+                    </td>
+                    <td style=' background:lightgrey;'>
+                    <div style='font-size:25px;text-align:center;'> <b>"&lastmileawbprint.Zone&"</b>  
+                    
+                    </td>
+                    
+                    <td   style='font-size:25px;text-align:center;'colspan='2'>
+                    <aside style=' transform: rotate(90deg);padding-left:80px;width:0px;'>
+                    
+                    
+                    <img alt='Barcode Generator TEC-IT'
+                           src='https://barcode.tec-it.com/barcode.ashx?data="&Coalesce(lastmileawbprint.'New AWB',lastmileawbprint.AWB)&"&code=Code39&translate-esc=on' height=60px;  width=250px /></aside>
+                           </td>
+                    </tr>
+                    
+                    
+                    
+                    
+                    
+                    <tr>
+                    <td style=' border: px solid black;height:150px;'colspan='3'>
+                    <div style='padding-left:10px;'>
+                    <b style='font-family:verdana;font-size:20px;'>Ship To :</b>
+                    </div>
+                    <dd style='text-align:left;padding-left:80px;font-size:11px;' > <b>"&lastmileawbprint.'Receiver Name'&" </dd> 
+                    <dd  style='text-align:left;padding-left:80px;font-size:11px;'> "&lastmileawbprint.ReceiverPhoneNumber&" </dd> 
+                    <dd style='text-align:left;padding-left:80px;font-size:11px;'> "&lastmileawbprint.'Receiver Address'&" </dd> 
+                    </dd>
+                    <div><br>
+                    </div>
+                    </tr>
+                    
+                    
+                    <tr style='background-color: black;width:100%;'>
+                    <td style='text-align:center;color:White;width:100%;'colspan='3'><strong>
+                     Package Description</strong>
+                    </td>
+                    
+                    </tr>
+                    
+                    
+                    <tr>
+                    <td>
+                    <div style='font-size:18px;padding-left:20px;text-align:left;'><b >  PKG Count         </b> <br > 1 / 1
+                    </div>
+                    </td>
+                    <td>
+                    <div style='font-size:14px;padding-left:10px;'><b> CURR. </b> </div>
+                    <div style='font-size:12px;padding-left:10px;padding-left:20px;text-align:left;'>KWD </div>
+                    </td>
+                    <td style='text-align:center;background:lightgrey;'>
+                    <div style='font-size:30px;padding-left:10px;'> <b>COD</b>  
+                    </div>
+                    </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                    <td>
+                    <div style='font-size:20px;padding-left:10px;'><b> QTY </b> </div>
+                    <div style='font-size:12px;padding-left:10px;padding-left:20px;text-align:left;'> "&lastmileawbprint.'Number of Items'&" </div>
+                    </td>
+                    
+                    
+                    
+                    
+                    <td>
+                    <div style='font-size:12px;padding-left:10px;'><b> ACTUAL W. </b> </div>
+                    <div style='font-size:12px;padding-left:10px;padding-left:20px;text-align:left;'> KG </div>
+                    </td>
+                    
+                    <td style='text-align:center';>
+                    <div style='font-size:15px;background:lightgrey;'> Amount 
+                    <div style='font-size:25px;'><b> "&lastmileawbprint.Amount&" KWD </b> </div>
+                    </td>
+                    
+                    
+                    </tr>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </table>
+                    
+                    
+                    
+                    </body>
+                    </html>
+                    "
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Width: =513
+                X: =281
+                ZIndex: =2
+

@@ -1,0 +1,89 @@
+Component1_5 As CanvasComponent:
+    Badge1: ="Text"
+    Badge1Color: =RGBA(0, 0, 0, 1)
+    Badge2: ="Text"
+    Color: ="Text"
+    ElevationColor: ="Text"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =700
+    Icone: ="Text"
+    Width: =650
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Image2 As image:
+        Height: =120
+        Image: |-
+            ="https://quickchart.io/chart?c="&EncodeUrl("{
+              type: 'radialGauge',
+              data: {
+                datasets: [
+                  {
+                    data: [89],
+                    backgroundColor: getGradientFillHelper('horizontal', ['red', 'blue']),
+                  },
+                ],
+              },
+              options: {
+                // See https://github.com/pandameister/chartjs-chart-radial-gauge#options
+                domain: [0, 100],
+                trackColor: '#f0f8ff',
+                centerPercentage: 90,
+                centerArea: {
+                  text: (val) => val + '%',
+                },
+              },
+            }")
+        Width: =110
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Image2_1 As image:
+        Height: =197
+        Image: |-
+            ="https://quickchart.io/chart?c="&EncodeUrl("{
+              type: 'bar',
+              data: {
+                labels: [2012, 2013, 2014, 2015, 2016],
+                datasets: [{
+                  label: 'Gradient example',
+                  data: [12, 6, 5, 18, 12],
+                  backgroundColor: getGradientFillHelper('horizontal', ['red', '#b19cd9', '#dafdd3']),
+                }]
+              }}")
+        Width: =278
+        X: =165
+        Y: =282
+        ZIndex: =2
+
+    HtmlText8 As htmlViewer:
+        Height: =261
+        HtmlText: |-
+            ="
+            <!DOCTYPE html>
+            <html>
+            <body>
+            <div style='background-color:lightgrey;Width:100%;Height:100%;'>
+            
+            <svg xmlns='http://www.w3.org/2000/svg' width='60' height='66' fill='Green' class='bi bi-x-circle-fill' viewBox='0 0 16 20'>
+              <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z'/>
+            </svg>
+            
+            
+            <svg viewBox='0 0 99.8 110' xmlns='http://www.w3.org/2000/svg' style=' background: ' >
+            <circle cx='50' cy='55' r='40' stroke='rgba(240,240,240,1.0)' stroke-width='12' fill='rgba(0,0,0,0)' />
+            <circle cx='50' cy='55' r='40' stroke='rgba(14,113,14,1.0)' stroke-linecap='bitt'  stroke-width='12' stroke-dasharray='248' stroke-dashoffset='100 %' fill='rgba(0,0,0,0)' />
+            
+            <text fill='Black' font-size='15' font-family='Verdana' x='34' y='60'>20%</text>
+            </svg>
+            </div>
+            </html>
+            </body>
+            "
+        Width: =107
+        X: =8
+        Y: =416
+        ZIndex: =3
+

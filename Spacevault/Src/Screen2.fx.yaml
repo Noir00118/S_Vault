@@ -1,0 +1,66 @@
+"Screen2 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    RectQuickActionBar1 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        Align: =Align.Center
+        Height: =88
+        Text: ="[Title]"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Canvas2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =3
+
+        DataCard20 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            TextCanvas14 As Text:
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =90
+                Text: =Pi()*.4*.8
+                Width: =284
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            "MeasureInMR1 As 'Measure in MR (preview)'.pcfdataset":
+                BorderFillColor: =RGBA(47, 81, 151, 1)
+                BoxDraw: =true
+                DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                DisabledContentColor: =RGBA(166, 166, 166, 1)
+                DisabledFillColor: =RGBA(244, 244, 244, 1)
+                DisplayMode: =DisplayMode.Edit
+                EnableShadows: =true
+                FillColor: =RGBA(56, 96, 178, 1)
+                Height: =70
+                HoverBorderColor: =RGBA(88, 115, 171, 1)
+                HoverContentColor: =RGBA(255, 255, 255, 1)
+                HoverFillColor: =RGBA(47, 81, 151, 1)
+                OnMixedRealitySelect: =false
+                PressedBorderColor: =RGBA(56, 96, 178, 1)
+                PressedContentColor: =RGBA(56, 96, 178, 1)
+                PressedFillColor: =RGBA(255, 255, 255, 1)
+                TextColor: =RGBA(255, 255, 255, 1)
+                Width: =280
+                X: =225
+                Y: =207
+                ZIndex: =3
+

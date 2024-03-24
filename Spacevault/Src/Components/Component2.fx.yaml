@@ -1,0 +1,160 @@
+Component2 As CanvasComponent:
+    CustomProperty1: =false
+    CustomProperty2: =ISexpp
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =App.DesignHeight
+    OnReset: =Set(ISexpp,Component2.CustomProperty1)
+    Width: =If(ISexpp,130,40)
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Image11_3 As image:
+        Height: =40  
+        Image: ='WhatsApp Image 2023-11-09 at 14.43.02_c0bf4c3d'
+        Width: =Parent.Width
+        ZIndex: =2
+
+    "Icon22_3 As 'Fluent Icon (1.0.22)'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =30
+        IconColor: ="SeaGreen"
+        IconName: ="WaffleOffice365"
+        OnChange: =Set(ISexpp,!ISexpp)
+        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+        Theme: =AppThemeJson
+        Width: =Parent.Width
+        X: =0
+        Y: =Image11_3.Height+10
+        ZIndex: =3
+
+    "Nav3_6 As 'Fluent Nav (1.0.22)'.pcfdataset":
+        CollapseByDefault: =true
+        DisplayMode: =DisplayMode.Edit
+        Height: =CountRows(Navitable)*50
+        Items: =Navitable
+        OnSelect: |-
+            =If(
+                Self.Selected.TargetScreen <> App.ActiveScreen,
+                Navigate(Self.Selected.TargetScreen)
+            )
+        SelectedKey: =LookUp(Navitable,TargetScreen=App.ActiveScreen).ItemKey
+        Theme: =AppThemeJson
+        Width: =Parent.Width
+        X: =
+        Y: =Icon22_3.Y+Icon22_3.Height+10
+        ZIndex: =4
+
+        ItemDisplayName12_6 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemDisplayName"
+            FieldName: ="ItemDisplayName"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =20
+
+        ItemEnabled5_6 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemEnabled"
+            FieldName: ="ItemEnabled"
+            FieldType: ="b"
+            FieldVariantName: ="textualColumn"
+            Order: =2
+            ZIndex: =21
+
+        ItemIconColor7_6 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemIconColor"
+            FieldName: ="ItemIconColor"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =3
+            ZIndex: =22
+
+        ItemIconName12_6 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemIconName"
+            FieldName: ="ItemIconName"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            ZIndex: =23
+
+        ItemKey12_6 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemKey"
+            FieldName: ="ItemKey"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            ZIndex: =24
+
+        TargetScreen2_6 As pcfDataField.textualColumn:
+            FieldDisplayName: ="TargetScreen"
+            FieldName: ="TargetScreen"
+            FieldType: ="v"
+            FieldVariantName: ="textualColumn"
+            Order: =6
+            ZIndex: =25
+
+    "Nav3_7 As 'Fluent Nav (1.0.22)'.pcfdataset":
+        CollapseByDefault: =true
+        DisplayMode: =DisplayMode.Edit
+        Height: =150
+        Items: =navtable1
+        OnSelect: |-
+            =If(
+                Self.Selected.TargetScreen <> App.ActiveScreen,
+                Navigate(Self.Selected.TargetScreen)
+            )
+        SelectedKey: =LookUp(navtable1,TargetScreen=App.ActiveScreen).ItemKey
+        Theme: =AppThemeJson
+        Width: =Parent.Width
+        X: =0
+        Y: =Parent.Height-Self.Height
+        ZIndex: =5
+
+        ItemDisplayName12_7 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemDisplayName"
+            FieldName: ="ItemDisplayName"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =20
+
+        ItemEnabled5_7 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemEnabled"
+            FieldName: ="ItemEnabled"
+            FieldType: ="b"
+            FieldVariantName: ="textualColumn"
+            Order: =2
+            ZIndex: =21
+
+        ItemIconColor7_7 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemIconColor"
+            FieldName: ="ItemIconColor"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =3
+            ZIndex: =22
+
+        ItemIconName12_7 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemIconName"
+            FieldName: ="ItemIconName"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            ZIndex: =23
+
+        ItemKey12_7 As pcfDataField.textualColumn:
+            FieldDisplayName: ="ItemKey"
+            FieldName: ="ItemKey"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            ZIndex: =24
+
+        TargetScreen2_7 As pcfDataField.textualColumn:
+            FieldDisplayName: ="TargetScreen"
+            FieldName: ="TargetScreen"
+            FieldType: ="v"
+            FieldVariantName: ="textualColumn"
+            Order: =6
+            ZIndex: =25
+

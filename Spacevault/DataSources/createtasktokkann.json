@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "7e0ce063-43c0-4813-b9c2-b44e5e88546f",
+    "Name": "createtasktokkann",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "a56190d5-6d43-ee11-bdf3-000d3a69dce2"
+  }
+]

@@ -1,0 +1,85 @@
+"Screen6_1 As screen.'autoLayout_SplitScreen_ver1.0'":
+
+    ScreenContainer4_1 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutMode: =LayoutMode.Auto
+        LayoutWrap: =true
+        Width: =Parent.Width
+        ZIndex: =1
+
+        LeftContainer1_1 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =If(ISexpp,130,40)
+            ZIndex: =1
+
+            Component2_13 As Component2:
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+
+        ScreenContainer2_2 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+            ZIndex: =3
+
+            HeaderContainer2_2 As groupContainer.horizontalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =75
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =1
+
+            FooterContainer1_2 As groupContainer.horizontalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =75
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =2
+
+            MainContainer2_2 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =3
+

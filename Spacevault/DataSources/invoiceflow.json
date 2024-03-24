@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "81403e33-1a06-4cd5-bc94-9fd0a348cf68",
+    "Name": "invoiceflow",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "8c2ff2f2-e145-ee11-be6e-000d3a69dce2"
+  }
+]

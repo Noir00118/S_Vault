@@ -1,0 +1,170 @@
+Screen1 As screen:
+
+    ScreenContainer4_6 As groupContainer.verticalAutoLayoutContainer:
+        Fill: =RGBA(227, 227, 227, 0.35)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =15
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+        HeaderContainer4_2 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semilight
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =35
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =1
+
+            "Icon19_3 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                IconName: ="ChromeBack"
+                IconType: ='PowerCAT.Icon.IconType'.IconButon
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: =Navigate(Reportss)
+                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                Theme: =AppThemeJson
+                Tooltip: ="Back"
+                Width: =50
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            BadgeCanvas18_3 As Badge:
+                AccessibleLabel: =""
+                AlignInContainer: =AlignInContainer.Stretch
+                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                BasePaletteColor: =
+                Content: =""
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =30
+                LayoutMinHeight: =2
+                LayoutMinWidth: =10
+                Shape: ='BadgeCanvas.Shape'.Square
+                ThemeColor: ='BadgeCanvas.ThemeColor'.Brand
+                Width: =Parent.Width-30
+                X: =5
+                Y: =0
+                ZIndex: =2
+
+            "DatePickerCanvas3_1 As 'Date picker'":
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                SelectedDate: =Today()
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+            Toggle10_1 As Toggle:
+                AlignInContainer: =AlignInContainer.Stretch
+                BasePaletteColor: =
+                Checked: =true
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =10
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =25
+                Label: =If(Self.Checked,"Add Headder Manually","Add Custom Headder")
+                LabelPosition: ='Toggle.LabelPosition'.Before
+                LayoutMinHeight: =3
+                LayoutMinWidth: =11
+                OnCheck: =false
+                OnUncheck: =false
+                Width: =170
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+            "Icon19_4 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =""
+                Height: =200
+                HoverFillColor: ="WhiteSmoke"
+                IconName: ="Send"
+                IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: |-
+                    =Office365Outlook.SendEmailV2(Concat(PeoplePicker2_4.SelectedPeople,PersonaKey , ";"),ResizableTextarea2_2.Text,HtmlText2_4.HtmlText,{Attachments:AddColumns(RenameColumns(DataCardValue9_7.Attachments,"Value","ContentBytes"),"@odata.type",""),Cc:Concat(PeoplePicker2_5.SelectedPeople,PersonaKey , ";"),From:User().Email});Notify("Sent",NotificationType.Success);Clear   (PreSelectedUserCollections);Clear(UserCollectionn);Set(Emailclient,Blank())
+                Text: ="Sent"
+                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                Theme: =AppThemeJson
+                Width: =70
+                X: =0
+                Y: =0
+                ZIndex: =5
+
+        Container47_3 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =340
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            FooterContainer4_2 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =90
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1000
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+

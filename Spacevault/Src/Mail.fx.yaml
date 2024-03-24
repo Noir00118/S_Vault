@@ -1,0 +1,551 @@
+"Mail As screen.'autoLayout_SplitScreen_ver1.0'":
+
+    ScreenContainer4_3 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutMode: =LayoutMode.Auto
+        LayoutWrap: =true
+        Width: =Parent.Width
+        ZIndex: =1
+
+        LeftContainer1_3 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =false
+            Width: =If(ISexpp,130,40)
+            ZIndex: =1
+
+            Component2_15 As Component2:
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+
+        ScreenContainer2_4 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+            ZIndex: =3
+
+            HeaderContainer2_4 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =30
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =1
+
+                "Icon19_5 As 'Fluent Icon (1.0.22)'":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =200
+                    IconName: ="ChromeBack"
+                    IconType: ='PowerCAT.Icon.IconType'.IconButon
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    OnChange: =Navigate(Reportss)
+                    TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                    Theme: =AppThemeJson
+                    Tooltip: ="Back"
+                    Width: =50
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                BadgeCanvas18_4 As Badge:
+                    AccessibleLabel: =""
+                    AlignInContainer: =AlignInContainer.Stretch
+                    Appearance: ='BadgeCanvas.Appearance'.Ghost
+                    BasePaletteColor: =
+                    Content: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =30
+                    LayoutMinHeight: =2
+                    LayoutMinWidth: =10
+                    Shape: ='BadgeCanvas.Shape'.Square
+                    ThemeColor: ='BadgeCanvas.ThemeColor'.Brand
+                    Width: =Parent.Width-30
+                    X: =5
+                    Y: =0
+                    ZIndex: =2
+
+                "DatePickerCanvas3_2 As 'Date picker'":
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    SelectedDate: =Today()
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                Toggle10_2 As Toggle:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BasePaletteColor: =
+                    Checked: =true
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontSize: =10
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =25
+                    Label: =If(Self.Checked,"Add Headder Manually","Add Custom Headder")
+                    LabelPosition: ='Toggle.LabelPosition'.Before
+                    LayoutMinHeight: =3
+                    LayoutMinWidth: =11
+                    OnCheck: =false
+                    OnUncheck: =false
+                    Width: =170
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                "Icon19_6 As 'Fluent Icon (1.0.22)'":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =""
+                    Height: =200
+                    HoverFillColor: ="WhiteSmoke"
+                    IconName: ="Send"
+                    IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    OnChange: |-
+                        =Office365Outlook.SendEmailV2(Concat(PeoplePicker1.SelectedPeople,PersonaKey , ";"),TextInputCanvas12.Value,HtmlText11.HtmlText,{Attachments:AddColumns(RenameColumns(DataCardValue9_13.Attachments,"Value","ContentBytes"),"@odata.type",""),Cc:Concat(PeoplePicker2.SelectedPeople,PersonaKey , ";"),From:User().Email});Notify("Sent",NotificationType.Success);Clear   (PreSelectedUserCollections);Clear(UserCollectionn);Set(Emailclient,Blank())
+                    Text: ="Sent"
+                    TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                    Theme: =AppThemeJson
+                    Width: =70
+                    X: =0
+                    Y: =0
+                    ZIndex: =5
+
+            FooterContainer1_5 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =230
+                LayoutGap: =10
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =4
+                PaddingLeft: =4
+                PaddingRight: =4
+                PaddingTop: =4
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =2
+
+                ComboboxCanvas11 As Combobox.pcfdataset:
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =32
+                    Items: ='Company name'
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    OnChange: |-
+                        =Set(Emailclient,{Key:Self.Selected.Emails,
+                        Name:Self.Selected.Title});
+                        
+                        ClearCollect(
+                            PreSelectedUserCollections,
+                            AddColumns(
+                               // Get first 5 users who have email ID - optional
+                                Filter('Company name',Title=Emailclient.Name
+                                ),
+                                "PersonaKey",Emails
+                                ,
+                                "PersonaName",
+                                Title
+                            )
+                        )
+                    Visible: =false
+                    Width: =320
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                    Title29 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Title"
+                        FieldName: ="Title"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =4
+
+                    "'Item No Prefix9' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Item No Prefix"
+                        FieldName: ="INV"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =5
+
+                    "'Barcode Value13' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Barcode Value"
+                        FieldName: ="OData__dlc_BarcodeValue"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =3
+                        ZIndex: =6
+
+                    "'Item No Code9' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Item No Code"
+                        FieldName: ="ItemNoCode"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =5
+                        ZIndex: =7
+
+                    Storage8 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Storage"
+                        FieldName: ="Storar"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =6
+                        ZIndex: =8
+
+                    Emails9 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Emails"
+                        FieldName: ="Emails"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =7
+                        ZIndex: =9
+
+                    "'API Key9' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="API Key"
+                        FieldName: ="APIKey"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =8
+                        ZIndex: =10
+
+                    OperatingSystem9 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="OperatingSystem"
+                        FieldName: ="OperatingSystem"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =9
+                        ZIndex: =11
+
+                    "'Used Shelves12' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Used Shelves"
+                        FieldName: ="UsedShelves"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =10
+                        ZIndex: =12
+
+                    "'Location Type9' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Location Type"
+                        FieldName: ="LocationType"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =11
+                        ZIndex: =13
+
+                    Attachments19 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Attachments"
+                        FieldName: ="{Attachments}"
+                        FieldType: ="r*"
+                        FieldVariantName: ="textualColumn"
+                        Order: =12
+                        ZIndex: =14
+
+                Container115 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Semilight
+                    Fill: =RGBA(255, 255, 255, 1)
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =4
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =6
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    ZIndex: =4
+
+                    "PeoplePicker1 As 'Fluent PeoplePicker (1.0.22) Preview'.pcfdataset":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =38
+                        HintText: |-
+                            ="To : "
+                        Items: =PreSelectedUserCollections
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        OnBlur: =false
+                        OnFocus: =false
+                        OnSearch: |-
+                            =ClearCollect(
+                                UserCollection,
+                                AddColumns(
+                                    Office365Users.SearchUser(
+                                        {
+                                            searchTerm: Self.SearchText,
+                                            top: 500
+                                        }
+                                    ),
+                                    "ImageURL",
+                                    Substitute(
+                                        JSON(
+                                            Office365Users.UserPhotoV2(Id),
+                                            JSONFormat.IncludeBinaryData
+                                        ),
+                                        """",
+                                        ""
+                                    ),
+                            		"Presence",
+                            		"away"
+                                )
+                            )
+                        Suggestions_Items: =UserCollection
+                        Theme: =AppThemeJson
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "PeoplePicker2 As 'Fluent PeoplePicker (1.0.22) Preview'.pcfdataset":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Error: =false
+                        Height: =38
+                        HintText: |-
+                            ="CC : "
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        OnBlur: =false
+                        OnFocus: =false
+                        OnSearch: |-
+                            =ClearCollect(
+                                UserCollectionn,
+                                AddColumns(
+                                    Office365Users.SearchUser(
+                                        {
+                                            searchTerm: Self.SearchText,
+                                            top: 500
+                                        }
+                                    ),
+                                    "ImageURL",
+                                    Substitute(
+                                        JSON(
+                                            Office365Users.UserPhotoV2(Id),
+                                            JSONFormat.IncludeBinaryData
+                                        ),
+                                        """",
+                                        ""
+                                    ),
+                            		"Presence",
+                            		"away"
+                                )
+                            )
+                        Suggestions_Items: =UserCollectionn
+                        Theme: =AppThemeJson
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    "TextInputCanvas12 As 'Text input'":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =320
+                        Placeholder: |-
+                            ="Subject  : "
+                        Width: =320
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                    "TextInputCanvas16 As 'Text input'":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =70
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =320
+                        Mode: ='TextInputCanvas.Mode'.Multiline
+                        Value: |-
+                            ="Body  :  "
+                        Width: =320
+                        X: =0
+                        Y: =0
+                        ZIndex: =4
+
+                DataCardValue9_13 As attachments:
+                    AddAttachmentText: ="----------            Add File"
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BorderColor: =
+                    BorderStyle: =BorderStyle.None
+                    DisplayMode: =Parent.DisplayMode
+                    DropTargetBackgroundColor: =RGBA(53, 61, 63, 1)
+                    DropTargetBorderStyle: =BorderStyle.None
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =22
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(214, 221, 224, 1)
+                    IsInDataCard: =true
+                    ItemFill: =RGBA(56, 200, 178, 1)
+                    Items: =
+                    LayoutMinHeight: =30
+                    MaxAttachments: =10
+                    MaxAttachmentSize: =20
+                    NoAttachmentsText: =
+                    OnAddFile: =
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    PressedFill: =RGBA(214, 221, 224, 1)
+                    Size: =10
+                    TabIndex: =1
+                    Tooltip: =
+                    Width: =187
+                    X: =1146
+                    Y: =275
+                    ZIndex: =5
+
+            MainContainer2_4 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                ZIndex: =3
+
+                HtmlText11 As htmlViewer:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    FillPortions: =1
+                    HtmlText: |-
+                        =If(Toggle10_2.Checked,"
+                        <div style='  width: 100% ; background: RGBA(0, 0, 0, 0.0); background-image: url( " & background & " ) ; background-attachment: Fixed; background-size:20%;background-repeat: no-repeat; background-position: right;' >
+                         <h1 style='text-align: center  ; font-size:30px ; padding-right:1px;'colspan='3'> Daily Activity Summary </h1>
+                         <h4  style='text-align: center; padding-left:0px; color:grey;' > "&Text(DateAdd(Today(),-1),"ddddd, dd-mmm-yyyy") &"</h4><br></br>
+                         <a style='color:#212121; font-size:13px ;'>"&TextInputCanvas16.Value&" </a>
+                         <br></br><br>
+                         </div>
+                         <br>
+                        <div>"&HtmlText4_1.HtmlText&"</div>",
+                        "
+                         <p    style='text-align: left;'  >"&TextInputCanvas16.Value&"</p>
+                        ")&
+                        "
+                        </br>
+                        <br></br>
+                         <span>
+                        "&HtmlText1_55.HtmlText&"</span> <br><span>"&HtmlText1_69.HtmlText&"</span>
+                          
+                          
+                          <br></br>
+                          <div>"&
+                          HtmlText1_72.HtmlText
+                          &"</div>
+                          <br></br>
+                          <div>"&
+                          HtmlText1_54.HtmlText
+                          &"</div>
+                        <br></br>
+                          <div>"&
+                          HtmlText1_51.HtmlText
+                          &"</div>
+                          <br></br>
+                          <div>"&
+                          HtmlText1_49.HtmlText
+                          &"</div>
+                          <br></br>
+                          <div>"&
+                          HtmlText1_50.HtmlText
+                          &"</div>
+                          <br>
+                          <div>"&
+                          HtmlText1_61.HtmlText
+                          &"</div>
+                        <br>
+                          <div>"&
+                          HtmlText1_62.HtmlText
+                          &"</div>
+                          <br>
+                        <br>
+                          <div>"&
+                          HtmlText1_63.HtmlText
+                          &"</div>
+                          <br>
+                          <div  style='  width: 100% ; background: RGBA(0, 0, 0, 0.0); background-image: url( " & backgfoot & " ) ; background-attachment: Fixed; background-size:20%;background-repeat: no-repeat; background-position: right; background-position-x: 90%;
+                        ' >
+                         <img src= "&logooo&" style='width:10%;'></img>
+                         <h3 style='text-align:center; font-size:10px ;padding-right:70px;' >
+                          It's been amazing to see your business achieve  and <br>
+                          watch your customer base grow as a result.
+                          We especially appreciated you reaching out to help<br> us with this opportunity, 
+                          it's helped us a lot. We're so grateful
+                           <br>you've chosen 
+                           <b style='font-size:13px; color:Green;' >Space3Pl</b> to go on this ride with you —<br> 
+                           thanks for giving us the chance to help
+                        
+                        03:05
+                        you grow!
+                           
+                           </h3>"&" 
+                        <h1 style='text-align:center  ; font-size:20px ; padding-right:0px;color:Green;'colspan='1'><b> Partner With Experts<b> </h1>
+                        <br></br><br></br><br></br><br></br>
+                        </div>
+                        </div>
+                        "
+                    ZIndex: =1
+

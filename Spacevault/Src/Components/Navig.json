@@ -1,0 +1,54 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": true,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "Navig",
+    "TemplateGuid": "4952b291a79b427fa7ec90edd35393a5"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Item",
+      "Hidden": false,
+      "Name": "Item",
+      "PropertyDataTypeKey": "Table",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"Icon\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Label\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Screen\",\"Kind\":\"Error\",\"EnumString\":\"\",\"Type\":[]},{\"Name\":\"Tooltip\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Isexpand",
+      "Hidden": true,
+      "Name": "Isexpand",
+      "PropertyDataTypeKey": "Boolean",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Boolean\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Defl",
+      "Hidden": false,
+      "Name": "Defl",
+      "PropertyDataTypeKey": "Boolean",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Boolean\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213918952",
+  "Name": "4952b291a79b427fa7ec90edd35393a5",
+  "OverridableProperties": {},
+  "Version": "1.0"
+}

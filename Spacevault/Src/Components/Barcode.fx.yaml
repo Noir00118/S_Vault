@@ -1,0 +1,138 @@
+Barcode As CanvasComponent:
+    Code: ="A18241BCZCCA"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: |
+        =200
+    OnReset: =
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery1_2 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        DisabledBorderColor: =Gallery1_2.BorderColor
+        DisabledFill: =Gallery1_2.Fill
+        Height: =48
+        HoverBorderColor: =Gallery1_2.BorderColor
+        HoverFill: =Gallery1_2.Fill
+        Items: |-
+            =ForAll(Split("*" & Barcode.Code & "*",""), {Result: ThisRecord.Value})
+        PressedBorderColor: =Gallery1_2.BorderColor
+        PressedFill: =Gallery1_2.Fill
+        TemplatePadding: =0
+        TemplateSize: =20
+        Width: =CountRows(Gallery1_2.AllItems) * Gallery1_2.TemplateWidth
+        X: =Barcode.Width / 2 - Gallery1_2.Width / 2
+        ZIndex: =1
+
+        Image1_3 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderColor: =Image1_3.BorderColor
+            FocusedBorderThickness: =4
+            Height: =20
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: |-
+                ="https://pahandsonlab.blob.core.windows.net/content/Barcode/" & LookUp(CodeList, Key = ThisItem.Result).Value 
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Visible: =false
+            Width: =26
+            ZIndex: =2
+
+        HtmlText1 As htmlViewer:
+            AutoHeight: =true
+            Height: =48
+            HoverBorderColor: =HtmlText1.BorderColor
+            HtmlText: |-
+                ="<img width='45px' src='" & "https://pahandsonlab.blob.core.windows.net/content/Barcode/" & If(!IsBlank(LookUp(CodeList, Key = ThisItem.Result).Value), LookUp(CodeList, Key = ThisItem.Result).Value, "notdef.svg" ) & "'/>"
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedBorderColor: =HtmlText1.BorderColor
+            Width: =20
+            ZIndex: =3
+
+    InitBarecode As timer:
+        AutoStart: =true
+        BorderColor: =RGBA(0, 120, 212, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(244, 244, 244, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Duration: =1000
+        Fill: =RGBA(0, 120, 212, 1)
+        FocusedBorderColor: =InitBarecode.BorderColor
+        Font: =Font.'Segoe UI'
+        Height: =21
+        HoverBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        HoverFill: =ColorFade(RGBA(0, 120, 212, 1), -10%)
+        OnTimerStart: |
+            =ClearCollect(CodeList, {Key:"A",Value:"A.svg"}
+            ,{Key:"*",Value:"asterisk.svg"}
+            ,{Key:"B",Value:"B.svg"}
+            ,{Key:"C",Value:"C.svg"}
+            ,{Key:"D",Value:"D.svg"}
+            ,{Key:"dollar",Value:"dollar.svg"}
+            ,{Key:"E",Value:"E.svg"}
+            ,{Key:"8",Value:"eight.svg"}
+            ,{Key:"F",Value:"F.svg"}
+            ,{Key:"5",Value:"five.svg"}
+            ,{Key:"4",Value:"four.svg"}
+            ,{Key:"G",Value:"G.svg"}
+            ,{Key:"glyph1",Value:"glyph1.svg"}
+            ,{Key:"glyph2",Value:"glyph2.svg"}
+            ,{Key:"H",Value:"H.svg"}
+            ,{Key:"-",Value:"hyphen.svg"}
+            ,{Key:"I",Value:"I.svg"}
+            ,{Key:"J",Value:"J.svg"}
+            ,{Key:"K",Value:"K.svg"}
+            ,{Key:"L",Value:"L.svg"}
+            ,{Key:"M",Value:"M.svg"}
+            ,{Key:"N",Value:"N.svg"}
+            ,{Key:"9",Value:"nine.svg"}
+            ,{Key:"O",Value:"O.svg"}
+            ,{Key:"1",Value:"one.svg"}
+            ,{Key:"P",Value:"P.svg"}
+            ,{Key:"%",Value:"percent.svg"}
+            ,{Key:",",Value:"period.svg"}
+            ,{Key:"+",Value:"plus.svg"}
+            ,{Key:"Q",Value:"Q.svg"}
+            ,{Key:"R",Value:"R.svg"}
+            ,{Key:"S",Value:"S.svg"}
+            ,{Key:"7",Value:"seven.svg"}
+            ,{Key:"6",Value:"six.svg"}
+            ,{Key:"/",Value:"slash.svg"}
+            ,{Key:" ",Value:"space.svg"}
+            ,{Key:" ",Value:"space1.svg"}
+            ,{Key:"T",Value:"T.svg"}
+            ,{Key:"3",Value:"three.svg"}
+            ,{Key:"2",Value:"two.svg"}
+            ,{Key:"U",Value:"U.svg"}
+            ,{Key:"V",Value:"V.svg"}
+            ,{Key:"W",Value:"W.svg"}
+            ,{Key:"X",Value:"X.svg"}
+            ,{Key:"Y",Value:"Y.svg"}
+            ,{Key:"Z",Value:"Z.svg"}
+            ,{Key:"0",Value:"zero.svg"})
+        PressedBorderColor: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(0, 120, 212, 1), -30%)
+        Size: =21
+        Start: =true
+        Text: |-
+            =Text(Time(0, 0, InitBarecode.Value/1000), "hh:mm:ss")
+        Visible: =false
+        Width: =12
+        X: =48
+        Y: =99
+        ZIndex: =2
+

@@ -1,0 +1,116 @@
+Component4_39 As CanvasComponent:
+    count: =Component4_39.Rate*TextInputCanvas16_123.Value
+    Countdata: =TextInputCanvas16_123.Value
+    CustomProperty1: =true
+    Data: =
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =37
+    Rate: ="Text"
+    Service: ="Text"
+    Total: =
+    Width: =600
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container55_47 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.Semilight
+        Height: =32
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+        TextCanvas3_233 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AlignInContainer: =AlignInContainer.Stretch
+            DisplayMode: =DisplayMode.Edit
+            FillPortions: =1
+            Font: =""
+            FontColor: =
+            FontItalic: =true
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =25
+            LayoutMinHeight: =20
+            LayoutMinWidth: =60
+            Size: =12
+            Text: =Component4_39.Service
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =130
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "TextInputCanvas16_123 As 'Text input'":
+            Align: ="Start"
+            AlignInContainer: =AlignInContainer.Center
+            BasePaletteColor: =
+            DelayOutput: =true
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontSize: =0
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =32
+            LayoutMinHeight: =32
+            LayoutMinWidth: =60
+            MaxLength: =-1
+            Mode: ='TextInputCanvas.Mode'.SingleLine
+            OnChange: =Set(Countt,Self.Value)
+            Placeholder: =""
+            Type: ="Text"
+            ValidationState: ="None"
+            Value: =Component4_39.Data
+            Width: =80
+            X: =
+            Y: =3
+            ZIndex: =2
+
+        TextCanvas13_142 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AlignInContainer: =AlignInContainer.Stretch
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =25
+            LayoutMinHeight: =32
+            LayoutMinWidth: =60
+            Size: =9
+            Text: =Component4_39.Rate
+            Visible: =Component4_39.CustomProperty1
+            Width: =50
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        TextCanvas13_141 As Text:
+            Align: ='TextCanvas.Align'.Center
+            AlignInContainer: =AlignInContainer.Stretch
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            Height: =25
+            LayoutMinHeight: =32
+            LayoutMinWidth: =60
+            Size: =9
+            Text: =Component4_39.count & " KWD"
+            Width: =90
+            X: =0
+            Y: =0
+            ZIndex: =4
+

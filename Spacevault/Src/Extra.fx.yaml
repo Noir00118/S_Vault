@@ -1,0 +1,772 @@
+Extra As screen:
+
+    Canvas1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =
+        ZIndex: =18
+
+        DataCard22 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =1366
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+            Image1 As image:
+                Height: =162
+                Image: =space
+                Width: =156
+                X: =772
+                ZIndex: =1
+
+            Image1_1 As image:
+                Height: =136
+                Image: ='PHOTO-2022-12-20-13-37-39'
+                Width: =158
+                X: =603
+                ZIndex: =4
+
+            Image1_2 As image:
+                Height: =182
+                Image: ='AssEcommerceet-2'
+                Width: =303
+                X: =890
+                ZIndex: =5
+
+        DataCard23 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Width: =1366
+            X: =0
+            Y: =1
+            ZIndex: =3
+
+            Container149_13 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.None
+                ZIndex: =1
+
+                "Elevation1_11 As 'Fluent Elevation (1.0.22)'":
+                    DarkOverlay: =false
+                    Depth: ='PowerCAT.Elevation.Depth'.Depth4
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =Parent.Height
+                    HoverDepth: ='PowerCAT.Elevation.HoverDepth'.Depth16
+                    HoverFillColor: ="WhiteSmoke"
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    Width: =Parent.Width    
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            "Gallery8_4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                DelayItemLoading: =true
+                Height: =223
+                Items: |-
+                    =Ungroup(ForAll(Sequence(CountRows(printepage)),{DATA:Table(Last(FirstN(printepage,Value))),
+                        Rownoo:Value}),"DATA")
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =0
+                Width: =1
+                X: =1365
+                Y: =518
+                ZIndex: =2
+
+                Image3 As image:
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    RadiusBottomLeft: =8
+                    RadiusBottomRight: =8
+                    RadiusTopLeft: =8
+                    RadiusTopRight: =8
+                    Width: =1
+                    ZIndex: =1
+
+                NextArrow2 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    Color: =RGBA(166, 166, 166, 1)
+                    Height: =1
+                    Icon: =Icon.ChevronRight
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    Tooltip: ="View item details"
+                    Width: =1
+                    ZIndex: =4
+
+                Separator7 As rectangle:
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =5
+
+                Rectangle7 As rectangle:
+                    Height: =Parent.TemplateHeight - Separator7.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =1
+                    ZIndex: =6
+
+                TextCanvas1 As Text:
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =1
+                    Text: =Sum(ThisItem.Qty*ThisItem.Price)
+                    Width: =1
+                    X: =0
+                    Y: =0
+                    ZIndex: =7
+
+            Image7 As image:
+                Height: =214
+                Image: |-
+                    ="https://spacefulfillmentsolutions.sharepoint.com/sites/Test/_layouts/15/barcodeimagefromitem.aspx?ID="&VARPRIN.ID&"&list=d00ca09c-bef4-4021-b0d2-b4f4089bc30a"
+                Width: =0
+                X: =156
+                Y: =339
+                ZIndex: =3
+
+            HtmlText5 As htmlViewer:
+                Height: =71
+                HtmlText: |-
+                    ="
+                    
+                    <div style='text-align:center;'>
+                    <span ><a style='text-align:center;padding-right:10px;  color:green; font-size:30px; '><b>Inbound -    </b>     </a><a style='text-align:center;padding-right:10px;  color:green; font-size:20px; '>" & vargallerysel.Company & "</a></span>
+                    </div>
+                    
+                    
+                    <table style='width:100%'>
+                      
+                    <tr> 
+                    <th style = 'font-size:20px;padding-top:px;'>Invoice No:<a> "&vargallerysel.'Barcode Value'&"</th>
+                    
+                    
+                    
+                    </tr>
+                    <br>
+                    <tr>
+                    <td style = 'font-size:15px;'><div style = 'font-size:13px;'></div></td>
+                    <td style = 'font-size:15px;'><div style = 'font-size:13px;'></div></td>
+                    </tr>
+                    <tr>
+                    <td style = 'font-size:15px;'><div style = 'font-size:12px;'><b>Doc No :</b> <a  style = 'font-size:10px;'>" & vargallerysel.Title&"</div></td>
+                    
+                    </tr>
+                    <tr>
+                    <td style = 'font-size:15px;'><div style = 'font-size:12px;'><b> Total SKU : </b> <a  style = 'font-size:10px;'>" &vargallerysel.'Total Sku'&"</div></td>
+                    
+                    </tr>
+                    
+                    <tr>
+                    <td>
+                    
+                    <div style = 'font-size:13px;'> <b> Total Item : </b> <a  style = 'font-size:10px;'>" &vargallerysel.'Total Items'& " PCS</div>
+                    
+                    </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                    <td>
+                    </td></tr>
+                    </table>
+                    <br>
+                    
+                        </table >
+                    <table style='font-family: arial;  border-collapse: collapse; width: 100%;' >
+                      <tr style='background-color: MediumSeaGreen;'>
+                      <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:12px; color:white;'>SR#</th>
+                        <th style='border: 1px solid #dddddd; font-size:15px ;text-align: center; padding: 1px;font-size:12px; color:white;'>Barcode </th>
+                        <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:12px; color:white;'>SKU</th>
+                        <th style='border: 1px solid #dddddd; font-size:15px ;text-align: center; padding: 1px;font-size:12px; color:white;'>Received QTY</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:12px; color:white;'>Good QTY</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:12px; color:white;'>Damage QTY</th>
+                      </tr>   " & Concat(
+                        Gallery3_14.AllItems,
+                        "
+                      <tr>
+                      <td style=' text-align: center;font-size:10px; padding: 1px;'>" &RowNO&"</td>
+                    
+                       
+                    
+                       
+                        <th style=' text-align: center;font-size:10px; padding: 8px;'>" & Barcode & "</th>
+                        <th style=' text-align: center; padding: 8px;font-size:10px;'>" & Sku & "</th>
+                        <th style='border-bottom: 0px solid #ddd; text-align: center;font-size:10px; padding: 8px;'>" & Qty & "</th>
+                     <th style=' text-align: center;font-size:10px; padding: 8px;'>" & GoodQty & "</th>
+                     <th style=' text-align: center;font-size:10px; padding: 8px;'>" & DamageQty & "</th>
+                      </tr>"
+                    ) & "
+                      </table   >
+                    
+                        <br>
+                      <table style='font-family: arial, sans-serif; border-collapse: collapse; width: 100%;'>
+                       <tr>
+                    
+                    
+                      <td style= ' text-align : left ;font-size:7px ;padding-top:15px;width:70%'>
+                      <table style='font-family: arial;  border-collapse: collapse;width: 100%;'background-color: black;' >
+                    
+                    
+                      <tr style='background-color: black;padding-top:0px;'>
+                    <td style='border: px solid #dddddd;font-size:1px ; text-align: center;  padding: px;font-size:px; color:white;'>
+                    </td>
+                    <td style='border: px solid #dddddd;font-size:1px ; text-align: center;  padding: px;font-size:px; color:white;'>
+                    </td>
+                    </tr>
+                    
+                    
+                    <tr style='padding-left:20px;'>
+                    <td style='padding-top:5px;padding-left:20px;'><div> <a style='fonty-size:7px;'> 📍  25th February Tower, 14th Floor,khalid Ibn Al Waleed St, Sharq | Kuwait.</a></div>
+                    <div>
+                    <a style='fonty-size:7px;'> ✉️ info@space3pl.com </a><a style='padding-left:20px;'> 📞 +96555400032</div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <div><img src= " & QRcod & " style='width:80px;height:70px;padding-top:px;padding-left:10px;'></img>
+                    <p style='padding-left:10px;fonty-size:5px;'>Scan For More Details</td>
+                    </tr>
+                    
+                    </table>
+                     
+                    
+                    </html>"
+                Width: =0
+                Y: =696
+                ZIndex: =4
+
+            ButtonCanvas4_4 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                OnSelect: =
+                Text: ="Print"
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =5
+
+            Image6 As image:
+                Height: =59
+                Image: ='WhatsApp Image 2023-11-09 at 14.43.05_ae704596'
+                ImagePosition: =ImagePosition.Fill
+                Width: =85
+                ZIndex: =6
+
+            ButtonCanvas26 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                OnSelect: =Set(logooooo,JSON(Image6.Image,JSONFormat.IncludeBinaryData))
+                Width: =96
+                X: =100
+                Y: =90
+                ZIndex: =7
+
+            Image13 As image:
+                Height: =66
+                Image: ='WhatsApp Image 2023-11-09 at 14.43.05_ae704596'
+                Width: =108
+                ZIndex: =8
+
+        DataCard39 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =454
+            Width: =1366
+            X: =0
+            Y: =2
+            ZIndex: =4
+
+            Container53_1 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =454
+                LayoutGap: =5
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =5
+                PaddingLeft: =5
+                PaddingRight: =5
+                PaddingTop: =5
+                Width: =Parent.Width
+                X: =40
+                ZIndex: =1
+
+                Container19_11 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                    HtmlText6_11 As htmlViewer:
+                        Fill: =RGBA(0, 0, 0, 0)
+                        FillPortions: =1
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            
+                             <div  style='width:60%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'> Total Orders Fulfilled  </div>
+                            
+                              <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(AllOrdercount)&"</div>
+                            
+                            
+                              </br>
+                            
+                            <table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Orders</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(AllOrdercount))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        LayoutMinHeight: =300
+                        ZIndex: =1
+
+                    HtmlText6_12 As htmlViewer:
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            
+                             <div  style='width:60%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'> OFS Order Client Wise  </div>
+                            
+                              <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(ofsolistD)&"</div>
+                              
+                              </br>
+                            
+                            <table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Orders</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(AddColumns(GroupBy(Sort(ofsolistD,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        ZIndex: =2
+
+                    HtmlText6_13 As htmlViewer:
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            <Table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Status</th> 
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Orders</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(AddColumns(GroupBy(Sort(ofsolistD,Client,SortOrder.Ascending),"OrderStatus","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"
+                            <tr>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.OrderStatus&"</td>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        ZIndex: =3
+
+                    HtmlText6_14 As htmlViewer:
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            <Table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Client</th>
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Invoice</th> 
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> SKU</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(AddColumns(GroupBy(Sort(ofsolistdashboard,Client,SortOrder.Ascending),"OrderStatus","Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.OrderStatus&"</td>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        ZIndex: =4
+
+                    HtmlText6_15 As htmlViewer:
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =1
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            <Table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Client</th>
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Invoice</th> 
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> SKU</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"OrderStatus","Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.OrderStatus&"</td>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        ZIndex: =5
+
+                Container19_12 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Height: =Parent.Height
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =5
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width-5
+                    ZIndex: =2
+
+                    HtmlText6_16 As htmlViewer:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        AutoHeight: =true
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            
+                             <div  style='width:60%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'> S.V. Order Client Wise  </div>
+                            
+                              <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(Filter(dashBoardSVMSout,Fulfilltype="Order"))&"</div>
+                            
+                            
+                              </br>
+                            
+                            <table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Orders</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(Filter(AddColumns(GroupBy(dashBoardSVMSout,"Fulfilltype","Orderype","Client","vv"),"Count",CountRows(vv)),Fulfilltype="Order"),"%",Sum(ThisRecord.Count/Sum (CountRows(Filter(dashBoardSVMSout,Fulfilltype="Order")))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        ZIndex: =1
+
+                    HtmlText6_17 As htmlViewer:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        AutoHeight: =true
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            
+                             <div  style='width:60%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'>Transfers Client Wise  </div>
+                            
+                              <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(Filter(dashBoardSVMSout,Fulfilltype="Transfer"))&"</div>
+                            
+                            
+                              </br>
+                            
+                            <table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Count</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(Filter(AddColumns(GroupBy(dashBoardSVMSout,"Fulfilltype","Orderype","Client","vv"),"Count",CountRows(vv)),Fulfilltype="Transfer"),"%",Sum(ThisRecord.Count/Sum (CountRows(Filter(dashBoardSVMSout,Fulfilltype="Transfer")))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        ZIndex: =2
+
+                    HtmlText6_18 As htmlViewer:
+                        AutoHeight: =true
+                        Fill: =RGBA(0, 0, 0, 0)
+                        HtmlText: |-
+                            ="<!DOCTYPE html>
+                            <html>
+                            
+                             <div  style='width:60%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'> Fulfilled With  SpaceVault  </div>
+                             
+                             <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(dashBoardSVMSout)&"</div>
+                            
+                            
+                            </br>
+                            <Table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                            <tr style='background-color: MediumSeaGreen;'>
+                            
+                             
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Orders</th> 
+                            
+                            <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                            
+                            </tr>
+                            
+                            "&Concat(AddColumns(AddColumns(GroupBy(dashBoardSVMSout,"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(dashBoardSVMSout))*100)),"
+                            <tr>
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                            
+                            <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                            
+                            
+                            ")&"
+                            
+                            </tr>
+                            
+                            
+                            
+                            </table>
+                            </html>"
+                        LayoutMinHeight: =500
+                        ZIndex: =3
+
+            Table2_3 As Table.pcfdataset:
+                DisableChildItemsEditing: ="no"
+                DisplayMode: =DisplayMode.Edit
+                EnableColumnMoving: ="no"
+                Height: =219
+                Items: |-
+                    =AddColumns(
+                        GroupBy(
+                            AddColumns(RenameColumns(
+                            
+                                    AllOrdercount,"OrderDate","Date"
+                                    
+                                ),
+                                    
+                                    "Week",
+                                    If(
+                                        Value(Day(Date)) <= 7,
+                                    "W1",
+                                    If(
+                                        Value(Day(Date)) <= 14,
+                                        "W2",
+                                        If(
+                                            Value(Day(Date)) <= 21,
+                                            "W3",
+                                            If(
+                                                Value(Day(Date)) <= 31,
+                                                "W4"
+                                            )
+                                        )
+                                    )
+                                )
+                            ),
+                          
+                            
+                            "Week",
+                            "ww"
+                        ),
+                        "Count",
+                        CountRows(ww)
+                    )
+                onCellValueChange: =false
+                onFilter: =false
+                onNavigate: =false
+                onRowSelect: =false
+                onSave: =false
+                OnSelect: =false
+                ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.GridOnly
+                Width: =799
+                X: =10
+                Y: =135
+                ZIndex: =2
+
+                Week1_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Week"
+                    FieldName: ="Week"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =8
+
+                Company6_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Company"
+                    FieldName: ="Company"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =2
+                    ZIndex: =9
+
+                Count1_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Count"
+                    FieldName: ="Count"
+                    FieldType: ="n"
+                    FieldVariantName: ="textualColumn"
+                    Order: =4
+                    ZIndex: =10
+
+                Fulfill1_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Fulfill"
+                    FieldName: ="Fulfill"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =3
+                    ZIndex: =11
+

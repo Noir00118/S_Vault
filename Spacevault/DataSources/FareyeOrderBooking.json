@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "0bf4a0be-340a-499b-9e46-771df3b4bbb9",
+    "Name": "FareyeOrderBooking",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "7a52162b-23d6-ee11-904d-000d3a69dce2"
+  }
+]

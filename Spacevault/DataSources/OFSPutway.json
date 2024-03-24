@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "9f62dc67-d489-42af-bf9c-24ec0cfc4bde",
+    "Name": "OFSPutway",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "f46d6144-af46-ee11-be6e-000d3a69dce2"
+  }
+]

@@ -1,0 +1,168 @@
+Dashbordcompo1 As CanvasComponent:
+    Badge: ="Text"
+    color: ="Text"
+    CustomProperty1: ="Text"
+    Fill: =RGBA(230, 227, 227, 0)
+    Fillcolor: |-
+        ="#fffff"
+    Height: =500
+    HTML: |-
+        ="<!DOCTYPE html>
+        <html>
+        <Table style='width:100% ; border-collapse: collapse;'>
+        <tr style='background-color: MediumSeaGreen;'>
+        
+         <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Fulfillment</th> 
+        <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Client</th>
+        
+        </tr>
+        
+        
+        
+        
+        </table>
+        </html>"
+    icone: ="Text"
+    option: =["Expand", "Export"]
+    optionlogic: ="Text"
+    TopCount: ="Text"
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "Elevation6 As 'Fluent Elevation (1.0.22)'":
+        Depth: ='PowerCAT.Elevation.Depth'.Depth8
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Dashbordcompo1.Fillcolor
+        Height: =Parent.Height
+        HoverDepth: ='PowerCAT.Elevation.HoverDepth'.Depth16
+        HoverFillColor: |-
+            ="#ffffff"
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+    Label1_2 As Label:
+        Alignment: =Align.Center
+        AutoHeight: =false
+        Color: =RGBA(54, 176, 75, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Segoe UI'
+        FontSize: =50
+        FontWeight: =FontWeight.Semibold
+        Height: =0
+        OnChange: =false
+        Text: =Dashbordcompo1.TopCount
+        TextRole: ='Label.TextRole'.Heading1
+        VerticalAlignment: =VerticalAlign.Top
+        Width: =Parent.Width-Self.X-10
+        X: =Icon23_1.Width+Icon23_1.X+5
+        Y: =10
+        ZIndex: =2
+
+    BadgeCanvas3_2 As Badge:
+        Appearance: ='BadgeCanvas.Appearance'.Filled
+        BasePaletteColor: =
+        Content: =Dashbordcompo1.Badge
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        Shape: ='BadgeCanvas.Shape'.Rounded
+        Width: =Parent.Width-Self.X-15
+        X: =15
+        Y: =Image2_2.Height+19
+        ZIndex: =3
+
+    Label2_1 As Label:
+        Alignment: =Align.Justify
+        Color: =RGBA(106, 122, 127, 1)
+        DisplayMode: =DisplayMode.View
+        FontSize: =9
+        Height: =27
+        OnChange: =false
+        Text: ="Summery"
+        TextRole: ='Label.TextRole'.Heading1
+        Visible: =false
+        Width: =225
+        X: =15
+        Y: =BadgeCanvas3_2.Y+BadgeCanvas3_2.Height+5
+        ZIndex: =4
+
+    HtmlText1_2 As htmlViewer:
+        Height: =Parent.Height-Self.Y-10
+        HtmlText: =Dashbordcompo1.HTML
+        PaddingLeft: =15
+        PaddingRight: =15
+        Size: =12
+        Width: =Parent.Width
+        Y: =Label2_1.Y+Label2_1.Height+10
+        ZIndex: =5
+
+    "Icon23_1 As 'Fluent Icon (1.0.22)'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =60
+        IconColor: =Dashbordcompo1.color
+        IconName: =Dashbordcompo1.icone
+        IconSize: =30
+        IconType: ='PowerCAT.Icon.IconType'.Icon
+        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+        Width: =60
+        X: =10
+        Y: =10
+        ZIndex: =6
+
+    "TabList8 As 'Tab list'.pcfdataset":
+        Alignment: ='TabList.Alignment'.Vertical
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Items: =Dashbordcompo1.option
+        OnSelect: =Dashbordcompo1.optionlogic
+        Visible: =false
+        Width: =45
+        X: =Parent.Width-Self.Width
+        Y: =0
+        ZIndex: =7
+
+        Value20 As pcfDataField.textualColumn:
+            FieldDisplayName: ="Value"
+            FieldName: ="Value"
+            FieldType: ="s"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            ZIndex: =1
+
+    Image2_2 As image:
+        Height: =117
+        Image: |-
+            ="https://quickchart.io/chart?c="&EncodeUrl("{
+              type: 'radialGauge',
+              data: {
+                datasets: [
+                  {
+                    data: [89],
+                    backgroundColor: getGradientFillHelper('horizontal', ['red', 'blue']),
+                  },
+                ],
+              },
+              options: {
+                // See https://github.com/pandameister/chartjs-chart-radial-gauge#options
+                domain: [0, 100],
+                trackColor: '#f0f8ff',
+                centerPercentage: 90,
+                centerArea: {
+                  text: (val) => val + '%',
+                },
+              },
+            }")
+        ImagePosition: =ImagePosition.Fill
+        Width: =123
+        X: =Parent.Width/2-Self.Width/2
+        Y: =14
+        ZIndex: =8
+

@@ -1,0 +1,120 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": false,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "DropDown",
+    "TemplateGuid": "f0072e0520664a8f84d7dbce072145b9"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Items",
+      "Hidden": false,
+      "Name": "Items",
+      "PropertyDataTypeKey": "Table",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"Value\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "ShowScrollbar",
+      "Hidden": false,
+      "Name": "ShowScrollbar",
+      "PropertyDataTypeKey": "Boolean",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Boolean\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "InputTextPlaceholder",
+      "Hidden": false,
+      "Name": "InputTextPlaceholder",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "SelectedItemColor",
+      "Hidden": false,
+      "Name": "SelectedItemColor",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "DefaultHeight",
+      "Hidden": false,
+      "Name": "DefaultHeight",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "DefaultValue",
+      "Hidden": false,
+      "Name": "DefaultValue",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "MenuWidth",
+      "Hidden": true,
+      "Name": "MenuWidth",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "The width of the component",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Allow searching",
+      "Hidden": false,
+      "Name": "AllowSearching",
+      "PropertyDataTypeKey": "Boolean",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Boolean\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Border",
+      "Hidden": false,
+      "Name": "Border",
+      "PropertyDataTypeKey": "Number",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Number\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "BorderColor",
+      "Hidden": false,
+      "Name": "BorderColor",
+      "PropertyDataTypeKey": "Color",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Color\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": true,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213807160",
+  "Name": "f0072e0520664a8f84d7dbce072145b9",
+  "OverridableProperties": {},
+  "SourceLibraryId": "5f8f0f71-3db7-404c-89a8-ab4c2f1e6b1f",
+  "SourceLibraryLogicalName": "cr34d_fluentui_62fcf",
+  "TemplateOriginalName": "13c7df3f1f564fb78d6f7c216488ffdf",
+  "Version": "637862368364536261"
+}

@@ -1,0 +1,689 @@
+"'Movement track' As screen.'autoLayout_HeaderFooter_ver1.0'":
+    OnVisible: =
+
+    ScreenContainer1_10 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =5
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+        HeaderContainer1_10 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =45
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =5
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            "Icon4_8 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                HoverIconColor: ="black"
+                IconColor: ="black"
+                IconName: ="ChromeBack"
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: =Navigate(Reportss)
+                Tooltip: ="Back"
+                Width: =40
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "TabList1_56 As 'Tab list'.pcfdataset":
+                AccessibleLabel: ="1"
+                AlignInContainer: =AlignInContainer.Stretch
+                Alignment: ='TabList.Alignment'.Horizontal
+                BasePaletteColor: =
+                DefaultSelectedItems: |-
+                    ={Value:Defltt}
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Font: =""
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =35
+                Items: =["Client Report","SOH","Outbound","Inbound","Cyclecount","Movement Track"]
+                LayoutMinHeight: =Parent.Height
+                LayoutMinWidth: =30
+                OnSelect: |-
+                    =Set(Defltt,Self.Selected.Value);
+                    
+                    Switch(
+                        Self.Selected.Value,
+                        "Client Report",
+                        UpdateContext({Fullfilre: true});Navigate(Reportss),
+                        
+                        "Logistic",
+                        Navigate(Reportss_1),
+                        
+                        "Mail",
+                        
+                        Navigate(Mail),"SOH",Navigate(Cyclecount),"Outbound",Navigate('Detail View outbound'),"Inbound",Navigate('Detail View inbound'),"Cyclecount",Navigate('cyclecount data'),"Movement Track",Navigate('Movement track')
+                    )
+                Size: ='TabList.Size'.Medium
+                Width: =60
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+            "CommandBar3_8 As 'Fluent Command Bar (1.0.22)'.pcfdataset":
+                AlignInContainer: =AlignInContainer.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                Items: |-
+                    =Table(
+                       
+                        {
+                            ItemKey: "Down",
+                            ItemDisplayName: "",
+                            ItemIconName: "ExcelLogoInverse16",
+                            ItemFarItem: true
+                           
+                        },
+                       
+                       
+                       
+                        {
+                            ItemKey: "tile",
+                            ItemDisplayName: "Grid view",
+                            ItemIconName: "refresh",
+                            ItemIconOnly: true,
+                            ItemFarItem: true
+                        }
+                    )
+                LayoutMinHeight: =200
+                LayoutMinWidth: =200
+                OnSelect: |-
+                    =Switch(
+                        Self.Selected.ItemKey,
+                        
+                        "Down",
+                        Set(
+                        Clintreportexp,
+                        ExcelFlow.Run(
+                            JSON(
+                                DropColumns(
+                                    Filter(
+                                        'Cycle Count',
+                                        IsBlank(ComboboxCanvas1_28.Selected.Title) || false || Company = ComboboxCanvas1_28.Selected.Title,
+                                        StartsWith(
+                                            Barcode,
+                                            TextInputCanvas1_9.Value
+                                        ) || StartsWith(
+                                            LOCATION,
+                                            TextInputCanvas1_9.Value
+                                        ) || StartsWith(
+                                            SKU,
+                                            TextInputCanvas1_9.Value
+                                        )
+                                    ),
+                                    "Author",
+                                    "{Attachments}",
+                                    "{HasAttachments}",
+                                    "{Thumbnail}",
+                                    "{FilenameWithExtension}",
+                                    "{FullPath}",
+                                    "{Link}",
+                                    "{Path}",
+                                    "{TriggerWindowEndToken}"
+                                ),
+                                JSONFormat.IncludeBinaryData
+                            ),
+                            ComboboxCanvas1_28.Selected.Title & "_" & "CycleCount"
+                        ).name
+                    );
+                    Download("https://spacefulfillmentsolutions.sharepoint.com/:x:/r/sites/Test/Reports/" & Clintreportexp),"tile",Refresh('Cycle Count')
+                               
+                    )
+                Theme: =AppThemeJson
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+                ItemDisplayName3_8 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemDisplayName"
+                    FieldName: ="ItemDisplayName"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =27
+
+                ItemFarItem2_8 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemFarItem"
+                    FieldName: ="ItemFarItem"
+                    FieldType: ="b"
+                    FieldVariantName: ="textualColumn"
+                    Order: =2
+                    ZIndex: =28
+
+                ItemIconColor2_8 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconColor"
+                    FieldName: ="ItemIconColor"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =3
+                    ZIndex: =29
+
+                ItemIconName3_8 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconName"
+                    FieldName: ="ItemIconName"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =4
+                    ZIndex: =30
+
+                ItemIconOnly2_8 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconOnly"
+                    FieldName: ="ItemIconOnly"
+                    FieldType: ="b"
+                    FieldVariantName: ="textualColumn"
+                    Order: =5
+                    ZIndex: =31
+
+                ItemKey3_8 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemKey"
+                    FieldName: ="ItemKey"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =6
+                    ZIndex: =32
+
+        MainContainer1_10 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(255, 255, 255, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =5
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            FooterContainer1_44 As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =40
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutGap: =8
+                LayoutJustifyContent: =LayoutJustifyContent.End
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =5
+                PaddingRight: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                "SearchBox6 As 'Fluent SearchBox (1.0.22) Preview'":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =200
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    Theme: =AppThemeJson
+                    Underlined: =true
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                ComboboxCanvas1_30 As Combobox.pcfdataset:
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    InputTextPlaceholder: ="🔍 Clients"
+                    Items: ='Company name'
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =100
+                    Width: =180
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                    Title1_11 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Title"
+                        FieldName: ="Title"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =14
+
+                    "'Item No Prefix1_11' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Item No Prefix"
+                        FieldName: ="INV"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =15
+
+                    "'Barcode Value1_11' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Barcode Value"
+                        FieldName: ="OData__dlc_BarcodeValue"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =3
+                        ZIndex: =16
+
+                    "'Item No Code1_11' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Item No Code"
+                        FieldName: ="ItemNoCode"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =5
+                        ZIndex: =17
+
+                    Storage1_11 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Storage"
+                        FieldName: ="Storar"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =6
+                        ZIndex: =18
+
+                    Emails1_11 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Emails"
+                        FieldName: ="Emails"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =7
+                        ZIndex: =19
+
+                    "'API Key1_11' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="API Key"
+                        FieldName: ="APIKey"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =8
+                        ZIndex: =20
+
+                    OperatingSystem1_11 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="OperatingSystem"
+                        FieldName: ="OperatingSystem"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =9
+                        ZIndex: =21
+
+                    "'Used Shelves1_11' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Used Shelves"
+                        FieldName: ="UsedShelves"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =10
+                        ZIndex: =22
+
+                    "'Location Type1_11' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Location Type"
+                        FieldName: ="LocationType"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =11
+                        ZIndex: =23
+
+                    Attachments1_11 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Attachments"
+                        FieldName: ="{Attachments}"
+                        FieldType: ="r*"
+                        FieldVariantName: ="textualColumn"
+                        Order: =12
+                        ZIndex: =24
+
+                "DatePickerCanvas9 As 'Date picker'":
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    SelectedDate: =DateAdd(Today(),-15)
+                    Width: =180
+                    X: =0
+                    Y: =0
+                    ZIndex: =4
+
+                "DatePickerCanvas9_1 As 'Date picker'":
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =32
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =320
+                    SelectedDate: =Today()
+                    Width: =180
+                    X: =0
+                    Y: =0
+                    ZIndex: =5
+
+            Container3_11 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =6
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =5
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =100
+                LayoutMinWidth: =Parent.Width
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                PaddingTop: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                FooterContainer1_48 As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(219, 219, 219, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =1
+                    DropShadow: =DropShadow.None
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =35
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =600
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutOverflowX: =LayoutOverflow.Scroll
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =2
+
+                    "FluentDetailsList6 As 'Fluent Details List (1.0.22)'.pcfdataset":
+                        columns_Items: |-
+                            =With(
+                                {
+                                    availableWidth: Self.Width},
+                                Table(
+                                    {
+                                        ColName: "Title",
+                                        ColIsBold: true,
+                                        ColDisplayName: "Client",
+                                        ColWidth: 140,
+                                        ColRowHeader: true,
+                                        ColResizable: true,
+                                        ColSortable:true
+                                    },
+                                    {
+                                        ColName: "MovementType",
+                                        ColDisplayName: "Status",
+                                        ColWidth: 100,
+                                        ColRowHeader: true,
+                                        ColResizable: true,
+                                        ColCellType: "tag",
+                                        ColTagColorColumn: "TagColor"
+                                    },
+                                    {
+                                        ColName: "Created",
+                                        ColDisplayName: "Date",
+                                        ColWidth: 100,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "Barcode",
+                                        ColDisplayName: "Barcode",
+                                        ColWidth: 130,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "Sku",
+                                        ColDisplayName: "SKU",
+                                        ColWidth: 100,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "Qty",
+                                        ColDisplayName: "QTY",
+                                        ColWidth: 70,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "Location",
+                                        ColDisplayName: "Location",
+                                        ColWidth: 70,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "User",
+                                        ColDisplayName: "User",
+                                        ColWidth: 60,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "DocNo",
+                                        ColDisplayName: "Doc No",
+                                        ColWidth: 130,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "Fulfillmenttype",
+                                        ColDisplayName: "Fulfillment Type",
+                                        ColWidth: 60,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "ordertype",
+                                        ColDisplayName: "Order Type",
+                                        ColWidth: 60,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    },
+                                    {
+                                        ColName: "IsReturned",
+                                        ColDisplayName: "IsReturned",
+                                        ColWidth: 80,
+                                        ColRowHeader: true,
+                                        ColResizable: true,
+                                        ColCellType: "tag"
+                                    },
+                                    {
+                                        ColName: "Drivername",
+                                        ColDisplayName: "Tookan ID",
+                                        ColWidth: availableWidth-140-100-200-130-140-60-80-70-150,
+                                        ColRowHeader: true,
+                                        ColResizable: true
+                                    }
+                                )
+                            )
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =200
+                        Items: |-
+                            =AddColumns(
+                                Sort(
+                                    Filter(
+                                        'Inventory Movement Tracker',            StartsWith(
+                                            Barcode,
+                                            SearchBox6.SearchText
+                                        ),
+                                        Created >= DatePickerCanvas9.SelectedDate && Created <= DateAdd(DatePickerCanvas9_1.SelectedDate,1),
+                                        IsBlank(ComboboxCanvas1_30.Selected.Title)||false||Title = ComboboxCanvas1_30.Selected.Title
+                                    ),
+                                    ID,
+                                    SortOrder.Descending
+                                ),
+                                "TagColor",
+                               
+                                    "rgb(102, 205,170)",
+                                "TagBorderColor",
+                                "rgb(225, 255,255)"
+                            )
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                        Title25 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Title"
+                            FieldName: ="Title"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =53
+
+                        Barcode6 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Barcode"
+                            FieldName: ="Barcode"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =2
+                            ZIndex: =54
+
+                        Sku5 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Sku"
+                            FieldName: ="Sku"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =3
+                            ZIndex: =55
+
+                        "'Movement Type3' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Movement Type"
+                            FieldName: ="MovementType"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =4
+                            ZIndex: =56
+
+                        User3 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="User"
+                            FieldName: ="User"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =5
+                            ZIndex: =57
+
+                        "'Doc No3' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Doc No"
+                            FieldName: ="DocNo"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =6
+                            ZIndex: =58
+
+                        Qty5 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Qty"
+                            FieldName: ="Qty"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =7
+                            ZIndex: =59
+
+                        MSID2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="MSID"
+                            FieldName: ="MSID"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =8
+                            ZIndex: =60
+
+                        Location5 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Location"
+                            FieldName: ="Location"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =9
+                            ZIndex: =61
+
+                        "'Product Quality2' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Product Quality"
+                            FieldName: ="ProductQuality"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =10
+                            ZIndex: =62
+
+                        "'Fulfillment type3' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Fulfillment type"
+                            FieldName: ="Fulfillmenttype"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =11
+                            ZIndex: =63
+
+                        "'order type3' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="order type"
+                            FieldName: ="ordertype"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =12
+                            ZIndex: =64
+
+                        Attachments17 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Attachments"
+                            FieldName: ="{Attachments}"
+                            FieldType: ="r*"
+                            FieldVariantName: ="textualColumn"
+                            Order: =13
+                            ZIndex: =65
+
+                        Created2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Created"
+                            FieldName: ="Created"
+                            FieldType: ="d"
+                            FieldVariantName: ="textualColumn"
+                            Order: =14
+                            ZIndex: =66
+

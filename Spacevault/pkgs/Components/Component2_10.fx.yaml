@@ -1,0 +1,81 @@
+Component2_10 As CanvasComponent:
+    Badge: ="Text"
+    Fill: =RGBA(0, 0, 0, 0)
+    Fillcolor: ="White"
+    Height: =640
+    HTML: |-
+        ="<!DOCTYPE html>
+        <html>
+        <Table style='width:100% ; border-collapse: collapse;'>
+        <tr style='background-color: MediumSeaGreen;'>
+        
+         <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Fulfillment</th> 
+        <th style=' color:white;text-align:center;padding:5px;font-size:18px;'> Client</th>
+        
+        </tr>
+        
+        
+        
+        
+        </table>
+        </html>"
+    TopCount: ="Text"
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label1_1 As Label:
+        Alignment: =Align.Center
+        AutoHeight: =false
+        Color: =RGBA(54, 176, 75, 1)
+        DisplayMode: =DisplayMode.View
+        Font: =Font.'Segoe UI'
+        FontSize: =70
+        FontWeight: =FontWeight.Semibold
+        Height: =140
+        OnChange: =false
+        Text: =Component2_10.TopCount
+        TextRole: ='Label.TextRole'.Heading1
+        VerticalAlignment: =VerticalAlign.Top
+        Width: =Parent.Width
+        X: =0
+        Y: =0
+        ZIndex: =2
+
+    BadgeCanvas3_1 As Badge:
+        BasePaletteColor: =
+        Content: =Component2_10.Badge
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        Shape: ='BadgeCanvas.Shape'.Rounded
+        Width: =Parent.Width-Self.X-10
+        X: =10
+        Y: =Label1_1.Height+4
+        ZIndex: =3
+
+    Label2 As Label:
+        Alignment: =Align.Justify
+        Color: =RGBA(106, 122, 127, 1)
+        DisplayMode: =DisplayMode.View
+        FontSize: =9
+        Height: =27
+        OnChange: =false
+        Text: ="Summery"
+        TextRole: ='Label.TextRole'.Heading1
+        Width: =225
+        X: =10
+        Y: =185
+        ZIndex: =4
+
+    HtmlText1_1 As htmlViewer:
+        Height: =Parent.Height-Self.Y-10
+        HtmlText: =Component2_10.HTML
+        PaddingLeft: =10
+        PaddingRight: =10
+        Size: =12
+        Width: =Parent.Width
+        Y: =Label2.Y+Label2.Height+10
+        ZIndex: =5
+

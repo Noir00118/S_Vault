@@ -1,0 +1,82 @@
+[
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "5f8f0f71-3db7-404c-89a8-ab4c2f1e6b1f",
+    "LibraryLogicalName": "cr34d_fluentui_62fcf",
+    "LibraryVersion": "2023-07-15T19:31:17Z",
+    "OriginalComponentDefinitionTemplateId": "13c7df3f1f564fb78d6f7c216488ffdf",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-07-15T19:31:17.535+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "6481a98b-2cbc-4d80-8359-28485d7644ae",
+    "LibraryLogicalName": "cr34d_cleanui_918e9",
+    "LibraryVersion": "2023-11-04T07:06:15Z",
+    "OriginalComponentDefinitionTemplateId": "c08844b7dea64279b88b31d857d0bc4d",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-10-10T13:51:57.904+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "6481a98b-2cbc-4d80-8359-28485d7644ae",
+    "LibraryLogicalName": "cr34d_cleanui_918e9",
+    "LibraryVersion": "2023-11-04T07:06:15Z",
+    "OriginalComponentDefinitionTemplateId": "dbea93c246e746d1ab425ad4b86ed5a3",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-10-10T13:51:57.904+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "6fe76569-e7b0-431e-a61f-cb423c2a648f",
+    "LibraryLogicalName": "cat_powercatcomponentlibrary_0be3a",
+    "LibraryVersion": "2023-11-04T05:31:35Z",
+    "OriginalComponentDefinitionTemplateId": "952d39d80fc84420b772a5058b19d909",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-10-25T17:32:26.961+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 3,
+    "LibraryId": "6fe76569-e7b0-431e-a61f-cb423c2a648f",
+    "LibraryLogicalName": "cat_powercatcomponentlibrary_0be3a",
+    "LibraryVersion": "2023-11-04T05:31:35Z",
+    "OriginalComponentDefinitionTemplateId": "2e88179d732a402184a767c94eab038b",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-10-25T17:32:26.961+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 12,
+    "LibraryId": "6fe76569-e7b0-431e-a61f-cb423c2a648f",
+    "LibraryLogicalName": "cat_powercatcomponentlibrary_0be3a",
+    "LibraryVersion": "2023-11-04T05:31:35Z",
+    "OriginalComponentDefinitionTemplateId": "6da4b2f929d240969e49e05e10e720ce",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2023-10-25T17:32:26.961+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "9325410f-1d71-42b4-a793-b447efde049a",
+    "LibraryLogicalName": "cr34d_cards_61fc2",
+    "LibraryVersion": "2024-03-04T00:38:06Z",
+    "OriginalComponentDefinitionTemplateId": "0198e9c53a594da7be956d55338937e1",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-03-04T00:38:11.172+00:00"
+  },
+  {
+    "HasLibraryLogicalName": true,
+    "InstanceCount": 0,
+    "LibraryId": "9325410f-1d71-42b4-a793-b447efde049a",
+    "LibraryLogicalName": "cr34d_cards_61fc2",
+    "LibraryVersion": "2024-03-04T00:38:06Z",
+    "OriginalComponentDefinitionTemplateId": "6003628994234bb98abc671d1ee2c087",
+    "RefusedSourceLastTimeSaved": "0001-01-01T00:00:00",
+    "SourceLastTimeSaved": "2024-03-04T00:38:11.172+00:00"
+  }
+]

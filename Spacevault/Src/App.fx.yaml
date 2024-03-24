@@ -1,0 +1,417 @@
+App As appinfo:
+    BackEnabled: =true
+    ConfirmExit: =true
+    Formulas: |
+        =
+        
+        
+        lastmiledeliverydocno= LookUp('Invoice Out',ID=12);
+        
+        
+        
+        dashinbound= AddColumns(
+            GroupBy(
+                dashin,
+                "Company",
+                "bbb"
+            ),
+            "Invoice",
+            CountRows(
+                Distinct(
+                    bbb,
+                    Title
+                )
+            ),
+            "QTY",
+            Sum(
+                bbb,
+               Value( 'Total Items')
+            ),"SKU",Sum(bbb,'Total Sku')
+        );
+        
+        
+        
+        
+        
+        
+        
+        
+        Months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+        _firstofmon = DateAdd(
+            Today(),
+            1 - Day(Today()),
+            TimeUnit.Days
+        );
+        firstdvie = DateAdd(
+            _firstofmon,
+            -(Weekday(_firstofmon) - 2 + 1),
+            TimeUnit.Days
+        );
+        lastdaymon = DateAdd(
+            DateAdd(
+                _firstofmon,
+                1,
+                TimeUnit.Months
+            ),
+            -1,
+            TimeUnit.Days
+        );
+        colContinentColors = [
+            {
+                ContinentName: "North America",
+                R: 230,
+                G: 25,
+                B: 75,
+                Extended: false,
+                ViewBox: "0 170 400 300"
+            },
+            {
+                ContinentName: "South America",
+                R: 245,
+                G: 130,
+                B: 48,
+                Extended: false,
+                ViewBox: "200 400 200 300"
+            },
+            {
+                ContinentName: "Europe",
+                R: 60,
+                G: 180,
+                B: 75,
+                Extended: true,
+                ViewBox: "400 185 200 180"
+            },
+            {
+                ContinentName: "Asia",
+                R: 0,
+                G: 130,
+                B: 200,
+                Extended: false,
+                ViewBox: "540 100 480 385"
+            },
+            {
+                ContinentName: "Oceania",
+                R: 100,
+                G: 100,
+                B: 100,
+                Extended: false,
+                ViewBox: "750 400 270 250"
+            },
+            {
+                ContinentName: "Africa",
+                R: 145,
+                G: 30,
+                B: 180,
+                Extended: false,
+                ViewBox: "440 330 270 250"
+            },
+            {
+                ContinentName: "Antarctica",
+                R: 255,
+                G: 255,
+                B: 255,
+                Extended: false,
+                ViewBox: "400 185 200 180"
+            }
+        ];
+        //Menu in Country-Details
+        Clientpa = If(
+            VARUSER.Role = "Admin",
+            "Clients"
+        );
+        Transfercount = Filter(
+            'Master Out Bound',
+            'Fulfillment Type'.Value = "Transfer",
+            Date >= DateAdd(
+                Today(),
+                -Day(Today())
+            ) && Date <= Today()
+        );
+        InboundIn = Filter(
+            'Master In Bound',
+            Date >= DateAdd(
+                Today(),
+                -Day(Today())
+            ) && Date <= Today()
+        );
+        Clientlist = ForAll(
+            Sort(
+                'Company name',
+                Title,
+                SortOrder.Ascending
+            ),
+            Table(
+                {
+                    ItemKey: ThisRecord.Title,
+                    ItemDisplayName: ThisRecord.Title
+                }
+            )
+        );
+        colRowImages = Table(
+            {
+                name: "pdf",
+                url: "https://static2.sharepointonline.com/files/fabric/assets/item-types/16/pdf.svg"
+            },
+            {
+                name: "png",
+                url: "https://static2.sharepointonline.com/files/fabric/assets/item-types/16/photo.svg"
+            },
+            {
+                name: "pdf",
+                url: "https://static2.sharepointonline.com/files/fabric/assets/item-types/16/pptx.svg"
+            },
+            {
+                name: "docx",
+                url: "https://static2.sharepointonline.com/files/fabric/assets/item-types/16/docx.svg"
+            },
+            {
+                name: "xlsx",
+                url: "https://static2.sharepointonline.com/files/fabric/assets/item-types/16/xlsx.svg"
+            }
+        );
+        Colllectedd = With({CILL:Filter(
+                LastMile,
+                Collected = false
+            )},CountRows(CILL)
+            
+        );
+        RTNNN = With({RT:Filter(
+                LastMile,
+                RTN = true
+            )},CountRows(RT)
+            
+        );
+        Lastmilehold = With({Hol:Filter(
+                LastMile,
+                StartsWith(
+                    Status,
+                    "Returned"
+                )
+            )},CountRows(Hol)
+            
+        );
+        Navitable = Table(
+            {
+                ItemKey: "Home",
+                ItemDisplayName: "Home",
+                ItemIconName: "HomeSolid",
+                ItemIconColor: "red",
+                TargetScreen: Home
+            },
+            {
+                ItemKey: "FulFillment",
+                ItemDisplayName: "FulFillment",
+                ItemIconName: "ShoppingCartSolid",
+                ItemIconColor: "SeaGreen",
+                TargetScreen: Screen8
+            },
+            {
+                ItemKey: "Inbound",
+                ItemDisplayName: "Inbound",
+                ItemEnabled: true,
+                ItemIconName: "ReceiptForward",
+                TargetScreen: 'Inbound Doc'
+            },
+            {
+                ItemKey: "Products",
+                ItemDisplayName: "Products",
+                ItemEnabled: true,
+                ItemIconName: "ProductVariant",
+                ItemIconColor: "SeaGreen",
+                TargetScreen: Products
+            },
+            {
+                ItemKey: "Task",
+                ItemDisplayName: "Task",
+                ItemEnabled: true,
+                ItemIconName: "IssueSolid",
+                TargetScreen: Task
+            },
+            {
+                ItemKey: "Logistics",
+                ItemDisplayName: "Logistics",
+                ItemIconName: "DeliveryTruck",
+                ItemIconColor: "SeaGreen",
+                TargetScreen: 'Return Exchange Create Tookan'
+            },
+            {
+                ItemKey: "Reports",
+                ItemDisplayName: "Reports",
+                ItemIconName: "PowerBILogo",
+                ItemIconColor: "SeaGreen",
+                TargetScreen: Reportss
+            }
+        );
+        navtable1 = Table(
+            {
+                ItemKey: "Doc",
+                ItemDisplayName: "Documents",
+                ItemIconName: "OneDriveFolder16",
+                ItemIconColor: "Black",
+                TargetScreen: 'Document folder'
+            },
+            {
+                ItemKey: "Clients",
+                ItemDisplayName: "Clients",
+                ItemIconName: "WorkforceManagement",
+                ItemIconColor: "SeaGreen",
+                TargetScreen: Clients
+            },
+            {
+                ItemKey: "Settings",
+                ItemDisplayName: "Settings",
+                ItemEnabled: true,
+                ItemIconName: "Settings",
+                TargetScreen: Settings,
+                ItemIconColor: "Red"
+            }
+        );
+    OnStart: |-
+        =Concurrent(Set(
+            background,
+            JSON(
+                Image1_1.Image,
+                JSONFormat.IncludeBinaryData
+            )
+        ),
+        Set(
+            backgfoot,
+            JSON(
+                Image1_2.Image,
+                JSONFormat.IncludeBinaryData
+            )
+        ),
+        Set(
+            logooo,
+            JSON(
+                Image1.Image,
+                JSONFormat.IncludeBinaryData
+            )
+        ),
+        Set(
+            paginatedgall,
+            1
+        ),
+        ClearCollect(
+            orty,
+            "Order",
+            "Transfer",
+            "Scan Error",
+            "On Request"
+        ),
+        ClearCollect(
+            fulty,
+            "local",
+            "International"
+        ),
+        ClearCollect(
+            comname,
+            'Company name'
+        ),
+        Set(
+            AppTheme,
+            {
+                palette: {
+                    themePrimary: "#0078d4",
+                    themeLighterAlt: "#eff6fc",
+                    themeLighter: "#deecf9",
+                    themeLight: "#c7e0f4",
+                    themeTertiary: "#71afe5",
+                    themeSecondary: "#2b88d8",
+                    themeDarkAlt: "#106ebe",
+                    themeDark: "#005a9e",
+                    themeDarker: "#004578",
+                    neutralLighterAlt: "#faf9f8",
+                    neutralLighter: "#f3f2f1",
+                    neutralLight: "#edebe9",
+                    neutralQuaternaryAlt: "#e1dfdd",
+                    neutralQuaternary: "#d0d0d0",
+                    neutralTertiaryAlt: "#c8c6c4",
+                    neutralTertiary: "#a19f9d",
+                    neutralSecondary: "#605e5c",
+                    neutralPrimaryAlt: "#3b3a39",
+                    neutralPrimary: "#323130",
+                    neutralDark: "#201f1e",
+                    black: "#000000",
+                    white: "#ffffff"
+                },
+                paletteCSS: {
+                    themePrimary: "#0078d4",
+                    themeLighterAlt: "#eff6fc",
+                    themeLighter: "#deecf9",
+                    themeLight: "#c7e0f4",
+                    themeTertiary: "#71afe5",
+                    themeSecondary: "#2b88d8",
+                    themeDarkAlt: "#106ebe",
+                    themeDark: "#005a9e",
+                    themeDarker: "#004578",
+                    neutralLighterAlt: "#faf9f8",
+                    neutralLighter: "#f3f2f1",
+                    neutralLight: "#edebe9",
+                    neutralQuaternaryAlt: "#e1dfdd",
+                    neutralQuaternary: "#d0d0d0",
+                    neutralTertiaryAlt: "#c8c6c4",
+                    neutralTertiary: "#a19f9d",
+                    neutralSecondary: "#605e5c",
+                    neutralPrimaryAlt: "#3b3a39",
+                    neutralPrimary: "#323130",
+                    neutralDark: "#201f1e",
+                    black: "#000000",
+                    white: "#ffffff"
+                },
+                fontSizes: {
+                    xs: 10,
+                    s: 11,
+                    m: 13,
+                    l: 16,
+                    xl: 20
+                },
+                U: 4
+            }
+        ));
+        Set(
+            AppThemeJson,
+            JSON(AppTheme.palette)
+        );
+        ClearCollect(
+            colCategory,
+            Choices('Work progress tracker'.Progress)
+        );
+        Clear(colData);
+        ForAll(
+            Sequence(CountRows(colCategory)),
+            Collect(
+                colData,
+                {
+                    Value: Last(
+                        FirstN(
+                            colCategory,
+                            ThisRecord.Value
+                        )
+                    ).Value,
+                    RowNumber: Value
+                }
+            )
+        )
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

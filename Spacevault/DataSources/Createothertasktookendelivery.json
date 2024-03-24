@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "fefbd2b5-5e1d-4188-8d13-f9fb5197d02c",
+    "Name": "Createothertasktookendelivery",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "ef135071-8754-ee11-be6f-000d3a69dce2"
+  }
+]

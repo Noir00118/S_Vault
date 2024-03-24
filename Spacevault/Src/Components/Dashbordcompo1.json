@@ -1,0 +1,109 @@
+{
+  "ComponentAllowCustomization": true,
+  "ComponentChangedSinceFileImport": true,
+  "ComponentManifest": {
+    "AllowAccessToGlobals": true,
+    "AllowCustomization": true,
+    "Description": "",
+    "Name": "Dashbordcompo1",
+    "TemplateGuid": "c0cc49cc0788410c8b3b9493e88d6811"
+  },
+  "ComponentType": "CanvasComponent",
+  "CustomGroupControlTemplateName": "",
+  "CustomProperties": [
+    {
+      "Category": 0,
+      "DisplayName": "Top Count",
+      "Hidden": false,
+      "Name": "TopCount",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Badge",
+      "Hidden": false,
+      "Name": "Badge",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "HTML",
+      "Hidden": false,
+      "Name": "HTML",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Fillcolor",
+      "Hidden": false,
+      "Name": "Fillcolor",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "icone",
+      "Hidden": false,
+      "Name": "icone",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "color",
+      "Hidden": false,
+      "Name": "color",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "option",
+      "Hidden": false,
+      "Name": "option",
+      "PropertyDataTypeKey": "Table",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"Value\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "Custom property 1",
+      "Hidden": true,
+      "Name": "CustomProperty1",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "optionlogic",
+      "Hidden": false,
+      "Name": "optionlogic",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.338\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
+    }
+  ],
+  "FirstParty": true,
+  "Id": "http://microsoft.com/appmagic/Component",
+  "IsComponentLocked": false,
+  "IsComponentTemplate": true,
+  "IsCustomGroupControlTemplate": false,
+  "IsPcfControl": false,
+  "IsPremiumPcfControl": false,
+  "IsWidgetTemplate": false,
+  "LastModifiedTimestamp": "638468371213925562",
+  "Name": "c0cc49cc0788410c8b3b9493e88d6811",
+  "OverridableProperties": {},
+  "TemplateOriginalName": "93c2badaf0714095b1753d62252b6e67",
+  "Version": "1.0"
+}

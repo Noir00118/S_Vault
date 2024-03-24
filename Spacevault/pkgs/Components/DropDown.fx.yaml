@@ -1,0 +1,116 @@
+DropDown As CanvasComponent:
+    AllowSearching: =true
+    Border: =2
+    BorderColor: =RGBA(86, 40, 233, 1)
+    DefaultHeight: =100
+    DefaultValue: =""
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =DropDown.MenuWidth
+    InputTextPlaceholder: ="Find items"
+    Items: |-
+        =Table({Value: "SampleText1"}, {Value: "SampleText2"}, {Value: "SampleText3"},{Value: "SampleText4"})
+    MenuWidth: =If(_showDropDown, SearchCountrCTl.Height+HtmlText1_4.Height + 10,100) 
+    OnReset: =Set(_selectedItem, "")
+    SelectedItemColor: =RGBA(86, 40, 233, 1)
+    ShowScrollbar: =true
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Rectangle3_4 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =If(!_showDropDown, 100, 350)
+        Width: =640
+        ZIndex: =1
+
+    HtmlText1_4 As htmlViewer:
+        Height: =260
+        HtmlText: |-
+            ="<div style='margin:5px;background:#ffffff ;width:"&Gallery1_8.Width&"px;height:"&Gallery1_8.Height&"px;box-shadow:0 3px 9px 0px  #1E1E1E; border-radius:5px'></div>"
+        OnSelect: =
+        Visible: =_showDropDown
+        Width: =Parent.Width
+        Y: =89
+        ZIndex: =2
+
+    Gallery1_8 As gallery.galleryVertical:
+        BorderColor: =DropDown.BorderColor
+        BorderThickness: =DropDown.Border
+        Height: =226
+        Items: =If(IsBlank(SearchCountrCTl.Text),DropDown.Items, If(DropDown.AllowSearching, Search(DropDown.Items, SearchCountrCTl.Text, "Value"), DropDown.Items))
+        Layout: =Layout.Vertical
+        OnSelect: =Set(_showDropDown, false); Set(_selectedItem, ThisItem.Value);
+        ShowScrollbar: =DropDown.ShowScrollbar
+        TemplateSize: =70
+        Visible: =_showDropDown
+        Width: =Parent.Width-30
+        X: =HtmlText1_4.X+10
+        Y: =100
+        ZIndex: =3
+
+        Rectangle2_8 As rectangle:
+            Fill: =RGBA(204, 204, 204, 1)
+            Height: =1
+            OnSelect: =Set(_showDropDown, false); Set(_selectedItem, ThisItem.Value);
+            Width: =Parent.Width-10
+            Y: =69
+            ZIndex: =1
+
+        Label3_1 As label:
+            Color: =If(ThisItem.IsSelected, RGBA(86, 40, 233, 1),  RGBA(0, 0, 0, 1))
+            Font: =Font.'Segoe UI'
+            Height: =70
+            OnSelect: =Set(_showDropDown, false); Set(_selectedItem, ThisItem.Value);
+            PaddingLeft: =20
+            Size: =16
+            Text: =ThisItem.Value
+            Width: =Parent.Width-10
+            ZIndex: =2
+
+    HtmlText2_1 As htmlViewer:
+        Height: =98
+        HtmlText: |-
+            ="<div style='margin:5px;background:#ffffff ;width:"&SearchCountrCTl.Width&"px;height:"&SearchCountrCTl.Height&"px;box-shadow:0 2px 8px 0px  #1E1E1E; border-radius:5px'></div>"
+        Width: =Parent.Width
+        Y: =4
+        ZIndex: =4
+
+    SearchCountrCTl As text:
+        BorderColor: =DropDown.BorderColor
+        BorderThickness: =DropDown.Border
+        Default: |-
+            =//If(IsBlank( Gallery1.Selected.Value), "", _selectedItem)
+            _selectedItem
+        DelayOutput: =true
+        DisabledBorderColor: =RGBA(160, 159, 159, 1)
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        DisplayMode: =
+        FocusedBorderThickness: =DropDown.Border
+        Font: =Font.'Segoe UI'
+        Height: =70
+        HintText: =DropDown.InputTextPlaceholder
+        HoverBorderColor: =DropDown.BorderColor
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnSelect: =Set(_showDropDown, !_showDropDown);
+        PaddingLeft: =60
+        PressedBorderColor: =DropDown.BorderColor
+        PressedFill: =RGBA(255, 255, 255, 1)
+        Size: =16
+        Tooltip: =
+        Width: =Parent.Width-30
+        X: =HtmlText1_4.X+10
+        Y: =15
+        ZIndex: =5
+
+    Icon1_1 As icon.Calculator:
+        Color: =DropDown.BorderColor
+        Icon: =Icon.Search
+        PaddingBottom: =20
+        PaddingLeft: =20
+        PaddingRight: =20
+        PaddingTop: =20
+        X: =SearchCountrCTl.X
+        Y: =SearchCountrCTl.Y+3
+        ZIndex: =6
+

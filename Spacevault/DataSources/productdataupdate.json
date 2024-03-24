@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "8aa63126-b652-48c4-b45a-fcf4bab09135",
+    "Name": "productdataupdate",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "5c4703bb-169a-ee11-be37-6045bd8c9633"
+  }
+]

@@ -1,0 +1,3249 @@
+"Settings As screen.'autoLayout_HeaderFooter_ver1.0'":
+    Fill: =RGBA(227, 227, 227, 0)
+
+    Container164_10 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(245, 245, 245, 100)
+        Height: =Parent.Height
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =4
+
+        Container166_10 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semilight
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutMinHeight: =100
+            LayoutMinWidth: =25
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Component2_6.Width
+            ZIndex: =1
+
+            Component2_6 As Component2:
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+
+        ScreenContainer3_3 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(245, 245, 245, 100)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =5
+            PaddingRight: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            ZIndex: =2
+
+            HeaderContainer3_4 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =45
+                LayoutJustifyContent: =LayoutJustifyContent.Center
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =20
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                "Pivot1 As 'Fluent Pivot (1.0.22)'.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Start
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Height: =20
+                    ItemChecked: =
+                    Items: |-
+                        =Table(
+                                    {ItemKey:"Users",ItemDisplayName:"Users",ItemIconName:"ContactCardSettings"},
+                                    
+                                    {ItemKey:"Clients",ItemDisplayName:"Client Work Profile",ItemIconName:"CRMServices"},
+                                    {ItemKey:"Bin",ItemDisplayName:"Bin",ItemIconName:"RowsGroup"},
+                                    {ItemKey:"Theam",ItemDisplayName:"Theme",ItemIconName:"ColorSolid"}
+                                   
+                                )
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    OnSelect: |-
+                        =Switch(
+                            Self.Selected.ItemKey,
+                            "Clients",
+                            ViewForm(Form1_1);
+                            UpdateContext({Useedit: false});
+                            UpdateContext({Clientsss: true}),
+                            "Users",ViewForm(Form1_3);
+                            UpdateContext({Clientsss: false});
+                            UpdateContext({Useedit: true})
+                        )
+                    RenderSize: =If(Self.Selected.ItemKey=Self.SelectedKey,'PowerCAT.Pivot.RenderSize'.Normal,'PowerCAT.Pivot.RenderSize'.Normal)
+                    RenderType: ='PowerCAT.Pivot.RenderType'.PivotLinks
+                    SelectedKey: =Coalesce(Self.Selected.ItemKey,"(none)")
+                    Theme: =AppThemeJson
+                    Width: =500
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    ItemCount1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemCount"
+                        FieldName: ="ItemCount"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =25
+
+                    ItemDisplayName1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemDisplayName"
+                        FieldName: ="ItemDisplayName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =26
+
+                    ItemIconName1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemIconName"
+                        FieldName: ="ItemIconName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =3
+                        ZIndex: =27
+
+                    ItemKey1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemKey"
+                        FieldName: ="ItemKey"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =4
+                        ZIndex: =28
+
+            Container51 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.Semilight
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =40
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =20
+                PaddingRight: =20
+                ZIndex: =2
+
+                "CommandBar5 As 'Fluent Command Bar (1.0.22)'.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Height: =40
+                    Items: |-
+                        =Table({
+                                ItemKey: "ADD",
+                                ItemIconName: "AddNotes",
+                                ItemDisplayName: "New",
+                                ItemIconColor: "rgb(0, 102, 34)",
+                                ItemIconOnly: false,
+                                ItemFarItem: false
+                            } ,
+                           
+                            {
+                                ItemKey: "Edit",
+                                ItemDisplayName: "Edit",
+                                ItemIconName: "EditMirrored",
+                               
+                                ItemFarItem: true
+                               
+                            },
+                           
+                            {
+                                ItemKey: "Cancel",
+                                ItemDisplayName: "Cancel",
+                                ItemIconName: "Cancel",
+                               
+                                ItemFarItem: true,
+                                ItemVisible:If(Form1_1.Mode=FormMode.Edit||Form1_3.Mode=FormMode.Edit,true,false)
+                               
+                            },
+                           
+                            {
+                                ItemKey: "Import",
+                                ItemDisplayName: "Import",
+                                ItemIconName: "Import",
+                               ItemVisible:If(Pivot1.Selected.ItemKey="Bin",true,false),
+                                ItemFarItem: false
+                               
+                            },{
+                                ItemKey: "Save",
+                                ItemIconName: "SaveAll",
+                                ItemDisplayName: "Save",
+                                ItemIconColor: "rgb(0, 102, 34)",
+                                ItemIconOnly: false,
+                                ItemFarItem: false,
+                                ItemVisible:If(Form1_1.Mode=FormMode.Edit||Form1_3.Mode=FormMode.Edit,true,false)
+                            } ,{
+                                ItemKey: "Delete",
+                                ItemDisplayName: "Delete",
+                                ItemIconName: "Delete",
+                                ItemIconOnly: true,
+                                ItemFarItem: true,
+                                ItemIconColor: "rgb(232, 17, 35)"
+                            })
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    OnSelect: |-
+                        =Switch(
+                            Self.Selected.ItemKey,
+                            "Edit",If(VARUSER.Admin=true,
+                            Switch(
+                                Pivot1.Selected.ItemKey,
+                                "Clients",
+                                Set(
+                                    Itempre,
+                                    Blank()
+                                );
+                                EditForm(Form1_1),
+                                "Users",
+                                EditForm(Form1_3)
+                            ),Notify("You Dont have Access To Edit",NotificationType.Warning)),
+                            "ADD",
+                            Switch(
+                                Pivot1.Selected.ItemKey,
+                                "Clients",
+                                Set(
+                                    Itempre,
+                                    LookUp(
+                                        'Invoice Out',
+                                        ID = 6
+                                    ).Title
+                                );
+                                ResetForm(Form1_1);
+                                NewForm(Form1_1),
+                                "Users",
+                                ResetForm(Form1_3);
+                                NewForm(Form1_3)
+                            ),
+                            "Delete",
+                            Switch(
+                                Pivot1.Selected.ItemKey,
+                                "Users",
+                        
+                                Remove(UserID,LookUp(UserID,ID=PowerAppsOneGrid4.Selected.ID));Notify("Deleted",NotificationType.Success);
+                                UpdateContext({Edituser: false});
+                                ViewForm(Form1_3);
+                                Set(
+                                    usersel,
+                                    Blank()
+                                ),"Clients",Remove('Company name',LookUp('Company name',ID=PowerAppsOneGrid5.Selected.ID));Notify("Deleted",NotificationType.Success)
+                            ),
+                            "Save",
+                            Switch(
+                                Pivot1.Selected.ItemKey,
+                                "Users",
+                                SubmitForm(Form1_3),
+                                "Clients",
+                                SubmitForm(Form1_1)
+                            ),"Cancel",ViewForm(Form1_3);ViewForm(Form1_1)
+                        )
+                    Theme: =AppThemeJson
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    ItemDisplayName4 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemDisplayName"
+                        FieldName: ="ItemDisplayName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =50
+
+                    ItemFarItem3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemFarItem"
+                        FieldName: ="ItemFarItem"
+                        FieldType: ="b"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =51
+
+                    ItemIconColor3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemIconColor"
+                        FieldName: ="ItemIconColor"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =3
+                        ZIndex: =52
+
+                    ItemIconName4 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemIconName"
+                        FieldName: ="ItemIconName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =4
+                        ZIndex: =53
+
+                    ItemIconOnly3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemIconOnly"
+                        FieldName: ="ItemIconOnly"
+                        FieldType: ="b"
+                        FieldVariantName: ="textualColumn"
+                        Order: =5
+                        ZIndex: =54
+
+                    ItemKey4 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemKey"
+                        FieldName: ="ItemKey"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =6
+                        ZIndex: =55
+
+                    ItemVisiable1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="ItemVisiable"
+                        FieldName: ="ItemVisiable"
+                        FieldType: ="b"
+                        FieldVariantName: ="textualColumn"
+                        Order: =7
+                        ZIndex: =56
+
+            Container55 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                MainContainer3_4 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =2
+
+                    Container3_2 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =6
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =300
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =Clientsss
+                        ZIndex: =1
+
+                        Container65 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Semilight
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =250
+                            ZIndex: =1
+
+                            glExpandMenu_3 As gallery.galleryVertical:
+                                AccessibleLabel: ="Menu"
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                BorderColor: =
+                                Fill: =RGBA(255, 255, 255, 1)
+                                FocusedBorderThickness: =0
+                                Height: =
+                                Items: ='Company name'
+                                Layout: =Layout.Vertical
+                                LayoutMinHeight: =287
+                                LayoutMinWidth: =320
+                                OnSelect: =
+                                ShowScrollbar: =false
+                                TabIndex: =1
+                                TemplateFill: =
+                                TemplateSize: =35
+                                Transition: =Transition.Push
+                                Visible: =false
+                                Width: =170
+                                Y: =45
+                                ZIndex: =1
+
+                                "Elevation2_7 As 'Fluent Elevation (1.0.22)'":
+                                    Depth: ='PowerCAT.Elevation.Depth'.Depth8
+                                    DisplayMode: =DisplayMode.Edit
+                                    Height: =30
+                                    HoverDepth: ='PowerCAT.Elevation.HoverDepth'.Depth8
+                                    PaddingBottom: =1
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    Visible: =If(ThisItem.Title=Clientview.Title,true,false)
+                                    Width: =Parent.TemplateWidth-1
+                                    X: =1
+                                    Y: =Parent.TemplateHeight/2-Self.Height/2
+                                    ZIndex: =2
+
+                                "Elevation2_6 As 'Fluent Elevation (1.0.22)'":
+                                    DarkOverlay: =false
+                                    Depth: ='PowerCAT.Elevation.Depth'.Depth0
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillColor: =""
+                                    Height: =30
+                                    HoverDepth: ='PowerCAT.Elevation.HoverDepth'.Depth8
+                                    HoverFillColor: ="White"
+                                    PaddingRight: =2
+                                    Tooltip: =""
+                                    Visible: =true
+                                    Width: =Parent.TemplateWidth-1
+                                    X: =1
+                                    Y: =Parent.TemplateHeight/2-Self.Height/2
+                                    ZIndex: =3
+
+                                Label9_1 As label:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =If(ThisItem.Title=Clientview.Title,RGBA(38, 159, 199, 87),Color.Black)
+                                    FontWeight: =If(ThisItem.Title =Clientview.Title,FontWeight.Bold,FontWeight.Normal)
+                                    Height: =35
+                                    OnSelect: =Select(Parent)
+                                    PaddingLeft: =10
+                                    PaddingRight: =0
+                                    Size: =10
+                                    Text: =ThisItem.Title
+                                    Width: =160
+                                    X: =31
+                                    ZIndex: =4
+
+                                imgIcon_4 As image:
+                                    BorderColor: =ColorFade(imgIcon_4.Fill, -20%)
+                                    Fill: =RGBA(0,0,0,0)
+                                    FocusedBorderThickness: =0
+                                    Height: =25
+                                    HoverBorderColor: =ColorFade(imgIcon_4.BorderColor, 20%)
+                                    HoverFill: =ColorFade(imgIcon_4.Fill, 20%)
+                                    Image: =
+                                    OnSelect: =Select(Parent)
+                                    PressedBorderColor: =ColorFade(imgIcon_4.BorderColor, -20%)
+                                    PressedFill: =ColorFade(imgIcon_4.Fill, -20%)
+                                    Width: =20
+                                    Y: =Parent.TemplateHeight/2-Self.Height/2
+                                    ZIndex: =5
+
+                                rectHighlight_5 As rectangle:
+                                    BorderColor: =ColorFade(rectHighlight_5.Fill, -20%)
+                                    DisabledFill: =rectHighlight_5.Fill
+                                    Fill: =
+                                    FocusedBorderThickness: =0
+                                    Height: =30
+                                    HoverFill: =ColorFade(rectHighlight_5.Fill, 20%)
+                                    OnSelect: =Select(Parent)
+                                    PressedFill: =ColorFade(rectHighlight_5.Fill, -20%)
+                                    Visible: =If(ThisItem.Title=Clientview.Title,true,false)
+                                    Width: =2
+                                    Y: =Parent.TemplateHeight/2-Self.Height/2
+                                    ZIndex: =6
+
+                                rectHighlight_4 As rectangle:
+                                    BorderColor: =ColorFade(rectHighlight_4.Fill, -20%)
+                                    DisabledFill: =rectHighlight_4.Fill
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =0
+                                    Height: =Parent.TemplateHeight
+                                    HoverFill: =
+                                    OnSelect: =Set(Clientview,ThisItem)
+                                    PressedFill: =ColorFade(rectHighlight_4.Fill, -20%)
+                                    Width: =Parent.TemplateWidth
+                                    Y: =
+                                    ZIndex: =7
+
+                                "Icon16 As 'Fluent Icon (1.0.22)'":
+                                    BorderColor: ="Transparent"
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillColor: ="Transparent"
+                                    Height: =35
+                                    HoverFillColor: ="Transparent"
+                                    IconColor: |-
+                                        =If(ThisItem.Title=Clientview.Title,"#269FC7","Black")
+                                    IconName: ="WorkforceManagement"
+                                    OnChange: =Set(Clientview,ThisItem);ViewForm(Form1_1)
+                                    Theme: =AppThemeJson
+                                    Width: =Parent.TemplateWidth-6
+                                    X: =2
+                                    Y: =0
+                                    ZIndex: =8
+
+                            PowerAppsOneGrid5 As Table.pcfdataset:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                DisableChildItemsEditing: ="no"
+                                DisplayMode: =DisplayMode.Edit
+                                EnableAggregation: ="no"
+                                EnableColumnMoving: ="no"
+                                FillPortions: =1
+                                Font: =""
+                                FontSize: =0
+                                FontWeight: =""
+                                HeaderFont: =""
+                                HeaderFontSize: =0
+                                HeaderFontWeight: =""
+                                Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                                Items: ='Company name'
+                                LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                                LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                                NoDataText: =""
+                                OnSelect: =false
+                                ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.ListOnly
+                                Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                                X: =0
+                                Y: =0
+                                ZIndex: =2
+
+                                Title24 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Title"
+                                    FieldName: ="Title"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =1
+                                    ZIndex: =117
+
+                                "'Item No Prefix5' As pcfDataField.textualColumn":
+                                    FieldDisplayName: ="Item No Prefix"
+                                    FieldName: ="INV"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =2
+                                    ZIndex: =118
+
+                                "'Barcode Value12' As pcfDataField.textualColumn":
+                                    FieldDisplayName: ="Barcode Value"
+                                    FieldName: ="OData__dlc_BarcodeValue"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =3
+                                    ZIndex: =119
+
+                                "'Item No Code11' As pcfDataField.textualColumn":
+                                    FieldDisplayName: ="Item No Code"
+                                    FieldName: ="ItemNoCode"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =5
+                                    ZIndex: =120
+
+                                Storage6 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Storage"
+                                    FieldName: ="Storar"
+                                    FieldType: ="E"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =6
+                                    ZIndex: =121
+
+                                Emails13 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Emails"
+                                    FieldName: ="Emails"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =7
+                                    ZIndex: =122
+
+                                "'API Key11' As pcfDataField.textualColumn":
+                                    FieldDisplayName: ="API Key"
+                                    FieldName: ="APIKey"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =8
+                                    ZIndex: =123
+
+                                OperatingSystem5 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="OperatingSystem"
+                                    FieldName: ="OperatingSystem"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =9
+                                    ZIndex: =124
+
+                                "'Used Shelves6' As pcfDataField.textualColumn":
+                                    FieldDisplayName: ="Used Shelves"
+                                    FieldName: ="UsedShelves"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =10
+                                    ZIndex: =125
+
+                                "'Location Type6' As pcfDataField.textualColumn":
+                                    FieldDisplayName: ="Location Type"
+                                    FieldName: ="LocationType"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =11
+                                    ZIndex: =126
+
+                                Attachments16 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Attachments"
+                                    FieldName: ="{Attachments}"
+                                    FieldType: ="r*"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =12
+                                    ZIndex: =127
+
+                        Container57 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Semilight
+                            Fill: =RGBA(255, 255, 255, 1)
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =10
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Width: =400
+                            ZIndex: =2
+
+                            BadgeCanvas5_5 As Badge:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Appearance: ='BadgeCanvas.Appearance'.Filled
+                                BasePaletteColor: =RGBA(15, 108, 189, 1)
+                                Content: ="Details"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Shape: ='BadgeCanvas.Shape'.Rounded
+                                ThemeColor: ='BadgeCanvas.ThemeColor'.Brand
+                                Width: =32
+                                X: =0
+                                Y: =0
+                                ZIndex: =1
+
+                            Form1_1 As form.PowerApps_CoreControls_Form:
+                                DataSource: ='Company name'
+                                DefaultMode: =FormMode.View
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Item: =PowerAppsOneGrid5.Selected
+                                LayoutMinHeight: =250
+                                LayoutMinWidth: =400
+                                NumberOfColumns: =1
+                                OnSuccess: |-
+                                    =Notify(
+                                        "done",
+                                        NotificationType.Success
+                                    );
+                                    If(
+                                        !IsBlank(Itempre),
+                                        Patch(
+                                            'Invoice Out',
+                                            LookUp(
+                                                'Invoice Out',
+                                                ID = 6
+                                            ),
+                                            {Title: Itempre + 1}
+                                        )
+                                    );
+                                    ResetForm(Form1_1);
+                                    NewForm(Form1_1);
+                                    Set(
+                                        usersel,
+                                        Blank()
+                                    );
+                                    UpdateContext({Edituser: false})
+                                SnapToColumns: =false
+                                UseFluentV9Cards: =true
+                                ZIndex: =2
+
+                                Title_DataCard6 As typedDataCard.fluentV9TextualEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="Title"
+                                    Default: =ThisItem.Title
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"Title")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =70
+                                    MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "Title")
+                                    Required: =true
+                                    Update: =DataCardValue18.Value
+                                    Width: =941
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =1
+
+                                    DataCardKey21 As Text:
+                                        AutoHeight: =false
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =52
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =40
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    "DataCardValue18 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =DataCardKey21.X + DataCardKey21.Width+20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage16 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue18.Y + DataCardValue18.Height
+                                        ZIndex: =3
+
+                                    StarVisible16 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        AutoHeight: =true
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey21.Y
+                                        ZIndex: =4
+
+                                OperatingSystem_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="OperatingSystem"
+                                    Default: =ThisItem.OperatingSystem
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"OperatingSystem")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =70
+                                    MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "OperatingSystem")
+                                    Required: =true
+                                    Update: =DropdownCanvas6.Selected.Value
+                                    Width: =941
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =1
+                                    ZIndex: =1
+
+                                    DataCardKey22 As Text:
+                                        AutoHeight: =true
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =22
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =40
+                                        Y: =7
+                                        ZIndex: =1
+
+                                    "DataCardValue19 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Visible: =false
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =DataCardKey22.X + DataCardKey22.Width
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage18 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue19.Y + DataCardValue19.Height
+                                        ZIndex: =3
+
+                                    StarVisible18 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        AutoHeight: =true
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey22.Y
+                                        ZIndex: =4
+
+                                    DropdownCanvas6 As Dropdown.pcfdataset:
+                                        DefaultSelectedItems: |-
+                                            =If(Form1_1.Mode=FormMode.View,[{Value: Parent.Default}],["OFS","OMS"])
+                                        DisplayMode: =DisplayMode.Edit
+                                        Height: =32
+                                        Items: =["OFS","OMS"]
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =302
+                                        Y: =17
+                                        ZIndex: =6
+
+                                Storage_DataCard1 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="Storar"
+                                    Default: =ThisItem.Storage
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"Storar")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =70
+                                    Required: =false
+                                    Update: =DataCardValue26.SelectedItems
+                                    Width: =571
+                                    WidthFit: =true
+                                    X: =-1
+                                    Y: =2
+                                    ZIndex: =1
+
+                                    DataCardKey29 As Text:
+                                        AutoHeight: =true
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =22
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =40
+                                        Y: =7
+                                        ZIndex: =1
+
+                                    DataCardValue26 As Combobox.pcfdataset:
+                                        DefaultSelectedItems: =Parent.Default
+                                        Font: =""
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Items: =Choices('Company name'.Storage)
+                                        SelectMultiple: =true
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =DataCardKey29.X + DataCardKey29.Width+20
+                                        Y: =18
+                                        ZIndex: =37
+
+                                        Title21 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="Title"
+                                            FieldName: ="Title"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =3
+                                            ZIndex: =38
+
+                                        "'Item No Prefix7' As pcfDataField.textualColumn":
+                                            FieldDisplayName: ="Item No Prefix"
+                                            FieldName: ="INV"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =5
+                                            ZIndex: =39
+
+                                        "'Barcode Value10' As pcfDataField.textualColumn":
+                                            FieldDisplayName: ="Barcode Value"
+                                            FieldName: ="OData__dlc_BarcodeValue"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =6
+                                            ZIndex: =40
+
+                                        "'Item No Code10' As pcfDataField.textualColumn":
+                                            FieldDisplayName: ="Item No Code"
+                                            FieldName: ="ItemNoCode"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =7
+                                            ZIndex: =41
+
+                                        Storage5 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="Storage"
+                                            FieldName: ="Storar"
+                                            FieldType: ="E"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =2
+                                            ZIndex: =42
+
+                                        Emails10 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="Emails"
+                                            FieldName: ="Emails"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =8
+                                            ZIndex: =43
+
+                                        "'API Key10' As pcfDataField.textualColumn":
+                                            FieldDisplayName: ="API Key"
+                                            FieldName: ="APIKey"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =9
+                                            ZIndex: =44
+
+                                        OperatingSystem6 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="OperatingSystem"
+                                            FieldName: ="OperatingSystem"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =10
+                                            ZIndex: =45
+
+                                        "'Used Shelves9' As pcfDataField.textualColumn":
+                                            FieldDisplayName: ="Used Shelves"
+                                            FieldName: ="UsedShelves"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =11
+                                            ZIndex: =46
+
+                                        "'Location Type5' As pcfDataField.textualColumn":
+                                            FieldDisplayName: ="Location Type"
+                                            FieldName: ="LocationType"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =12
+                                            ZIndex: =47
+
+                                        Attachments10 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="Attachments"
+                                            FieldName: ="{Attachments}"
+                                            FieldType: ="r*"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =12
+                                            ZIndex: =48
+
+                                        Value5 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="Value"
+                                            FieldName: ="Value"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =1
+                                            ZIndex: =49
+
+                                "'Item No Prefix_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="INV"
+                                    Default: =ThisItem.'Item No Prefix'
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"INV")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =70
+                                    MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "INV")
+                                    Required: =false
+                                    Update: =DataCardValue21.Value
+                                    Width: =941
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =2
+                                    ZIndex: =1
+
+                                    DataCardKey24 As Text:
+                                        AutoHeight: =false
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =52
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =40
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    "DataCardValue21 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =If(Form1_1.Mode=FormMode.View||Form1_1.Mode=FormMode.Edit,Parent.Default,LookUp('Invoice Out',ID=6).Title)
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =DataCardKey24.X + DataCardKey24.Width+20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage20 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue21.Y + DataCardValue21.Height
+                                        ZIndex: =3
+
+                                    StarVisible20 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey24.Y
+                                        ZIndex: =4
+
+                                "'Item No Code_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="ItemNoCode"
+                                    Default: =ThisItem.'Item No Code'
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"ItemNoCode")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =70
+                                    MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "ItemNoCode")
+                                    Required: =false
+                                    Update: =DataCardValue22.Value
+                                    Width: =941
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =3
+                                    ZIndex: =1
+
+                                    DataCardKey25 As Text:
+                                        AutoHeight: =false
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =52
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =40
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    "DataCardValue22 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =If(Form1_1.Mode=FormMode.View||Form1_1.Mode=FormMode.Edit,Parent.Default,Concatenate(LookUp('Invoice Out',ID=6).Title,"000001"))
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =DataCardKey25.X + DataCardKey25.Width+20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage21 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue22.Y + DataCardValue22.Height
+                                        ZIndex: =3
+
+                                    StarVisible21 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey25.Y
+                                        ZIndex: =4
+
+                                Emails_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="Emails"
+                                    Default: =ThisItem.Emails
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"Emails")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =70
+                                    MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "Emails")
+                                    Required: =false
+                                    Update: =DataCardValue24.Value
+                                    Width: =941
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =4
+                                    ZIndex: =1
+
+                                    DataCardKey27 As Text:
+                                        AutoHeight: =false
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =52
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =40
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    "DataCardValue24 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =DataCardKey27.X + DataCardKey27.Width+20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage24 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue24.Y + DataCardValue24.Height
+                                        ZIndex: =3
+
+                                    StarVisible24 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey27.Y
+                                        ZIndex: =4
+
+                    Container45 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.Semilight
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =5
+                        PaddingRight: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =Useedit
+                        ZIndex: =3
+
+                        PowerAppsOneGrid4 As Table.pcfdataset:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisableChildItemsEditing: ="no"
+                            DisplayMode: =DisplayMode.Edit
+                            EnableAggregation: ="no"
+                            EnableColumnMoving: ="no"
+                            FillPortions: =1
+                            Font: =""
+                            FontSize: =0
+                            FontWeight: =""
+                            HeaderFont: =""
+                            HeaderFontSize: =0
+                            HeaderFontWeight: =""
+                            Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                            Items: =Users
+                            LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                            LayoutMinWidth: =
+                            NoDataText: =""
+                            OnSelect: =false
+                            ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.ListOnly
+                            Width: =400
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                            Title23 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Title"
+                                FieldName: ="Title"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =2
+                                ZIndex: =103
+
+                            Password2 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Password"
+                                FieldName: ="Password"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =10
+                                ZIndex: =104
+
+                            "'User Name3' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="User Name"
+                                FieldName: ="UserID"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =5
+                                ZIndex: =105
+
+                            "'3PL OFS ID1' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="3PL OFS ID"
+                                FieldName: ="OfsUserID"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =11
+                                ZIndex: =106
+
+                            Fulfillment1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Fulfillment"
+                                FieldName: ="Fulfillment"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =13
+                                ZIndex: =108
+
+                            "'Task update1' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="Task update"
+                                FieldName: ="Task_x0020_update"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =13
+                                ZIndex: =109
+
+                            CRM1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="CRM"
+                                FieldName: ="CRM"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =12
+                                ZIndex: =110
+
+                            Admin1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Admin"
+                                FieldName: ="Admin"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =12
+                                ZIndex: =111
+
+                            "'Sub Role1' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="Sub Role"
+                                FieldName: ="SubRole"
+                                FieldType: ="E"
+                                FieldVariantName: ="textualColumn"
+                                Order: =11
+                                ZIndex: =112
+
+                            Role1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Role"
+                                FieldName: ="Role"
+                                FieldType: ="E"
+                                FieldVariantName: ="textualColumn"
+                                Order: =9
+                                ZIndex: =116
+
+                            "'User Name4' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="User Name"
+                                FieldName: ="field_2"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =128
+
+                            UsersMail1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="UsersMail"
+                                FieldName: ="UsersMail"
+                                FieldType: ="E"
+                                FieldVariantName: ="textualColumn"
+                                Order: =4
+                                ZIndex: =129
+
+                            Admin2 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Admin"
+                                FieldName: ="field_7"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =14
+                                ZIndex: =130
+
+                            "'3PL OFS ID2' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="3PL OFS ID"
+                                FieldName: ="field_3"
+                                FieldType: ="n"
+                                FieldVariantName: ="textualColumn"
+                                Order: =15
+                                ZIndex: =131
+
+                            Password3 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Password"
+                                FieldName: ="field_1"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =16
+                                ZIndex: =132
+
+                            "'Sub Role2' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="Sub Role"
+                                FieldName: ="field_6"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =17
+                                ZIndex: =133
+
+                            Role2 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Role"
+                                FieldName: ="field_4"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =3
+                                ZIndex: =134
+
+                            "'Task update2' As pcfDataField.textualColumn":
+                                FieldDisplayName: ="Task update"
+                                FieldName: ="field_9"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =18
+                                ZIndex: =135
+
+                            Fulfillment2 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Fulfillment"
+                                FieldName: ="field_10"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =19
+                                ZIndex: =136
+
+                            CRM2 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="CRM"
+                                FieldName: ="field_8"
+                                FieldType: ="b"
+                                FieldVariantName: ="textualColumn"
+                                Order: =20
+                                ZIndex: =137
+
+                            Name6 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Name"
+                                FieldName: ="{Name}"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =21
+                                ZIndex: =138
+
+                        Container74 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Semilight
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =5
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Width: =400
+                            ZIndex: =2
+
+                            BadgeCanvas5 As Badge:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Appearance: ='BadgeCanvas.Appearance'.Filled
+                                BasePaletteColor: =RGBA(15, 108, 189, 1)
+                                Content: ="Details"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Shape: ='BadgeCanvas.Shape'.Square
+                                ThemeColor: ='BadgeCanvas.ThemeColor'.Brand
+                                Width: =32
+                                X: =0
+                                Y: =0
+                                ZIndex: =1
+
+                            Form1_3 As form.PowerApps_CoreControls_Form:
+                                DataSource: =Users
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Item: =PowerAppsOneGrid4.Selected
+                                LayoutMinHeight: =250
+                                LayoutMinWidth: =400
+                                NumberOfColumns: =1
+                                OnSuccess: |-
+                                    =Notify(
+                                        "done",
+                                        NotificationType.Success
+                                    );
+                                    ResetForm(Form1_3);
+                                    ViewForm(Form1_3);
+                                    Set(
+                                        usersel,
+                                        Blank()
+                                    );
+                                    UpdateContext({Edituser: false})
+                                UseFluentV9Cards: =true
+                                Width: =0
+                                ZIndex: =2
+
+                                "'User Name_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_2"
+                                    Default: =ThisItem.'User Name'
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_2")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    MaxLength: =DataSourceInfo([@Users], DataSourceInfo.MaxLength, "field_2")
+                                    Required: =false
+                                    Update: =DataCardValue52.Value
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =50
+                                    ZIndex: =1
+
+                                    DataCardKey62 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =5
+                                        ZIndex: =1
+
+                                    "DataCardValue52 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage56 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue52.Y + DataCardValue52.Height
+                                        ZIndex: =3
+
+                                    StarVisible56 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey62.Y
+                                        ZIndex: =4
+
+                                UsersMail_DataCard1 As typedDataCard.fluentV9ComboBoxEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="UsersMail"
+                                    Default: =ThisItem.UsersMail
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"UsersMail")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Update: =DataCardValue64.Selected
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =100
+                                    ZIndex: =1
+
+                                    DataCardKey75 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =5
+                                        ZIndex: =1
+
+                                    DataCardValue64 As Combobox.pcfdataset:
+                                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                        DefaultSelectedItems: =[Parent.Default]
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Items: =Choices([@Users].UsersMail)
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                        DisplayName1 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="DisplayName"
+                                            FieldName: ="DisplayName"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =1
+                                            ZIndex: =139
+
+                                        Email1 As pcfDataField.textualColumn:
+                                            FieldDisplayName: ="Email"
+                                            FieldName: ="Email"
+                                            FieldType: ="s"
+                                            FieldVariantName: ="textualColumn"
+                                            Order: =2
+                                            ZIndex: =140
+
+                                    ErrorMessage70 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue64.Y + DataCardValue64.Height
+                                        ZIndex: =3
+
+                                    StarVisible70 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =20
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey75.Y
+                                        ZIndex: =4
+
+                                Title_DataCard8 As typedDataCard.fluentV9TextualEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="Title"
+                                    Default: =ThisItem.Title
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"Title")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    MaxLength: =DataSourceInfo([@Users], DataSourceInfo.MaxLength, "Title")
+                                    Required: =false
+                                    Update: =DataCardValue39.Value
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =150
+                                    ZIndex: =1
+
+                                    DataCardKey50 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: ="login ID"
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =5
+                                        ZIndex: =1
+
+                                    "DataCardValue39 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage29 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue39.Y + DataCardValue39.Height
+                                        ZIndex: =3
+
+                                    StarVisible29 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey50.Y
+                                        ZIndex: =4
+
+                                Password_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_1"
+                                    Default: =ThisItem.Password
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_1")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    MaxLength: =DataSourceInfo([@Users], DataSourceInfo.MaxLength, "field_1")
+                                    Required: =false
+                                    Update: =DataCardValue25.Value
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =200
+                                    ZIndex: =1
+
+                                    DataCardKey28 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =5
+                                        ZIndex: =1
+
+                                    "DataCardValue25 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage23 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue25.Y + DataCardValue25.Height
+                                        ZIndex: =3
+
+                                    StarVisible23 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey28.Y
+                                        ZIndex: =4
+
+                                Admin_DataCard1 As typedDataCard.fluentV9ToggleEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_7"
+                                    Default: =ThisItem.Admin
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_7")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Update: =DataCardValue7.Checked
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =250
+                                    ZIndex: =1
+
+                                    DataCardKey8 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =5
+                                        ZIndex: =1
+
+                                    DataCardValue7 As Toggle:
+                                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                        BasePaletteColor: =
+                                        Checked: =Parent.Default
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Label: =""
+                                        OnCheck: =false
+                                        OnUncheck: =false
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage6 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue7.Y + DataCardValue7.Height
+                                        ZIndex: =3
+
+                                    StarVisible6 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey8.Y
+                                        ZIndex: =4
+
+                                CRM_DataCard1 As typedDataCard.fluentV9ToggleEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_8"
+                                    Default: =ThisItem.CRM
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_8")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Update: =DataCardValue8.Checked
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =300
+                                    ZIndex: =1
+
+                                    DataCardKey9 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =4 + (DataCardValue8.Height / 2) - (Self.Height / 2)
+                                        ZIndex: =1
+
+                                    DataCardValue8 As Toggle:
+                                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                        BasePaletteColor: =
+                                        Checked: =Parent.Default
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Label: =""
+                                        OnCheck: =false
+                                        OnUncheck: =false
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage7 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue8.Y + DataCardValue8.Height
+                                        ZIndex: =3
+
+                                    StarVisible7 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey9.Y
+                                        ZIndex: =4
+
+                                Fulfillment_DataCard1 As typedDataCard.fluentV9ToggleEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_10"
+                                    Default: =ThisItem.Fulfillment
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_10")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Update: =DataCardValue9.Checked
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =350
+                                    ZIndex: =1
+
+                                    DataCardKey14 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =4 + (DataCardValue9.Height / 2) - (Self.Height / 2)
+                                        ZIndex: =1
+
+                                    DataCardValue9 As Toggle:
+                                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                        BasePaletteColor: =
+                                        Checked: =Parent.Default
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Label: =""
+                                        OnCheck: =false
+                                        OnUncheck: =false
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage8 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue9.Y + DataCardValue9.Height
+                                        ZIndex: =3
+
+                                    StarVisible8 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey14.Y
+                                        ZIndex: =4
+
+                                "'Task update_DataCard1' As typedDataCard.fluentV9ToggleEditCard":
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_9"
+                                    Default: =ThisItem.'Task update'
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_9")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Update: =DataCardValue29.Checked
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =400
+                                    ZIndex: =1
+
+                                    DataCardKey33 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =4 + (DataCardValue29.Height / 2) - (Self.Height / 2)
+                                        ZIndex: =1
+
+                                    DataCardValue29 As Toggle:
+                                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                        BasePaletteColor: =
+                                        Checked: =Parent.Default
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Label: =""
+                                        OnCheck: =false
+                                        OnUncheck: =false
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage28 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue29.Y + DataCardValue29.Height
+                                        ZIndex: =3
+
+                                    StarVisible28 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey33.Y
+                                        ZIndex: =4
+
+                                Role_DataCard1 As typedDataCard.fluentV9TextualEditCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_4"
+                                    Default: =ThisItem.Role
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_4")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    MaxLength: =DataSourceInfo([@Users], DataSourceInfo.MaxLength, "field_4")
+                                    Required: =false
+                                    Update: =DataCardValue27.Value
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =450
+                                    ZIndex: =1
+
+                                    DataCardKey30 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =4 + (DataCardValue27.Height / 2) - (Self.Height / 2)
+                                        ZIndex: =1
+
+                                    "DataCardValue27 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage25 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue27.Y + DataCardValue27.Height
+                                        ZIndex: =3
+
+                                    StarVisible25 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey30.Y
+                                        ZIndex: =4
+
+                                "'Sub Role_DataCard1' As typedDataCard.fluentV9TextualEditCard":
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_6"
+                                    Default: =ThisItem.'Sub Role'
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_6")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    MaxLength: =DataSourceInfo([@Users], DataSourceInfo.MaxLength, "field_6")
+                                    Required: =false
+                                    Update: =DataCardValue28.Value
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =500
+                                    ZIndex: =1
+
+                                    DataCardKey32 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =4 + (DataCardValue28.Height / 2) - (Self.Height / 2)
+                                        ZIndex: =1
+
+                                    "DataCardValue28 As 'Text input'":
+                                        AccessibleLabel: =Parent.DisplayName
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        Required: =Parent.Required
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage27 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue28.Y + DataCardValue28.Height
+                                        ZIndex: =3
+
+                                    StarVisible27 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey32.Y
+                                        ZIndex: =4
+
+                                "'3PL OFS ID_DataCard1' As typedDataCard.fluentV9NumberEditCard":
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="field_3"
+                                    Default: =ThisItem.'3PL OFS ID'
+                                    DisplayMode: =Parent.DisplayMode
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"field_3")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Update: =Value(DataCardValue6.Value)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =550
+                                    ZIndex: =1
+
+                                    DataCardKey7 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =4 + (DataCardValue6.Height / 2) - (Self.Height / 2)
+                                        ZIndex: =1
+
+                                    "DataCardValue6 As 'Text input'":
+                                        AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =Parent.DisplayMode
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                                    ErrorMessage5 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: =Parent.Error
+                                        Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =Parent.Width - 48
+                                        Wrap: =true
+                                        X: =24
+                                        Y: =DataCardValue6.Y + DataCardValue6.Height
+                                        ZIndex: =3
+
+                                    StarVisible5 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =30
+                                        Text: ="*"
+                                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                        Width: =30
+                                        X: =0
+                                        Y: =DataCardKey7.Y
+                                        ZIndex: =4
+
+                                ID_DataCard2 As typedDataCard.fluentV9TextualViewCard:
+                                    BorderStyle: =BorderStyle.Solid
+                                    DataField: ="ID"
+                                    Default: =ThisItem.ID
+                                    DisplayMode: =DisplayMode.View
+                                    DisplayName: =DataSourceInfo([@Users],DataSourceInfo.DisplayName,"ID")
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =79
+                                    Required: =false
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =600
+                                    ZIndex: =1
+
+                                    DataCardKey26 As Text:
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =43
+                                        Text: =Parent.DisplayName
+                                        Weight: ='TextCanvas.Weight'.Semibold
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        Wrap: =false
+                                        X: =24
+                                        Y: =5
+                                        ZIndex: =1
+
+                                    "DataCardValue23 As 'Text input'":
+                                        Align: ="Start"
+                                        BasePaletteColor: =
+                                        DisplayMode: =DisplayMode.View
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =32
+                                        Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                        ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                        Value: =Parent.Default
+                                        Width: =(Parent.Width - 48) * 0.4
+                                        X: =Parent.Width-Self.Width-20
+                                        Y: =10
+                                        ZIndex: =2
+
+                "ThemeDesigner1 As 'Fluent Theme Designer (1.0.22)'":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Height: =200
+                    LayoutMinHeight: =200
+                    LayoutMinWidth: =200
+                    ThemeJSON: =AppThemeJson
+                    Visible: =false
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+    Form1_5 As form.PowerApps_CoreControls_Form:
+        AcceptsFocus: =true
+        DataSource: ='Company name'
+        DefaultMode: =FormMode.New
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =483
+        Item: =Clientview
+        NumberOfColumns: =1
+        OnSuccess: |-
+            =Notify("done",NotificationType.Success);If(!IsBlank(Itempre),Patch('Invoice Out',LookUp('Invoice Out',ID=6),{Title:Itempre+1}));ResetForm(Form1_5);NewForm(Form1_5);Set(usersel,Blank());UpdateContext({Edituser:false})
+        SnapToColumns: =false
+        UseFluentV9Cards: =true
+        Visible: =false
+        Width: =0
+        X: =1366
+        Y: =125
+        ZIndex: =5
+
+        Title_DataCard6_1 As typedDataCard.fluentV9TextualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "Title")
+            Required: =true
+            Update: =DataCardValue18_1.Value
+            Width: =426
+            WidthFit: =true
+            X: =0
+            Y: =0
+            ZIndex: =57
+
+            StarVisible16_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey21_1.Y
+                ZIndex: =58
+
+            DataCardKey21_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue18_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =59
+
+            "DataCardValue18_1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                Align: ="Start"
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey21_1.X + DataCardKey21_1.Width
+                Y: =10
+                ZIndex: =60
+
+            ErrorMessage16_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue18_1.Y + DataCardValue18_1.Height
+                ZIndex: =61
+
+        OperatingSystem_DataCard1_1 As typedDataCard.fluentV9TextualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="OperatingSystem"
+            Default: =ThisItem.OperatingSystem
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"OperatingSystem")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "OperatingSystem")
+            Required: =true
+            Update: =DropdownCanvas6_1.Selected.Value
+            Width: =426
+            WidthFit: =true
+            X: =0
+            Y: =1
+            ZIndex: =62
+
+            StarVisible18_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey22_1.Y
+                ZIndex: =63
+
+            DataCardKey22_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue19_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =64
+
+            "DataCardValue19_1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                Align: ="Start"
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Visible: =false
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey22_1.X + DataCardKey22_1.Width
+                Y: =10
+                ZIndex: =65
+
+            DropdownCanvas6_1 As Dropdown.pcfdataset:
+                DefaultSelectedItems: |-
+                    =If(Form1_5.Mode=FormMode.View,[{Value: Parent.Default}],["OFS","OMS"])
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Items: =["OFS","OMS"]
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey22_1.X + DataCardKey22_1.Width
+                Y: =10
+                ZIndex: =66
+
+            ErrorMessage18_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue19_1.Y + DataCardValue19_1.Height
+                ZIndex: =67
+
+        Storage_DataCard1_1 As typedDataCard.fluentV9ComboBoxMultiSelectEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Storar"
+            Default: =ThisItem.Storage
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"Storar")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            Required: =false
+            Update: =DataCardValue26_1.SelectedItems
+            Width: =426
+            WidthFit: =true
+            X: =-1
+            Y: =2
+            ZIndex: =68
+
+            DataCardKey29_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue26_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =69
+
+            DataCardValue26_1 As Combobox.pcfdataset:
+                DefaultSelectedItems: =Parent.Default
+                Font: =""
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Items: =Choices('Company name'.Storage)
+                SelectMultiple: =true
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey29_1.X + DataCardKey29_1.Width
+                Y: =10
+                ZIndex: =70
+
+                Title21_1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Title"
+                    FieldName: ="Title"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =3
+                    ZIndex: =71
+
+                "'Item No Prefix7_1' As pcfDataField.textualColumn":
+                    FieldDisplayName: ="Item No Prefix"
+                    FieldName: ="INV"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =5
+                    ZIndex: =72
+
+                "'Barcode Value10_1' As pcfDataField.textualColumn":
+                    FieldDisplayName: ="Barcode Value"
+                    FieldName: ="OData__dlc_BarcodeValue"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =6
+                    ZIndex: =73
+
+                "'Item No Code10_1' As pcfDataField.textualColumn":
+                    FieldDisplayName: ="Item No Code"
+                    FieldName: ="ItemNoCode"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =7
+                    ZIndex: =74
+
+                Storage5_1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Storage"
+                    FieldName: ="Storar"
+                    FieldType: ="E"
+                    FieldVariantName: ="textualColumn"
+                    Order: =2
+                    ZIndex: =75
+
+                Emails10_1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Emails"
+                    FieldName: ="Emails"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =8
+                    ZIndex: =76
+
+                "'API Key10_1' As pcfDataField.textualColumn":
+                    FieldDisplayName: ="API Key"
+                    FieldName: ="APIKey"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =9
+                    ZIndex: =77
+
+                OperatingSystem6_1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="OperatingSystem"
+                    FieldName: ="OperatingSystem"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =10
+                    ZIndex: =78
+
+                "'Used Shelves9_1' As pcfDataField.textualColumn":
+                    FieldDisplayName: ="Used Shelves"
+                    FieldName: ="UsedShelves"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =11
+                    ZIndex: =79
+
+                "'Location Type5_1' As pcfDataField.textualColumn":
+                    FieldDisplayName: ="Location Type"
+                    FieldName: ="LocationType"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =12
+                    ZIndex: =80
+
+                Attachments10_1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Attachments"
+                    FieldName: ="{Attachments}"
+                    FieldType: ="r*"
+                    FieldVariantName: ="textualColumn"
+                    Order: =12
+                    ZIndex: =81
+
+                Value5_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Value"
+                    FieldName: ="Value"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =82
+
+        "'Item No Prefix_DataCard1_1' As typedDataCard.fluentV9TextualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="INV"
+            Default: =ThisItem.'Item No Prefix'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"INV")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "INV")
+            Required: =false
+            Update: =DataCardValue21_1.Value
+            Width: =426
+            WidthFit: =true
+            X: =0
+            Y: =2
+            ZIndex: =83
+
+            StarVisible20_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey24_1.Y
+                ZIndex: =84
+
+            DataCardKey24_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue21_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =85
+
+            "DataCardValue21_1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                Align: ="Start"
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =If(Form1_5.Mode=FormMode.View||Form1_5.Mode=FormMode.Edit,Parent.Default,LookUp('Invoice Out',ID=6).Title)
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey24_1.X + DataCardKey24_1.Width
+                Y: =10
+                ZIndex: =86
+
+            ErrorMessage20_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue21_1.Y + DataCardValue21_1.Height
+                ZIndex: =87
+
+        "'Item No Code_DataCard1_1' As typedDataCard.fluentV9TextualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ItemNoCode"
+            Default: =ThisItem.'Item No Code'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"ItemNoCode")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "ItemNoCode")
+            Required: =false
+            Update: =DataCardValue22_1.Value
+            Width: =426
+            WidthFit: =true
+            X: =0
+            Y: =3
+            ZIndex: =88
+
+            StarVisible21_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey25_1.Y
+                ZIndex: =89
+
+            DataCardKey25_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue22_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =90
+
+            "DataCardValue22_1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                Align: ="Start"
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =If(Form1_5.Mode=FormMode.View||Form1_5.Mode=FormMode.Edit,Parent.Default,Concatenate(LookUp('Invoice Out',ID=6).Title,"000001"))
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey25_1.X + DataCardKey25_1.Width
+                Y: =10
+                ZIndex: =91
+
+            ErrorMessage21_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue22_1.Y + DataCardValue22_1.Height
+                ZIndex: =92
+
+        Emails_DataCard1_1 As typedDataCard.fluentV9TextualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Emails"
+            Default: =ThisItem.Emails
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"Emails")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "Emails")
+            Required: =false
+            Update: =DataCardValue24_1.Value
+            Width: =426
+            WidthFit: =true
+            X: =0
+            Y: =4
+            ZIndex: =93
+
+            StarVisible24_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey27_1.Y
+                ZIndex: =94
+
+            DataCardKey27_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue24_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =95
+
+            "DataCardValue24_1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                Align: ="Start"
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey27_1.X + DataCardKey27_1.Width
+                Y: =10
+                ZIndex: =96
+
+            ErrorMessage24_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue24_1.Y + DataCardValue24_1.Height
+                ZIndex: =97
+
+        "'API Key_DataCard1_1' As typedDataCard.fluentV9TextualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="APIKey"
+            Default: =ThisItem.'API Key'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Company name'],DataSourceInfo.DisplayName,"APIKey")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70
+            MaxLength: =DataSourceInfo([@'Company name'], DataSourceInfo.MaxLength, "APIKey")
+            Required: =false
+            Update: =DataCardValue25_1.Value
+            Width: =426
+            WidthFit: =true
+            X: =0
+            Y: =5
+            ZIndex: =98
+
+            StarVisible25_1 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                X: =0
+                Y: =DataCardKey28_1.Y
+                ZIndex: =99
+
+            DataCardKey28_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =22
+                Text: =Parent.DisplayName
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =(Parent.Width - 48) * 0.4
+                Wrap: =false
+                X: =24
+                Y: =4 + (DataCardValue25_1.Height / 2) - (Self.Height / 2)
+                ZIndex: =100
+
+            "DataCardValue25_1 As 'Text input'":
+                AccessibleLabel: =Parent.DisplayName
+                Align: ="Start"
+                BasePaletteColor: =
+                DisplayMode: =Parent.DisplayMode
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                Required: =Parent.Required
+                ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                Value: =Parent.Default
+                Width: =(Parent.Width - 48) * 0.4
+                X: =DataCardKey28_1.X + DataCardKey28_1.Width
+                Y: =10
+                ZIndex: =101
+
+            ErrorMessage25_1 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                Height: =30
+                Text: =Parent.Error
+                Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                Width: =Parent.Width - 48
+                Wrap: =true
+                X: =24
+                Y: =DataCardValue25_1.Y + DataCardValue25_1.Height
+                ZIndex: =102
+

@@ -1,0 +1,2757 @@
+Screen8 As screen:
+    OnVisible: =Set(Orderfilter,"Order")
+
+    BottomContainer1_1 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(245, 245, 245, 100)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Container170_2 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =If(ISexpp,130,40)
+            ZIndex: =1
+
+            Image11_1 As image:
+                Height: =40
+                Image: ='WhatsApp Image 2023-11-09 at 14.43.02_c0bf4c3d'
+                LayoutMinWidth: =10
+                ZIndex: =1
+
+            "Icon22_1 As 'Fluent Icon (1.0.22)'":
+                DisplayMode: =DisplayMode.Edit
+                Height: =30
+                IconColor: ="SeaGreen"
+                IconName: ="WaffleOffice365"
+                LayoutMinHeight: =200
+                LayoutMinWidth: =20
+                OnChange: =Set(ISexpp,!ISexpp)
+                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                Theme: =AppThemeJson
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+            "Nav3_2 As 'Fluent Nav (1.0.22)'.pcfdataset":
+                CollapseByDefault: =true
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Height: =200
+                Items: =Navitable
+                LayoutMinHeight: =200
+                OnSelect: |-
+                    =If(
+                        Self.Selected.TargetScreen <> App.ActiveScreen,
+                        Navigate(Self.Selected.TargetScreen)
+                    )
+                SelectedKey: =LookUp(Navitable,TargetScreen=App.ActiveScreen).ItemKey
+                Theme: =AppThemeJson
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+                ItemDisplayName12_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemDisplayName"
+                    FieldName: ="ItemDisplayName"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =20
+
+                ItemEnabled5_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemEnabled"
+                    FieldName: ="ItemEnabled"
+                    FieldType: ="b"
+                    FieldVariantName: ="textualColumn"
+                    Order: =2
+                    ZIndex: =21
+
+                ItemIconColor7_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconColor"
+                    FieldName: ="ItemIconColor"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =3
+                    ZIndex: =22
+
+                ItemIconName12_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconName"
+                    FieldName: ="ItemIconName"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =4
+                    ZIndex: =23
+
+                ItemKey12_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemKey"
+                    FieldName: ="ItemKey"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =5
+                    ZIndex: =24
+
+                TargetScreen2_2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="TargetScreen"
+                    FieldName: ="TargetScreen"
+                    FieldType: ="v"
+                    FieldVariantName: ="textualColumn"
+                    Order: =6
+                    ZIndex: =25
+
+            "Nav3_3 As 'Fluent Nav (1.0.22)'.pcfdataset":
+                CollapseByDefault: =true
+                DisplayMode: =DisplayMode.Edit
+                Height: =150
+                Items: =navtable1
+                LayoutMinHeight: =200
+                OnSelect: |-
+                    =If(
+                        Self.Selected.TargetScreen <> App.ActiveScreen,
+                        Navigate(Self.Selected.TargetScreen)
+                    )
+                SelectedKey: =LookUp(navtable1,TargetScreen=App.ActiveScreen).ItemKey
+                Theme: =AppThemeJson
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+                ItemDisplayName12_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemDisplayName"
+                    FieldName: ="ItemDisplayName"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =20
+
+                ItemEnabled5_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemEnabled"
+                    FieldName: ="ItemEnabled"
+                    FieldType: ="b"
+                    FieldVariantName: ="textualColumn"
+                    Order: =2
+                    ZIndex: =21
+
+                ItemIconColor7_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconColor"
+                    FieldName: ="ItemIconColor"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =3
+                    ZIndex: =22
+
+                ItemIconName12_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemIconName"
+                    FieldName: ="ItemIconName"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =4
+                    ZIndex: =23
+
+                ItemKey12_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="ItemKey"
+                    FieldName: ="ItemKey"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =5
+                    ZIndex: =24
+
+                TargetScreen2_3 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="TargetScreen"
+                    FieldName: ="TargetScreen"
+                    FieldType: ="v"
+                    FieldVariantName: ="textualColumn"
+                    Order: =6
+                    ZIndex: =25
+
+        MainContainer4_2 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =7
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =5
+            PaddingRight: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            Container2 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =37
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =10
+                PaddingRight: =10
+                ZIndex: =1
+
+                "TabList1_3 As 'Tab list'.pcfdataset":
+                    AccessibleLabel: ="1"
+                    AlignInContainer: =AlignInContainer.Stretch
+                    Alignment: ='TabList.Alignment'.Horizontal
+                    BasePaletteColor: =
+                    DefaultSelectedItems: =[Ordermanudef.Value]
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =35
+                    Items: =["Order","Transfer","Edited","Exchange","Return","Web Order","Last Mile"]
+                    LayoutMinHeight: =55
+                    LayoutMinWidth: =280
+                    OnChange: =
+                    OnSelect: |-
+                        =Switch(
+                            Self.Selected.Value,
+                            "Web Order",
+                            Navigate('Web Order');
+                            Set(
+                                Ordermanudef,
+                                Blank()
+                            );
+                            Set(
+                                Ordermanudef,
+                                {Value: "Order"}
+                            ),
+                            "Last Mile",
+                            Set(
+                                Ordermanudef,
+                                Blank()
+                            );
+                            Set(
+                                Ordermanudef,
+                                {Value: "Order"}
+                            );
+                            Navigate('LastMile Orders'),
+                            "Order",
+                            Set(
+                                Orderfilter,
+                                "Order"
+                            ),
+                            "Transfer",
+                            Set(
+                                Orderfilter,
+                                "Transfer"
+                            ),
+                            "Return",
+                            Set(
+                                returnform,
+                                false
+                            );
+                            Set(
+                                Ordermanudef,
+                                Blank()
+                            );
+                            Set(
+                                Ordermanudef,
+                                {Value: "Order"}
+                            );
+                            Navigate(Return),
+                            "Edited",
+                            Set(
+                                Orderfilter,
+                                 "Edited"
+                            ),
+                            "Exchange",
+                            Set(
+                                Orderfilter,
+                                 "Exchange"
+                            )
+                        )
+                    Size: ='TabList.Size'.Small
+                    Visible: =true
+                    Width: =30
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    Value3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Value"
+                        FieldName: ="Value"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =53
+
+                ButtonCanvas2 As Button:
+                    AlignInContainer: =AlignInContainer.Center
+                    Appearance: ='ButtonCanvas.Appearance'.Secondary
+                    BasePaletteColor: =
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =28
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: =Navigate('Import Order')
+                    Text: ="Import"
+                    Width: =70
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+            Container1 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =70
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =2
+
+                Container168_2 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FillPortions: =0
+                    Height: =30
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =1
+
+                    "CommandBar1_1 As 'Fluent Command Bar (1.0.22)'.pcfdataset":
+                        AlignInContainer: =AlignInContainer.Center
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =30
+                        Items: |-
+                            =Table(
+                               
+                                {
+                                    ItemKey: "Return",
+                                    ItemDisplayName: "Return",
+                                    ItemIconName: "ReturnToSession"
+                                },
+                                {
+                                    ItemKey: "Post",
+                                    ItemDisplayName: "Post",
+                                    ItemDivider: true,
+                                    ItemIconName: "Upload"
+                                },
+                                {
+                                    ItemKey: "Down",
+                                    ItemDisplayName: "Export",
+                                    ItemIconName: "ExcelLogoInverse16",
+                                    ItemEnabled: 
+                                        true
+                                    
+                                },
+                                {
+                                    ItemKey: "reaasinge",
+                                    ItemDisplayName: "Reassinge",
+                                    ItemIconName: "ArrowUpRight8",
+                                    ItemEnabled: 
+                                        true,
+                                        ItemIconColor: "rgb(0, 0, 0)"
+                                    
+                                },
+                                {
+                                    ItemKey: "Draft",
+                                    ItemDisplayName: "Draft",
+                                    ItemIconName: "DocumentManagement",
+                                    ItemEnabled: 
+                                        true
+                                    
+                                },
+                                {
+                                    ItemKey: "Print",
+                                    ItemIconName: "Print",
+                                    ItemFarItem: true
+                                },
+                                {
+                                    ItemKey: "tile",
+                                    ItemDisplayName: "Grid view",
+                                    ItemIconName: "refresh",
+                                    ItemIconOnly: true,
+                                    ItemFarItem: true
+                                },
+                                {
+                                    ItemKey: "Delete",
+                                    ItemDisplayName: "Delete",
+                                    ItemIconName: "Delete",
+                                    ItemIconOnly: true,
+                                    ItemFarItem: true,
+                                    ItemIconColor: "rgb(232, 17, 35)"
+                                }
+                            )
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =200
+                        OnSelect: |-
+                            =Switch(
+                                Self.Selected.ItemKey,
+                                "Return",
+                                Set(
+                                    VARreturnn,
+                                    FluentDetailsList1.Selected
+                                );
+                                Set(
+                                    returnform,
+                                    true
+                                );
+                                Navigate(Return),
+                                "Delete",
+                                Set(
+                                    removeFulfillmentt,
+                                    FluentDetailsList1.Selected.Title
+                                );
+                                Set(
+                                    Deletpopup,
+                                    true
+                                ),
+                                "Print",
+                                ClearCollect(
+                                    printepage,
+                                    Filter(
+                                        'Out Bound',
+                                        Title = FluentDetailsList1.Selected.Title
+                                    )
+                                );
+                                Set(
+                                    Barcodeimage,
+                                    JSON(
+                                        Image4.Image,
+                                        JSONFormat.IncludeBinaryData
+                                    )
+                                );
+                                Set(
+                                    logooo,
+                                    JSON(
+                                        Image13.Image,
+                                        JSONFormat.IncludeBinaryData
+                                    )
+                                );
+                                Set(
+                                    QRcod,
+                                    JSON(
+                                        'QRCode for Request Form',
+                                        JSONFormat.IncludeBinaryData
+                                    )
+                                );
+                                Set(
+                                    popprint,
+                                    true
+                                ),
+                                "Down",
+                                ClearCollect(
+                                    expooo,
+                                    ForAll(
+                                        Filter(
+                                            'Out Bound',
+                                            Title = FluentDetailsList1.Selected.Title,
+                                            Date = FluentDetailsList1.Selected.Date
+                                        ),
+                                        {
+                                            DocNo: Title,
+                                            Barcode: Barcode,
+                                            SKU: Sku,
+                                            ItemNo: 'Item No',
+                                            Name: PlainText('Product name'),
+                                            QTY: Qty
+                                        }
+                                    )
+                                );
+                                Set(
+                                    excelexpo,
+                                    ExcelFlow.Run(
+                                        JSON(
+                                            expooo,
+                                            JSONFormat.IncludeBinaryData
+                                        ),
+                                        FluentDetailsList1.Selected.Title
+                                    ).name
+                                );
+                                Download("https://spacefulfillmentsolutions.sharepoint.com/:x:/r/sites/Test/Reports/" & excelexpo),
+                                "tile",
+                                Refresh('Master Out Bound'),
+                                "Post",
+                                If(
+                                    FluentDetailsList1.Selected.Status.Value = "Complete",
+                                    Notify(
+                                        "Order Already Posted",
+                                        NotificationType.Warning
+                                    ),
+                                    updatecustomer.Run(
+                                        TextInputCanvas8_3.Value,
+                                        TextInputCanvas8_5.Value,
+                                        TextInputCanvas8_6.Value,
+                                        TabList6_1.Selected.Value,
+                                        TextInputCanvas8_7.Value,
+                                        FluentDetailsList1.Selected.ID
+                                    );
+                                    Notify(
+                                        "Customer Data Updated",
+                                        NotificationType.Success
+                                    );
+                                    createtasktokkann.Run(
+                                        Concatenate(
+                                            FluentDetailsList1.Selected.Title,
+                                            "-",
+                                            FluentDetailsList1.Selected.'Barcode Value'
+                                        ),
+                                        FluentDetailsList1.Selected.'Barcode Value',
+                                        TextInputCanvas8_3.Value,
+                                        TextInputCanvas8_5.Value,
+                                        TextInputCanvas8_6.Value,
+                                        TabList6_1.Selected.Value,
+                                        TextInputCanvas8_7.Value,
+                                        Text(
+                                            Today(),
+                                            "yyyy-mm-dd"
+                                        ),
+                                        FluentDetailsList1.Selected.ID
+                                    );
+                                    Notify(
+                                        "Posted",
+                                        NotificationType.Success
+                                    );
+                                    Refresh('Master Out Bound')
+                                ),
+                                "reaasinge",
+                                Navigate(
+                                    'Return Exchange Create Tookan',
+                                    ScreenTransition.Cover
+                                ),
+                                "Draft",
+                                Patch(
+                                    'Master Out Bound',
+                                    LookUp(
+                                        'Master Out Bound',
+                                        ID = FluentDetailsList1.Selected.ID
+                                    ),
+                                    {Status: {Value: "Draft"}}
+                                ),"EditInvoice",UpdateContext({Editinvoivee:true})
+                            )
+                        Theme: =AppThemeJson
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                Container168_4 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    EnableChildFocus: =false
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FillPortions: =0
+                    Height: =If(Screen8.Size<ScreenSize.Medium,80,35)
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =5
+                    LayoutJustifyContent: =LayoutJustifyContent.End
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =300
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    PaddingLeft: =5
+                    PaddingRight: =5
+                    ZIndex: =2
+
+                    "Icon6 As 'Fluent Icon (1.0.22)'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =25
+                        IconName: ="ClearFilter"
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        OnChange: |-
+                            =UpdateContext({restfil:{Value:""}});Reset(ComboboxCanvas1_6);UpdateContext({restfil:{Value:Blank()}})
+                        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                        Theme: =AppThemeJson
+                        Width: =30
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "SearchBox2 As 'Fluent SearchBox (1.0.22) Preview'":
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =32
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =100
+                        TabIndex: =1
+                        Theme: =AppThemeJson
+                        Tooltip: =""
+                        Underlined: =true
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    ComboboxCanvas1_6 As Combobox.pcfdataset:
+                        BasePaletteColor: =
+                        DefaultSelectedItems: =restfil
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =10
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        InputTextPlaceholder: ="Clients"
+                        Items: ='Company name'
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =100
+                        Width: =125
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                        Title1_2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Title"
+                            FieldName: ="Title"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =14
+
+                        "'Item No Prefix1_1' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Item No Prefix"
+                            FieldName: ="INV"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =2
+                            ZIndex: =15
+
+                        "'Barcode Value1_1' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Barcode Value"
+                            FieldName: ="OData__dlc_BarcodeValue"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =3
+                            ZIndex: =16
+
+                        "'Item No Code1_1' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Item No Code"
+                            FieldName: ="ItemNoCode"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =5
+                            ZIndex: =17
+
+                        Storage1_1 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Storage"
+                            FieldName: ="Storar"
+                            FieldType: ="E"
+                            FieldVariantName: ="textualColumn"
+                            Order: =6
+                            ZIndex: =18
+
+                        Emails1_1 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Emails"
+                            FieldName: ="Emails"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =7
+                            ZIndex: =19
+
+                        "'API Key1_2' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="API Key"
+                            FieldName: ="APIKey"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =8
+                            ZIndex: =20
+
+                        OperatingSystem1_2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="OperatingSystem"
+                            FieldName: ="OperatingSystem"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =9
+                            ZIndex: =21
+
+                        "'Used Shelves1_2' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Used Shelves"
+                            FieldName: ="UsedShelves"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =10
+                            ZIndex: =22
+
+                        "'Location Type1_2' As pcfDataField.textualColumn":
+                            FieldDisplayName: ="Location Type"
+                            FieldName: ="LocationType"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =11
+                            ZIndex: =23
+
+                        Attachments1_2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Attachments"
+                            FieldName: ="{Attachments}"
+                            FieldType: ="r*"
+                            FieldVariantName: ="textualColumn"
+                            Order: =12
+                            ZIndex: =24
+
+                    "DatePickerCanvas1_1 As 'Date picker'":
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =10
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Format: ='DatePickerCanvas.Format'.Short
+                        Height: =30
+                        IsEditable: =true
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =100
+                        SelectedDate: =DateAdd(Today(),-15)
+                        Width: =105
+                        X: =0
+                        Y: =0
+                        ZIndex: =5
+
+                    "DatePickerCanvas1_2 As 'Date picker'":
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =10
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Format: ='DatePickerCanvas.Format'.Short
+                        Height: =30
+                        IsEditable: =true
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =100
+                        SelectedDate: =DateAdd(Today(),1)
+                        Width: =105
+                        X: =0
+                        Y: =0
+                        ZIndex: =6
+
+                BadgeCanvas1_4 As Badge:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    Appearance: ='BadgeCanvas.Appearance'.Filled
+                    BasePaletteColor: =
+                    Content: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =3
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =600
+                    Shape: ='BadgeCanvas.Shape'.Square
+                    ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+                    Width: =32
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+            Container153 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =60
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =3
+
+                "FluentDetailsList1 As 'Fluent Details List (1.0.22)'.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    columns_Items: |-
+                        =With(
+                            {
+                                availableWidth: Self.Width},
+                            Table(
+                                {
+                                    ColName: "DocNumber",
+                                    ColIsBold: true,
+                                    ColDisplayName: "DOC",
+                                    ColWidth: 140,
+                                    ColRowHeader: true,
+                                    ColResizable: true,
+                               
+                               
+                                    
+                                    ColSortable:true
+                                },
+                                {
+                                    ColName: "Statuss",
+                                    ColDisplayName: "Status",
+                                    ColWidth: 100,
+                                    ColRowHeader: true,
+                                    ColResizable: true,
+                                    ColCellType: "tag",
+                                    ColTagColorColumn: "TagColor"
+                                },
+                                {
+                                    ColName: "Date",
+                                    ColDisplayName: "Date",
+                                    ColWidth: 100,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                },
+                                {
+                                    ColName: "Company",
+                                    ColDisplayName: "Client",
+                                    ColWidth: 130,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                },
+                                {
+                                    ColName: "inv",
+                                    ColDisplayName: "Invoice NO",
+                                    ColWidth: 100,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                },
+                                {
+                                    ColName: "Fulfuilltyp",
+                                    ColDisplayName: "Fullfill",
+                                    ColWidth: 70,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                },
+                                {
+                                    ColName: "otrtyp",
+                                    ColDisplayName: "Ordertype",
+                                    ColWidth: 70,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                },
+                                {
+                                    ColName: "TotalItem",
+                                    ColDisplayName: "QTY",
+                                    ColWidth: 60,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                },
+                                {
+                                    ColName: "IsReturned",
+                                    ColDisplayName: "IsReturned",
+                                    ColWidth: 80,
+                                    ColRowHeader: true,
+                                    ColResizable: true,
+                                    ColCellType: "tag"
+                                },
+                                {
+                                    ColName: "Drivername",
+                                    ColDisplayName: "Tookan ID",
+                                    ColWidth: availableWidth-140-100-200-130-140-60-80-70-150,
+                                    ColRowHeader: true,
+                                    ColResizable: true
+                                }
+                            )
+                        )
+                    Compact: =true
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Height: =200
+                    InputEvent: =varnextp&selectedrec
+                    Items: |-
+                        =AddColumns(
+                            Sort(
+                                Filter(
+                                    'Master Out Bound',
+                                    StartsWith(
+                                        'Doc Number',
+                                        SearchBox2.SearchText
+                                    ),
+                                    Date >= DatePickerCanvas1_1.SelectedDate && Date <= DatePickerCanvas1_2.SelectedDate,
+                                    IsBlank(ComboboxCanvas1_6.Selected.Title) || false || Company = ComboboxCanvas1_6.Selected.Title,
+                                    IsBlank(Orderfilter)||false||'Fulfillment Type'.Value=Orderfilter
+                                ),
+                                ID,
+                                SortOrder.Descending
+                            ),
+                            "Fulfuilltyp",
+                            'Fulfillment Type'.Value,
+                            "Statuss",
+                            Status.Value,
+                            "otrtyp",
+                            'Order Type'.Value,
+                            "inv",
+                            'Barcode Value',
+                            "rr",
+                            Text(ThisRecord.'Is Returned'),
+                            "TagColor",
+                            If(
+                                Status.Value = "Complete",
+                                "rgb(102, 205,170)",
+                                "rgb(225, 255,255)"
+                            ),
+                            "TagBorderColor",
+                            "rgb(225, 255,255)"
+                        )
+                    LargeDatasetPaging: =false
+                    LayoutMinHeight: =200
+                    LayoutMinWidth: =600
+                    OnChange: |-
+                        =ClearCollect(out,Filter('Out Bound',StartsWith(Title,FluentDetailsList1.Selected.Title))) ;Set(VARreturnn,FluentDetailsList1.Selected);If(
+                            Self.EventName = "OnRowSelectionChange",
+                                Set(selectedrec,Self.EventRowKey)
+                        )
+                    OnSelect: =Set(viewitemss,Self.Selected.'doc no');Set(Showdata,!Showdata) 
+                    PageSize: =25
+                    RaiseOnRowSelectionChangeEvent: =true
+                    RecordKey: =""
+                    SelectionAlwaysVisible: =false
+                    SelectionType: ='PowerCAT.FluentDetailsList.SelectionType'.Multiple
+                    SelectRowsOnFocus: =true
+                    Theme: =AppThemeJson
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    Title3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Title"
+                        FieldName: ="Title"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =1
+                        ZIndex: =6
+
+                    Date1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Date"
+                        FieldName: ="Date"
+                        FieldType: ="D"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        ZIndex: =7
+
+                    "'Number Of Bag1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Number Of Bag"
+                        FieldName: ="Sku"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =3
+                        ZIndex: =8
+
+                    Company1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Company"
+                        FieldName: ="Company"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =4
+                        ZIndex: =9
+
+                    Remark1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Remark"
+                        FieldName: ="Remark"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =5
+                        ZIndex: =10
+
+                    "'pick timer1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="pick timer"
+                        FieldName: ="pick_x0020_timer"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =6
+                        ZIndex: =11
+
+                    "'doc no1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="doc no"
+                        FieldName: ="doc_x0020_no"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =7
+                        ZIndex: =12
+
+                    Status1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Status"
+                        FieldName: ="Status"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =8
+                        ZIndex: =13
+
+                    WMSuser1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="WMSuser"
+                        FieldName: ="WMSuser"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =9
+                        ZIndex: =14
+
+                    "'Order Version1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Order Version"
+                        FieldName: ="OrderVersion"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =10
+                        ZIndex: =15
+
+                    "'Order Type1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Order Type"
+                        FieldName: ="OrderType"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =11
+                        ZIndex: =16
+
+                    JobID1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="JobID"
+                        FieldName: ="Drivername"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =12
+                        ZIndex: =17
+
+                    "'MS ID1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="MS ID"
+                        FieldName: ="MSID"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =13
+                        ZIndex: =18
+
+                    SKU1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="SKU"
+                        FieldName: ="SKU0"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =14
+                        ZIndex: =19
+
+                    "'Total Item1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Total Item"
+                        FieldName: ="TotalItem"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =15
+                        ZIndex: =20
+
+                    joinnn1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="joinnn"
+                        FieldName: ="joinnn"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =16
+                        ZIndex: =21
+
+                    Country1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Country"
+                        FieldName: ="Country"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =17
+                        ZIndex: =22
+
+                    "'Doc Number1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Doc Number"
+                        FieldName: ="DocNumber"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =18
+                        ZIndex: =23
+
+                    view1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="view"
+                        FieldName: ="Barcode0"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =19
+                        ZIndex: =24
+
+                    "'Fulfill Req Source1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Fulfill Req Source"
+                        FieldName: ="FulfillReason"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =20
+                        ZIndex: =25
+
+                    "'Customer Name1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Customer Name"
+                        FieldName: ="CustomerName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =21
+                        ZIndex: =26
+
+                    "'Customer Number1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Customer Number"
+                        FieldName: ="CustomerNumber"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =22
+                        ZIndex: =27
+
+                    "'Expiration Date1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Expiration Date"
+                        FieldName: ="OData__dlc_ExpireDate"
+                        FieldType: ="d"
+                        FieldVariantName: ="textualColumn"
+                        Order: =23
+                        ZIndex: =28
+
+                    "'Barcode Value3' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Barcode Value"
+                        FieldName: ="OData__dlc_BarcodeValue"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =24
+                        ZIndex: =29
+
+                    Payment1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Payment"
+                        FieldName: ="Payment"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =26
+                        ZIndex: =30
+
+                    Amount1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Amount"
+                        FieldName: ="Amount"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =27
+                        ZIndex: =31
+
+                    Addresss1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Addresss"
+                        FieldName: ="Addresss"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =28
+                        ZIndex: =32
+
+                    "'Is Returned1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Is Returned"
+                        FieldName: ="IsReturned"
+                        FieldType: ="b"
+                        FieldVariantName: ="textualColumn"
+                        Order: =29
+                        ZIndex: =33
+
+                    "'Fulfillment Type1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Fulfillment Type"
+                        FieldName: ="FulfillmentType"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Order: =30
+                        ZIndex: =34
+
+                    "'Assigne To1' As pcfDataField.textualColumn":
+                        FieldDisplayName: ="Assigne To"
+                        FieldName: ="AssigneTo"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =31
+                        ZIndex: =35
+
+                    Attachments3 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Attachments"
+                        FieldName: ="{Attachments}"
+                        FieldType: ="r*"
+                        FieldVariantName: ="textualColumn"
+                        Order: =32
+                        ZIndex: =36
+
+                    Fulfuilltyp1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Fulfuilltyp"
+                        FieldName: ="Fulfuilltyp"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =32
+                        ZIndex: =37
+
+                    inv1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="inv"
+                        FieldName: ="inv"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =33
+                        ZIndex: =38
+
+                    otrtyp1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="otrtyp"
+                        FieldName: ="otrtyp"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =34
+                        ZIndex: =39
+
+                    rr1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="rr"
+                        FieldName: ="rr"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =35
+                        ZIndex: =40
+
+                    Statuss1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="Statuss"
+                        FieldName: ="Statuss"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =36
+                        ZIndex: =41
+
+                    TagColor1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="TagColor"
+                        FieldName: ="TagColor"
+                        FieldType: ="c"
+                        FieldVariantName: ="textualColumn"
+                        Order: =37
+                        ZIndex: =42
+
+                    TagBorderColor1 As pcfDataField.textualColumn:
+                        FieldDisplayName: ="TagBorderColor"
+                        FieldName: ="TagBorderColor"
+                        FieldType: ="c"
+                        FieldVariantName: ="textualColumn"
+                        Order: =38
+                        ZIndex: =43
+
+                BadgeCanvas1_3 As Badge:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    Appearance: ='BadgeCanvas.Appearance'.Filled
+                    BasePaletteColor: =
+                    Content: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontColor: =
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =2
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =600
+                    Shape: ='BadgeCanvas.Shape'.Square
+                    ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+                    Width: =32
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                Container168_3 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =32
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =600
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =20
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =3
+
+                    "Icon7 As 'Fluent Icon (1.0.22)'":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =200
+                        IconColor: ="Grey"
+                        IconName: ="DoubleChevronLeft8"
+                        InputEvent: =varnextp
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =200
+                        OnChange: =Set(varnextp,"LoadFirstPage" & Text(Rand()))
+                        Theme: =AppThemeJson
+                        Width: =30
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "Icon7_1 As 'Fluent Icon (1.0.22)'":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =200
+                        IconColor: ="Grey"
+                        IconName: ="ChevronLeftSmall"
+                        InputEvent: =varnextp
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =200
+                        OnChange: =Set(varnextp,"LoadPreviousPage" & Text(Rand()))
+                        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                        Theme: =AppThemeJson
+                        Width: =30
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    BadgeCanvas1 As Badge:
+                        AlignInContainer: =AlignInContainer.Center
+                        Appearance: ='BadgeCanvas.Appearance'.Ghost
+                        BasePaletteColor: =
+                        Content: ="Page " &FluentDetailsList1.PageNumber
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =28
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =32
+                        Shape: ='BadgeCanvas.Shape'.Rounded
+                        ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+                        Width: =70
+                        X: =0
+                        Y: =0
+                        ZIndex: =4
+
+                    "Icon7_2 As 'Fluent Icon (1.0.22)'":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =200
+                        IconColor: ="Grey"
+                        IconName: ="ChevronRightSmall"
+                        InputEvent: =varnextp
+                        LayoutMinHeight: =20
+                        LayoutMinWidth: =200
+                        OnChange: =Set(varnextp,"LoadNextPage" & Text(Rand()));
+                        TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                        Theme: =AppThemeJson
+                        Width: =30
+                        X: =0
+                        Y: =0
+                        ZIndex: =5
+
+                    BadgeCanvas1_2 As Badge:
+                        AlignInContainer: =AlignInContainer.Center
+                        Appearance: ='BadgeCanvas.Appearance'.Ghost
+                        BasePaletteColor: =
+                        Content: =FluentDetailsList1.TotalRecords & " recorde(s)  " & Text(CountRows(FluentDetailsList1.SelectedItems)+0) & " selected"
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        FontColor: =
+                        Height: =28
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =32
+                        Shape: ='BadgeCanvas.Shape'.Rounded
+                        ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+                        Width: =32
+                        X: =0
+                        Y: =0
+                        ZIndex: =7
+
+    Panel_13 As Panel_8:
+        Buttons: =
+        ChildTabPriority: =false
+        DialogWidth: =If(Screen8.Size<ScreenSize.Medium,Parent.Width,700)
+        EnableChildFocus: =false
+        Fill: =Panel_13.OverlayColor
+        Height: =Parent.Height
+        OnCloseSelect: =Set(popprint,false)
+        RoundedButtons: =false
+        Subtitle: =""
+        Title: =""
+        Visible: =popprint
+        Width: =Parent.Width
+        ZIndex: =4
+
+    Container36_1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height-Self.Y-5
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        Visible: =popprint
+        Width: =If(Screen8.Size<ScreenSize.Medium,Parent.Width,630)
+        X: =Parent.Width-Self.Width-65
+        Y: =15
+        ZIndex: =5
+
+        Container37_1 As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =40
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =76
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =10
+            PaddingRight: =10
+            ZIndex: =1
+
+            Toggle2 As Toggle:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =35
+                Label: ="View Price"
+                LayoutMinHeight: =35
+                LayoutMinWidth: =110
+                OnCheck: =false
+                OnUncheck: =false
+                Width: =150
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            ButtonCanvas4_3 As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Subtle
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: |-
+                    =Set(
+                        Invoic,
+                        invoiceflow.Run(
+                            FluentDetailsList1.Selected.Title,
+                            HtmlText6_4.HtmlText
+                        ).invoice
+                    );
+                    Download("https://spacefulfillmentsolutions.sharepoint.com/sites/Test/" & Invoic);
+                    Set(
+                        Invoic,
+                        invoiceflow.Run(
+                            Concatenate(
+                                "AWB",
+                                "_",
+                                FluentDetailsList1.Selected.'Doc Number'
+                            ),
+                            HtmlText11_1.HtmlText
+                        ).invoice
+                    );
+                    Download("https://spacefulfillmentsolutions.sharepoint.com/sites/Test/Downloads/" & Invoic)
+                Text: ="Print"
+                Width: =96
+                X: =197
+                Y: =10
+                ZIndex: =2
+
+            ButtonCanvas39_1 As Button:
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontSize: =0
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: =Set(QRcod,JSON('QRCode for Request Form',JSONFormat.IncludeBinaryData))
+                Visible: =false
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+        Container38_1 As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.None
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =76
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            ZIndex: =2
+
+            HtmlText6_4 As htmlViewer:
+                AlignInContainer: =AlignInContainer.Stretch
+                FillPortions: =1
+                Height: =1047
+                HtmlText: |-
+                    =
+                    
+                    "<!DOCTYPE html>
+                    <html>
+                    
+                    <table  style='width:100%;'>
+                    <tr>
+                    <td style='text-align:left;padding-right:30px;  color:black; font-size:40px;font-family:verdana;width:100%;padding-bottom:30px;'>
+                    <img src= " & logooo & " style='width:100px;height:70px;'></img>
+                    <div style='text-align:left;padding-left:40px;font-size:10px;'>" & VARreturnn.Date & "</div>
+                    
+                    </td>
+                    
+                      
+                      <td style='text-align:right;padding-right:30px;  color:black; font-size:40px;font-family:verdana; '><h2>Invoice</h2></td>
+                    </tr>
+                    </table>
+                      
+                      <div>
+                    <table style='width:100%;'>
+                    
+                    <tr>
+                    <td style='text-align: left; padding-left:10px;padding-top:30px;'>
+                    <div style = 'font-size:11px;'><b>Customer Name :  </b> <a style = 'font-size:10px;'>" & VARreturnn.'Customer Name' & "</div>
+                    <div style = 'font-size:11px;'><b>Customer Number :  </b> <a style = 'font-size:10px;'> " & VARreturnn.'Customer Number' & "</div>
+                    <div style = 'font-size:11px;'><b>Customer Address : </b> <a style = 'font-size:10px;'>" & VARreturnn.Addresss & "</div></td>
+                    <td style='text-align: right;padding-right:10px;padding-bottom:30px;'>
+                    
+                    <div style='text-align:right;padding-right:px;  color:black; font-size:30px;font-family:verdana; '><strong>" & VARreturnn.Company & " </strong>
+                    </div>
+                    
+                    <img alt='Barcode Generator TEC-IT'
+                    src=https://barcode.tec-it.com/barcode.ashx?data="&VARreturnn.'Barcode Value'&"&code=Code39&multiplebarcodes=false&
+                    translate-esc=on&unit=Fit&dpi=96&imagetype=Jpg&rotation=50deg&color=%23000000&bgcolor=%23ffffff&
+                    codepage=Default&qunit=Mm&quiet=0&hidehrt=False' width=250; height=70 />
+                    </img>
+                    
+                    </td>
+                    </tr>
+                     </table>
+                     </div>
+                    
+                    
+                    <table style='width:100%;padding-left:10px;padding-top:10px'>
+                    
+                    <tr>
+                    <td style = 'font-size:15px;'><div style = 'font-size:11px;'><b>Payment : </b> <a style = 'font-size:10px;'>" & VARreturnn.Payment & "</div></td>
+                    <td style = 'font-size:15px;'><div style = 'font-size:11px;text-align: right;padding-right:10px;''><b>Order No : </b> <a style = 'font-size:10px;'> " & VARreturnn.'Doc Number' & "</div></td>
+                    </tr>
+                    <tr>
+                    <td style = 'font-size:15px;'><div style = 'font-size:11px;'><b>Amount : </b> <a style = 'font-size:10px;'> " & VARreturnn.Amount & "</div></td>
+                    <td style = 'font-size:15px;'><div style = 'font-size:11px;text-align: right;padding-right:10px;''><b>AWB :   </b> <a style = 'font-size:10px;'> " & VARreturnn.'Barcode Value' & "</div></td>
+                    </tr>
+                    
+                    </table>
+                    <br>
+                     
+                    "&If(Toggle2.Checked,"
+                    
+                    <table style='font-family: arial;  border-collapse: collapse; width: 100%;' >
+                      <tr style='background-color: MediumSeaGreen;'>
+                      <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>SR#</th>
+                        <th style='border: 1px solid #dddddd; font-size:15px ;text-align: center; padding: 1px;font-size:15px; color:white;'>Barcode </th>
+                        <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>SKU</th>
+                        <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>Discription</th>
+                        <th style='border: 1px solid #dddddd; font-size:15px ;text-align: center; padding: 1px;font-size:15px; color:white;'>Qty</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>Unit Price</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>Total</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>BoxNo</th>
+                      </tr>   " & Concat(
+                        Gallery8_4.AllItems,
+                        "
+                      <tr>
+                      <td style=' border-bottom: 1px solid #ddd;text-align: center;font-size:10px; padding: px;'>" & Rownoo & "</td>
+                        <th style='border-bottom: 1px solid #ddd;text-align:center;font-size:10px; padding: px;'>" & Coalesce(
+                            Barcode,
+                            LookUp(
+                                'Product Details',
+                                SKU = Sku
+                            ).BARCODE
+                        ) & "</th>
+                        <td style=' border-bottom: 1px solid #ddd;;text-align: center; padding: px;font-size:10px;'>" & Sku & "</th>
+                        <td style=' border-bottom: 1px solid #ddd;;text-align: center; padding: px;font-size:10px;'>" & Productname & "</th>
+                       
+                     <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & Qty & "</th>
+                      <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & Price & "</th>
+                       <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & Sum(ThisRecord.Qty*ThisRecord.Price) & "</th>
+                     <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & BoxNo & "</th>
+                      </tr>"
+                    ) & "
+                      </table   >","
+                    
+                    
+                    <table style='font-family: arial;  border-collapse: collapse; width: 100%;' >
+                      <tr style='background-color: MediumSeaGreen;'>
+                      <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>SR#</th>
+                        <th style='border: 1px solid #dddddd; font-size:15px ;text-align: center; padding: 1px;font-size:15px; color:white;'>Barcode </th>
+                        <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>SKU</th>
+                        <th style='border: 1px solid #dddddd;font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>Discription</th>
+                        <th style='border: 1px solid #dddddd; font-size:15px ;text-align: center; padding: 1px;font-size:15px; color:white;'>Unit</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>Qty</th>
+                       <th style='border: 1px solid #dddddd; font-size:15px ; text-align: center; padding: 1px;font-size:15px; color:white;'>BoxNo</th>
+                      </tr>   " & Concat(
+                        Gallery8_4.AllItems,
+                        "
+                      <tr>
+                      <td style=' border-bottom: 1px solid #ddd;text-align: center;font-size:10px; padding: px;'>" & Rownoo & "</td>
+                        <th style='border-bottom: 1px solid #ddd;text-align:center;font-size:10px; padding: px;'>" & Coalesce(
+                            Barcode,
+                            LookUp(
+                                'Product Details',
+                                SKU = Sku
+                            ).BARCODE
+                        ) & "</th>
+                        <td style=' border-bottom: 1px solid #ddd;;text-align: center; padding: px;font-size:10px;'>" & Sku & "</th>
+                        <td style=' border-bottom: 1px solid #ddd;;text-align: center; padding: px;font-size:10px;'>" & Productname & "</th>
+                        <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & "PCS" & "</th>
+                     <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & Qty & "</th>
+                     <td style='border-bottom: 1px solid #ddd; text-align: center;font-size:10px; padding: px;'>" & BoxNo & "</th>
+                      </tr>"
+                    ) & "
+                      </table   >"
+                    )&"
+                    
+                    
+                    
+                      <br>
+                      
+                      <table style='font-family: arial, sans-serif; border-collapse: collapse; width: 100%;'>
+                       <tr>
+                    
+                      <td style= ' text-align : left ;font-size:7px ;padding-top:15px;width:70%'>
+                      <table style='font-family: arial;  border-collapse: collapse;width: 100%;'background-color: #E0E0E0;' >
+                    
+                      <tr style='background-color: ;padding-top:0px;'>
+                    <td style='border: px solid #dddddd;font-size:1px ; text-align: center;  padding: px;font-size:px; color:white;'>
+                    </td>
+                    <td style='border: px solid #dddddd;font-size:1px ; text-align: center;  padding: px;font-size:px; color:white;'>
+                    </td>
+                    </tr>
+                    
+                    <tr style='padding-left:20px;'>
+                    <td style='padding-bottom:0px;padding-left:20px;'><div> <a style='font-size:8px;'> 📍  25th February Tower, 14th Floor,khalid Ibn Al Waleed St, Sharq | Kuwait.</a></div>
+                    <div>
+                    <a style='font-size:8px;'> ✉️ info@space3pl.com </a><a style='padding-left:20px;font-size:8px;'> 📞 +96555400032</div>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+                    <div><img src= " & QRcod & " style='width:90px;height:70px;padding-top:px;padding-left:20px;'></img>
+                    <p style='padding-left:20px;font-size:7px;'>Scan For More Details</p></div></td>
+                    </tr>
+                    </table>
+                      </td>
+                    "&If(Toggle2.Checked,"
+                     <td style='text-align : Right;padding-bottom:70px;'>
+                     <table style='font-family: arial, sans-serif; border-collapse: collapse;width:100%;'>
+                     <caption style='background-color: #D4D7D7;padding:5px;font-size:16px '> <b>Sub-Total</b><caption>
+                     <tr style='padding:5px;'>
+                    
+                    <td style=' border-bottom: 1px solid #ddd;text-align : left ;padding:5px;font-size:11px ;'> <b>QTY :</b> </td>
+                    <td style=' border-bottom: 1px solid #ddd;text-align : center ;padding:5px;padding-right:0px;font-size:11px ;'>  " & Sum(
+                        printepage,
+                        Qty
+                    ) & " </td>
+                    </tr>
+                    <tr>
+                    <td style='border-bottom: 1px solid #ddd; text-align : left ;padding:5px;font-size:11px ;'> <b> Amount : </b></td>
+                    <td style=' border-bottom: 1px solid #ddd;text-align : center ;padding:5px;font-size:11px ;'> " & Sum(Gallery8_4.AllItems,ThisRecord.TextCanvas1.Text) & " KWD</td>
+                    
+                    </tr>
+                     
+                    </table>
+                    </td>","
+                    
+                    
+                      <td style='text-align : Right;padding-bottom:70px;'>
+                     <table style='font-family: arial, sans-serif; border-collapse: collapse;width:100%;'>
+                     <caption style='background-color: #D4D7D7;padding:5px;font-size:16px '> <b>Sub-Total</b><caption>
+                     <tr style='padding:5px;'>
+                    <td style='border-bottom: 1px solid #ddd; text-align : left ;padding:5px;padding-left:px;font-size:11px ;'> <b> SKU : </b></td>
+                    <td style=' border-bottom: 1px solid #ddd;text-align : left ;padding:5px;padding-right:50px;font-size:11px ;'> " & Gallery8_4.AllItemsCount & "</td>
+                    <td style=' border-bottom: 1px solid #ddd;text-align : right ;padding:5px;padding-left:0px;font-size:11px ;'> <b>QTY :</b> </td>
+                    <td style=' border-bottom: 1px solid #ddd;text-align : center ;padding:5px;padding-left:0px;font-size:11px ;'>  " & Sum(
+                        printepage,
+                        Qty
+                    ) & " </td>
+                    </tr>
+                     
+                    </table>
+                    </td>")&"
+                    
+                    
+                    </tr>
+                     </table>
+                    
+                     
+                    
+                    </html>"
+                LayoutMinWidth: =20
+                PaddingTop: =
+                Size: =9
+                Width: =794
+                Y: =70
+                ZIndex: =1
+
+            Image4 As image:
+                Image: |-
+                    ="https://spacefulfillmentsolutions.sharepoint.com/sites/Test/_layouts/15/barcodeimagefromitem.aspx?ID="&FluentDetailsList1.Selected.ID&"&list=d00ca09c-bef4-4021-b0d2-b4f4089bc30a"
+                Visible: =false
+                ZIndex: =2
+
+    Container124_2 As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Visible: =Deletpopup
+        Width: =Parent.Width
+        ZIndex: =6
+
+        Container2_25 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            X: =433
+            Y: =281
+            ZIndex: =1
+
+            BadgeCanvas2_18 As Badge:
+                AccessibleLabel: =""
+                Appearance: ='BadgeCanvas.Appearance'.Filled
+                BasePaletteColor: =
+                Content: ="Delete Selected Orders"
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Shape: ='BadgeCanvas.Shape'.Rounded
+                ThemeColor: ='BadgeCanvas.ThemeColor'.Warning
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            BadgeCanvas2_28 As Badge:
+                AccessibleLabel: =""
+                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                BasePaletteColor: =
+                Content: ="Are You Sure You Want To Delete ?"
+                DisplayMode: =DisplayMode.Edit
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                Shape: ='BadgeCanvas.Shape'.Square
+                Width: =Parent.Width
+                X: =0
+                Y: =75
+                ZIndex: =2
+
+            Button1_103 As Button:
+                BorderColor: =
+                BorderRadius: =2
+                DisabledBorderColor: =
+                DisabledFillColor: =
+                DisabledTextColor: =
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                HoverBorderColor: =
+                HoverFillColor: =
+                HoverTextColor: =
+                OnChange: =false
+                OnSelect: =RemoveIf('Master Out Bound',Title in FluentDetailsList1.Selected.Title);RemoveIf('Out Bound',Title in FluentDetailsList1.Selected.Title);Notify("Deleted",NotificationType.Success);Set(Deletpopup,false)
+                PaddingTop: =0.00
+                PCFTeamsTheme: ="default"
+                PressedBorderColor: =
+                PressedFillColor: =
+                PressedTextColor: =
+                Text: ="Delete"
+                TextColor: =RGBA(151, 0, 0, 1)
+                Width: =100
+                X: =Parent.Width-Self.Width-47
+                Y: =144
+                ZIndex: =3
+
+            Button1_82 As Button:
+                BorderColor: =
+                BorderRadius: =2
+                DisabledBorderColor: =
+                DisabledFillColor: =
+                DisabledTextColor: =
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =RGBA(255, 255, 255, 1)
+                Font: =Font.'Lato Black'
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                HoverBorderColor: =
+                HoverFillColor: =
+                HoverTextColor: =
+                OnChange: =false
+                OnSelect: =Set(Deletpopup,false)
+                PaddingTop: =0.00
+                PCFTeamsTheme: ="default"
+                PressedBorderColor: =
+                PressedFillColor: =
+                PressedTextColor: =
+                Text: ="Cancel"
+                TextColor: =RGBA(0, 94, 146, 1)
+                Width: =100
+                X: =47
+                Y: =144
+                ZIndex: =4
+
+    Container104 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(240, 240, 240, 0.9)
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =8
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =20
+        PaddingLeft: =20
+        PaddingRight: =20
+        PaddingTop: =20
+        Visible: =Showdata
+        Width: =Parent.Width
+        ZIndex: =7
+
+        Container105_1 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            Height: =35
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =1
+
+            TextCanvas4 As Text:
+                Align: ='TextCanvas.Align'.Center
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =RGBA(15, 84, 140, 1)
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Size: =18
+                Text: ="Order Details"
+                Weight: ='TextCanvas.Weight'.Bold
+                Width: =150
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "Icon22 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                IconColor: ="Red"
+                IconName: ="Cancel"
+                IconSize: =20
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: =Set(Showdata,!Showdata)
+                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                Theme: =AppThemeJson
+                Tooltip: ="Close"
+                Width: =35
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        Container10 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semilight
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =35
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =10
+            PaddingRight: =10
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =2
+
+            "Icon8 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                IconName: ="PublishContent"
+                IconType: =If(FluentDetailsList1.Selected.Status.Value="Complete",'PowerCAT.Icon.IconType'.Icon,'PowerCAT.Icon.IconType'.ActionButton)
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: |-
+                    =createtasktokkann.Run(
+                        Concatenate(
+                            FluentDetailsList1.Selected.Title,
+                            "-",
+                            FluentDetailsList1.Selected.'Barcode Value'
+                        ),
+                        FluentDetailsList1.Selected.'Barcode Value',
+                        TextInputCanvas8_3.Value,
+                        TextInputCanvas8_5.Value,
+                        TextInputCanvas8_6.Value,
+                        TabList6_1.Selected.Value,
+                        TextInputCanvas8_7.Value,
+                        Text(
+                            Today(),
+                            "yyyy-mm-dd"
+                        ),
+                        FluentDetailsList1.Selected.ID
+                    );
+                    Notify(
+                        "Posted",
+                        NotificationType.Success
+                    );
+                    Refresh('Master Out Bound')
+                Text: ="Post"
+                Theme: =AppThemeJson
+                Tooltip: =""
+                Width: =100
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "Icon11_2 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                FontSize: =10
+                Height: =200
+                IconName: ="ReminderGroup"
+                IconSize: =20
+                IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: |-
+                    =
+                    Patch('Master Out Bound',LookUp('Master Out Bound',Title=FluentDetailsList1.Selected.Title),{Addresss:TextInputCanvas8_6.Value,'Customer Name':TextInputCanvas8_3.Value,'Customer Number':TextInputCanvas8_5.Value,City:ComboboxCanvas6.Selected.Area,Zone:ComboboxCanvas6.Selected.Zone,Amount:TextInputCanvas8_7.Value,Payment:TabList6_1.Selected.Value})
+                    
+                    
+                    ;
+                    
+                    Notify("Customer Data Updated",NotificationType.Success)
+                Text: ="Update Cust. Details"
+                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                Theme: =AppThemeJson
+                Tooltip: =""
+                Width: =110
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+            "Icon8_2 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                IconName: ="PublishContent"
+                IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: |-
+                    =FareyeOrderBooking.Run(
+                        FluentDetailsList1.Selected.Title,
+                        TabList6_1.Selected.Value,
+                        TextInputCanvas8_7.Value,
+                        Text(
+                            FluentDetailsList1.Selected.Date,
+                            "yyyy-mm-dd"
+                        ),
+                        "",
+                        TextInputCanvas8_3.Value,
+                        TextInputCanvas8_6.Value,
+                        TextInputCanvas8_5.Value,
+                        FluentDetailsList1.Selected.ID
+                    );
+                    Notify(
+                        "Posted",
+                        NotificationType.Success
+                    );
+                    Refresh('Master Out Bound')
+                Text: ="Post To Fareye"
+                Theme: =AppThemeJson
+                Tooltip: =""
+                Width: =150
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+            ButtonCanvas27 As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                BasePaletteColor: =
+                DisplayMode: =DisplayMode.View
+                FillPortions: =1
+                Font: =""
+                FontColor: =
+                FontItalic: =false
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =""
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =10
+                Text: =""
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =4
+
+            "Icon8_4 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                IconName: ="SubstitutionsIn"
+                IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: |-
+                    =Patch('Out Bound',ShowColumns(out,"ID","Price"));
+                    
+                    UpdateContext({EditinvoiveeItem:false})
+                Text: ="Post"
+                Theme: =AppThemeJson
+                Tooltip: =""
+                Visible: =EditinvoiveeItem
+                Width: =80
+                X: =0
+                Y: =0
+                ZIndex: =5
+
+            "Icon8_3 As 'Fluent Icon (1.0.22)'":
+                AlignInContainer: =AlignInContainer.Stretch
+                DisplayMode: =DisplayMode.Edit
+                Height: =200
+                IconName: =If(EditinvoiveeItem,"Cancel","Edit")
+                IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                LayoutMinHeight: =20
+                LayoutMinWidth: =200
+                OnChange: |-
+                    =UpdateContext({EditinvoiveeItem:!EditinvoiveeItem})
+                Text: =If(EditinvoiveeItem,"Cancel","Edit Item Price")
+                Theme: =AppThemeJson
+                Tooltip: =""
+                Width: =150
+                X: =0
+                Y: =0
+                ZIndex: =6
+
+        Container105 As groupContainer.horizontalAutoLayoutContainer:
+            Fill: =RGBA(255, 255, 255, 1)
+            LayoutGap: =5
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =3
+
+            "FluentDetailsList2 As 'Fluent Details List (1.0.22)'.pcfdataset":
+                AlignInContainer: =AlignInContainer.Stretch
+                columns_Items: |-
+                    =With(
+                        {
+                            availableWidth: Self.Width},Table({ColName:"Barcode",ColIsBold:true,ColDisplayName:"Barcode",ColWidth:120,ColRowHeader:true,ColResizable:true},
+                    {ColName:"Sku",ColDisplayName:"SKU",ColWidth:120,ColRowHeader:true,ColResizable:true},
+                    {ColName:"Date",ColDisplayName:"Date",ColWidth:100,ColRowHeader:true,ColResizable:true},
+                    {ColName:"Qty",ColDisplayName:"Qty",ColWidth:50,ColRowHeader:true,ColResizable:true},
+                    {ColName:"OrderQTY",ColDisplayName:"OrderQTY",ColWidth:100,ColRowHeader:true,ColResizable:true},
+                    {ColName:"WMSuser",ColDisplayName:"user",ColWidth:70,ColRowHeader:true,ColResizable:true},
+                    {ColName:"Productname",ColDisplayName:"Productname",ColWidth:availableWidth,ColRowHeader:true,ColResizable:true},
+                    {ColName:"TotalItem",ColDisplayName:"Fullfill",ColWidth:70,ColRowHeader:true,ColResizable:true}))
+                Compact: =false
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Height: =200
+                Items: =out
+                LayoutMinHeight: =20
+                LayoutMinWidth: =20
+                SelectionType: ='PowerCAT.FluentDetailsList.SelectionType'.Multiple
+                SelectRowsOnFocus: =true
+                Theme: =AppThemeJson
+                Visible: =!EditinvoiveeItem
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                Barcode1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Barcode"
+                    FieldName: ="Barcode"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =44
+
+                OrderQTY1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="OrderQTY"
+                    FieldName: ="OrderQTY"
+                    FieldType: ="n"
+                    FieldVariantName: ="textualColumn"
+                    Order: =3
+                    ZIndex: =46
+
+                PickTime1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="PickTime"
+                    FieldName: ="PickTime"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =4
+                    ZIndex: =47
+
+                Productname1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Productname"
+                    FieldName: ="Productname"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =5
+                    ZIndex: =48
+
+                Qty1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Qty"
+                    FieldName: ="Qty"
+                    FieldType: ="n"
+                    FieldVariantName: ="textualColumn"
+                    Order: =6
+                    ZIndex: =49
+
+                Sku1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="Sku"
+                    FieldName: ="Sku"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =7
+                    ZIndex: =50
+
+                WMSuser2 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="WMSuser"
+                    FieldName: ="WMSuser"
+                    FieldType: ="s"
+                    FieldVariantName: ="textualColumn"
+                    Order: =8
+                    ZIndex: =51
+
+            Container169 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Height: =Parent.Height-Self.Y-5
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =8
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Visible: =EditinvoiveeItem
+                Width: =If(Screen8.Size<ScreenSize.Medium,Parent.Width-5,890)
+                X: =Parent.Width-Self.Width-8
+                Y: =76
+                ZIndex: =2
+
+                Container4 As groupContainer.horizontalAutoLayoutContainer:
+                    FillPortions: =0
+                    Height: =40
+                    LayoutGap: =3
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =7
+                    PaddingRight: =7
+                    Visible: =EditinvoiveeItem
+                    ZIndex: =5
+
+                    Label8_1 As label:
+                        FontWeight: =FontWeight.Bold
+                        Size: =10
+                        Text: ="Barcode"
+                        Width: =140
+                        ZIndex: =1
+
+                    Label10_29 As label:
+                        FillPortions: =1
+                        FontWeight: =FontWeight.Bold
+                        Size: =10
+                        Text: ="Name"
+                        ZIndex: =2
+
+                    Label10_30 As label:
+                        FontWeight: =FontWeight.Bold
+                        Size: =10
+                        Text: ="QTY"
+                        Width: =70
+                        ZIndex: =3
+
+                    Label10_31 As label:
+                        FontWeight: =FontWeight.Bold
+                        Size: =10
+                        Text: ="Unit Price"
+                        Width: =80
+                        ZIndex: =4
+
+                    Label10_32 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Size: =10
+                        Text: ="Total"
+                        Width: =100
+                        ZIndex: =5
+
+                    Label10_33 As label:
+                        Align: =Align.Center
+                        FontWeight: =FontWeight.Bold
+                        Size: =10
+                        Text: =""
+                        Width: =40
+                        ZIndex: =6
+
+                Gallery3 As gallery.variableTemplateHeightGallery:
+                    DelayItemLoading: =true
+                    Items: =out
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Data
+                    TemplateSize: =40
+                    Visible: =EditinvoiveeItem
+                    ZIndex: =6
+
+                    Container4_1 As groupContainer.horizontalAutoLayoutContainer:
+                        Height: =37
+                        LayoutGap: =3
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        Width: =Parent.TemplateWidth
+                        Y: =3
+                        ZIndex: =1
+
+                        Label8 As label:
+                            FontWeight: =FontWeight.Bold
+                            Height: =35
+                            Size: =10
+                            Text: =ThisItem.Barcode
+                            Width: =120
+                            ZIndex: =1
+
+                        Label10 As label:
+                            FillPortions: =1
+                            Height: =35
+                            PaddingBottom: =2
+                            Size: =9
+                            Text: =ThisItem.Name
+                            ZIndex: =2
+
+                        Label10_1 As label:
+                            Align: =Align.Center
+                            Height: =35
+                            PaddingBottom: =2
+                            Size: =10
+                            Text: =ThisItem.Qty
+                            Width: =70
+                            ZIndex: =3
+
+                        "TextInputCanvas4 As 'Text input'":
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =32
+                            Value: =ThisItem.Price
+                            Width: =80
+                            X: =0
+                            Y: =0
+                            ZIndex: =4
+
+                        Label10_28 As label:
+                            Align: =Align.Center
+                            Height: =35
+                            PaddingBottom: =2
+                            Size: =10
+                            Text: =Sum(ThisItem.Qty*TextInputCanvas4.Value)
+                            Width: =100
+                            ZIndex: =5
+
+                        ButtonCanvas33 As Button:
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            FontColor: =
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            OnSelect: |-
+                                =UpdateIf(out,Title=ThisItem.Title&&Barcode=ThisItem.Barcode,{Price:Value(TextInputCanvas4.Value)})
+                            Text: ="Save"
+                            Width: =45
+                            X: =0
+                            Y: =0
+                            ZIndex: =6
+
+            Container109 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.Semilight
+                FillPortions: =0
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingLeft: =10
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =350
+                ZIndex: =3
+
+                Container170_1 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    FillPortions: =0
+                    Height: =45
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =5
+                    LayoutMinHeight: =10
+                    LayoutMinWidth: =25
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingLeft: =20
+                    PaddingRight: =20
+                    PaddingTop: =5
+                    ZIndex: =1
+
+                    BadgeCanvas34 As Badge:
+                        Appearance: ='BadgeCanvas.Appearance'.Filled
+                        BasePaletteColor: =RGBA(141, 229, 250, 1)
+                        Content: ="Customer Info"
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        FontColor: =
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =30
+                        Shape: ='BadgeCanvas.Shape'.Rounded
+                        Width: =32
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                Container16_1 As groupContainer.horizontalAutoLayoutContainer:
+                    Height: =30
+                    LayoutGap: =5
+                    LayoutMinHeight: =40
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    PaddingBottom: =5
+                    PaddingLeft: =5
+                    PaddingRight: =10
+                    PaddingTop: =15
+                    Width: =Parent.Width
+                    Y: =76
+                    ZIndex: =2
+
+                    Icon5_5 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.Person
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =1
+
+                    TextCanvas7 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Name"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    "TextInputCanvas8_3 As 'Text input'":
+                        Align: ="Start"
+                        BasePaletteColor: =
+                        DelayOutput: =false
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =40
+                        MaxLength: =-1
+                        OnChange: =
+                        Placeholder: =""
+                        Type: ="Text"
+                        ValidationState: ="None"
+                        Value: =FluentDetailsList1.Selected.'Customer Name'
+                        Width: =320
+                        X: =38
+                        Y: =1
+                        ZIndex: =3
+
+                    Icon5_6 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.Phone
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =4
+
+                    TextCanvas7_1 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Number"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =5
+
+                    "TextInputCanvas8_5 As 'Text input'":
+                        Align: ="Start"
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =40
+                        MaxLength: =-1
+                        OnChange: =
+                        Placeholder: =""
+                        Type: ="Text"
+                        ValidationState: ="None"
+                        Value: =FluentDetailsList1.Selected.'Customer Number'
+                        Width: =320
+                        X: =158
+                        Y: =121
+                        ZIndex: =6
+
+                    Icon5_7 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.Location
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =7
+
+                    TextCanvas7_4 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Address"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =8
+
+                    "TextInputCanvas8_6 As 'Text input'":
+                        Align: ="Start"
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =33
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =40
+                        MaxLength: =-1
+                        OnChange: =
+                        Placeholder: =""
+                        Type: ="Text"
+                        ValidationState: ="None"
+                        Value: =FluentDetailsList1.Selected.Addresss
+                        Width: =320
+                        X: =138
+                        Y: =101
+                        ZIndex: =9
+
+                    Icon5_8 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.Currency
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =10
+
+                    TextCanvas7_2 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Payment Mode"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =11
+
+                    "TabList6_1 As 'Tab list'.pcfdataset":
+                        BasePaletteColor: =
+                        DefaultSelectedItems: |-
+                            ={Value:FluentDetailsList1.Selected.Payment}
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =10
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        Items: =["COD","Knet"]
+                        LayoutMinHeight: =55
+                        LayoutMinWidth: =40
+                        OnChange: =
+                        Size: ='TabList.Size'.Small
+                        Width: =330
+                        X: =131
+                        Y: =80
+                        ZIndex: =12
+
+                    Icon5_9 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.Money
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =13
+
+                    TextCanvas7_3 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Amount"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =14
+
+                    "TextInputCanvas8_7 As 'Text input'":
+                        Align: ="Start"
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =30
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =20
+                        MaxLength: =-1
+                        OnChange: =
+                        Placeholder: =""
+                        Type: ="Text"
+                        ValidationState: ="None"
+                        Value: =FluentDetailsList1.Selected.Amount
+                        Width: =320
+                        X: =98
+                        Y: =61
+                        ZIndex: =15
+
+                    Icon5_15 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.Pin
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =16
+
+                    TextCanvas7_5 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="City"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =17
+
+                    ComboboxCanvas6 As Combobox.pcfdataset:
+                        DefaultSelectedItems: |-
+                            ={Value: FluentDetailsList1.Selected.City}
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        InputTextPlaceholder: ="City"
+                        Items: ='Zones List'
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =320
+                        OnChange: =Set(zone,Self.Selected.Zone)
+                        Width: =320
+                        X: =0
+                        Y: =0
+                        ZIndex: =18
+
+                        Id2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Id"
+                            FieldName: ="Title"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =2
+                            ZIndex: =54
+
+                        Area2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Area"
+                            FieldName: ="field_1"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =55
+
+                        Zone2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Zone"
+                            FieldName: ="field_2"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =3
+                            ZIndex: =56
+
+                        Edit2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Edit"
+                            FieldName: ="field_3"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =4
+                            ZIndex: =57
+
+                        Attachments12 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Attachments"
+                            FieldName: ="{Attachments}"
+                            FieldType: ="r*"
+                            FieldVariantName: ="textualColumn"
+                            Order: =5
+                            ZIndex: =58
+
+                    Icon5_16 As icon.Add:
+                        Color: =RGBA(79, 90, 94, 1)
+                        Height: =30
+                        Icon: =Icon.TrendingHashtag
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =35
+                        ZIndex: =19
+
+                    TextCanvas7_6 As Text:
+                        Align: ='TextCanvas.Align'.Start
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =Font.Verdana
+                        FontColor: =RGBA(15, 108, 189, 1)
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        Text: ="Zone"
+                        Weight: ='TextCanvas.Weight'.Semibold
+                        Width: =150
+                        X: =0
+                        Y: =0
+                        ZIndex: =20
+
+                    TextCanvas9 As Text:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontColor: =
+                        FontItalic: =false
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        Height: =32
+                        LayoutMinHeight: =35
+                        LayoutMinWidth: =96
+                        Text: =FluentDetailsList1.Selected.Zone
+                        Width: =240
+                        X: =0
+                        Y: =0
+                        ZIndex: =21
+

@@ -1,0 +1,1749 @@
+"inbound1 As screen.'autoLayout_HeaderFooter_ver1.0'":
+    OnVisible: |-
+        =UpdateContext({Clintinfoo:true});UpdateContext({Clientbill:false});
+        ClearCollect(comname,'Company name')
+
+    BottomContainer1_8 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutMode: =LayoutMode.Auto
+        LayoutWrap: =true
+        Width: =Parent.Width
+        ZIndex: =1
+
+        MainContainer4_10 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =7
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =2
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =5
+
+            Container168_11 As groupContainer.horizontalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =35
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =1
+
+                "CommandBar1_5 As 'Fluent Command Bar (1.0.22)'.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Height: =200
+                    Items: |-
+                        =Table(
+                           
+                            {
+                                ItemKey: "Back",
+                                ItemDisplayName: "Back",
+                                ItemIconName: "ChromeBack"
+                            },
+                            {
+                                ItemKey: "Mail",
+                                ItemDisplayName: "Mail",
+                                ItemIconName: "Send",
+                                ItemIconOnly: false,
+                                ItemFarItem: true,
+                                ItemVisible:If(Viewputway,false,true)
+                            }
+                        )
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    OnSelect: |-
+                        =Switch(
+                            Self.Selected.ItemKey,
+                            "Back",
+                            Navigate('Inbound Doc'),
+                            "Mail",
+                            Office365Outlook.SendEmailV2(
+                                "3plinbound@space3pl.com",
+                                "Receving Details Of " & "<b>" & FluentDetailsList3.Selected.Company & "</b>",
+                                "</br></br>" & HtmlText5.HtmlText,
+                                {
+                                    Attachments: Table(
+                                        {
+                                            Name: "inbound.pdf",
+                                            ContentBytes: PDF(
+                                                Container3_12,
+                                                {
+                                                    ExpandContainers: true,
+                                                    Orientation: PaperOrientation.Portrait,
+                                                    Size: PaperSize.A4,
+                                                    Margin: "1pt 2pt"
+                                                }
+                                            )
+                                        }
+                                    )
+                                }
+                            )
+                        )
+                    Theme: =AppThemeJson
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            MainContainer4_11 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =7
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                Container168_12 As groupContainer.horizontalAutoLayoutContainer:
+                    DropShadow: =DropShadow.Semilight
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =35
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =1
+
+                    Container3_4 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =Parent.Height   -Self.Y
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        PaddingTop: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =showpdf
+                        Width: =If('Inbound Doc'.Size<ScreenSize.Medium,Parent.Width-10,890)
+                        X: =Parent.Width-Self.Width-5
+                        Y: =70
+                        ZIndex: =1
+
+                        Container25 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            Height: =35
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutGap: =15
+                            LayoutJustifyContent: =LayoutJustifyContent.End
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =50
+                            LayoutMode: =LayoutMode.Auto
+                            Visible: =showpdf
+                            ZIndex: =1
+
+                            Container1_32 As groupContainer.manualLayoutContainer:
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                ChildTabPriority: =false
+                                DropShadow: =DropShadow.None
+                                EnableChildFocus: =false
+                                Height: =36
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =20
+                                RadiusBottomLeft: =0
+                                RadiusBottomRight: =0
+                                RadiusTopLeft: =0
+                                RadiusTopRight: =0
+                                Visible: =false
+                                Width: =70
+                                X: =43
+                                Y: =44
+                                ZIndex: =1
+
+                                Icon1_52 As icon.Add:
+                                    Color: =RGBA(0, 94, 146, 1)
+                                    FocusedBorderThickness: =0
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Mail
+                                    OnSelect: =Set(showpdf,false)
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    Visible: =false
+                                    Width: =35
+                                    ZIndex: =1
+
+                                BadgeCanvas3_30 As Badge:
+                                    AccessibleLabel: =""
+                                    Appearance: ='BadgeCanvas.Appearance'.Ghost
+                                    BasePaletteColor: =
+                                    Content: ="Mail"
+                                    DisplayMode: =DisplayMode.Edit
+                                    Font: =""
+                                    FontColor: =
+                                    FontItalic: =false
+                                    FontStrikethrough: =false
+                                    FontUnderline: =false
+                                    FontWeight: =""
+                                    Height: =Parent.Height
+                                    Visible: =false
+                                    Width: =Parent.Width-Self.X
+                                    X: =35
+                                    Y: =0
+                                    ZIndex: =2
+
+                                Button1_31 As button:
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(0, 0, 0, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =Parent.Height
+                                    HoverFill: =RGBA(237, 237, 237, 0.48)
+                                    OnSelect: |-
+                                        =Office365Outlook.SendEmailV2("3plinbound@space3pl.com","Receving Details",FluentDetailsList3.Selected.Company &"</br></br>"&HtmlText5.HtmlText,{Attachments:  Table({Name:"inbound.pdf",ContentBytes:PDF(Container3_12,{ExpandContainers:true,Orientation:PaperOrientation.Portrait,Size:PaperSize.A4,Margin:"1pt 2pt"})})})
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Visible: =false
+                                    Width: =Parent.Width
+                                    ZIndex: =3
+
+                            Toggle5 As Toggle:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontSize: =12
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =35
+                                Label: ="CBM"
+                                LabelPosition: ='Toggle.LabelPosition'.Before
+                                LayoutMinHeight: =35
+                                LayoutMinWidth: =110
+                                OnCheck: =Set(varcbmshow,true)
+                                OnUncheck: =Set(varcbmshow,false)
+                                Width: =150
+                                X: =0
+                                Y: =0
+                                ZIndex: =2
+
+                            Toggle5_1 As Toggle:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontSize: =12
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =35
+                                Label: ="Expire Date"
+                                LabelPosition: ='Toggle.LabelPosition'.Before
+                                LayoutMinHeight: =35
+                                LayoutMinWidth: =110
+                                OnCheck: =Set(varexpshow,true)
+                                OnUncheck: =Set(varexpshow,false)
+                                Width: =133
+                                X: =0
+                                Y: =0
+                                ZIndex: =3
+
+                            Toggle5_2 As Toggle:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontSize: =12
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =35
+                                Label: =If(Self.Checked,"Box","PCS")
+                                LabelPosition: ='Toggle.LabelPosition'.Before
+                                LayoutMinHeight: =35
+                                LayoutMinWidth: =110
+                                OnCheck: =Set(varexpshow,true)
+                                OnUncheck: =Set(varexpshow,false)
+                                Width: =100
+                                X: =0
+                                Y: =0
+                                ZIndex: =4
+
+                            ButtonCanvas34 As Button:
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                FontColor: =
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =96
+                                OnSelect: |-
+                                    =Set(pdfdd,PDF(
+                                                            Container3_12,
+                                                            {
+                                                                ExpandContainers: true,
+                                                                Orientation: PaperOrientation.Portrait,
+                                                                Size: PaperSize.A4,
+                                                                Margin: "1pt 2pt"
+                                                            }
+                                                        ))
+                                Width: =96
+                                X: =0
+                                Y: =0
+                                ZIndex: =5
+
+                        Container3_12 As groupContainer.manualLayoutContainer:
+                            DropShadow: =DropShadow.Regular
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Height: =Parent.Height-Self.Y
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =1000
+                            Visible: =showpdf
+                            Width: =Parent.Width-Self.X-50
+                            X: =
+                            Y: =140
+                            ZIndex: =5
+
+                            Canvas2_9 As fluidGrid.fluidGridWithBlankCard:
+                                AcceptsFocus: =false
+                                BorderThickness: =0
+                                Height: =Parent.Height
+                                Width: =Parent.Width
+                                ZIndex: =1
+
+                                DataCard7_8 As dataCard.blankCard:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderStyle: =BorderStyle.Solid
+                                    DisplayMode: =DisplayMode.Edit
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =88
+                                    Width: =1063
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =2
+
+                                    Container33 As groupContainer.horizontalAutoLayoutContainer:
+                                        Height: =150
+                                        LayoutMode: =LayoutMode.Auto
+                                        Width: =Parent.Width
+                                        Y: =1
+                                        ZIndex: =5
+
+                                        Image2_7 As image:
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            DisabledFill: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(255, 255, 255, 1)
+                                            FocusedBorderThickness: =4
+                                            Height: =93
+                                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                            HoverFill: =RGBA(0, 0, 0, 0)
+                                            Image: ='WhatsApp Image 2023-11-09 at 14.43.05_ae704596'
+                                            PaddingRight: =0.00
+                                            PaddingTop: =0.00
+                                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                            PressedFill: =RGBA(0, 0, 0, 0)
+                                            Width: =151
+                                            ZIndex: =1
+
+                                        Container34 As groupContainer.verticalAutoLayoutContainer:
+                                            DropShadow: =DropShadow.None
+                                            LayoutDirection: =LayoutDirection.Vertical
+                                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                                            LayoutMinHeight: =100
+                                            LayoutMinWidth: =250
+                                            LayoutMode: =LayoutMode.Auto
+                                            ZIndex: =2
+
+                                            Label45_68 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(54, 176, 75, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Bold
+                                                Height: =47
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =40
+                                                Text: ="Inbound"
+                                                Width: =689
+                                                Y: =46
+                                                ZIndex: =1
+
+                                            Label45_70 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(9, 33, 98, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Bold
+                                                Height: =60
+                                                PaddingRight: =3.20
+                                                PaddingTop: =6
+                                                Size: =16.03
+                                                Text: =vargallerysel.Company
+                                                Width: =573
+                                                X: =254
+                                                Y: =9
+                                                ZIndex: =2
+
+                                        Label45_69 As label:
+                                            Align: =Align.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =37
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="📅 "&Text(vargallerysel.Date,"mmm-dd-yyy")
+                                            Width: =220
+                                            X: =1100
+                                            Y: =28
+                                            ZIndex: =3
+
+                                DataCard10_3 As dataCard.blankCard:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderStyle: =BorderStyle.Solid
+                                    DisplayMode: =DisplayMode.Edit
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =88
+                                    Width: =766
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =1
+                                    ZIndex: =3
+
+                                    Container41_5 As groupContainer.verticalAutoLayoutContainer:
+                                        Height: =93
+                                        LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMode: =LayoutMode.Auto
+                                        PaddingRight: =0.00
+                                        PaddingTop: =0.00
+                                        Width: =252
+                                        X: =Parent.Width-Self.Width
+                                        ZIndex: =1
+
+                                        Label45_75 As label:
+                                            Align: =Align.Justify
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =29
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Total Good QTY      :   " &Sum(colrecgallery,'Good Qty')
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =208
+                                            ZIndex: =1
+
+                                        Label45_76 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =29
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Total Damage QTY :   " &Sum(colrecgallery,'Damage Qty')
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =169
+                                            ZIndex: =2
+
+                                        Label45_77 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =29
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Total CBM :   " &Sum(colrecgallery,'Toatl CMB')
+                                            Visible: =varcbmshow
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =169
+                                            ZIndex: =3
+
+                                    Container41_4 As groupContainer.verticalAutoLayoutContainer:
+                                        Height: =110
+                                        LayoutDirection: =LayoutDirection.Vertical
+                                        LayoutMode: =LayoutMode.Auto
+                                        PaddingRight: =0.00
+                                        PaddingTop: =0.00
+                                        Width: =400
+                                        ZIndex: =2
+
+                                        Label45_71 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =37
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Inv/NO         :   " &vargallerysel.Title
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =121
+                                            ZIndex: =1
+
+                                        Label45_72 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =31
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Total Sku      :   " &vargallerysel.'Total Sku'
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =155
+                                            ZIndex: =2
+
+                                        Label45_73 As label:
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =31
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Total Qty      :   " &vargallerysel.'Total Items'
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =189
+                                            ZIndex: =3
+
+                                        Label45_74 As label:
+                                            Align: =Align.Justify
+                                            AlignInContainer: =AlignInContainer.Stretch
+                                            AutoHeight: =true
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(51, 51, 51, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.'Segoe UI'
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =31
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: |-
+                                                ="Received By  :  "  &vargallerysel.User
+                                            Width: =0.00
+                                            X: =0.00
+                                            Y: =214
+                                            ZIndex: =4
+
+                                DataCard11_3 As dataCard.blankCard:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderStyle: =BorderStyle.Solid
+                                    DisplayMode: =DisplayMode.Edit
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =40
+                                    Width: =Parent.Width
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =2
+                                    ZIndex: =4
+
+                                    Container10_9 As groupContainer.horizontalAutoLayoutContainer:
+                                        Height: =40
+                                        LayoutAlignItems: =LayoutAlignItems.Center
+                                        LayoutGap: =3
+                                        LayoutMode: =LayoutMode.Auto
+                                        PaddingRight: =0.00
+                                        PaddingTop: =1
+                                        Width: =Parent.Width-15
+                                        ZIndex: =1
+
+                                        Label14_77 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="Barcode"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =140
+                                            X: =0.00
+                                            ZIndex: =1
+
+                                        Label14_78 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FillPortions: =1
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =300
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="SKU"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =200
+                                            X: =0.00
+                                            ZIndex: =2
+
+                                        Label14_79 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="QC"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =100
+                                            X: =0.00
+                                            ZIndex: =3
+
+                                        Label14_84 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =560
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="Unit"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =100
+                                            X: =0.00
+                                            ZIndex: =4
+
+                                        Label14_80 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FillPortions: =1
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =100
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =11
+                                            Text: ="Received Qty"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =115.38
+                                            X: =0.00
+                                            ZIndex: =5
+
+                                        Label14_81 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FillPortions: =1
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =100
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="Good Qty"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =96.15
+                                            X: =0.00
+                                            ZIndex: =6
+
+                                        Label14_82 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FillPortions: =1
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =100
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: ="Damage Qty"
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Width: =76.92
+                                            X: =0.00
+                                            ZIndex: =7
+
+                                        Label14_83 As label:
+                                            Align: =Align.Center
+                                            AlignInContainer: =AlignInContainer.Center
+                                            BorderColor: =RGBA(0, 0, 0, 0)
+                                            BorderStyle: =BorderStyle.None
+                                            BorderThickness: =2
+                                            Color: =RGBA(255, 255, 255, 1)
+                                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                            Fill: =RGBA(54, 176, 75, 1)
+                                            FillPortions: =1
+                                            FocusedBorderThickness: =4
+                                            Font: =Font.Lato
+                                            FontWeight: =FontWeight.Semibold
+                                            Height: =30
+                                            LayoutMinHeight: =70
+                                            LayoutMinWidth: =100
+                                            PaddingRight: =3.20
+                                            PaddingTop: =3.20
+                                            Size: =12
+                                            Text: =If(vargallerysel.Company = "Piiicks","CBM","EXP Date")
+                                            VerticalAlign: =VerticalAlign.Bottom
+                                            Visible: =If(varcbmshow || varexpshow,true,false)
+                                            Width: =80.13
+                                            X: =0.00
+                                            ZIndex: =8
+
+                                DataCard12_3 As dataCard.blankCard:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderStyle: =BorderStyle.Solid
+                                    DisplayMode: =DisplayMode.Edit
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =Gallery3_14.AllItemsCount*Gallery3_14.TemplateHeight+2
+                                    Width: =Parent.Width
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =3
+                                    ZIndex: =5
+
+                                    Gallery3_14 As gallery.variableTemplateHeightGallery:
+                                        BorderColor: =RGBA(166, 166, 166, 1)
+                                        DisplayMode: =DisplayMode.View
+                                        Height: =CountRows(Gallery3_14.AllItems)*Gallery3_14.TemplateHeight
+                                        Items: |-
+                                            =Ungroup(ForAll(Sequence(CountRows(colrecgallery)),{Data:Table(Last(FirstN(colrecgallery,Value))),RowNO:Value}),"Data")
+                                        Layout: =Layout.Vertical
+                                        ShowScrollbar: =false
+                                        TemplateSize: =50
+                                        Width: =If('Inbound Doc'.Size<ScreenSize.Medium,985,Parent.Width-15)
+                                        Y: =6
+                                        ZIndex: =1
+
+                                        Container31 As groupContainer.horizontalAutoLayoutContainer:
+                                            Height: =43
+                                            LayoutMode: =LayoutMode.Auto
+                                            Width: =If('Inbound Doc'.Size<ScreenSize.Medium,985,Parent.Width-15)
+                                            ZIndex: =21
+
+                                            Label13_54 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                Height: =1
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.Barcode
+                                                ZIndex: =1
+
+                                            Label13_55 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =1
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.Sku
+                                                Width: =Label14_78.Width
+                                                X: =1
+                                                ZIndex: =2
+
+                                            Label13_49 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =1
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.QC
+                                                Width: =100
+                                                X: =Label14_79.X
+                                                ZIndex: =3
+
+                                            Label13_57 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =1
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =If(Toggle5_2.Checked,"Box","PCS")
+                                                Width: =100
+                                                X: =Label14_79.X
+                                                ZIndex: =4
+
+                                            Label13_50 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =1
+                                                LayoutMinWidth: =100
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.Qty
+                                                Width: =1
+                                                X: =Label14_80.X
+                                                ZIndex: =5
+
+                                            Label13_51 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =1
+                                                LayoutMinWidth: =100
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.GoodQty
+                                                Width: =1
+                                                X: =Label14_81.X
+                                                ZIndex: =6
+
+                                            Label13_56 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =50
+                                                LayoutMinWidth: =100
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.DamageQty
+                                                Width: =76
+                                                ZIndex: =7
+
+                                            Label13_52 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =1
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.ToatlCMB
+                                                Visible: =varcbmshow
+                                                Width: =1
+                                                Wrap: =
+                                                X: =Label14_83.X
+                                                ZIndex: =8
+
+                                            Label13_53 As label:
+                                                Align: =Align.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                AutoHeight: =true
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =Color.Black
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                Height: =27
+                                                OnSelect: =
+                                                PaddingRight: =3.20
+                                                PaddingTop: =3.20
+                                                Size: =11
+                                                Text: =ThisItem.EXPDate
+                                                Visible: =If(varcbmshow || varexpshow,true,false)
+                                                Width: =141
+                                                Wrap: =
+                                                X: =1010
+                                                Y: =Label13_52.Y
+                                                ZIndex: =9
+
+                                    Rectangle3_5 As rectangle:
+                                        Height: =2
+                                        Width: =Gallery3_14.Width
+                                        Y: =Gallery3_14.Y+Gallery3_14.Height+5
+                                        ZIndex: =2
+
+                                DataCard15 As dataCard.blankCard:
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    BorderStyle: =BorderStyle.Solid
+                                    DisplayMode: =DisplayMode.Edit
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =63
+                                    Width: =1000
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =4
+                                    ZIndex: =6
+
+                                    HtmlText10 As htmlViewer:
+                                        Height: =80
+                                        HtmlText: |-
+                                            ="<td style='padding-bottom:0px;padding-left:20px;'><div> <a style='font-size:10px;'> 📍  25th February Tower, 14th Floor,khalid Ibn Al Waleed St, Sharq | Kuwait.</a></div>
+                                            <div>
+                                            <a style='font-size:10px;'> ✉️ info@space3pl.com </a><a style='padding-left:20px;font-size:10px;'> 📞 +96555400032</div>
+                                            </td>"
+                                        Width: =454
+                                        X: =40
+                                        ZIndex: =1
+
+                    MainContainer3_2 As groupContainer.verticalAutoLayoutContainer:
+                        Height: =Parent.Height-Self.Y
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        RadiusBottomLeft: =2
+                        RadiusBottomRight: =2
+                        RadiusTopLeft: =2
+                        RadiusTopRight: =2
+                        Visible: =Viewputway
+                        Width: =676
+                        X: =6
+                        ZIndex: =2
+
+                        Container42 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
+                            Height: =70
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            ZIndex: =1
+
+                            "TextInputCanvas11 As 'Text input'":
+                                Align: ="Start"
+                                BasePaletteColor: =
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontSize: =0
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =40
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =320
+                                Placeholder: ="🔍 Search"
+                                ValidationState: ="None"
+                                Width: =320
+                                X: =0
+                                Y: =0
+                                ZIndex: =1
+
+                        FooterContainer1_49 As groupContainer.horizontalAutoLayoutContainer:
+                            BorderColor: =RGBA(219, 219, 219, 1)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.None
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =0
+                            Height: =35
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutMinHeight: =50
+                            LayoutMinWidth: =Parent.Width
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            PaddingRight: =10
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Visible: =Viewputway
+                            ZIndex: =2
+
+                            BadgeCanvas4_128 As Badge:
+                                AccessibleLabel: =""
+                                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                                BasePaletteColor: =
+                                Content: ="Barcode"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Width: =150
+                                X: =0
+                                Y: =0
+                                ZIndex: =4
+
+                            BadgeCanvas4_129 As Badge:
+                                AccessibleLabel: =""
+                                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                                BasePaletteColor: =
+                                Content: ="SKU"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Width: =150
+                                X: =0
+                                Y: =0
+                                ZIndex: =6
+
+                            BadgeCanvas4_130 As Badge:
+                                AccessibleLabel: =""
+                                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                                BasePaletteColor: =
+                                Content: ="Qty"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Width: =110
+                                X: =0
+                                Y: =0
+                                ZIndex: =8
+
+                            BadgeCanvas4_131 As Badge:
+                                AccessibleLabel: =""
+                                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                                BasePaletteColor: =
+                                Content: ="Putway Qty"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Width: =110
+                                X: =0
+                                Y: =0
+                                ZIndex: =10
+
+                            BadgeCanvas4_132 As Badge:
+                                AccessibleLabel: =""
+                                Appearance: ='BadgeCanvas.Appearance'.Ghost
+                                BasePaletteColor: =
+                                Content: ="Putway Status"
+                                DisplayMode: =DisplayMode.Edit
+                                Font: =""
+                                FontColor: =
+                                FontItalic: =false
+                                FontStrikethrough: =false
+                                FontUnderline: =false
+                                FontWeight: =""
+                                Height: =32
+                                LayoutMinHeight: =32
+                                LayoutMinWidth: =32
+                                Width: =120
+                                X: =0
+                                Y: =0
+                                ZIndex: =12
+
+                        FooterContainer1_50 As groupContainer.horizontalAutoLayoutContainer:
+                            BorderColor: =RGBA(219, 219, 219, 1)
+                            BorderThickness: =1
+                            DropShadow: =DropShadow.None
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =6
+                            Height: =35
+                            LayoutAlignItems: =LayoutAlignItems.Center
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =Parent.Width
+                            LayoutMode: =LayoutMode.Auto
+                            LayoutOverflowX: =LayoutOverflow.Scroll
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Visible: =Viewputway
+                            ZIndex: =3
+
+                            "Gallery8_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                                AlignInContainer: =AlignInContainer.SetByContainer
+                                DelayItemLoading: =true
+                                Items: =Filter(Inbound,Title=FluentDetailsList3.Selected.Title||StartsWith(Title,FluentDetailsList3.Selected.Title),StartsWith(Barcode,TextInputCanvas11.Value),'Putway Status'=Blank())
+                                Layout: =Layout.Vertical
+                                LayoutMinHeight: =287
+                                LayoutMinWidth: =320
+                                LoadingSpinner: =LoadingSpinner.Data
+                                TemplateFill: =If(ThisItem.IsSelected,Color.WhiteSmoke,RGBA(0, 0, 0, 0))
+                                TemplatePadding: =0
+                                TemplateSize: =50
+                                ZIndex: =1
+
+                                Rectangle9_3 As rectangle:
+                                    Height: =50
+                                    OnSelect: =Select(Parent)
+                                    Visible: =ThisItem.IsSelected
+                                    Width: =4
+                                    ZIndex: =6
+
+                                Container4_4 As groupContainer.horizontalAutoLayoutContainer:
+                                    DropShadow: =DropShadow.None
+                                    EnableChildFocus: =false
+                                    Height: =40
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutGap: =5
+                                    LayoutMode: =LayoutMode.Auto
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Width: =Parent.Width-Self.X-15
+                                    X: =10
+                                    Y: =5
+                                    ZIndex: =9
+
+                                    TextCanvas3_1 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =40
+                                        LayoutMinHeight: =32
+                                        LayoutMinWidth: =100
+                                        Size: =If(ThisItem.IsSelected,12,11)
+                                        Text: =ThisItem.Barcode
+                                        Weight: =If(ThisItem.IsSelected,'TextCanvas.Weight'.Bold,'TextCanvas.Weight'.Semibold)
+                                        Width: =150
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =1
+
+                                    TextCanvas3_44 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        AlignInContainer: =AlignInContainer.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =40
+                                        LayoutMinHeight: =32
+                                        LayoutMinWidth: =70
+                                        Size: =If(ThisItem.IsSelected,12,11)
+                                        Text: =ThisItem.Sku
+                                        Weight: =If(ThisItem.IsSelected,'TextCanvas.Weight'.Bold,'TextCanvas.Weight'.Semibold)
+                                        Width: =150
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =2
+
+                                    TextCanvas3_47 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        AlignInContainer: =AlignInContainer.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =40
+                                        LayoutMinHeight: =32
+                                        LayoutMinWidth: =80
+                                        Size: =If(ThisItem.IsSelected,12,11)
+                                        Text: =ThisItem.Qty
+                                        Weight: =If(ThisItem.IsSelected,'TextCanvas.Weight'.Bold,'TextCanvas.Weight'.Semibold)
+                                        Width: =105
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =3
+
+                                    TextCanvas3_48 As Text:
+                                        Align: ='TextCanvas.Align'.Center
+                                        AlignInContainer: =AlignInContainer.Center
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        Height: =40
+                                        LayoutMinHeight: =32
+                                        LayoutMinWidth: =40
+                                        Size: =If(ThisItem.IsSelected,12,11)
+                                        Text: =ThisItem.'Putway Qty'
+                                        Weight: =If(ThisItem.IsSelected,'TextCanvas.Weight'.Bold,'TextCanvas.Weight'.Semibold)
+                                        Width: =110
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =4
+
+                                    BadgeCanvas13_3 As Badge:
+                                        AccessibleLabel: =""
+                                        Appearance: ='BadgeCanvas.Appearance'.Filled
+                                        BasePaletteColor: =
+                                        Content: =ThisItem.'Putway Status'
+                                        DisplayMode: =DisplayMode.Edit
+                                        Font: =""
+                                        FontColor: =
+                                        FontItalic: =false
+                                        FontStrikethrough: =false
+                                        FontUnderline: =false
+                                        FontWeight: =""
+                                        Height: =28
+                                        LayoutMinHeight: =32
+                                        LayoutMinWidth: =32
+                                        Shape: ='BadgeCanvas.Shape'.Rounded
+                                        ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+                                        Width: =100
+                                        X: =0
+                                        Y: =0
+                                        ZIndex: =5
+
+                                Button3_3 As button:
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =Color.WhiteSmoke
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Height: =50
+                                    HoverBorderColor: =
+                                    HoverFill: =
+                                    OnSelect: =Set(viewputofs,ThisItem)
+                                    PressedBorderColor: =
+                                    PressedFill: =
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                                    ZIndex: =10
+
+                    Container39 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =677
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =10
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingLeft: =10
+                        Visible: =Viewputway
+                        Width: =400
+                        X: =Parent.Width-Self.Width-20   
+                        Y: =70
+                        ZIndex: =3
+
+                        TextCanvas10 As Text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: |-
+                                ="Barcode : " & viewputofs.Barcode
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =1
+
+                        TextCanvas10_1 As Text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: |-
+                                ="SKU : "&viewputofs.Sku
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =2
+
+                        TextCanvas10_5 As Text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: |-
+                                ="Item No : "&viewputofs.Itemno
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =3
+
+                        TextCanvas10_2 As Text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: |-
+                                ="Received Qty : "& viewputofs.Qty
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =4
+
+                        TextCanvas10_3 As Text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: |-
+                                ="Putway Qty : "&viewputofs.'Putway Qty'
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =5
+
+                        TextCanvas10_4 As Text:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: |-
+                                ="Pending Qty : "& Sum(viewputofs.Qty-viewputofs.'Putway Qty')
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =6
+
+                        TextCanvas10_6 As Text:
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =96
+                            Text: =""
+                            Width: =96
+                            X: =0
+                            Y: =0
+                            ZIndex: =7
+
+                        "TextInputCanvas7 As 'Text input'":
+                            Align: ="Start"
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DelayOutput: =true
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =40
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =320
+                            OnChange: =If(Self.Value= viewputofs.Barcode,SetFocus(TextInputCanvas9),Notify("Barcode Not Match",NotificationType.Warning))
+                            Placeholder: ="Barcode"
+                            ValidationState: ="None"
+                            Width: =320
+                            X: =0
+                            Y: =0
+                            ZIndex: =8
+
+                        "TextInputCanvas9 As 'Text input'":
+                            Align: ="Start"
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =40
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =320
+                            Placeholder: ="Location"
+                            ValidationState: ="None"
+                            Width: =320
+                            X: =0
+                            Y: =0
+                            ZIndex: =9
+
+                        "TextInputCanvas10 As 'Text input'":
+                            Align: ="Start"
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =40
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =320
+                            Placeholder: ="Qty"
+                            ValidationState: ="None"
+                            Width: =320
+                            X: =0
+                            Y: =0
+                            ZIndex: =10
+
+                        Button1_70 As Button:
+                            AlignInContainer: =AlignInContainer.Center
+                            BorderColor: =
+                            BorderRadius: =5
+                            DisabledBorderColor: =
+                            DisabledFillColor: =
+                            DisabledTextColor: =
+                            DisplayMode: =If(viewputofs.Barcode=TextInputCanvas7.Value&&viewputofs.Qty>=Sum  (viewputofs.'Putway Qty'+TextInputCanvas10.Value),DisplayMode.Edit,DisplayMode.View)
+                            FillColor: =RGBA(39, 113, 194, 1)
+                            Font: =Font.'Lato Black'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =50
+                            HoverBorderColor: =
+                            HoverFillColor: =
+                            HoverTextColor: =
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnChange: =false
+                            OnSelect: |-
+                                =Set(Additinaldo,First(Filter('Invoice Out',ID=7)));
+                                
+                                If(
+                                    TextInputCanvas10.Value + Gallery8_2.Selected.'Putway Qty' <= Gallery8_2.Selected.Qty,
+                                
+                                Set(ofsput,OFSPutway.Run(Upper(Gallery8_2.Selected.Company),VARUSER.'3PL OFS ID',Gallery8_2.Selected.Itemno,TextInputCanvas10.Value  ,TextInputCanvas9.Value,Concatenate(Text(Right(FluentDetailsList3.Selected.Title,4)),"-",Additinaldo.Title+1)).putways);
+                                
+                                If(Text(ParseJSON(ofsput).Message)="SUCCESS",
+                                Concurrent(
+                                
+                                
+                                
+                                    Patch(
+                                        Inbound,
+                                        viewputofs,
+                                        {
+                                            'Putway Qty': viewputofs.'Putway Qty'+Value(TextInputCanvas10.Value),
+                                            PutwayUser: VARUSER.'User Name',
+                                            'Putway Status': If(
+                                                TextInputCanvas10.Value + viewputofs.'Putway Qty' =viewputofs.Qty ,
+                                                "Complete"
+                                            )
+                                        }
+                                    ),
+                                    Patch(
+                                        'Master In Bound',
+                                        LookUp('Master In Bound',Title=FluentDetailsList3.Selected.Title),
+                                        {'Putway Qty': LookUp('Master In Bound',Title=FluentDetailsList3.Selected.Title).'Putway Qty' + TextInputCanvas10.Value}
+                                    )
+                                    );UpdateIf('Invoice Out',ID=7,{Title:Sum(Additinaldo.Title+1)})
+                                
+                                    ;Reset(TextInputCanvas7);Reset(TextInputCanvas10);Reset(TextInputCanvas9)
+                                ),Notify("Putway Not Done",NotificationType.Warning))
+                            PaddingTop: =0.00
+                            PCFTeamsTheme: ="default"
+                            PressedBorderColor: =
+                            PressedFillColor: =
+                            PressedTextColor: =
+                            Text: ="Submit"
+                            TextColor: =RGBA(255, 255, 255, 1)
+                            Width: =151
+                            X: =286
+                            Y: =616
+                            ZIndex: =12
+
+    PdfViewer1 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =pdfdd
+        Fill: =RGBA(0, 0, 0, 0.5)
+        X: =40
+        Y: =40
+        ZIndex: =2
+

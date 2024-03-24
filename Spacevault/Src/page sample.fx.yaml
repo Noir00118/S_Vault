@@ -1,0 +1,254 @@
+"'page sample' As screen.'autoLayout_Sidebar_ver1.0'":
+
+    BottomContainer1_3 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutGap: =5
+        LayoutMode: =LayoutMode.Auto
+        LayoutWrap: =true
+        Width: =Parent.Width
+        ZIndex: =2
+
+        SidebarContainer1_12 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0   
+            RadiusBottomRight: =0
+            RadiusTopLeft: =
+            RadiusTopRight: =8
+            Width: =Component2_11.Width
+            ZIndex: =4
+
+            Component2_11 As Component2:
+                LayoutMinHeight: =640
+                LayoutMinWidth: =640
+                ZIndex: =2
+
+        MainContainer4_24 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            FillPortions: =7
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =4
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =5
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =5
+
+            Container168_24 As groupContainer.horizontalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =35
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusTopLeft: =0
+                ZIndex: =1
+
+                "CommandBar1_13 As 'Fluent Command Bar (1.0.22)'.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Stretch
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Height: =200
+                    Items: |-
+                        =Table(
+                           
+                            {
+                                ItemKey: "Return",
+                                ItemDisplayName: "Return",
+                                ItemIconName: "ReturnToSession"
+                            },
+                            {
+                                ItemKey: "Post",
+                                ItemDisplayName: "Post",
+                                ItemDivider: true,
+                                ItemIconName: "Upload"
+                            },
+                            {
+                                ItemKey: "Down",
+                                ItemDisplayName: "Export",
+                                ItemIconName: "ExcelLogoInverse16",
+                                ItemEnabled: 
+                                    true
+                                
+                            },{
+                                ItemKey: "Transfer",
+                                ItemDisplayName: "Add Transfer Picklist",
+                                ItemDivider: true,
+                                ItemIconName: "AddToShoppingList"
+                            },
+                            {
+                                ItemKey: "Print",
+                                ItemIconName: "Print"
+                            },
+                            {
+                                ItemKey: "tile",
+                                ItemDisplayName: "Grid view",
+                                ItemIconName: "refresh",
+                                ItemIconOnly: true,
+                                ItemFarItem: true
+                            },
+                            {
+                                ItemKey: "filter",
+                                ItemDisplayName: "Info",
+                                ItemIconName: "BarChartVerticalFilterSolid",
+                                ItemIconOnly: true,
+                                ItemFarItem: true
+                            }
+                        )
+                    LayoutMinHeight: =20
+                    LayoutMinWidth: =200
+                    Theme: =AppThemeJson
+                    Width: =200
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+            MainContainer4_25 As groupContainer.verticalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =7
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                MainContainer4_26 As groupContainer.verticalAutoLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FillPortions: =7
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =1
+
+                    CustomizableTextField2 As CustomizableTextField:
+                        DisplayMode: =DisplayMode.Edit
+                        Height: =200
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "ResizableTextarea1 As 'Resizable Text Area (1.0.22)'":
+                        AlignInContainer: =AlignInContainer.Stretch
+                        DisplayMode: =DisplayMode.Edit
+                        FillPortions: =1
+                        Height: =200
+                        LayoutMinHeight: =200
+                        LayoutMinWidth: =200
+                        Text: |-
+                            ="BLANDO_8112_EDTD	Picked	Order	8112_EDTD	BLANDO	45323
+                            ONEBASE_3183	Picked	Order	3183	ONEBASE	45323
+                            Koob_1473	Picked	Order	1473	Koob	45323
+                            AAW_2000000350	Picked	Order	2000000350	AAW	45323
+                            BLANDO_8046_EDTD	Picked	Order	8046_EDTD	BLANDO	45323
+                            BREWTAZZA_1015	Picked	Order	1015	BREWTAZZA	45323
+                            WEMZY_TOFeb3279	Picked	Transfer	TOFeb3279	WEMZY	45323
+                            BLANDO_4587_RE	Picked	Order	4587_RE	BLANDO	45323
+                            BLANDO_8178_RE	Picked	Order	8178_RE	BLANDO	45323
+                            WEMZY_TOFeb3280	Picked	Transfer	TOFeb3280	WEMZY	45324
+                            Doodads_3649	Picked	Order	3649	Doodads	45324
+                            TRIOVARI_FF13820	Picked	Order	FF13820	TRIOVARI	45324
+                            TRIOVARI_FF13846	Picked	Order	FF13846	TRIOVARI	45324
+                            TRIOVARI_FF13847	Picked	Order	FF13847	TRIOVARI	45324
+                            TRIOVARI_FF13861	Picked	Order	FF13861	TRIOVARI	45324
+                            TRIOVARI_FF13870	Picked	Order	FF13870	TRIOVARI	45324
+                            TRIOVARI_FF13890	Picked	Order	FF13890	TRIOVARI	45324
+                            TRIOVARI_FF13891	Picked	Order	FF13891	TRIOVARI	45324
+                            TRIOVARI_FF13894	Picked	Order	FF13894	TRIOVARI	45324
+                            TRIOVARI_FF13895	Picked	Order	FF13895	TRIOVARI	45324
+                            TRIOVARI_FF13896	Picked	Order	FF13896	TRIOVARI	45324
+                            TRIOVARI_FF13898	Picked	Order	FF13898	TRIOVARI	45324
+                            ONEBASE_3197	Picked	Order	3197	ONEBASE	45324
+                            TRIOVARI_FF13901	Picked	Order	FF13901	TRIOVARI	45324
+                            ONEBASE_3198	Picked	Order	3198	ONEBASE	45324"
+                        Width: =200
+                        X: =0
+                        Y: =0
+                        ZIndex: =2
+
+                    ButtonCanvas21 As Button:
+                        BasePaletteColor: =
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        Height: =32
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =ClearCollect(maaa,ForAll(Split(ResizableTextarea1.Text,Char(10)),Split(Value," ")))
+                        Width: =96
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+
+                MainContainer4_27 As groupContainer.verticalAutoLayoutContainer:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    FillPortions: =7
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    ZIndex: =2
+
+                    Table4 As Table.pcfdataset:
+                        DisableChildItemsEditing: ="no"
+                        DisplayMode: =DisplayMode.Edit
+                        EnableColumnMoving: ="no"
+                        Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                        Items: =Ungroup(maaa,"Value")
+                        LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                        LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                        onCellValueChange: =false
+                        onFilter: =false
+                        onNavigate: =false
+                        onRowSelect: =false
+                        onSave: =false
+                        OnSelect: =false
+                        Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                        Value21 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Value"
+                            FieldName: ="Value"
+                            FieldType: |-
+                                ="*[Value:s]"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =6
+
+            Container168_25 As groupContainer.horizontalAutoLayoutContainer:
+                Fill: =RGBA(255, 255, 255, 1)
+                FillPortions: =0
+                Height: =35
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusTopLeft: =0
+                Visible: =false
+                ZIndex: =3
+

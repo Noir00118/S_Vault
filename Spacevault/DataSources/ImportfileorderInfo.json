@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "ae79a2c7-6cf6-45cd-bc85-60eba209c60a",
+    "Name": "ImportfileorderInfo",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "cba99ad1-0782-ee11-8179-6045bd895221"
+  }
+]

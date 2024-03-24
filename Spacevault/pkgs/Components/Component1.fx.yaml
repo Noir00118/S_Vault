@@ -1,0 +1,42 @@
+Component1 As CanvasComponent:
+    Badge1: ="Text"
+    Badge2: ="Text"
+    Color: ="Text"
+    ElevationColor: ="Text"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =120
+    Icone: ="Text"
+    Width: =200
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    BadgeCanvas1_5 As Badge:
+        BasePaletteColor: =
+        Content: =Component1.Badge1
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =
+        Height: =32
+        Shape: ='BadgeCanvas.Shape'.Rounded
+        Width: =Parent.Width-Self.X-10
+        X: =10
+        Y: =Parent.Height-Self.Height-14
+        ZIndex: =3
+
+    BadgeCanvas2_1 As Badge:
+        Appearance: ='BadgeCanvas.Appearance'.Ghost
+        BasePaletteColor: =
+        Content: =Component1.Badge2
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Verdana
+        FontColor: =
+        FontSize: =22
+        FontWeight: =FontWeight.Semibold
+        Height: =BadgeCanvas1_5.Y-Self.Y-5 
+        Shape: ='BadgeCanvas.Shape'.Rounded
+        ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+        Width: =Parent.Width-Self.X-5
+        X: =Icon1.Width+Icon1.X+5
+        Y: =8
+        ZIndex: =4
+

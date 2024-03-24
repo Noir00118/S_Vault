@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "0285a019-a068-4b2c-8516-4ed5892cf07c",
+    "Name": "Notify",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "ff1b2c5e-786a-ee11-9ae7-000d3a69dce2"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "227797b9-d958-49eb-bc75-e209ffd28deb",
+    "Name": "GetTookanDetaisFromJobId",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "4c3347a1-fa8f-ee11-8179-6045bd8c98a3"
+  }
+]
