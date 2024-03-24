@@ -1,0 +1,3318 @@
+Screen3 As screen:
+    OnVisible: |-
+        =Set(_today,Today());
+        Set(_firstDayOfMonth,DateAdd(_today,1-Day(_today),TimeUnit.Days));
+        Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days));
+        Set(_selectedStart,Blank()); Set(_selectedEnd, Blank());
+        
+        
+        
+        If(IsBlank(timmmer),Set(timmmer,false);Set(timme,Value(180000));Set(timmmer,true),Set(timmmer,false);Set(timme,Value(180000));Set(timmmer,true));
+        
+        
+        
+        
+        
+        If(
+            IsEmpty(ofsolistD),
+           Select(ButtonCanvas18_8))
+
+    Container164_8 As groupContainer.horizontalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Fill: =RGBA(0, 0, 0, 0.03)
+        Height: =Parent.Height
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Container166_4 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semilight
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutMinHeight: =100
+            LayoutMinWidth: =25
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Component2_9.Width
+            ZIndex: =1
+
+        Container6 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.None
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            ZIndex: =3
+
+            Container12 As groupContainer.verticalAutoLayoutContainer:
+                DropShadow: =DropShadow.None
+                FillPortions: =0
+                Height: =220
+                LayoutGap: =5
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                ZIndex: =2
+
+                Container46 As groupContainer.verticalAutoLayoutContainer:
+                    DropShadow: =DropShadow.None
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    Container20 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =100
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutGap: =5
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =100
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        ZIndex: =2
+
+                        Container56_2 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =25
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =450
+                            ZIndex: =1
+
+                            Container67 As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                Height: =30
+                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                ZIndex: =1
+
+                                Label19_4 As label:
+                                    AutoHeight: =true
+                                    Color: =RGBA(54, 176, 75, 1)
+                                    Font: =Font.Georgia
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =30
+                                    LayoutMinHeight: =4
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: ="Dashboard"
+                                    VerticalAlign: =VerticalAlign.Top
+                                    Width: =200
+                                    ZIndex: =1
+
+                                Timer1_6 As timer:
+                                    AutoStart: =true
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(15, 84, 140, 1)
+                                    DisplayMode: =DisplayMode.View
+                                    Duration: =
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =32
+                                    LayoutMinHeight: =4
+                                    LayoutMinWidth: =30
+                                    OnTimerEnd: =
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Repeat: =true
+                                    Size: =10
+                                    Start: =timmmer
+                                    Text: |-
+                                        ="Next Refresh In - "&Text(Sum(timme-Timer1_5.Value),"mm:ss") 
+                                    Width: =150
+                                    X: =Parent.Width-Self.Width-20
+                                    Y: =72
+                                    ZIndex: =2
+
+                            Container56 As groupContainer.horizontalAutoLayoutContainer:
+                                DropShadow: =DropShadow.None
+                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                LayoutGap: =10
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                PaddingBottom: =5
+                                PaddingLeft: =5
+                                PaddingRight: =5
+                                PaddingTop: =5
+                                ZIndex: =2
+
+                                "TabList2_1 As 'Tab list'.pcfdataset":
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Alignment: ='TabList.Alignment'.Vertical
+                                    BasePaletteColor: =RGBA(141, 229, 250, 1)
+                                    DisplayMode: =DisplayMode.Edit
+                                    FillPortions: =1
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =40
+                                    Items: =[ "Outbound", "Logistics","Inbound"]
+                                    LayoutMinHeight: =55
+                                    LayoutMinWidth: =28
+                                    Size: ='TabList.Size'.Small
+                                    Width: =110
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =1
+
+                                Component1_7 As Card:
+                                    Badge1: ="Fulfilled B2C"
+                                    Badge1Color: =RGBA(255, 255, 255, 1)
+                                    Badge2: =CountRows(AllOrdercount)
+                                    Color: ="Black"
+                                    ElevationColor: =RGBA(71, 158, 245, 1)
+                                    Icone: ="ShoppingCartSolid"
+                                    LayoutMinHeight: =64
+                                    LayoutMinWidth: =640
+                                    ZIndex: =2
+
+                                Component1_9 As Card:
+                                    Badge1: ="Fulfilled B2B"
+                                    Badge1Color: =RGBA(72, 163, 62, 1)
+                                    Badge2: |-
+                                        =With({Transcountt:Filter(AddColumns(GroupBy(dashBoardSVMSout,"Fulfilltype","Orderype","Client","vv"),"Count",CountRows(vv)),Fulfilltype="Transfer")},
+                                        Sum(Transcountt,Count))
+                                    Color: ="Black"
+                                    ElevationColor: =RGBA(83, 144, 164, 1)
+                                    Icone: ="Packages"
+                                    LayoutMinHeight: =64
+                                    LayoutMinWidth: =640
+                                    ZIndex: =3
+
+                                Component1_8 As Card:
+                                    Badge1: ="Logistics"
+                                    Badge1Color: =RGBA(72, 163, 62, 1)
+                                    Badge2: =CountRows(logissDash)
+                                    Color: ="Back"
+                                    ElevationColor: =RGBA(29, 147, 173, 0.45)
+                                    Icone: ="ParkingSolid"
+                                    LayoutMinHeight: =64
+                                    LayoutMinWidth: =640
+                                    ZIndex: =4
+
+                                Component1_6 As Card:
+                                    Badge1: ="Inbound"
+                                    Badge1Color: =RGBA(72, 163, 62, 1)
+                                    Badge2: =Sum(dashinbound,Invoice)
+                                    Color: ="Black"
+                                    ElevationColor: =RGBA(34, 212, 49, 0.5)
+                                    Icone: ="Subscribe"
+                                    LayoutMinHeight: =64
+                                    LayoutMinWidth: =640
+                                    ZIndex: =5
+
+                        Container60 As groupContainer.horizontalAutoLayoutContainer:
+                            DropShadow: =DropShadow.None
+                            FillPortions: =0
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingLeft: =10
+                            Width: =310
+                            ZIndex: =3
+
+                            Container47_2 As groupContainer.verticalAutoLayoutContainer:
+                                AlignInContainer: =AlignInContainer.Center
+                                DropShadow: =DropShadow.None
+                                FillPortions: =0
+                                Height: =100
+                                LayoutAlignItems: =LayoutAlignItems.Stretch
+                                LayoutDirection: =LayoutDirection.Vertical
+                                LayoutJustifyContent: =LayoutJustifyContent.Center
+                                LayoutMinHeight: =100
+                                LayoutMinWidth: =250
+                                LayoutMode: =LayoutMode.Auto
+                                PaddingTop: =7
+                                Visible: =false
+                                Width: =100
+                                ZIndex: =1
+
+                                "Icon24_2 As 'Fluent Icon (1.0.22)'":
+                                    DisplayMode: =DisplayMode.Edit
+                                    Height: =50
+                                    IconName: ="FilterSolid"
+                                    IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                                    LayoutMinHeight: =200
+                                    LayoutMinWidth: =200
+                                    OnChange: |-
+                                        =
+                                            Set(
+                                                tookanpagecountDash,
+                                                getalldetailstookan.Run(
+                                                    Text(
+                                                       Calendar_2.StartDate,
+                                                        "yyyy-mm-dd"
+                                                    ),
+                                                    Text(
+                                                       Calendar_2.EndDate,
+                                                        "yyyy-mm-dd"
+                                                    )
+                                                ).responpage
+                                            ); Clear(logissDash);
+                                            Select(Button2_8)
+                                    Text: ="Filter"
+                                    TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
+                                    Theme: =AppThemeJson
+                                    Tooltip: =""
+                                    Visible: =false
+                                    Width: =100
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =4
+
+                                ButtonCanvas20_5 As Button:
+                                    BasePaletteColor: =
+                                    DisplayMode: =DisplayMode.Edit
+                                    FontColor: =
+                                    Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
+                                    OnSelect: =RemoveIf(OMSremove,Docno in ShowColumns(dashBoardSVMSout,"Docno"))
+                                    Text: ="remove"
+                                    Visible: =false
+                                    Width: =96
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =5
+
+                                ButtonCanvas14_1 As Button:
+                                    BasePaletteColor: =
+                                    DisplayMode: =DisplayMode.Edit
+                                    FontColor: =
+                                    Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
+                                    OnSelect: =ClearCollect(OMSremove,ofsolistD)
+                                    Visible: =false
+                                    Width: =96
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =6
+
+                                ButtonCanvas20_7 As Button:
+                                    BasePaletteColor: =
+                                    DisplayMode: =DisplayMode.Edit
+                                    FontColor: =
+                                    Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
+                                    OnSelect: |-
+                                        =With(
+                                            {
+                                                ofsdup: Filter(
+                                                    ofsolistdashboard,
+                                                    Docno in ShowColumns(
+                                                        dashBoardSVMSout,
+                                                        "Docno"
+                                                    )
+                                                )
+                                            },
+                                            With(
+                                                {
+                                                    SVDUP: Filter(
+                                                        dashBoardSVMSout,
+                                                        Docno in ShowColumns(
+                                                            ofsolistdashboard,
+                                                            "Docno"
+                                                        )
+                                                    )
+                                                },
+                                                ClearCollect(
+                                                    dashBoardSVMSoutduplicate,
+                                                    ofsdup,
+                                                    SVDUP
+                                                )
+                                            )
+                                        )
+                                    Text: ="Collect Duplicate"
+                                    Visible: =false
+                                    Width: =96
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =7
+
+                                ButtonCanvas20_8 As Button:
+                                    BasePaletteColor: =
+                                    DisplayMode: =DisplayMode.Edit
+                                    FontColor: =
+                                    Height: =32
+                                    LayoutMinHeight: =32
+                                    LayoutMinWidth: =96
+                                    OnSelect: =RemoveIf(OMSremove,Docno in ShowColumns(dashBoardSVMSout,"Docno"));ClearCollect(AllOrdercount,OMSremove,Filter(dashBoardSVMSout,Fulfilltype="Order"))
+                                    Text: ="Mearge"
+                                    Visible: =false
+                                    Width: =96
+                                    X: =0
+                                    Y: =0
+                                    ZIndex: =8
+
+                            Calendar_2 As Calendar:
+                                AlignInContainer: =AlignInContainer.Center
+                                CustomProperty1: |-
+                                    =Set(_today,Today());
+                                    Set(_firstDayOfMonth,DateAdd(_today,1-Day(_today),TimeUnit.Days));
+                                    Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days));
+                                    Set(_selectedStart,Blank()); Set(_selectedEnd, Blank())
+                                CustomProperty2: |-
+                                    =
+                                        ClearCollect(
+                                            ofsolistD,
+                                            ForAll(
+                                                Table(
+                                                    ParseJSON(
+                                                        OFSOrderList.Run(
+                                                            Text(
+                                                                _selectedStart,
+                                                                "mm/dd/yyyy"
+                                                            ),
+                                                            Text(
+                                                                _selectedEnd,
+                                                                "mm/dd/yyyy"
+                                                            )
+                                                        ).re
+                                                    )
+                                                ),
+                                                {
+                                                    Docno: Text(ThisRecord.Value.WebOrderNo),
+                                                    Client: Text(ThisRecord.Value.PackagingLocation),
+                                                    OrderDate: Text(
+                                                        Text(ThisRecord.Value.OrderDate),
+                                                        "mm/dd/yyyy"
+                                                    ),
+                                                    OrderStatus: Text(ThisRecord.Value.OrderStatus),
+                                                    OS:"OFS",
+                                                    Fulfilltype:"Order"
+                                                }
+                                            )
+                                        );Set(
+                                            tookanpagecountDash,
+                                            getalldetailstookan.Run(
+                                                Text(
+                                                   _selectedStart,
+                                                    "yyyy-mm-dd"
+                                                ),
+                                                Text(
+                                                   _selectedEnd,
+                                                    "yyyy-mm-dd"
+                                                )
+                                            ).responpage
+                                        );Concurrent(
+                                        ClearCollect(
+                                            dashBoardSVMSout,
+                                            ForAll(
+                                                Filter(
+                                                    'Master Out Bound',
+                                                    Date >= DateValue(
+                                                        Text(
+                                                            _selectedStart,
+                                                            "mm/dd/yyy"
+                                                        )
+                                                    ) && Date <= DateValue(
+                                                        Text(
+                                                            _selectedEnd,
+                                                            "mm/dd/yyy"
+                                                        )
+                                                    )
+                                                ),
+                                                {
+                                                    OrderStatus: ThisRecord.Status.Value,
+                                                    Client: ThisRecord.Company,
+                                                    Docno: ThisRecord.Title,
+                                                    OrderDate: Text(ThisRecord.Date),
+                                                    Fulfilltype: ThisRecord.'Fulfillment Type'.Value,
+                                                    Orderype: ThisRecord.'Order Type'.Value,
+                                                    OS: "SV",
+                                                    Remarkk: ThisRecord.Remark
+                                                }
+                                            )
+                                        ),
+                                        ClearCollect(
+                                            dashin,
+                                            Filter(
+                                                'Master In Bound',
+                                                Date >= DateValue(
+                                                    Text(
+                                                        _selectedStart,
+                                                        "mm/dd/yyy"
+                                                    )
+                                                ) && Date <= DateValue(
+                                                    Text(
+                                                        _selectedEnd,
+                                                        "mm/dd/yyy"
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                        ;
+                                    ClearCollect(
+                                        OMSremove,
+                                        ofsolistD
+                                    );
+                                    RemoveIf(
+                                        OMSremove,
+                                        Docno in ShowColumns(
+                                            dashBoardSVMSout,
+                                            "Docno"
+                                        )
+                                    );
+                                    ClearCollect(
+                                        AllOrdercount,
+                                        OMSremove,
+                                        dashBoardSVMSout
+                                    ); Clear(logissDash);
+                                        Select(Button2_8)
+                                FillPortions: =1
+                                Height: =Parent.Height
+                                LayoutMinHeight: =64
+                                LayoutMinWidth: =64
+                                X: =855
+                                Y: =270
+                                ZIndex: =2
+
+                            "Icon24_3 As 'Fluent Icon (1.0.22)'":
+                                AlignInContainer: =AlignInContainer.End
+                                DisplayMode: =DisplayMode.Edit
+                                Height: =40
+                                IconName: ="FilterSolid"
+                                IconType: ='PowerCAT.Icon.IconType'.ActionButton
+                                LayoutMinHeight: =200
+                                LayoutMinWidth: =20
+                                OnChange: |-
+                                    =
+                                        ClearCollect(
+                                            ofsolistD,
+                                            ForAll(
+                                                Table(
+                                                    ParseJSON(
+                                                        OFSOrderList.Run(
+                                                            Text(
+                                                                _selectedStart,
+                                                                "mm/dd/yyy"
+                                                            ),
+                                                            Text(
+                                                                _selectedEnd,
+                                                                "mm/dd/yyy"
+                                                            )
+                                                        ).re
+                                                    )
+                                                ),
+                                                {
+                                                    Docno: Text(ThisRecord.Value.WebOrderNo),
+                                                    Client: Text(ThisRecord.Value.PackagingLocation),
+                                                    OrderDate: Text(
+                                                        Text(ThisRecord.Value.OrderDate),
+                                                        "mm/dd/yyyy"
+                                                    ),
+                                                    OrderStatus: Text(ThisRecord.Value.OrderStatus),
+                                                    OS:"OFS",
+                                                    Fulfilltype:"Order"
+                                                }
+                                            )
+                                        );Set(
+                                            tookanpagecountDash,
+                                            getalldetailstookan.Run(
+                                                Text(
+                                                   _selectedStart,
+                                                    "yyyy-mm-dd"
+                                                ),
+                                                Text(
+                                                   _selectedEnd,
+                                                    "yyyy-mm-dd"
+                                                )
+                                            ).responpage
+                                        );Concurrent(
+                                        ClearCollect(
+                                            dashBoardSVMSout,
+                                            ForAll(
+                                                Filter(
+                                                    'Master Out Bound',
+                                                    Date >= DateValue(
+                                                        Text(
+                                                            _selectedStart,
+                                                            "mm/dd/yyy"
+                                                        )
+                                                    ) && Date <= DateValue(
+                                                        Text(
+                                                            _selectedEnd,
+                                                            "mm/dd/yyy"
+                                                        )
+                                                    )
+                                                ),
+                                                {
+                                                    OrderStatus: ThisRecord.Status.Value,
+                                                    Client: ThisRecord.Company,
+                                                    Docno: ThisRecord.Title,
+                                                    OrderDate: Text(ThisRecord.Date),
+                                                    Fulfilltype: ThisRecord.'Fulfillment Type'.Value,
+                                                    Orderype: ThisRecord.'Order Type'.Value,
+                                                    OS: "SV",
+                                                    Remarkk: ThisRecord.Remark
+                                                }
+                                            )
+                                        ),
+                                        ClearCollect(
+                                            dashin,
+                                            Filter(
+                                                'Master In Bound',
+                                                Date >= DateValue(
+                                                    Text(
+                                                        _selectedStart,
+                                                        "mm/dd/yyy"
+                                                    )
+                                                ) && Date <= DateValue(
+                                                    Text(
+                                                        _selectedEnd,
+                                                        "mm/dd/yyy"
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                        ; Clear(logissDash);
+                                        Select(Button2_8);
+                                    ClearCollect(
+                                        OMSremove,
+                                        ofsolistD
+                                    );
+                                    RemoveIf(
+                                        OMSremove,
+                                        Docno in ShowColumns(
+                                            dashBoardSVMSout,
+                                            "Docno"
+                                        )
+                                    );
+                                    ClearCollect(
+                                        AllOrdercount,
+                                        OMSremove,
+                                        dashBoardSVMSout
+                                    )
+                                Text: ="Filter"
+                                TextAlignment: ='PowerCAT.Icon.TextAlignment'.Left
+                                Theme: =AppThemeJson
+                                Tooltip: =""
+                                Visible: =false
+                                Width: =50
+                                X: =0
+                                Y: =0
+                                ZIndex: =3
+
+            Canvas2_3 As fluidGrid.fluidGridWithBlankCard:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =Parent.Height - Self.Y
+                LayoutMinHeight: =250
+                LayoutMinWidth: =100
+                Width: =Parent.Width
+                Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+                ZIndex: =5
+
+                DataCard27 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =330
+                    Width: =Parent.Width
+                    WidthFit: =true
+                    X: =0
+                    Y: =5
+                    ZIndex: =3
+
+                    Container19 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.Semilight
+                        Height: =300
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =Parent.Width-20
+                        X: =8
+                        Y: =8
+                        ZIndex: =2
+
+                        HtmlText6 As htmlViewer:
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =1
+                            HtmlText: |-
+                                ="<!DOCTYPE html>
+                                <html>
+                                <Table style='width:100% ; border-collapse: collapse;'>
+                                <tr style='background-color: MediumSeaGreen;'>
+                                
+                                 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Invoice</th> 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> SKU</th> 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> QTY</th> 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                
+                                </tr>
+                                
+                                "&Concat(AddColumns(dashinbound,"%",Sum(ThisRecord.Invoice/Sum (dashinbound,Invoice)*100)),"
+                                <tr>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Company&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Invoice&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.SKU&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.QTY&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                
+                                
+                                ")&"
+                                
+                                </tr>
+                                
+                                
+                                
+                                </table>
+                                </html>"
+                            LayoutMinHeight: =250
+                            ZIndex: =2
+
+                        Table4_3 As Table.pcfdataset:
+                            BasePaletteColor: =RGBA(237, 243, 245, 1)
+                            DisableChildItemsEditing: ="no"
+                            DisplayMode: =DisplayMode.Edit
+                            EnableColumnMoving: ="no"
+                            EnableSorting: ='PowerAppsOneGrid.EnableSorting'.Enable
+                            FontColor: =
+                            FontSize: =10
+                            HeaderFont: =Font.Arial
+                            HeaderFontWeight: =FontWeight.Bold
+                            Height: =246
+                            Items: |-
+                                =AddColumns(
+                                    GroupBy(
+                                        dashin,"Company","inn"
+                                    ),
+                                    "Invoice",
+                                    CountRows(
+                                        Distinct(
+                                            inn,Title
+                                        
+                                        )
+                                    ),
+                                    "QTY",
+                                    Sum(
+                                        inn,
+                                        'Total Items'
+                                    ),"SKU",Sum(inn,'Total Sku')
+                                )
+                            LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                            LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                            onCellValueChange: =false
+                            onFilter: =false
+                            onNavigate: =false
+                            onRowSelect: =false
+                            onSave: =false
+                            OnSelect: =false
+                            ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.GridOnly
+                            Visible: =false
+                            Width: =373
+                            X: =20
+                            Y: =55
+                            ZIndex: =4
+
+                            Remarkk1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Remarkk"
+                                FieldName: ="Remarkk"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =3
+                                ZIndex: =25
+
+                            Client1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Client"
+                                FieldName: ="Client"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =3
+                                ZIndex: =26
+
+                            Docno1 As pcfDataField.textualColumn:
+                                FieldDisplayName: ="Docno"
+                                FieldName: ="Docno"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =4
+                                ZIndex: =27
+
+                        HtmlText6_1 As htmlViewer:
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =1
+                            HtmlText: |-
+                                ="<!DOCTYPE html>
+                                <html>
+                                <Table style='width:100% ; border-collapse: collapse;'>
+                                <tr style='background-color: MediumSeaGreen;'>
+                                
+                                 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Invoice</th> 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> SKU</th> 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> QTY</th> 
+                                <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                
+                                </tr>
+                                
+                                "&Concat(AddColumns(dashinbound,"%",Sum(ThisRecord.Invoice/Sum (dashinbound,Invoice)*100)),"
+                                <tr>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Company&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Invoice&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.SKU&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.QTY&"</td>
+                                <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                
+                                
+                                ")&"
+                                
+                                </tr>
+                                
+                                
+                                
+                                </table>
+                                </html>"
+                            LayoutMinHeight: =250
+                            Visible: =false
+                            ZIndex: =5
+
+                        Image2_8 As image:
+                            Fill: =RGBA(255, 255, 255, 1)
+                            FillPortions: =1
+                            Height: =500
+                            Image: |-
+                                =With({WeekAVG:DropColumns(AddColumns(
+                                    GroupBy(
+                                        AddColumns(
+                                        
+                                                dashin,  
+                                                "Week",
+                                                If(
+                                                    Value(Day(Date)) <= 7,
+                                                "W1",
+                                                If(
+                                                    Value(Day(Date)) <= 14,
+                                                    "W2",
+                                                    If(
+                                                        Value(Day(Date)) <= 21,
+                                                        "W3",
+                                                        If(
+                                                            Value(Day(Date)) <= 31,
+                                                            "W4"
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                      
+                                        
+                                        "Week",
+                                        "ww"
+                                    ),
+                                    "Count",
+                                    CountRows(ww)
+                                ),"Count","ww")},
+                                
+                                
+                                
+                                With({WeekAVGcount:AddColumns(
+                                    GroupBy(
+                                        AddColumns(dashin,
+                                                
+                                                "Week",
+                                                If(
+                                                    Value(Day(Date)) <= 7,
+                                                "W1",
+                                                If(
+                                                    Value(Day(Date)) <= 14,
+                                                    "W2",
+                                                    If(
+                                                        Value(Day(Date)) <= 21,
+                                                        "W3",
+                                                        If(
+                                                            Value(Day(Date)) <= 31,
+                                                            "W4"
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                      
+                                        
+                                        "Week",
+                                        "ww"
+                                    ),
+                                    "Count",
+                                    CountRows(ww)
+                                )},
+                                
+                                
+                                
+                                
+                                "https://quickchart.io/chart?c="&EncodeUrl("{
+                                  type: 'bar',
+                                  data: {
+                                    labels:["&Concat(WeekAVG,"'"&Week&"'," ,"")&"],
+                                    datasets: [
+                                      {
+                                        label: '',
+                                        data: ["&Concat(WeekAVGcount,Count," ,")&"],
+                                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                        borderColor: 'rgb(54, 162, 235)',
+                                        borderWidth: 1,
+                                      },
+                                    ],
+                                  },
+                                  options: {
+                                    plugins: {
+                                      datalabels: {
+                                        anchor: 'end',
+                                        align: 'center',
+                                        color: '#000',
+                                        backgroundColor: 'rgba(34, 139, 34, 0.6)',
+                                        borderColor: 'rgba(34, 139, 34, 1.0)',
+                                        borderWidth: 1,
+                                        borderRadius: 5,
+                                        font: {
+                                          weight: 'bold',
+                                          size:'18'
+                                        },
+                                        formatter: (value) => {
+                                          return value + '';
+                                        },
+                                      },
+                                    },
+                                  },
+                                }
+                                ")))
+                            Visible: =false
+                            Width: =396
+                            X: =10
+                            Y: =193
+                            ZIndex: =6
+
+                        Image2_10 As image:
+                            AlignInContainer: =AlignInContainer.Stretch
+                            Fill: =RGBA(255, 255, 255, 1)
+                            Height: =200
+                            Image: |-
+                                =With({WeekAVG:DropColumns(AddColumns(
+                                    GroupBy(
+                                        AddColumns(
+                                        
+                                                dashin,  
+                                                "Week",
+                                                If(
+                                                    Value(Day(Date)) <= 7,
+                                                "W1",
+                                                If(
+                                                    Value(Day(Date)) <= 14,
+                                                    "W2",
+                                                    If(
+                                                        Value(Day(Date)) <= 21,
+                                                        "W3",
+                                                        If(
+                                                            Value(Day(Date)) <= 31,
+                                                            "W4"
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                      
+                                        
+                                        "Week",
+                                        "ww"
+                                    ),
+                                    "Count",
+                                    CountRows(ww)
+                                ),"Count","ww")},
+                                
+                                
+                                
+                                With({WeekAVGcount:AddColumns(
+                                    GroupBy(
+                                        AddColumns(dashin,
+                                                
+                                                "Week",
+                                                If(
+                                                    Value(Day(Date)) <= 7,
+                                                "W1",
+                                                If(
+                                                    Value(Day(Date)) <= 14,
+                                                    "W2",
+                                                    If(
+                                                        Value(Day(Date)) <= 21,
+                                                        "W3",
+                                                        If(
+                                                            Value(Day(Date)) <= 31,
+                                                            "W4"
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                      
+                                        
+                                        "Week",
+                                        "ww"
+                                    ),
+                                    "Count",
+                                    CountRows(ww)
+                                )},
+                                
+                                
+                                
+                                
+                                "https://quickchart.io/chart?c="&EncodeUrl("{
+                                  type: 'doughnut',
+                                  data: {
+                                    datasets: [
+                                      {
+                                        data: ["&Concat(WeekAVGcount,Count," ,")&"],
+                                        backgroundColor: [
+                                          'rgb(255, 99, 132)',
+                                          'rgb(255, 159, 64)',
+                                          'rgb(255, 205, 86)',
+                                          'rgb(75, 192, 192)',
+                                          'rgb(54, 162, 235)',
+                                        ],
+                                        label: 'Dataset 1',
+                                      },
+                                    ],
+                                    labels: ["&Concat(WeekAVG,"'"&Week&"'," ,"")&"],
+                                  },
+                                  options: {
+                                    font: {
+                                          weight: 'bold',
+                                          size:'20'
+                                        },
+                                    legend: {
+                                      position: 'right',
+                                    },
+                                    title: {
+                                      display: true,
+                                      text: 'Chart.js Doughnut Chart',
+                                    },
+                                  },
+                                }
+                                ")))
+                            Width: =396
+                            X: =10
+                            Y: =193
+                            ZIndex: =7
+
+                DataCard28 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =Container53.Height+30
+                    Width: =Parent.Width
+                    WidthFit: =true
+                    X: =0
+                    Y: =1
+                    ZIndex: =4
+
+                    Container53 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =500
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                        Width: =Parent.Width-10
+                        ZIndex: =2
+
+                        Container19_2 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Semilight
+                            FillPortions: =2
+                            Height: =Parent.Height
+                            LayoutAlignItems: =LayoutAlignItems.Stretch
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =5
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            HtmlText6_10 As htmlViewer:
+                                AlignInContainer: =AlignInContainer.Stretch
+                                Fill: =RGBA(0, 0, 0, 0)
+                                FillPortions: =2
+                                HtmlText: |-
+                                    ="<!DOCTYPE html>
+                                    <html>
+                                    
+                                     <div  style='width:50%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'> Total Orders Fulfilled  </div>
+                                    
+                                      <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(AllOrdercount)&"</div>
+                                    
+                                    
+                                      </br>
+                                    
+                                    <table style='width:100% ; border-collapse: collapse;background-color: White;'>
+                                    <tr style='background-color: MediumSeaGreen;'>
+                                    
+                                     
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                    
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> OFS Orders</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> SV Orders</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Transfer</th>
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Edited</th>  
+                                    
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Total </th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                    
+                                    </tr>
+                                    
+                                    "&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv),"Transfer",CountIf(vv,Fulfilltype="Transfer"),"OFS ORDERS",CountIf(vv,Fulfilltype="Order"&&OS="OFS"),"SV Orders",CountIf(vv,Fulfilltype="Order"&&OS="SV"),"Edited",CountIf(vv,Fulfilltype="Edited"&&OS="SV")),"%",Sum(ThisRecord.Count/Sum (CountRows(AllOrdercount))*100)),"
+                                    <tr>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Client&"</td>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&If(ThisRecord.'OFS ORDERS'=0,"",ThisRecord.'OFS ORDERS')&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&If(ThisRecord.'SV Orders'=0,"",ThisRecord.'SV Orders')&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&If(ThisRecord.Transfer=0,"",ThisRecord.Transfer)&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&If(ThisRecord.Edited=0,"",ThisRecord.Edited)&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                    
+                                    
+                                    ")&"
+                                    
+                                    </tr>
+                                    
+                                    
+                                    
+                                    </table>
+                                    </html>"
+                                LayoutMinHeight: =300
+                                PaddingTop: =0
+                                ZIndex: =1
+
+                            Table2_4 As Table.pcfdataset:
+                                DisableChildItemsEditing: ="no"
+                                DisplayMode: =DisplayMode.Edit
+                                EnableColumnMoving: ="no"
+                                Height: =0
+                                Items: |-
+                                    =With({WeekAVG:DropColumns(AddColumns(
+                                        GroupBy(
+                                            AddColumns(RenameColumns(
+                                            
+                                                    AllOrdercount,"OrderDate","Date"
+                                                    
+                                                ),
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    ),"Count","ww")},WeekAVG)
+                                LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                                LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                                onCellValueChange: =false
+                                onFilter: =false
+                                onNavigate: =false
+                                onRowSelect: =false
+                                onSave: =false
+                                OnSelect: =false
+                                ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.GridOnly
+                                Visible: =false
+                                Width: =Parent.Width-10
+                                X: =10
+                                Y: =259
+                                ZIndex: =2
+
+                                Week1_4 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Week"
+                                    FieldName: ="Week"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =1
+                                    ZIndex: =8
+
+                                Company6_4 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Company"
+                                    FieldName: ="Company"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =2
+                                    ZIndex: =9
+
+                                Count1_4 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Count"
+                                    FieldName: ="Count"
+                                    FieldType: ="n"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =4
+                                    ZIndex: =10
+
+                                Fulfill1_4 As pcfDataField.textualColumn:
+                                    FieldDisplayName: ="Fulfill"
+                                    FieldName: ="Fulfill"
+                                    FieldType: ="s"
+                                    FieldVariantName: ="textualColumn"
+                                    Order: =3
+                                    ZIndex: =11
+
+                        Container19_3 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Regular
+                            Height: =
+                            LayoutAlignItems: =LayoutAlignItems.Stretch
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =5
+                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width-5
+                            ZIndex: =3
+
+                            Image2_4 As image:
+                                DisplayMode: =DisplayMode.View
+                                Fill: =RGBA(255, 255, 255, 1)
+                                FillPortions: =1
+                                Height: =500
+                                Image: |-
+                                    =With({WeekAVG:DropColumns(AddColumns(
+                                        GroupBy(
+                                            AddColumns(RenameColumns(
+                                            
+                                                    AllOrdercount,"OrderDate","Date"
+                                                    
+                                                ),
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    ),"Count","ww")},
+                                    
+                                    
+                                    
+                                    With({WeekAVGcount:AddColumns(
+                                        GroupBy(
+                                            AddColumns(RenameColumns(
+                                            
+                                                    AllOrdercount,"OrderDate","Date"
+                                                    
+                                                ),
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    )},
+                                    
+                                    
+                                    
+                                    
+                                    "https://quickchart.io/chart?c="&EncodeUrl("
+                                    
+                                    
+                                    {
+                                      'type': 'horizontalBar',
+                                      'data': {
+                                        'datasets': [
+                                          {
+                                            'label': 'Dataset 1',
+                                            'backgroundColor': 'rgba(255, 99, 132, 0.5)',
+                                            'borderColor': 'rgb(255, 99, 132)',
+                                            'borderWidth': 1,
+                                            'data': [
+                                             "&Concat(WeekAVGcount,Count," ,")&"
+                                            ],
+                                            'fill': false,
+                                            'spanGaps': false,
+                                            'lineTension': 0.4,
+                                            'pointRadius': 3,
+                                            'pointHoverRadius': 3,
+                                            'pointStyle': 'circle',
+                                            'borderDash': [
+                                              0,
+                                              0
+                                            ],
+                                            'barPercentage': 0.9,
+                                            'categoryPercentage': 0.8,
+                                            'type': 'horizontalBar',
+                                            'hidden': false
+                                          }
+                                        ],
+                                        'labels': [
+                                           "&Concat(WeekAVG,"'"&Week&"'," ,"")&"
+                                        ]
+                                      },
+                                      'options': {
+                                        'title': {
+                                          'display': true,
+                                          'text': 'Chart.js Horizontal Bar Chart',
+                                          'position': 'top',
+                                          'fontSize': 12,
+                                          'fontFamily': 'sans-serif',
+                                          'fontColor': '#666666',
+                                          'fontStyle': 'bold',
+                                          'padding': 10,
+                                          'lineHeight': 1.2
+                                        },
+                                        'layout': {
+                                          'padding': {},
+                                          'left': 0,
+                                          'right': 0,
+                                          'top': 0,
+                                          'bottom': 0
+                                        },
+                                        'legend': {
+                                          'position': 'right',
+                                          'display': true,
+                                          'align': 'center',
+                                          'fullWidth': true,
+                                          'reverse': false,
+                                          'labels': {
+                                            'fontSize': 12,
+                                            'fontFamily': 'sans-serif',
+                                            'fontColor': '#666666',
+                                            'fontStyle': 'normal',
+                                            'padding': 10
+                                          }
+                                        },
+                                        'scales': {
+                                          'xAxes': [
+                                            {
+                                              'id': 'X1',
+                                              'display': true,
+                                              'position': 'bottom',
+                                              'type': 'linear',
+                                              'stacked': false,
+                                              'offset': true,
+                                              'time': {
+                                                'unit': false,
+                                                'stepSize': 1,
+                                                'displayFormats': {
+                                                  'millisecond': 'h:mm:ss.SSS a',
+                                                  'second': 'h:mm:ss a',
+                                                  'minute': 'h:mm a',
+                                                  'hour': 'hA',
+                                                  'day': 'MMM D',
+                                                  'week': 'll',
+                                                  'month': 'MMM YYYY',
+                                                  'quarter': '[Q]Q - YYYY',
+                                                  'year': 'YYYY'
+                                                }
+                                              },
+                                              'distribution': 'linear',
+                                              'gridLines': {
+                                                'display': true,
+                                                'color': 'rgba(0, 0, 0, 0.1)',
+                                                'borderDash': [
+                                                  0,
+                                                  0
+                                                ],
+                                                'lineWidth': 1,
+                                                'drawBorder': true,
+                                                'drawOnChartArea': true,
+                                                'drawTicks': true,
+                                                'tickMarkLength': 10,
+                                                'zeroLineWidth': 1,
+                                                'zeroLineColor': 'rgba(0, 0, 0, 0.25)',
+                                                'zeroLineBorderDash': [
+                                                  0,
+                                                  0
+                                                ]
+                                              },
+                                              'angleLines': {
+                                                'display': true,
+                                                'color': 'rgba(0, 0, 0, 0.1)',
+                                                'borderDash': [
+                                                  0,
+                                                  0
+                                                ],
+                                                'lineWidth': 1
+                                              },
+                                              'pointLabels': {
+                                                'display': true,
+                                                'fontColor': '#666',
+                                                'fontSize': 10,
+                                                'fontStyle': 'normal'
+                                              },
+                                              'ticks': {
+                                                'display': true,
+                                                'fontSize': 12,
+                                                'fontFamily': 'sans-serif',
+                                                'fontColor': '#666666',
+                                                'fontStyle': 'normal',
+                                                'padding': 0,
+                                                'stepSize': null,
+                                                'minRotation': 0,
+                                                'maxRotation': 50,
+                                                'mirror': false,
+                                                'reverse': false
+                                              },
+                                              'scaleLabel': {
+                                                'display': false,
+                                                'labelString': 'Axis label',
+                                                'lineHeight': 1.2,
+                                                'fontColor': '#666666',
+                                                'fontFamily': 'sans-serif',
+                                                'fontSize': 12,
+                                                'fontStyle': 'normal',
+                                                'padding': 4
+                                              }
+                                            }
+                                          ],
+                                          'yAxes': [
+                                            {
+                                              'id': 'Y1',
+                                              'display': true,
+                                              'position': 'left',
+                                              'type': 'category',
+                                              'stacked': false,
+                                              'offset': true,
+                                              'time': {
+                                                'unit': false,
+                                                'stepSize': 1,
+                                                'displayFormats': {
+                                                  'millisecond': 'h:mm:ss.SSS a',
+                                                  'second': 'h:mm:ss a',
+                                                  'minute': 'h:mm a',
+                                                  'hour': 'hA',
+                                                  'day': 'MMM D',
+                                                  'week': 'll',
+                                                  'month': 'MMM YYYY',
+                                                  'quarter': '[Q]Q - YYYY',
+                                                  'year': 'YYYY'
+                                                }
+                                              },
+                                              'distribution': 'linear',
+                                              'gridLines': {
+                                                'display': true,
+                                                'color': 'rgba(0, 0, 0, 0.1)',
+                                                'borderDash': [
+                                                  0,
+                                                  0
+                                                ],
+                                                'lineWidth': 1,
+                                                'drawBorder': true,
+                                                'drawOnChartArea': true,
+                                                'drawTicks': true,
+                                                'tickMarkLength': 10,
+                                                'zeroLineWidth': 1,
+                                                'zeroLineColor': 'rgba(0, 0, 0, 0.25)',
+                                                'zeroLineBorderDash': [
+                                                  0,
+                                                  0
+                                                ]
+                                              },
+                                              'angleLines': {
+                                                'display': true,
+                                                'color': 'rgba(0, 0, 0, 0.1)',
+                                                'borderDash': [
+                                                  0,
+                                                  0
+                                                ],
+                                                'lineWidth': 1
+                                              },
+                                              'pointLabels': {
+                                                'display': true,
+                                                'fontColor': '#666',
+                                                'fontSize': 10,
+                                                'fontStyle': 'normal'
+                                              },
+                                              'ticks': {
+                                                'display': true,
+                                                'fontSize': 12,
+                                                'fontFamily': 'sans-serif',
+                                                'fontColor': '#666666',
+                                                'fontStyle': 'normal',
+                                                'padding': 0,
+                                                'stepSize': null,
+                                                'minRotation': 0,
+                                                'maxRotation': 50,
+                                                'mirror': false,
+                                                'reverse': false
+                                              },
+                                              'scaleLabel': {
+                                                'display': false,
+                                                'labelString': 'Axis label',
+                                                'lineHeight': 1.2,
+                                                'fontColor': '#666666',
+                                                'fontFamily': 'sans-serif',
+                                                'fontSize': 12,
+                                                'fontStyle': 'normal',
+                                                'padding': 4
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        'plugins': {
+                                          'datalabels': {
+                                            'display': true,
+                                            'align': 'center',
+                                            'anchor': 'center',
+                                            'backgroundColor': '#eee',
+                                            'borderColor': '#ddd',
+                                            'borderRadius': 6,
+                                            'borderWidth': 1,
+                                            'padding': 4,
+                                            'color': '#666666',
+                                            'font': {
+                                              'family': 'sans-serif',
+                                              'size': 10,
+                                              'style': 'normal'
+                                            }
+                                          },
+                                          'datalabelsZAxis': {
+                                            'enabled': false
+                                          },
+                                          'googleSheets': {},
+                                          'airtable': {},
+                                          'tickFormat': ''
+                                        },
+                                        'elements': {
+                                          'rectangle': {
+                                            'borderWidth': 2
+                                          }
+                                        },
+                                        'responsive': true,
+                                        'cutoutPercentage': 50,
+                                        'rotation': -1.5707963267948966,
+                                        'circumference': 6.283185307179586,
+                                        'startAngle': -1.5707963267948966
+                                      }
+                                    }
+                                    ")))
+                                PaddingRight: =20
+                                Width: =396
+                                X: =10
+                                Y: =193
+                                ZIndex: =1
+
+                            Image2_3 As image:
+                                DisplayMode: =DisplayMode.View
+                                Fill: =RGBA(255, 255, 255, 1)
+                                FillPortions: =1
+                                Height: =247
+                                Image: |-
+                                    ="https://quickchart.io/chart?c="&EncodeUrl("{
+                                      type: 'doughnut',
+                                      data: {
+                                        datasets: [
+                                          {
+                                            data: [ "&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"'"&Count&"',")&"],
+                                            backgroundColor: [
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)',
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)',
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)','rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)','rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)',
+                                            ],
+                                            label: 'Dataset 1',
+                                          },
+                                        ],
+                                        labels: ["&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"'"&Client&"',")&"],
+                                      },
+                                      options: {
+                                        font: {
+                                              weight: 'bold',
+                                              size:'20'
+                                            },
+                                        legend: {
+                                          position: 'right',
+                                        },
+                                        title: {
+                                          display: true,
+                                          text: 'Chart.js Doughnut Chart',
+                                        },
+                                      },
+                                    }")
+                                Visible: =false
+                                Width: =396
+                                X: =10
+                                Y: =33
+                                ZIndex: =2
+
+                            Image2_13 As image:
+                                DisplayMode: =DisplayMode.View
+                                Fill: =RGBA(255, 255, 255, 1)
+                                FillPortions: =1
+                                Height: =500
+                                Image: |-
+                                    =With({WeekAVG:DropColumns(AddColumns(
+                                        GroupBy(
+                                            AddColumns(RenameColumns(
+                                            
+                                                    AllOrdercount,"OrderDate","Date"
+                                                    
+                                                ),
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    ),"Count","ww")},
+                                    
+                                    
+                                    
+                                    With({WeekAVGcount:AddColumns(
+                                        GroupBy(
+                                            AddColumns(RenameColumns(
+                                            
+                                                    AllOrdercount,"OrderDate","Date"
+                                                    
+                                                ),
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    )},
+                                    
+                                    
+                                    
+                                    
+                                    "https://quickchart.io/chart?c="&EncodeUrl("
+                                    
+                                    {
+                                      'type': 'doughnut',
+                                      'data': {
+                                        'datasets': [
+                                          {
+                                            'data': [
+                                              "&Concat(WeekAVGcount,Count," ,")&"
+                                            ],
+                                            'backgroundColor': [
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)'
+                                            ],
+                                            'label': 'Dataset 1',
+                                            'fill': false,
+                                            'spanGaps': false,
+                                            'lineTension': 0.4,
+                                            'pointRadius': 3,
+                                            'pointHoverRadius': 3,
+                                            'pointStyle': 'circle',
+                                            'borderDash': [
+                                              0,
+                                              0
+                                            ],
+                                            'barPercentage': 0.9,
+                                            'categoryPercentage': 0.8,
+                                            'type': 'doughnut',
+                                            'borderColor': [
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)'
+                                            ],
+                                            'borderWidth': 3,
+                                            'hidden': false
+                                          }
+                                        ],
+                                        'labels': [
+                                          "&Concat(WeekAVG,"'"&Week&"'," ,"")&"
+                                        ]
+                                      },
+                                      'options': {
+                                        'title': {
+                                          'display': false,
+                                          'text': 'Chart.js Doughnut Chart',
+                                          'position': 'top',
+                                          'fontSize': 12,
+                                          'fontFamily': 'sans-serif',
+                                          'fontColor': '#666666',
+                                          'fontStyle': 'bold',
+                                          'padding': 10,
+                                          'lineHeight': 1.2
+                                        },
+                                        'layout': {
+                                          'padding': {},
+                                          'left': 0,
+                                          'right': 0,
+                                          'top': 0,
+                                          'bottom': 0
+                                        },
+                                        'legend': {
+                                          'display': true,
+                                          'position': 'left',
+                                          'align': 'center',
+                                          'fullWidth': false,
+                                          'reverse': false,
+                                          'labels': {
+                                            'fontSize': 12,
+                                            'fontFamily': 'sans-serif',
+                                            'fontColor': '#666666',
+                                            'fontStyle': 'normal',
+                                            'padding': 10
+                                          }
+                                        },
+                                        'scales': {
+                                          'xAxes': [
+                                            {
+                                              'id': 'X1',
+                                              'display': false,
+                                              'position': 'bottom',
+                                              'type': 'category',
+                                              'stacked': false,
+                                              'offset': false,
+                                              'time': {
+                                                'unit': false,
+                                                'stepSize': 1,
+                                                'displayFormats': {
+                                                  'millisecond': 'h:mm:ss.SSS a',
+                                                  'second': 'h:mm:ss a',
+                                                  'minute': 'h:mm a',
+                                                  'hour': 'hA',
+                                                  'day': 'MMM D',
+                                                  'week': 'll',
+                                                  'month': 'MMM YYYY',
+                                                  'quarter': '[Q]Q - YYYY',
+                                                  'year': 'YYYY'
+                                                }
+                                              },
+                                              'distribution': 'linear',
+                                              'gridLines': {
+                                                'display': true,
+                                                'color': 'rgba(0, 0, 0, 0.1)',
+                                                'borderDash': [
+                                                  0,
+                                                  0
+                                                ],
+                                                'lineWidth': 1,
+                                                'drawBorder': true,
+                                                'drawOnChartArea': true,
+                                                'drawTicks': true,
+                                                'tickMarkLength': 10,
+                                                'zeroLineWidth': 1,
+                                                'zeroLineColor': 'rgba(0, 0, 0, 0.25)',
+                                                'zeroLineBorderDash': [
+                                                  0,
+                                                  0
+                                                ]
+                                              },
+                                              'angleLines': {
+                                                'display': true,
+                                                'color': 'rgba(0, 0, 0, 0.1)',
+                                                'borderDash': [
+                                                  0,
+                                                  0
+                                                ],
+                                                'lineWidth': 1
+                                              },
+                                              'pointLabels': {
+                                                'display': true,
+                                                'fontColor': '#666',
+                                                'fontSize': 10,
+                                                'fontStyle': 'normal'
+                                              },
+                                              'ticks': {
+                                                'display': true,
+                                                'fontSize': 12,
+                                                'fontFamily': 'sans-serif',
+                                                'fontColor': '#666666',
+                                                'fontStyle': 'normal',
+                                                'padding': 0,
+                                                'stepSize': null,
+                                                'minRotation': 0,
+                                                'maxRotation': 50,
+                                                'mirror': false,
+                                                'reverse': false
+                                              },
+                                              'scaleLabel': {
+                                                'display': false,
+                                                'labelString': 'Axis label',
+                                                'lineHeight': 1.2,
+                                                'fontColor': '#666666',
+                                                'fontFamily': 'sans-serif',
+                                                'fontSize': 12,
+                                                'fontStyle': 'normal',
+                                                'padding': 4
+                                              }
+                                            }
+                                          ],
+                                          'yAxes': []
+                                        },
+                                        'plugins': {
+                                          'datalabels': {
+                                            'display': true,
+                                            'align': 'center',
+                                            'anchor': 'center',
+                                            'backgroundColor': '#eee',
+                                            'borderColor': '#ddd',
+                                            'borderRadius': 6,
+                                            'borderWidth': 1,
+                                            'padding': 4,
+                                            'color': '#666666',
+                                            'font': {
+                                              'family': 'sans-serif',
+                                              'size': 10,
+                                              'style': 'normal'
+                                            }
+                                          },
+                                          'datalabelsZAxis': {
+                                            'enabled': false
+                                          },
+                                          'googleSheets': {},
+                                          'airtable': {},
+                                          'tickFormat': ''
+                                        },
+                                        'cutoutPercentage': 50,
+                                        'rotation': -1.5707963267948966,
+                                        'circumference': 6.283185307179586,
+                                        'startAngle': -1.5707963267948966
+                                      }
+                                    }
+                                    ")))
+                                LayoutMinHeight: =10
+                                Width: =396
+                                X: =10
+                                Y: =193
+                                ZIndex: =3
+
+                DataCard34 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =1000
+                    Width: =Parent.Width
+                    WidthFit: =true
+                    X: =0
+                    Y: =3
+                    ZIndex: =5
+
+                    Table3_4 As Table.pcfdataset:
+                        DisableChildItemsEditing: ="no"
+                        DisplayMode: =DisplayMode.Edit
+                        EnableColumnMoving: ="no"
+                        Height: =353
+                        Items: |-
+                            =AddColumns(GroupBy(AddColumns(logissDash,"Week",
+                                        If(
+                                            Value(Day(CDate)) <= 7,
+                                            "W1",
+                                            If(
+                                                Value(Day(CDate)) <= 14,
+                                                "W2",
+                                                If(
+                                                    Value(Day(CDate)) <= 21,
+                                                    "W3",
+                                                    If(
+                                                        Value(Day(CDate)) <= 31,
+                                                        "W4"
+                                                    ))))),"Week"
+                                                    
+                                                    
+                                                    
+                                                    ,"pp"),"Count",CountRows(pp))
+                        onCellValueChange: =false
+                        onFilter: =false
+                        onNavigate: =false
+                        onRowSelect: =false
+                        onSave: =false
+                        OnSelect: =false
+                        ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.Reflow
+                        Visible: =false
+                        Width: =477
+                        X: =0
+                        Y: =80
+                        ZIndex: =2
+
+                        Clients1_4 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Clients"
+                            FieldName: ="Clients"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =2
+                            ZIndex: =14
+
+                        Count2_4 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Count"
+                            FieldName: ="Count"
+                            FieldType: ="n"
+                            FieldVariantName: ="textualColumn"
+                            Order: =4
+                            ZIndex: =15
+
+                        Week2_2 As pcfDataField.textualColumn:
+                            FieldDisplayName: ="Week"
+                            FieldName: ="Week"
+                            FieldType: ="s"
+                            FieldVariantName: ="textualColumn"
+                            Order: =1
+                            ZIndex: =19
+
+                    Container53_2 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =1000
+                        LayoutGap: =10
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingBottom: =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                        Width: =Parent.Width-10
+                        ZIndex: =5
+
+                        Container19_13 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Semilight
+                            FillPortions: =3
+                            Height: =Parent.Height
+                            LayoutAlignItems: =LayoutAlignItems.Stretch
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =10
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width
+                            ZIndex: =2
+
+                            HtmlText6_5 As htmlViewer:
+                                AutoHeight: =true
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =260
+                                HtmlText: |-
+                                    ="<!DOCTYPE html>
+                                    <html>
+                                    
+                                     <div  style='width:60%; overflow:auto;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;display:inline-block;'> Total Orders Dispatched  </div>
+                                    
+                                      <div  style='width:40%; float:right;display:inline-block;background-color: White;padding:5px;font-size:14px;border-bottom: 3px solid #ddd;font-weight: bold;text-align:right;'> Total  "&CountRows(logissDash)&"</div>
+                                    
+                                    
+                                      </br>
+                                    
+                                    <Table style='width:100% ; border-collapse: collapse;'>
+                                    <tr style='background-color: MediumSeaGreen;'>
+                                    
+                                     
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> W1</th>
+                                    "&If(
+                                                    Value(Day(Today())) > 7,"
+                                    
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> W2</th>")&"
+                                    
+                                    
+                                    "&If(
+                                                    Value(Day(Today())) > 14,"
+                                    
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> W3</th>")&"
+                                    
+                                    "&If(
+                                                    Value(Day(Today())) > 21,"
+                                    
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> W4</th> ")&"
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Total</th> 
+                                    
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                    
+                                    </tr>
+                                    
+                                    "&Concat(Sort(AddColumns(AddColumns(GroupBy(AddColumns(logissDash,"Week",
+                                                If(
+                                                    Value(Day(CDate)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(CDate)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(CDate)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(CDate)) <= 31,
+                                                                "W4"
+                                                            ))))),"Clint"
+                                                            
+                                                            
+                                                            
+                                                            ,"pp"),"Count",CountRows(pp),"W1",CountIf(pp,Week="W1"),"W2",CountIf(pp,Week="W2"),"W3",CountIf(pp,Week="W3"),"W4",CountIf(pp,Week="W4")),"%",Sum(ThisRecord.Count/CountRows (logissDash)*100)),Clint,SortOrder.Ascending),"
+                                    <tr>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Clint&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.W1&"</td>
+                                    "&If(
+                                                    Value(Day(Today())) > 7,"
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.W2&"</td> ")&"
+                                    "&If(
+                                                    Value(Day(Today())) > 14,"
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.W3&"</td> ")&"
+                                    "&If(
+                                                    Value(Day(Today())) >21,"
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.W4&"</td> ")&"
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                    
+                                    
+                                    ")&"
+                                    
+                                    </tr>
+                                    
+                                    
+                                    
+                                    </table>
+                                    </html>"
+                                Width: =628
+                                X: =112
+                                Y: =24
+                                ZIndex: =2
+
+                            HtmlText6_2 As htmlViewer:
+                                AutoHeight: =true
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =260
+                                HtmlText: |-
+                                    ="<!DOCTYPE html>
+                                    <html>
+                                    <Table style='width:100% ; border-collapse: collapse;'>
+                                    <tr style='background-color: MediumSeaGreen;'>
+                                    
+                                     
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Invoice</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> SKU</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> QTY</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                    
+                                    </tr>
+                                    
+                                    "&Concat(AddColumns(AddColumns(GroupBy(logissDash,"Status","Type","lll"),"CountST",CountRows(lll)),"%",Sum(ThisRecord.CountST/CountRows (logissDash)*100)),"
+                                    <tr>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Status&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Type&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.CountST&"</td>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                    
+                                    
+                                    ")&"
+                                    
+                                    </tr>
+                                    
+                                    
+                                    
+                                    </table>
+                                    </html>"
+                                Width: =628
+                                X: =112
+                                Y: =24
+                                ZIndex: =3
+
+                            HtmlText6_3 As htmlViewer:
+                                AutoHeight: =true
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =341
+                                HtmlText: |-
+                                    ="<!DOCTYPE html>
+                                    <html>
+                                    <Table style='width:100% ; border-collapse: collapse;'>
+                                    <tr style='background-color: MediumSeaGreen;'>
+                                    
+                                     
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Invoice</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> SKU</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> QTY</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                    
+                                    </tr>
+                                    
+                                    "&Concat(Sort(AddColumns(AddColumns(GroupBy(logissDash,"Clint","Status","lll"),"CountST",CountRows(lll)),"%",Sum(ThisRecord.CountST/CountRows (logissDash)*100)),Clint,SortOrder.Ascending),"
+                                    <tr>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Clint&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Status&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.CountST&"</td>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                    
+                                    
+                                    ")&"
+                                    
+                                    </tr>
+                                    
+                                    
+                                    
+                                    </table>
+                                    </html>"
+                                Width: =628
+                                X: =412
+                                Y: =44
+                                ZIndex: =4
+
+                            HtmlText6_6 As htmlViewer:
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =260
+                                HtmlText: |-
+                                    ="<!DOCTYPE html>
+                                    <html>
+                                    <Table style='width:100% ; border-collapse: collapse;'>
+                                    <tr style='background-color: MediumSeaGreen;'>
+                                    
+                                     
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Client</th>
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> Invoice</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> SKU</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> QTY</th> 
+                                    <th style=' color:white;text-align:center;padding:5px;font-size:15px;'> % </th> 
+                                    
+                                    </tr>
+                                    
+                                    "&Concat(AddColumns(AddColumns(GroupBy(AddColumns(logissDash,"Week",
+                                                If(
+                                                    Value(Day(CDate)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(CDate)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(CDate)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(CDate)) <= 31,
+                                                                "W4"
+                                                            ))))),"Week","Clint","Status"
+                                                            
+                                                            
+                                                            
+                                                            ,"pp"),"Count",CountRows(pp)),"%",Sum(ThisRecord.Count/CountRows (logissDash)*100)),"
+                                    <tr>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Week&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Status&"</td>
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&ThisRecord.Count&"</td>
+                                    
+                                    <td style='border-bottom: 1px solid #ddd;text-align:center;font-size:12px;padding:5px;'>"&Text(ThisRecord.'%',"00.00 %")&"</td>
+                                    
+                                    
+                                    ")&"
+                                    
+                                    </tr>
+                                    
+                                    
+                                    
+                                    </table>
+                                    </html>"
+                                Visible: =false
+                                Width: =628
+                                X: =112
+                                Y: =24
+                                ZIndex: =5
+
+                        Container19_14 As groupContainer.verticalAutoLayoutContainer:
+                            DropShadow: =DropShadow.Regular
+                            Height: =Parent.Height
+                            LayoutAlignItems: =LayoutAlignItems.Stretch
+                            LayoutDirection: =LayoutDirection.Vertical
+                            LayoutGap: =5
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            Width: =Parent.Width-5
+                            ZIndex: =3
+
+                            Image2_11 As image:
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =500
+                                Image: |-
+                                    =With({WeekAVG:DropColumns(AddColumns(
+                                        GroupBy(
+                                            AddColumns(
+                                                    logissDash
+                                                    
+                                                ,
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    ),"Count","ww")},
+                                    
+                                    
+                                    
+                                    With({WeekAVGcount:AddColumns(
+                                        GroupBy(
+                                            AddColumns(
+                                            
+                                                    logissDash,
+                                                    
+                                                    "Week",
+                                                    If(
+                                                        Value(Day(Date)) <= 7,
+                                                    "W1",
+                                                    If(
+                                                        Value(Day(Date)) <= 14,
+                                                        "W2",
+                                                        If(
+                                                            Value(Day(Date)) <= 21,
+                                                            "W3",
+                                                            If(
+                                                                Value(Day(Date)) <= 31,
+                                                                "W4"
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            ),
+                                          
+                                            
+                                            "Week",
+                                            "ww"
+                                        ),
+                                        "Count",
+                                        CountRows(ww)
+                                    )},
+                                    
+                                    
+                                    
+                                    
+                                    "https://quickchart.io/chart?c="&EncodeUrl("{
+                                      type: 'bar',
+                                      data: {
+                                        labels:["&Concat(WeekAVG,"'"&Week&"'," ,"")&"],
+                                        datasets: [
+                                          {
+                                          
+                                            data: ["&Concat(WeekAVGcount,Count," ,")&"],
+                                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                                            borderColor: 'rgb(54, 162, 235)',
+                                            borderWidth: 1,
+                                          },
+                                        ],
+                                      },
+                                      options: {
+                                        plugins: {
+                                          datalabels: {
+                                            anchor: 'end',
+                                            align: 'top',
+                                            color: '#000',
+                                            backgroundColor: 'rgba(34, 139, 34, 0.6)',
+                                            borderColor: 'rgba(34, 139, 34, 1.0)',
+                                            borderWidth: 1,
+                                            borderRadius: 5,
+                                            font: {
+                                              weight: 'bold',
+                                              size:'18'
+                                            },
+                                            formatter: (value) => {
+                                              return value + '';
+                                            },
+                                          },
+                                        },
+                                      },
+                                    }
+                                    ")))
+                                Width: =396
+                                X: =10
+                                Y: =193
+                                ZIndex: =1
+
+                            Image2_12 As image:
+                                Fill: =RGBA(255, 255, 255, 1)
+                                Height: =247
+                                Image: |-
+                                    ="https://quickchart.io/chart?c="&EncodeUrl("{
+                                      type: 'doughnut',
+                                      data: {
+                                        datasets: [
+                                          {
+                                            data: [ "&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"'"&Count&"',")&"],
+                                            backgroundColor: [
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)',
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)',
+                                              'rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)','rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)','rgb(255, 99, 132)',
+                                              'rgb(255, 159, 64)',
+                                              'rgb(255, 205, 86)',
+                                              'rgb(75, 192, 192)',
+                                              'rgb(54, 162, 235)',
+                                            ],
+                                            label: 'Dataset 1',
+                                          },
+                                        ],
+                                        labels: ["&Concat(AddColumns(AddColumns(GroupBy(Sort(AllOrdercount,Client,SortOrder.Ascending),"Client","vv"),"Count",CountRows(vv)),"%",Sum(ThisRecord.Count/Sum (CountRows(ofsolistdashboard))*100)),"'"&Client&"',")&"],
+                                      },
+                                      options: {
+                                        font: {
+                                              weight: 'bold',
+                                              size:'20'
+                                            },
+                                        legend: {
+                                          position: 'right',
+                                        },
+                                        title: {
+                                          display: true,
+                                          text: 'Chart.js Doughnut Chart',
+                                        },
+                                      },
+                                    }")
+                                Width: =396
+                                X: =10
+                                Y: =33
+                                ZIndex: =2
+
+                DataCard36 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =58
+                    Width: =1316
+                    WidthFit: =true
+                    X: =0
+                    Y: =0
+                    ZIndex: =6
+
+                    BadgeCanvas27 As Badge:
+                        Appearance: ='BadgeCanvas.Appearance'.Filled
+                        BasePaletteColor: =RGBA(141, 229, 250, 1)
+                        Content: ="Outbound"
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        FontSize: =15
+                        FontWeight: =FontWeight.Bold
+                        Height: =32
+                        Shape: ='BadgeCanvas.Shape'.Rounded
+                        Width: =Parent.Width-23
+                        X: =10
+                        Y: =10
+                        ZIndex: =1
+
+                DataCard37 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =190
+                    Visible: =false
+                    Width: =658
+                    X: =0
+                    Y: =6
+                    ZIndex: =7
+
+                    Container66_1 As groupContainer.verticalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =100
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutGap: =5
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMode: =LayoutMode.Auto
+                        LayoutWrap: =true
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                        Width: =437
+                        ZIndex: =1
+
+                        Button2_8 As button:
+                            Height: =50
+                            LayoutMinWidth: =100
+                            OnSelect: |-
+                                =Set(
+                                    loodingcontrol,
+                                    true
+                                );
+                                If(
+                                    pagecounttDash = Value(Sum(Text(ParseJSON(tookanpagecountDash).total_page_count) + 1)),
+                                    Set(
+                                        pagecounttDash,
+                                        1
+                                    );
+                                    Notify(
+                                        "Quary Completed",
+                                        NotificationType.Success
+                                    );
+                                    Set(
+                                        loodingcontrol,
+                                        false
+                                    ),
+                                    Set(
+                                        pagecounttDash,
+                                        pagecounttDash + 1
+                                    );
+                                    UpdateContext({tooooDash: !tooooDash})
+                                )
+                            Text: ="Button"
+                            Width: =100
+                            X: =697
+                            Y: =105
+                            ZIndex: =4
+
+                        Toggle2_7 As toggleSwitch:
+                            Default: =tooooDash
+                            Height: =34
+                            OnChange: |-
+                                =Set(
+                                    tookanlistttDash,
+                                    tokanalladata.Run(
+                                      Text(
+                                               Coalesce(
+                                                            _selectedStart,Today()),
+                                                "yyyy-mm-dd"
+                                            ),
+                                            Text(
+                                               Coalesce(
+                                                            _selectedEnd,Today()),
+                                                "yyyy-mm-dd"
+                                            )
+                                        ,pagecounttDash
+                                    ).tookandataa
+                                );
+                                //Text(First(Split(ThisItem.orid,"-")).Value)//
+                                Collect(
+                                    logissDash,
+                                    ForAll(
+                                        Table(ParseJSON(tookanlistttDash)),
+                                        {
+                                            orid: Text(ThisRecord.Value.'Order ID'),
+                                            Type: Switch(
+                                                Text(ThisRecord.Value.job_type),
+                                                "1",
+                                                "Delivery",
+                                                "0",
+                                                "For Pickup"
+                                            ),
+                                            Status: Switch(
+                                                Text(ThisRecord.Value.job_status),
+                                                "1",
+                                                "Started",
+                                                "2",
+                                                "Successful",
+                                                "9",
+                                                "Cancel","6","Unassigned","0","Assigned","3","Failed","4","InProgress/Arrived","7","Accepted/Acknowledged"
+                                            ),
+                                            Clint: If(
+                                                StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),
+                                                    "0"
+                                                ),
+                                                "Teeela",If(StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),
+                                                    "#")||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"1"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"2"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"3"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"4"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"5"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"6"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"7"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"8"
+                                                )||StartsWith(
+                                                    Text(
+                                                        First(
+                                                            Split(
+                                                                ThisRecord.Value.'Order ID',
+                                                                "-"
+                                                            )
+                                                        ).Value
+                                                    ),"9"
+                                                ),
+                                                "PetZone",
+                                                Text(
+                                                    First(
+                                                        Split(
+                                                            ThisRecord.Value.'Order ID',
+                                                            "_"
+                                                        )
+                                                    ).Value
+                                                )
+                                            )),
+                                
+                                //Text(First(Split(ThisItem.orid,"-")).Value)//
+                                            Ordern0: Text(First(                                
+                                                Split(
+                                                    ThisRecord.Value.'Order ID',
+                                                    "-"
+                                                )
+                                            ).Value)
+                                            ,
+                                            OtherTask:Text(Last(                                
+                                                Split(
+                                                    ThisRecord.Value.'Order ID',
+                                                    "-"
+                                                )
+                                            ).Value)
+                                
+                                
+                                
+                                            ,
+                                             Date:  Text(Left(ThisRecord.Value.'date delivered',10),"mm-dd-yyyy"),
+                                             CDate:Text(Left(ThisRecord.Value.CRDate,10),"mm-dd-yyyy")
+                                        }
+                                    )
+                                );Select(Button2_8)
+                            Width: =139
+                            X: =19
+                            Y: =91
+                            ZIndex: =5
+
+                        "DatePickerCanvas4_9 As 'Date picker'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Format: ='DatePickerCanvas.Format'.Short
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnChange: |-
+                                =Concurrent(
+                                
+                                
+                                
+                                ClearCollect(
+                                    dashoms,
+                                    Filter(
+                                        'Master Out Bound',
+                                        Date = DatePickerCanvas4_9.SelectedDate
+                                    )
+                                ),
+                                ClearCollect(
+                                    dashin,
+                                    Filter(
+                                        'Master In Bound',
+                                        Date = DatePickerCanvas4_9.SelectedDate
+                                    )
+                                ))
+                            SelectedDate: =Today()
+                            Visible: =true
+                            Width: =130
+                            X: =0
+                            Y: =0
+                            ZIndex: =6
+
+                        "DatePickerCanvas4_10 As 'Date picker'":
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Format: ='DatePickerCanvas.Format'.Short
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnChange: |-
+                                =Concurrent(
+                                
+                                
+                                
+                                ClearCollect(
+                                    dashoms,
+                                    Filter(
+                                        'Master Out Bound',
+                                        Date = DatePickerCanvas4_10.SelectedDate
+                                    )
+                                ),
+                                ClearCollect(
+                                    dashin,
+                                    Filter(
+                                        'Master In Bound',
+                                        Date = DatePickerCanvas4_10.SelectedDate
+                                    )
+                                ))
+                            SelectedDate: =Today()
+                            Visible: =true
+                            Width: =130
+                            X: =0
+                            Y: =0
+                            ZIndex: =7
+
+                        Timer1_5 As timer:
+                            AutoStart: =true
+                            BorderStyle: =BorderStyle.None
+                            Color: =RGBA(106, 122, 127, 1)
+                            Duration: =timme
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Height: =7
+                            OnTimerEnd: |-
+                                =
+                                    ClearCollect(
+                                        ofsolistD,
+                                        ForAll(
+                                            Table(
+                                                ParseJSON(
+                                                    OFSOrderList.Run(
+                                                        Text(
+                                                            _selectedStart,
+                                                            "mm/dd/yyy"
+                                                        ),
+                                                        Text(
+                                                            _selectedEnd,
+                                                            "mm/dd/yyy"
+                                                        )
+                                                    ).re
+                                                )
+                                            ),
+                                            {
+                                                Docno: Text(ThisRecord.Value.WebOrderNo),
+                                                Client: Text(ThisRecord.Value.PackagingLocation),
+                                                OrderDate: Text(
+                                                    Text(ThisRecord.Value.OrderDate),
+                                                    "mm/dd/yyyy"
+                                                ),
+                                                OrderStatus: Text(ThisRecord.Value.OrderStatus),
+                                                OS:"OFS",
+                                                Fulfilltype:"Order"
+                                            }
+                                        )
+                                    );Set(
+                                        tookanpagecountDash,
+                                        getalldetailstookan.Run(
+                                            Text(
+                                               _selectedStart,
+                                                "yyyy-mm-dd"
+                                            ),
+                                            Text(
+                                               _selectedEnd,
+                                                "yyyy-mm-dd"
+                                            )
+                                        ).responpage
+                                    );Concurrent(
+                                    ClearCollect(
+                                        dashBoardSVMSout,
+                                        ForAll(
+                                            Filter(
+                                                'Master Out Bound',
+                                                Date >= DateValue(
+                                                    Text(
+                                                        _selectedStart,
+                                                        "mm/dd/yyy"
+                                                    )
+                                                ) && Date <= DateValue(
+                                                    Text(
+                                                        _selectedEnd,
+                                                        "mm/dd/yyy"
+                                                    )
+                                                )
+                                            ),
+                                            {
+                                                OrderStatus: ThisRecord.Status.Value,
+                                                Client: ThisRecord.Company,
+                                                Docno: ThisRecord.Title,
+                                                OrderDate: Text(ThisRecord.Date),
+                                                Fulfilltype: ThisRecord.'Fulfillment Type'.Value,
+                                                Orderype: ThisRecord.'Order Type'.Value,
+                                                OS: "SV",
+                                                Remarkk: ThisRecord.Remark
+                                            }
+                                        )
+                                    ),
+                                    ClearCollect(
+                                        dashin,
+                                        Filter(
+                                            'Master In Bound',
+                                            Date >= DateValue(
+                                                Text(
+                                                    _selectedStart,
+                                                    "mm/dd/yyy"
+                                                )
+                                            ) && Date <= DateValue(
+                                                Text(
+                                                    _selectedEnd,
+                                                    "mm/dd/yyy"
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                                    ;
+                                ClearCollect(
+                                    OMSremove,
+                                    ofsolistD
+                                );
+                                RemoveIf(
+                                    OMSremove,
+                                    Docno in ShowColumns(
+                                        dashBoardSVMSout,
+                                        "Docno"
+                                    )
+                                );
+                                ClearCollect(
+                                    AllOrdercount,
+                                    OMSremove,
+                                    dashBoardSVMSout
+                                ); Clear(logissDash);
+                                    Select(Button2_8)
+                            OnTimerStart: =
+                            Repeat: =true
+                            Start: =timmmer
+                            Text: |-
+                                ="Next Refresh In "&Text(Time(0, 0, Self.Value/1000), "mm:ss")
+                            X: =758
+                            Y: =172
+                            ZIndex: =8
+
+                        ButtonCanvas18_8 As Button:
+                            AlignInContainer: =AlignInContainer.Center
+                            Appearance: ='ButtonCanvas.Appearance'.Primary
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnSelect: |-
+                                =Concurrent(
+                                    ClearCollect(
+                                        ofsolistD,
+                                        ForAll(
+                                            Table(
+                                                ParseJSON(
+                                                    OFSOrderList.Run(
+                                                        Text(Coalesce(
+                                                            _selectedStart,Today()),
+                                                            "mm/dd/yyy"
+                                                        ),
+                                                        Text(Coalesce(
+                                                            _selectedEnd,Today()),
+                                                            "mm/dd/yyy"
+                                                        )
+                                                    ).re
+                                                )
+                                            ),
+                                            {
+                                                Docno: Text(ThisRecord.Value.WebOrderNo),
+                                                Client: Text(ThisRecord.Value.PackagingLocation),
+                                                OrderDate: Text(
+                                                    Text(ThisRecord.Value.OrderDate),
+                                                    "mm/dd/yyyy"
+                                                ),
+                                                OrderStatus: Text(ThisRecord.Value.OrderStatus),
+                                                OS:"OFS",
+                                                Fulfilltype:"Order"
+                                            }
+                                        )
+                                    ),Set(
+                                        tookanpagecountDash,
+                                        getalldetailstookan.Run(
+                                            Text(
+                                               Coalesce(
+                                                            _selectedStart,Today()),
+                                                "yyyy-mm-dd"
+                                            ),
+                                            Text(
+                                               Coalesce(
+                                                            _selectedEnd,Today()),
+                                                "yyyy-mm-dd"
+                                            )
+                                        ).responpage
+                                    ),
+                                    ClearCollect(
+                                        dashBoardSVMSout,
+                                        ForAll(
+                                            Filter(
+                                                'Master Out Bound',
+                                                Date >= DateValue(
+                                                    Text(
+                                                        Coalesce(
+                                                            _selectedStart,Today()),
+                                                        "mm/dd/yyy"
+                                                    )
+                                                ) && Date <= DateValue(
+                                                    Text(
+                                                        Coalesce(
+                                                            _selectedEnd,Today()),
+                                                        "mm/dd/yyy"
+                                                    )
+                                                )
+                                            ),
+                                            {
+                                                OrderStatus: ThisRecord.Status.Value,
+                                                Client: ThisRecord.Company,
+                                                Docno: ThisRecord.Title,
+                                                OrderDate: Text(ThisRecord.Date),
+                                                Fulfilltype: ThisRecord.'Fulfillment Type'.Value,
+                                                Orderype: ThisRecord.'Order Type'.Value,
+                                                OS: "SV",
+                                                Remarkk: ThisRecord.Remark
+                                            }
+                                        )
+                                    ),
+                                    ClearCollect(
+                                        dashin,
+                                        Filter(
+                                            'Master In Bound',
+                                            Date >= DateValue(
+                                                Text(
+                                                    Coalesce(
+                                                            _selectedStart,Today()),
+                                                    "mm/dd/yyy"
+                                                )
+                                            ) && Date <= DateValue(
+                                                Text(
+                                                    Coalesce(
+                                                            _selectedEnd,Today()),
+                                                    "mm/dd/yyy"
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                                    ;
+                                ClearCollect(
+                                    OMSremove,
+                                    ofsolistD
+                                );
+                                RemoveIf(
+                                    OMSremove,
+                                    Docno in ShowColumns(
+                                        dashBoardSVMSout,
+                                        "Docno"
+                                    )
+                                );
+                                ClearCollect(
+                                    AllOrdercount,
+                                    OMSremove,
+                                    dashBoardSVMSout
+                                ); Clear(logissDash);
+                                    Select(Button2_8)
+                            Text: ="Update"
+                            Width: =70
+                            X: =0
+                            Y: =0
+                            ZIndex: =9
+
+                    Container17 As groupContainer.horizontalAutoLayoutContainer:
+                        DropShadow: =DropShadow.None
+                        Height: =50
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =10
+                        LayoutMode: =LayoutMode.Auto
+                        PaddingRight: =5
+                        Visible: =false
+                        Width: =150
+                        ZIndex: =2
+
+                        Timer1_7 As timer:
+                            AlignInContainer: =AlignInContainer.Center
+                            AutoStart: =true
+                            BorderStyle: =BorderStyle.None
+                            Color: =RGBA(15, 84, 140, 1)
+                            DisplayMode: =DisplayMode.View
+                            Duration: =
+                            Fill: =RGBA(0, 0, 0, 0)
+                            Font: =Font.'Segoe UI'
+                            FontWeight: =FontWeight.Semibold
+                            Height: =32
+                            LayoutMinWidth: =30
+                            OnTimerEnd: =
+                            RadiusBottomLeft: =0
+                            RadiusBottomRight: =0
+                            RadiusTopLeft: =0
+                            RadiusTopRight: =0
+                            Repeat: =true
+                            Size: =10
+                            Start: =timmmer
+                            Text: |-
+                                ="Next Refresh In - "&Text(Sum(timme-Timer1_5.Value),"mm:ss") 
+                            Width: =150
+                            X: =Parent.Width-Self.Width-20
+                            Y: =72
+                            ZIndex: =1
+
+                        "DatePickerCanvas4_11 As 'Date picker'":
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Format: ='DatePickerCanvas.Format'.Short
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnChange: =
+                            SelectedDate: =Today()
+                            Visible: =false
+                            Width: =130
+                            X: =0
+                            Y: =0
+                            ZIndex: =2
+
+                        "DatePickerCanvas4_12 As 'Date picker'":
+                            AlignInContainer: =AlignInContainer.Center
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Format: ='DatePickerCanvas.Format'.Short
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnChange: |-
+                                =Concurrent(
+                                
+                                
+                                
+                                ClearCollect(
+                                    dashoms,
+                                    Filter(
+                                        'Master Out Bound',
+                                        Date = DatePickerCanvas4_12.SelectedDate
+                                    )
+                                ),
+                                ClearCollect(
+                                    dashin,
+                                    Filter(
+                                        'Master In Bound',
+                                        Date = DatePickerCanvas4_12.SelectedDate
+                                    )
+                                ))
+                            SelectedDate: =DateAdd(Today(),1)
+                            Visible: =false
+                            Width: =130
+                            X: =0
+                            Y: =0
+                            ZIndex: =3
+
+                        ButtonCanvas18_7 As Button:
+                            AlignInContainer: =AlignInContainer.Center
+                            Appearance: ='ButtonCanvas.Appearance'.Primary
+                            BasePaletteColor: =
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontColor: =
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =32
+                            LayoutMinHeight: =32
+                            LayoutMinWidth: =100
+                            OnSelect: |-
+                                =UpdateContext({loader: true});
+                                Concurrent(
+                                    ClearCollect(
+                                        ofsolistdashboard,
+                                        ForAll(
+                                            Table(
+                                                ParseJSON(
+                                                    OFSOrderList.Run(
+                                                        DatePickerCanvas4_11.SelectedDate,
+                                                        DatePickerCanvas4_12.SelectedDate
+                                                    ).re
+                                                )
+                                            ),
+                                            {
+                                                Docno: Text(ThisRecord.Value.WebOrderNo),
+                                                Client: Text(ThisRecord.Value.PackagingLocation),
+                                                OrderDate: Text(
+                                                    Text(ThisRecord.Value.OrderDate),
+                                                    "mm/dd/yyyy"
+                                                ),
+                                                OrderStatus: Text(ThisRecord.Value.OrderStatus)
+                                            }
+                                        )
+                                    ),
+                                    Set(
+                                        tookanpagecountDash,
+                                        getalldetailstookan.Run(
+                                            Text(
+                                                DatePickerCanvas4_9.SelectedDate,
+                                                "yyyy-mm-dd"
+                                            ),
+                                            Text(
+                                                DatePickerCanvas4_10.SelectedDate,
+                                                "yyyy-mm-dd"
+                                            )
+                                        ).responpage
+                                    ));
+                                    Set(
+                                        pagecounttDash,
+                                        0
+                                    );
+                                    Clear(logissDash);
+                                    Select(Button2_8);
+                                
+                                    Concurrent(
+                                        
+                                    ClearCollect(
+                                        dashoms,
+                                        ForAll(
+                                            Filter(
+                                                'Master Out Bound',
+                                                Date >= DatePickerCanvas4_11.SelectedDate && Date <= DatePickerCanvas4_12.SelectedDate
+                                            ),
+                                            {
+                                                OrderStatus: ThisRecord.Status.Value,
+                                                Client: ThisRecord.Company,
+                                                Docno: ThisRecord.'Doc Number',
+                                                OrderDate: Text(ThisRecord.Date)
+                                            }
+                                        )
+                                    ),
+                                    ClearCollect(
+                                        dashin,
+                                        Filter(
+                                            'Master In Bound',
+                                            Date >= DatePickerCanvas4_11.SelectedDate && Date <= DatePickerCanvas4_12.SelectedDate
+                                        )
+                                    )
+                                );
+                                UpdateContext({loader: false})
+                            Text: ="Update"
+                            Visible: =false
+                            Width: =70
+                            X: =0
+                            Y: =0
+                            ZIndex: =4
+
+                DataCard26 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =67
+                    Width: =1316
+                    WidthFit: =true
+                    X: =0
+                    Y: =2
+                    ZIndex: =8
+
+                    BadgeCanvas27_1 As Badge:
+                        Appearance: ='BadgeCanvas.Appearance'.Filled
+                        BasePaletteColor: =RGBA(141, 229, 250, 1)
+                        Content: ="Outbound"
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        FontSize: =15
+                        FontWeight: =FontWeight.Bold
+                        Height: =32
+                        Shape: ='BadgeCanvas.Shape'.Rounded
+                        Width: =Parent.Width-23
+                        X: =10
+                        Y: =11
+                        ZIndex: =1
+
+                DataCard38 As dataCard.blankCard:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    BorderStyle: =BorderStyle.Solid
+                    DisplayMode: =DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =66
+                    Width: =438
+                    WidthFit: =true
+                    X: =0
+                    Y: =4
+                    ZIndex: =9
+
+                    BadgeCanvas27_2 As Badge:
+                        Appearance: ='BadgeCanvas.Appearance'.Filled
+                        BasePaletteColor: =RGBA(141, 229, 250, 1)
+                        Content: ="Outbound"
+                        DisplayMode: =DisplayMode.Edit
+                        FontColor: =
+                        FontSize: =15
+                        FontWeight: =FontWeight.Bold
+                        Height: =32
+                        Shape: ='BadgeCanvas.Shape'.Rounded
+                        Width: =Parent.Width-23
+                        X: =10
+                        Y: =20
+                        ZIndex: =1
+

@@ -1,0 +1,49 @@
+Card As CanvasComponent:
+    Badge1: ="Text"
+    Badge1Color: =RGBA(0, 0, 0, 1)
+    Badge2: ="Text"
+    Color: ="Text"
+    ElevationColor: =RGBA(0, 0, 0, 0)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =200
+    Icone: ="Text"
+    Moreinfo: ="Text"
+    Width: =160
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container98 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =Card.ElevationColor
+        Height: =Parent.Height-14
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width-14
+        X: =7
+        Y: =7
+        ZIndex: =1
+
+        TextCanvas1 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Width: =Parent.Width
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+        TextCanvas1_1 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            Height: =100
+            Size: =25
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =Parent.Width
+            X: =0
+            Y: =Parent.Height-Self.Height-5
+            ZIndex: =2
+

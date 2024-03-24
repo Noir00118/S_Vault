@@ -1,0 +1,31 @@
+Calendar As CanvasComponent:
+    CustomProperty1():
+        ThisProperty:
+            Default: |-
+                =Set(_today,Today());
+                Set(_firstDayOfMonth,DateAdd(_today,1-Day(_today),TimeUnit.Days));
+                Set(_firstDayInView,DateAdd(_firstDayOfMonth,-(Mod(Weekday(_firstDayOfMonth)-2,7)+1),TimeUnit.Days));
+                Set(_selectedStart,Blank()); Set(_selectedEnd, Blank())
+    CustomProperty2():
+        ThisProperty:
+            Default: =true
+    BorderRadius: =0
+    Color: =RGBA(50,50,50,1)
+    DefaultEndDate: =Now()
+    DefaultStartDate: =Now()
+    EndDate: =If(Calendar.SelectRange,_selectedEnd,_selectedStart)
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =300
+    OnReset: =true
+    SelectedDateColor: =Color.White
+    SelectedDateFill: =RGBA(20,145,84,57.647)
+    SelectRange: =true
+    StartDate: =_selectedStart
+    Styles: |-
+        =Table({Key:"",Value:"",Type:""})
+    Visibleee: =true
+    Width: =300
+    X: =0
+    Y: =0
+    ZIndex: =1
+

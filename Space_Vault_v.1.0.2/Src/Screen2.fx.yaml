@@ -1,0 +1,179 @@
+Screen2 As screen:
+    BackgroundImage: =R
+
+    HtmlText3 As htmlViewer:
+        AutoHeight: =true
+        Fill: =RGBA(82, 79, 79, 0.38)
+        Height: =Parent.Height
+        HtmlText: |-
+            ="<div style=' width:3000px; height: "&Parent.Height&"px; backdrop-filter: blur(px);
+            
+            background-color: RGBA(255, 255, 255, 0.1);
+            
+             '> </div>"
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Container1 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.None
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Width: =Parent.Width
+        ZIndex: =2
+
+        Image3 As image:
+            Height: =300
+            Image: =space
+            Width: =200
+            ZIndex: =3
+
+        BadgeCanvas9 As Badge:
+            AccessibleLabel: =""
+            Appearance: ='BadgeCanvas.Appearance'.Ghost
+            BasePaletteColor: =
+            Content: ="Sign in"
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontItalic: =false
+            FontSize: =12
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =FontWeight.Semibold
+            Height: =32
+            LayoutMinHeight: =32
+            LayoutMinWidth: =32
+            Shape: ='BadgeCanvas.Shape'.Rounded
+            ThemeColor: ='BadgeCanvas.ThemeColor'.Informative
+            Width: =150
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        "TextInputCanvas6 As 'Text input'":
+            Align: ="Start"
+            AlignInContainer: =AlignInContainer.Center
+            BasePaletteColor: =RGBA(40, 134, 222, 1)
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontSize: =0
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =32
+            LayoutMinHeight: =32
+            LayoutMinWidth: =32
+            Placeholder: ="👤 User"
+            Type: ='TextInputCanvas.Type'.Text
+            ValidationState: ="None"
+            Visible: =true
+            Width: =220
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        "TextInputCanvas6_1 As 'Text input'":
+            Align: ="Start"
+            AlignInContainer: =AlignInContainer.Center
+            BasePaletteColor: =RGBA(40, 134, 222, 1)
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontSize: =0
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =32
+            LayoutMinHeight: =32
+            LayoutMinWidth: =32
+            Placeholder: ="🔒 Password"
+            Type: ='TextInputCanvas.Type'.Password
+            ValidationState: ="None"
+            Visible: =true
+            Width: =220
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        BadgeCanvas9_1 As Badge:
+            AccessibleLabel: =""
+            Appearance: ='BadgeCanvas.Appearance'.Filled
+            BasePaletteColor: =
+            Content: ="User or Password Wrong"
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =
+            FontItalic: =false
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =""
+            Height: =30
+            LayoutMinHeight: =32
+            LayoutMinWidth: =32
+            Shape: ='BadgeCanvas.Shape'.Rounded
+            ThemeColor: ='BadgeCanvas.ThemeColor'.Danger
+            Visible: =WrongPass
+            Width: =200
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        ButtonCanvas1 As Button:
+            BasePaletteColor: =RGBA(141, 229, 250, 1)
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            Height: =32
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            OnSelect: |-
+                =Set(
+                    varu,
+                    If(
+                        !IsBlank(
+                            LookUp(
+                                UserID,
+                                Title = TextInputCanvas6.Value And Password = TextInputCanvas6_1.Value
+                            ).Title
+                        ),Concurrent(
+                        Set(
+                            VARUSER,
+                            LookUp(
+                                UserID,
+                                Title = TextInputCanvas6.Value
+                            )
+                        ),
+                        Set(
+                            verpass,
+                           TextInputCanvas6_1.Value
+                        ),
+                        UpdateContext({WrongPass: false}));
+                        Navigate(
+                            Home,
+                            ScreenTransition.Cover
+                        );
+                        UpdateContext({WrongPass: false}),
+                        UpdateContext({WrongPass: true})
+                    )
+                )
+                ;Set(IsOpen,!IsOpen);Set(SectionIDRef,0)
+            Text: ="Login"
+            Width: =96
+            X: =0
+            Y: =0
+            ZIndex: =8
+
