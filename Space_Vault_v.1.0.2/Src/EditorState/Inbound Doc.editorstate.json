@@ -38,14 +38,7 @@
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         },
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "Table(\n    {\n        Icon: \"HomeSolid\",\n        Label: \"Home\",\n        Screen: App.ActiveScreen,\n        Tooltip: \"Home\"\n    },\n    {\n        Icon: \"ShoppingCart\",\n        Label: \"Fulfillment\",\n        Tooltip: \"Fulfillment\",\n        SectionIDRef: 1,\n        Submanu: Table(\n            {\n                Label: \"Packing\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"PNA\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Web Orders\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Manual Orders\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Last Mile\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Transfers\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Returns\",\n                Screen: App.ActiveScreen\n            }\n        )\n    },\n    {\n        Icon: \"GenericScanFilled\",\n        Label: \"Inventory\",\n       \n        Tooltip: \"Inventory\",\n        Screen1: App.ActiveScreen,\n        SectionIDRef: 1,\n        Submanu: Table(\n            {\n                Label: \"Packing\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"PNA\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Web Orders\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Manual Orders\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Last Mile\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Transfers\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Returns\",\n                Screen: App.ActiveScreen\n            }\n        )\n    },\n    {\n        Icon: \"Archive\",\n        Label: \"Products\",\n        Screen: App.ActiveScreen,\n        Tooltip: \"Products\"\n    },\n    {\n        Icon: \"TaskList\",\n        Label: \"Task\",\n        Screen: App.ActiveScreen,\n        Tooltip: \"Task\"\n    },\n    {\n        Icon: \"Transportation\",\n        Label: \"Logistics\",\n        Screen: App.ActiveScreen,\n        Tooltip: \"Logistics\"\n    },\n    {\n        Icon: \"ReportDocument\",\n        Label: \"Reports\",\n        SectionIDRef: 2,\n        Tooltip: \"Reports\",\n        Submanu: Table(\n            {\n                Label: \"SOH\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Cycle Count\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Fulfilment\",\n                Screen: App.ActiveScreen\n            },\n            {\n                Label: \"Inventory\",\n                Screen: App.ActiveScreen\n            }\n        )\n    }\n)",
-          "InvariantPropertyName": "Items",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "Items",
         {
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
@@ -55,7 +48,6 @@
           "NameMapSourceSchema": "?"
         },
         "OnExpandSelect",
-        "OnButtonSelect",
         "IsNavigationEnabled",
         "Theme",
         "GetMenuIconPath_IconName",
@@ -159,7 +151,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "Metadata": {
-        "AllowAccessToGlobals": false,
+        "AllowAccessToGlobals": true,
         "AllowCustomization": true,
         "Description": ""
       },
@@ -272,11 +264,6 @@
         {
           "Category": "Design",
           "PropertyName": "ChildTabPriority",
-          "RuleProviderType": "System"
-        },
-        {
-          "Category": "Behavior",
-          "PropertyName": "OnButtonSelect",
           "RuleProviderType": "System"
         },
         {

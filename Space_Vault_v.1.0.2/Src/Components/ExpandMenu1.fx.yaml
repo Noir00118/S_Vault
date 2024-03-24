@@ -11286,7 +11286,7 @@ ExpandMenu1 As CanvasComponent:
     CustomProperty2: =ExpandMenu1.src
     DefaultExpandValue: =false
     Document: =App.ActiveScreen
-    Fill: =RGBA(214, 214, 214, 0.08)
+    Fill: =RGBA(255, 255, 255, 1)
     Height: =660
     IsExpanded: =IsOpen
     IsNavigationEnabled: =true
@@ -11295,7 +11295,7 @@ ExpandMenu1 As CanvasComponent:
             {
                 Icon: "HomeSolid",
                 Label: "Home",
-                Screen: App.ActiveScreen,
+                Screen: Home,
                 Tooltip: "Home"
             },
             {
@@ -11305,8 +11305,8 @@ ExpandMenu1 As CanvasComponent:
                 SectionIDRef: 1,
                 Submanu: Table(
                     {
-                        Label: "Packing",
-                        Screen: App.ActiveScreen
+                        Label: "Orders",
+                        Screen: Orders
                     },
                     {
                         Label: "PNA",
@@ -11346,7 +11346,7 @@ ExpandMenu1 As CanvasComponent:
                     },
                     {
                         Label: "Inbound Doc",
-                        Screen: App.ActiveScreen
+                        Screen: 'Inbound Doc'
                     },
                     {
                         Label: "New Inbound",
@@ -11407,8 +11407,7 @@ ExpandMenu1 As CanvasComponent:
                 )
             }
         )
-    OnButtonSelect: =true
-    OnExpandSelect: =Set(IsOpen,!IsOpen)
+    OnExpandSelect: =true
     OnReset: =Set(IsOpen, ExpandMenu1.DefaultExpandValue)
     Settings: =App.ActiveScreen
     src: =
@@ -11440,7 +11439,7 @@ ExpandMenu1 As CanvasComponent:
         	}
         }
     user: =
-    Width: =If(ExpandMenu1.IsExpanded,150,46)
+    Width: =If(ExpandMenu1.IsExpanded=true,150,46)
     X: =0
     Y: =0
     ZIndex: =11
@@ -11448,6 +11447,7 @@ ExpandMenu1 As CanvasComponent:
     Container163_6 As groupContainer.horizontalAutoLayoutContainer:
         DropShadow: =DropShadow.None
         Height: =55
+        LayoutAlignItems: =LayoutAlignItems.Stretch
         LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
         LayoutMode: =LayoutMode.Auto
         RadiusBottomLeft: =0
@@ -11459,7 +11459,6 @@ ExpandMenu1 As CanvasComponent:
 
         imgExpandButton_10 As image:
             AccessibleLabel: ="Expand Collapase button"
-            AlignInContainer: =AlignInContainer.Stretch
             BorderColor: =ColorFade(imgExpandButton_10.Fill, -20%)
             DisplayMode: =DisplayMode.View
             Fill: =RGBA(0,0,0,0)
@@ -11479,6 +11478,7 @@ ExpandMenu1 As CanvasComponent:
             ZIndex: =1
 
         Container149_17 As groupContainer.manualLayoutContainer:
+            AlignInContainer: =AlignInContainer.Center
             DropShadow: =DropShadow.None
             FillPortions: =0
             LayoutMinHeight: =10
@@ -11496,7 +11496,7 @@ ExpandMenu1 As CanvasComponent:
                 IconColor: ="Black"
                 IconName: =If(ExpandMenu1.IsExpanded,"DoubleChevronLeft8","DoubleChevronRight8")
                 IconType: ='PowerCAT.Icon.IconType'.IconButon
-                OnChange: =ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
+                OnChange: =Set(IsOpen,!IsOpen);ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
                 TextAlignment: ='PowerCAT.Icon.TextAlignment'.Center
                 Theme: |-
                     = JSON({palette:
@@ -11532,11 +11532,12 @@ ExpandMenu1 As CanvasComponent:
                 ZIndex: =1
 
             ButtonCanvas3 As Button:
-                Appearance: ='ButtonCanvas.Appearance'.Outline
+                Appearance: ='ButtonCanvas.Appearance'.Transparent
                 DisplayMode: =DisplayMode.Edit
                 Height: =Parent.Height
                 OnSelect: =Set(IsOpen,!IsOpen);ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
                 Text: =""
+                Visible: =true
                 Width: =Parent.Width
                 X: =0
                 Y: =0
@@ -11644,6 +11645,7 @@ ExpandMenu1 As CanvasComponent:
 
         "Elevation1 As 'Fluent Elevation (1.0.22)'":
             DisplayMode: =DisplayMode.Edit
+            FillColor: ="Whitesmoke"
             Height: =200
             HoverDepth: ='PowerCAT.Elevation.HoverDepth'.Depth8
             PaddingBottom: =5
@@ -11708,12 +11710,23 @@ ExpandMenu1 As CanvasComponent:
             IconSize: =18
             IconType: =If(ExpandMenu1.IsExpanded,'PowerCAT.Icon.IconType'.ActionButton,'PowerCAT.Icon.IconType'.IconButon)
             OnChange: |-
-                =Set(IsOpen,true);If(
-                    IsBlank(ThisItem.Screen) && ExpandMenu1.IsNavigationEnabled,If(SectionIDRef=ThisItem.SectionIDRef,Set(SectionIDRef,0),
-                    Set(
-                        SectionIDRef,
-                        ThisItem.SectionIDRef
-                    )),
+                =Set(
+                    IsOpen,
+                    true
+                );
+                If(
+                    IsBlank(ThisItem.Screen) && ExpandMenu1.IsNavigationEnabled,
+                    If(
+                        SectionIDRef = ThisItem.SectionIDRef,
+                        Set(
+                            SectionIDRef,
+                            0
+                        ),
+                        Set(
+                            SectionIDRef,
+                            ThisItem.SectionIDRef
+                        )
+                    ),
                     Navigate(ThisItem.Screen)
                 );
                 Set(
@@ -11790,6 +11803,7 @@ ExpandMenu1 As CanvasComponent:
         ZIndex: =5
 
         "Icon3 As 'Fluent Icon (1.0.22)'":
+            AlignInContainer: =AlignInContainer.Stretch
             DisplayMode: =DisplayMode.Edit
             Height: =30
             HoverFillColor: ="WhiteSmoke"
@@ -11833,6 +11847,7 @@ ExpandMenu1 As CanvasComponent:
             ZIndex: =1
 
         "Icon3_1 As 'Fluent Icon (1.0.22)'":
+            AlignInContainer: =AlignInContainer.Stretch
             DisplayMode: =DisplayMode.Edit
             Height: =30
             HoverFillColor: ="WhiteSmoke"

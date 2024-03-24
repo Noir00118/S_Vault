@@ -5,7 +5,14 @@
       "ControlPropertyState": [
         "MinScreenHeight",
         "MinScreenWidth",
-        "ConfirmExit",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "ConfirmExit",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SizeBreakpoints",
         "BackEnabled",
         "Theme",
@@ -14,6 +21,14 @@
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
           "InvariantPropertyName": "OnStart",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Formulas",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
         }
@@ -65,6 +80,11 @@
           "Category": "ConstantData",
           "PropertyName": "SizeBreakpoints",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Formulas",
+          "PropertyName": "Formulas",
+          "RuleProviderType": "User"
         }
       ],
       "StyleName": "",

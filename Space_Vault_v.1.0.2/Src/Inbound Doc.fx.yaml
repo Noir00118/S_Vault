@@ -11305,7 +11305,7 @@
                     , Name=IconName).Path
                 LayoutMinHeight: =640
                 LayoutMinWidth: =640
-                Width: =If(ExpandMenu1_2.IsExpanded,150,46)
+                Width: =If(ExpandMenu1_2.IsExpanded=true,150,46)
                 ZIndex: =1
 
         ScreenContainer2_6 As groupContainer.verticalAutoLayoutContainer:
