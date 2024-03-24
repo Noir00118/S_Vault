@@ -8394,7 +8394,7 @@
       "MetaDataIDKey": "",
       "Name": "HtmlText6_4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8786,7 +8786,7 @@
       "MetaDataIDKey": "",
       "Name": "HtmlText6_8",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8974,7 +8974,7 @@
       "MetaDataIDKey": "",
       "Name": "HtmlText6_9",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
