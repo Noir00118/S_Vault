@@ -82,7 +82,7 @@
       "CustomProperty2",
       "Visibleee"
     ],
-    "LastModifiedTimestamp": "638468882438122814",
+    "LastModifiedTimestamp": "638469362202363817",
     "Name": "Calendar",
     "Rules": [
       {
@@ -314,7 +314,7 @@
       "Name": "CustomProperty1",
       "PropertyDataTypeKey": "String",
       "PropertyScopeKey": {
-        "PropertyScopeRuleNamespaceKey": "31",
+        "PropertyScopeRuleNamespaceKey": "30",
         "PropertyScopeRulesKey": []
       },
       "Tooltip": "A custom property",
@@ -327,7 +327,7 @@
       "Name": "CustomProperty2",
       "PropertyDataTypeKey": "Boolean",
       "PropertyScopeKey": {
-        "PropertyScopeRuleNamespaceKey": "31",
+        "PropertyScopeRuleNamespaceKey": "30",
         "PropertyScopeRulesKey": []
       },
       "Tooltip": "A custom property",
@@ -351,7 +351,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638468882438122814",
+  "LastModifiedTimestamp": "638469362202363817",
   "Name": "8663be688c1f455e9f485ddcdb3a0576",
   "OverridableProperties": {},
   "TemplateOriginalName": "1a5d865ac7324116bf38e1d83dc50788",

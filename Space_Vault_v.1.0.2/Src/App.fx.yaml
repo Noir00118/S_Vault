@@ -1,11 +1,10 @@
 App As appinfo:
     BackEnabled: =true
     ConfirmExit: =true
-    Formulas: |
+    Formulas: |+
         =
         
-        
-        lastmiledeliverydocno= LookUp('Invoice Out',ID=12);
+        lastmiledeliverydocno= LookUp('Number Ser',ID=12);
         
         
         
@@ -129,7 +128,7 @@ App As appinfo:
         ];
         //Menu in Country-Details
         Clientpa = If(
-            VARUSER.Role = "Admin",
+            VARUSER.Role.Value = "Admin",
             "Clients"
         );
         Transfercount = Filter(
@@ -279,6 +278,118 @@ App As appinfo:
                 ItemIconColor: "Red"
             }
         );
+        
+        navmanuee =   Table(
+            {
+                Icon: "HomeSolid",
+                Label: "Home",
+                Screen: App.ActiveScreen,
+                Tooltip: "Home",
+                SectionIDRef: 100,
+                Submanu: Table()
+            },
+            {
+                Icon: "ShoppingCart",
+                Label: "Fulfillment",
+                Tooltip: "Fulfillment",
+                SectionIDRef: 1,
+                Submanu: Table(
+                    {
+                        Label: "Packing",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "PNA",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Web Orders",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Manual Orders",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Last Mile",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Transfers",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Returns",
+                        Screen: App.ActiveScreen
+                    }
+                )
+            },
+            {
+                Icon: "GenericScanFilled",
+                Label: "Inventory",
+                Tooltip: "Inventory",
+                SectionIDRef: 3,
+                Submanu: Table(
+                    {
+                        Label: "Product",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Inbound Doc",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "New Inbound",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Putway List",
+                        Screen: App.ActiveScreen
+                    }
+                )
+            },
+            {
+                Icon: "TaskList",
+                Label: "Task",
+                Screen: App.ActiveScreen,
+                Tooltip: "Task",
+                SectionIDRef: 101,
+                Submanu: Table()
+            },
+            {
+                Icon: "Transportation",
+                Label: "Logistics",
+                Screen: App.ActiveScreen,
+                Tooltip: "Logistics",
+                SectionIDRef: 102,
+                Submanu: Table()
+            },
+            {
+                Icon: "ReportDocument",
+                Label: "Reports",
+                SectionIDRef: 2,
+                Tooltip: "Reports",
+                Submanu: Table(
+                    {
+                        Label: "SOH",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Cycle Count",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Fulfilment",
+                        Screen: App.ActiveScreen
+                    },
+                    {
+                        Label: "Inventory",
+                        Screen: App.ActiveScreen
+                    }
+                )
+            }
+        );
+        
     OnStart: |-
         =Concurrent(
         Set(

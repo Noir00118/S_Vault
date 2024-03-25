@@ -755,8 +755,10 @@ CalendarComponent_2 As CanvasComponent:
 
     ButtonCanvas2 As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
+        BasePaletteColor: =
         DisplayMode: =DisplayMode.Edit
         Font: =Font.Arial
+        FontColor: =
         FontSize: =10
         FontWeight: =FontWeight.Normal
         Height: =20

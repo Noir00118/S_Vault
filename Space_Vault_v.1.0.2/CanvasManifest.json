@@ -98,10 +98,10 @@
       "usenonblockingonstartrule": true,
       "userdefinedfunctions": true,
       "webbarcodescanner": true,
-      "zeroalltabindexes": true
+      "zeroalltabindexes": false
     },
     "Author": "",
-    "BindingErrorCount": 27,
+    "BindingErrorCount": 63,
     "ContainsThirdPartyPcfControls": true,
     "DefaultConnectedDataSourceMaxGetRowsCount": 2000,
     "DocumentAppType": "DesktopOrTablet",

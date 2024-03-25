@@ -11290,123 +11290,7 @@ ExpandMenu1 As CanvasComponent:
     Height: =660
     IsExpanded: =IsOpen
     IsNavigationEnabled: =true
-    Items: |-
-        =Table(
-            {
-                Icon: "HomeSolid",
-                Label: "Home",
-                Screen: Home,
-                Tooltip: "Home"
-            },
-            {
-                Icon: "ShoppingCart",
-                Label: "Fulfillment",
-                Tooltip: "Fulfillment",
-                SectionIDRef: 1,
-                Submanu: Table(
-                    {
-                        Label: "Orders",
-                        Screen: Orders
-                    },
-                    {
-                        Label: "PNA",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Web Orders",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Manual Orders",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Last Mile",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Transfers",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Returns",
-                        Screen: App.ActiveScreen
-                    }
-                )
-            },
-            {
-                Icon: "GenericScanFilled",
-                Label: "Inventory",
-                Tooltip: "Inventory",
-                SectionIDRef: 3,
-                Submanu: Table(
-                    {
-                        Label: "Product",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Inbound Doc",
-                        Screen: 'Inbound Doc'
-                    },
-                    {
-                        Label: "New Inbound",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Manual Orders",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Last Mile",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Transfers",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Returns",
-                        Screen: App.ActiveScreen
-                    }
-                )
-            },
-            {
-                Icon: "TaskList",
-                Label: "Task",
-                Screen: App.ActiveScreen,
-                Tooltip: "Task"
-            },
-            {
-                Icon: "Transportation",
-                Label: "Logistics",
-                Screen: App.ActiveScreen,
-                Tooltip: "Logistics"
-            },
-            {
-                Icon: "ReportDocument",
-                Label: "Reports",
-                SectionIDRef: 2,
-                Tooltip: "Reports",
-                Submanu: Table(
-                    {
-                        Label: "SOH",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Cycle Count",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Fulfilment",
-                        Screen: App.ActiveScreen
-                    },
-                    {
-                        Label: "Inventory",
-                        Screen: App.ActiveScreen
-                    }
-                )
-            }
-        )
+    Items: =navmanuee
     OnExpandSelect: =true
     OnReset: =Set(IsOpen, ExpandMenu1.DefaultExpandValue)
     Settings: =App.ActiveScreen
@@ -11533,7 +11417,9 @@ ExpandMenu1 As CanvasComponent:
 
             ButtonCanvas3 As Button:
                 Appearance: ='ButtonCanvas.Appearance'.Transparent
+                BasePaletteColor: =
                 DisplayMode: =DisplayMode.Edit
+                FontColor: =
                 Height: =Parent.Height
                 OnSelect: =Set(IsOpen,!IsOpen);ExpandMenu1.OnExpandSelect();Set(SectionIDRef,0)
                 Text: =""
@@ -11634,7 +11520,7 @@ ExpandMenu1 As CanvasComponent:
     Gallery2_1 As gallery.variableTemplateHeightGallery:
         DelayItemLoading: =true
         Height: =429
-        Items: =ExpandMenu1.Items
+        Items: =navmanuee
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         ShowScrollbar: =false

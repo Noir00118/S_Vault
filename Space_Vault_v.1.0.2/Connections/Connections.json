@@ -503,8 +503,7 @@
           "Cycle Count": {
             "tableName": "994fef3d-772c-4a97-8dce-0940f2590d8b",
             "tableNameOverride": {
-              "environmentVariableName": "new_shared_sharepointonline_6e0634c164ca471ab6a2e14a39a07070",
-              "name": "994fef3d-772c-4a97-8dce-0940f2590d8b"
+              "environmentVariableName": "new_shared_sharepointonline_6e0634c164ca471ab6a2e14a39a07070"
             }
           },
           "Cycle count Data": {
@@ -531,8 +530,7 @@
           "LastMile": {
             "tableName": "9d481e6d-7238-48ad-812c-c65cf7a100f7",
             "tableNameOverride": {
-              "environmentVariableName": "new_shared_sharepointonline_f232d03dbd2b45d3a558aa13d5c83e98",
-              "name": "9d481e6d-7238-48ad-812c-c65cf7a100f7"
+              "environmentVariableName": "new_shared_sharepointonline_f232d03dbd2b45d3a558aa13d5c83e98"
             }
           },
           "Master In Bound": {

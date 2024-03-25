@@ -11431,6 +11431,7 @@ Home As screen:
 
                     Container3 As groupContainer.horizontalAutoLayoutContainer:
                         DropShadow: =DropShadow.None
+                        LayoutGap: =10
                         LayoutMinHeight: =100
                         LayoutMinWidth: =250
                         LayoutMode: =LayoutMode.Auto
@@ -11443,12 +11444,14 @@ Home As screen:
 
                         Card_1 As Card:
                             AlignInContainer: =AlignInContainer.Stretch
+                            ElevationColor: =RGBA(180, 214, 250, 1)
                             FillPortions: =1
                             LayoutMinHeight: =64
                             LayoutMinWidth: =64
 
                         Card_2 As Card:
                             AlignInContainer: =AlignInContainer.Stretch
+                            ElevationColor: =RGBA(180, 214, 250, 1)
                             FillPortions: =1
                             LayoutMinHeight: =64
                             LayoutMinWidth: =64
@@ -11456,6 +11459,7 @@ Home As screen:
 
                         Card_3 As Card:
                             AlignInContainer: =AlignInContainer.Stretch
+                            ElevationColor: =RGBA(180, 214, 250, 1)
                             FillPortions: =1
                             LayoutMinHeight: =64
                             LayoutMinWidth: =64
@@ -11463,6 +11467,7 @@ Home As screen:
 
                         Card_4 As Card:
                             AlignInContainer: =AlignInContainer.Stretch
+                            ElevationColor: =RGBA(180, 214, 250, 1)
                             FillPortions: =1
                             LayoutMinHeight: =64
                             LayoutMinWidth: =64
@@ -11470,6 +11475,7 @@ Home As screen:
 
                         Card_5 As Card:
                             AlignInContainer: =AlignInContainer.Stretch
+                            ElevationColor: =RGBA(180, 214, 250, 1)
                             FillPortions: =1
                             LayoutMinHeight: =64
                             LayoutMinWidth: =64
@@ -11477,6 +11483,7 @@ Home As screen:
 
                         Card_6 As Card:
                             AlignInContainer: =AlignInContainer.Stretch
+                            ElevationColor: =RGBA(180, 214, 250, 1)
                             FillPortions: =1
                             LayoutMinHeight: =64
                             LayoutMinWidth: =64

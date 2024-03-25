@@ -29,6 +29,7 @@ Card As CanvasComponent:
         TextCanvas1 As Text:
             Align: ='TextCanvas.Align'.Center
             DisplayMode: =DisplayMode.Edit
+            FontColor: =
             Height: =32
             Width: =Parent.Width
             X: =0
@@ -41,9 +42,10 @@ Card As CanvasComponent:
             FontColor: =
             Height: =100
             Size: =25
+            VerticalAlign: ='TextCanvas.VerticalAlign'.Bottom
             Weight: ='TextCanvas.Weight'.Semibold
             Width: =Parent.Width
             X: =0
-            Y: =Parent.Height-Self.Height-5
+            Y: =Parent.Height-Self.Height-8
             ZIndex: =2
 
